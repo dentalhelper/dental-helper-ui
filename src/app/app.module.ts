@@ -7,9 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
-import { faExclamation } from '@fortawesome/free-solid-svg-icons';
+
 
 import { MessageService } from 'primeng/components/common/messageservice';
 import { ToastModule } from 'primeng/toast';
@@ -25,6 +23,7 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 
 import { ROUTES } from './app.routes';
+import { CategoriaDespesaModule } from './categoria-despesa/categoria-despesa.module';
 
 @NgModule({
   declarations: [
@@ -37,14 +36,10 @@ import { ROUTES } from './app.routes';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule,
+
     HttpClientModule,
-    ToastModule,
-    TableModule,
-    TooltipModule,
-    DialogModule,
     CoreModule,
-    SharedModule,
+    CategoriaDespesaModule,
     RouterModule.forRoot(ROUTES),
 
   ],
@@ -55,9 +50,5 @@ import { ROUTES } from './app.routes';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
-    library.add(faTrash);
-    library.add(faExclamation);
-    library.add(faEdit);
-  }
+
 }
