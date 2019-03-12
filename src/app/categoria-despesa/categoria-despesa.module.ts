@@ -2,7 +2,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { CategoriaDespesaCadastroComponent } from './categoria-despesa-cadastro/categoria-despesa-cadastro.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CategoriaDespesaPesquisaComponent } from './categoria-despesa-pesquisa/categoria-despesa-pesquisa.component';
 
@@ -23,7 +22,6 @@ import { SharedModule } from '../shared/shared.module';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   declarations: [
-    CategoriaDespesaCadastroComponent,
     CategoriaDespesaPesquisaComponent]
 
 })

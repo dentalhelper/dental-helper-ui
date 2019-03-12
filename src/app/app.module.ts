@@ -17,8 +17,6 @@ import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { DialogModule } from 'primeng/dialog';
 
-import { CategoriaDespesaCadastroComponent } from './categoria-despesa/categoria-despesa-cadastro/categoria-despesa-cadastro.component';
-import { CategoriaDespesaPesquisaComponent } from './categoria-despesa/categoria-despesa-pesquisa/categoria-despesa-pesquisa.component';
 import { OdontogramaComponent } from './odontograma/odontograma.component';
 import { OdontoComponent } from './odonto/odonto.component';
 import { AppComponent } from './app.component';
@@ -32,8 +30,6 @@ import { ROUTES } from './app.routes';
   declarations: [
     AppComponent,
     OdontogramaComponent,
-    CategoriaDespesaCadastroComponent,
-    CategoriaDespesaPesquisaComponent,
     OdontoComponent
   ],
   imports: [

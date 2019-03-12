@@ -23,7 +23,7 @@ export class OdontogramaComponent implements OnInit {
     }
   }
 
-  esconderDentes(dente: string) {
+  esconderDentes(dente: any) {
     this.mostrar = true;
     this.dente = dente;
   }
