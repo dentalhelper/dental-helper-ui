@@ -1,0 +1,54 @@
+<nav>
+
+  <div class="container">
+    <div class="logo"></div>
+
+    <div class="barra-menu">
+      <div id="menu-bar" class="botao-menu" (click)="isOpen = !isOpen">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)">
+        <i class="fas fa-dollar-sign"></i>
+      </div>
+      <div class="botao-menu">
+        <i class="fas fa-sign-out-alt"></i>
+      </div>
+    </div>
+
+    <ul class="menu" id="menu" [ngClass]="{'menu-esconder' : !isOpen}">
+      <li>
+        <div class="logo-menu-extendido">
+          <div class="botao-menu-extendido">
+            <i class="fas fa-bars" (click)="isOpen = !isOpen"></i>
+          </div>
+        </div>
+      </li>
+
+      <li class="drop-down-menu">
+        <input type="checkbox" class="ativar" id="financas" name="financas" #financas>
+        <label for="financas" class="item-titulo top-menu">
+          <i class="fas fa-dollar-sign icon-esq"></i> Finanças <i id='financas-arrow'
+            class="fas fa-angle-right icon-dir"></i>
+        </label>
+
+        <ul class="drop-down">
+          <li class="item-submenu">
+            <a href="#">Recebimentos</a>
+          </li>
+          <li class="last item-submenu">
+            <a href="#">Despesas</a>
+          </li>
+          <li class="last item-submenu">
+            <a routerLinkActive="active" [routerLink]="['/categorias-despesa']">Categorias de Despesas</a>
+          </li>
+        </ul>
+
+      </li>
+      <li class="drop-down-menu">
+        <label class="item-titulo top-menu">
+          <i class="fas fa-sign-out-alt icon-esq"></i> Sair
+        </label>
+      </li>
+    </ul>
+  </div>
+</nav>

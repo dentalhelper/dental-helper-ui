@@ -1,0 +1,5 @@
+<button (click)="emitirAcaoDoBotao()" [ngClass]="classes" [disabled]="isDisabled()">
+  <i class="{{icon}}" *ngIf="iconPosition === 'left' || iconPosition !== 'right'"></i>
+  {{label}}
+  <i class="{{icon}}" *ngIf="iconPosition === 'right'"></i>
+</button>

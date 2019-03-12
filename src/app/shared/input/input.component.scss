@@ -1,0 +1,22 @@
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group__input {
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+
+  &:focus {
+    border-color: #3c8dbc;
+  }
+}
+
+.form-group__input--success {
+  border-color: #218838;
+  box-shadow: none;
+}
+
+.form-group__input--error {
+  border-color: #dd4b39;
+  box-shadow: none;
+}

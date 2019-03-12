@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "assets/scss/cores";
+@import "assets/scss/reset";
+
+body {
+  margin: 0;
+  font: 100%/1.4 "Roboto", sans-serif;
+  background-color: $cor-fundo;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 140%;
+}
+
+h2 {
+  font-size: 120%;
+}
+
+p {
+  margin: 0.6em 0;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.input-group__label {
+  color: #686b6d;
+  font-size: medium;
+  margin-right: 10px;
+}
+
+.input-group__input-message{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.input-group__input {
+  color: #535353;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  padding: 6px;
+
+  &:hover {
+    border-color: #8d8d8d;
+  }
+  &:focus {
+    border-color: #3c8dbc;
+  }
+}
+
+.input-group__mensagem {
+  line-height: 28px;
+  font-size: 13px;
+}
+
+.input-group--margem-md-tb {
+  margin: 15px 0 15px 0;
+}
+
+.input--error {
+  border-color: #218838;
+  box-shadow: none;
+}
+
+.input--success {
+  border-color: $mensagem-erro;
+  box-shadow: none;
+}
+
+.mensagem--erro {
+  color: $mensagem-erro;
+}
+
+.mensagem--sucesso{
+  color: $mensagem-sucesso;
+}

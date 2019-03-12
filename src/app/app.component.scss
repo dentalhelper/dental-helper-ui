@@ -1,0 +1,14 @@
+router-outlet {
+  display: none;
+}
+.container {
+  display: grid;
+  grid-template-rows: 70px auto;
+}
+
+@media screen and (min-width: 56.25em) {
+  .container {
+    grid-template-rows: auto;
+    grid-template-columns: 70px auto;
+  }
+}

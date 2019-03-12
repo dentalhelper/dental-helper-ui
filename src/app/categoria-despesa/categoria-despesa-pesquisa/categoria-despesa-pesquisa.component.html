@@ -1,0 +1,95 @@
+<div class="content">
+  <div class="header">
+    <h1>Categorias de despesa</h1>
+    <button type="button" class="header__botao-add botao-add--float" (click)="showDialog()">
+      <i class="fas fa-plus"></i>
+    </button>
+    <button type="button" class="header__botao-add botao-add--header" (click)="showDialog()">
+      Adicionar Categoria
+    </button>
+  </div>
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [value]="categorias" #tabela responsive="true">
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nome</th>
+            <th class="col-operacoes-header"></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-categoria>
+          <tr>
+            <td>
+              <span class="ui-column-title">Nome</span>
+              {{categoria.nome}}
+            </td>
+            <td class="operacoes">
+              <div class="botoes">
+                <button type="button" (click)="showDialog(categoria)" pTooltip="Editar" tooltipPosition="top">
+                  <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+
+                <button type="button" (click)="deletar(categoria)" pTooltip="Excluir" tooltipPosition="top">
+                  <fa-icon [icon]="['fas', 'trash']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+    </div>
+  </div>
+</div>
+
+<p-dialog [(visible)]="display" [modal]="true" [positionTop]="isMobile()" [resizable]="false"
+  (onHide)="limparInput(formulario)">
+  <p-header>
+    <span *ngIf="isEditando();else novo">
+      Editando a categoria "{{categoria?.nome}}"
+    </span>
+    <ng-template #novo>
+      <span>
+        Criando uma Categoria de Despesa.
+      </span>
+    </ng-template>
+  </p-header>
+
+  <form #formulario="ngForm">
+    <div class="input-group input-group--margem-md-tb">
+      <label for="nome" class="input-group__label">Nome</label>
+      <div class="input-group__input-message">
+
+        <input type="text" class="input-group__input" id="nome" name="nome" required minlength="3" maxlength="30"
+          [ngModel]="categoria?.nome" autocomplete="off" #nome="ngModel" />
+
+        <span class="input-group__mensagem mensagem--erro" *ngIf="nome.hasError('minlength')">
+          <i class="fas fa-exclamation-circle"></i>
+          Pelo menos 3 caracteres.
+        </span>
+
+        <span class="input-group__mensagem mensagem--erro" *ngIf="nome.hasError('required') && nome.dirty">
+          <i class="fas fa-exclamation-circle"></i>
+          Este campo é obrigatório.
+        </span>
+
+        <span class="input-group__mensagem mensagem--sucesso" *ngIf="formulario.valid;">
+          <i class="fas fa-check-circle"></i>
+        </span>
+
+      </div>
+    </div>
+  </form>
+
+  <p-footer>
+    <app-button label="Salvar" icon="fas fa-hdd" iconPosition="right"
+      (botaoClicado)="[display=false, submeterFormulario(formulario)]" [classes]="['botao--success']"
+      [desativar]="formulario.invalid">
+    </app-button>
+    <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[display=false]"
+      [classes]="['ui-button-secondary']">
+    </app-button>
+  </p-footer>
+</p-dialog>
