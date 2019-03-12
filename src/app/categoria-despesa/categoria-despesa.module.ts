@@ -7,6 +7,9 @@ import { CategoriaDespesaPesquisaComponent } from './categoria-despesa-pesquisa/
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from '../shared/shared.module';
+import { DialogModule } from 'primeng/dialog';
+import { TableModule } from 'primeng/table';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -16,13 +19,15 @@ import { SharedModule } from '../shared/shared.module';
     ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
+    DialogModule,
+    TableModule,
+    FontAwesomeModule,
     SharedModule
-
-
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   declarations: [
-    CategoriaDespesaPesquisaComponent]
+    CategoriaDespesaPesquisaComponent
+  ]
 
 })
 export class CategoriaDespesaModule {
