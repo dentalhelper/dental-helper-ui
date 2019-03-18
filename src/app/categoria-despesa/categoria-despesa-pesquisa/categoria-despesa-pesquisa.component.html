@@ -31,7 +31,7 @@
                   <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
 
-                <button type="button" (click)="deletar(categoria)" pTooltip="Excluir" tooltipPosition="top">
+                <button type="button" (click)="confirmarExclusao(categoria)" pTooltip="Excluir" tooltipPosition="top">
                   <fa-icon [icon]="['fas', 'trash']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
               </div>
@@ -44,8 +44,7 @@
   </div>
 </div>
 
-<p-dialog [(visible)]="display" [modal]="true" [positionTop]="isMobile()" [resizable]="false"
-  (onHide)="limparInput()">
+<p-dialog [(visible)]="display" [modal]="true" [positionTop]="isMobile()" [resizable]="false" (onHide)="limparInput()">
   <p-header>
     <span *ngIf="isEditando();else novo">
       Editando a categoria "{{categoria?.nome}}"
@@ -93,3 +92,15 @@
     </app-button>
   </p-footer>
 </p-dialog>
+
+<p-confirmDialog #confirmDialog header="Confirmar exclusão" icon="pi pi-exclamation-triangle">
+  <p-footer>
+    <app-button label="Excluir" icon="fas fa-trash" iconPosition="right" (botaoClicado)="[confirmDialog.accept()]"
+      [classes]="['botao--success']">
+    </app-button>
+
+    <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[confirmDialog.reject()]"
+      [classes]="['ui-button-secondary']">
+    </app-button>
+  </p-footer>
+</p-confirmDialog>

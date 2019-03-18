@@ -1,18 +1,17 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { MessageService } from 'primeng/components/common/messageservice';
-
 import { CategoriaDespesaService } from 'src/app/core/services/categoria-despesa.service';
-
 import { CategoriaDespesa } from 'src/app/domains/categoria-despesa.model';
-
-import { tap } from 'rxjs/operators';
 import { ToastService } from 'src/app/core/services/toast.service';
 
-import { MOBILE } from 'src/app/shared/constants/toast.key';
+import { tap } from 'rxjs/operators';
+
+import { ConfirmationService } from 'primeng/api';
 
 declare var $: any;
+const ALTURA_MODAL_MOBILE = '50';
+const ALTURA_MODAL_DESKTOP = '200';
 @Component({
   selector: 'app-categoria-despesa-pesquisa',
   templateUrl: './categoria-despesa-pesquisa.component.html',
@@ -30,16 +29,17 @@ export class CategoriaDespesaPesquisaComponent implements OnInit {
 
   constructor(
     private categoriaDespesaService: CategoriaDespesaService,
-    private messageService: MessageService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private confirmationService: ConfirmationService
   ) { }
 
   ngOnInit() {
     this.categoria = new CategoriaDespesa();
     this.pesquisar();
   }
+
   isMobile(): string {
-    return $.browser.mobile ? '50' : '200';
+    return $.browser.mobile ? ALTURA_MODAL_MOBILE : ALTURA_MODAL_DESKTOP;
   }
 
   pesquisar() {
@@ -74,8 +74,7 @@ export class CategoriaDespesaPesquisaComponent implements OnInit {
 
   atualizar(form: any) {
     const urlDoObjeto = this.categoria.links[0].href;
-    this.categoriaDespesaService
-      .atualizar(urlDoObjeto, form.value)
+    this.categoriaDespesaService.atualizar(urlDoObjeto, form.value)
       .pipe(
         tap((response: string) => {
           this.nomeCategoria = response;
@@ -106,31 +105,23 @@ export class CategoriaDespesaPesquisaComponent implements OnInit {
     this.categoria = null;
   }
 
+  confirmarExclusao(categoriaDespesa: CategoriaDespesa){
+
+    this.confirmationService.confirm({
+      message: `Você tem certeza que quer excluir "${categoriaDespesa.nome}"?`,
+      accept: () => {
+         this.deletar(categoriaDespesa);
+      }
+  });
+  }
+
   deletar(categoriaDespesa: any) {
     const url = categoriaDespesa.links[0].href;
-    this.categoriaDespesaService
-      .deletar(url)
-      .then(() => {
+    this.categoriaDespesaService.deletar(url)
+      .subscribe(() => {
         this.pesquisar();
-        this.mensagemSucesso();
-      })
-      .catch();
+        const mensagemToast = `"A categoria foi excluída."`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
   }
-
-  mensagemSucesso() {
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Sucesso!',
-      detail: 'Categoria excluída.'
-    });
-  }
-
-  mensagemErro() {
-    this.messageService.add({
-      severity: 'error',
-      summary: 'Erro!',
-      detail: 'Operação não implementada.'
-    });
-  }
-
 }

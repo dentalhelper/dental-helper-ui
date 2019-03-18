@@ -1,20 +1,36 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+
+import { NavbarComponent } from './navbar/navbar.component';
 import { CategoriaDespesaService } from './services/categoria-despesa.service';
 import { ToastService } from './services/toast.service';
+import { ToastLinkComponent } from './toast-link/toast-link.component';
+
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmationService } from 'primeng/api';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ToastModule,
+    ConfirmDialogModule
   ],
-  declarations: [NavbarComponent],
-  exports: [NavbarComponent],
+  declarations: [
+    NavbarComponent,
+    ToastLinkComponent
+  ],
+  exports: [
+    NavbarComponent,
+    ToastModule,
+    ToastLinkComponent
+  ],
   providers: [
     CategoriaDespesaService,
-    ToastService
+    ToastService,
+    ConfirmationService
   ]
 })
 export class CoreModule { }
