@@ -22,16 +22,22 @@ export class ErrorHandlerService implements HttpInterceptor {
       }
 
       switch (errorObj.status) {
+        case 400:
+          this.handle400(errorObj);
+          break;
         case 409:
           this.handle409(errorObj);
           break;
         default:
-
           this.handleDefaultError(errorObj);
       }
 
       return throwError(error);
     })) as any;
+  }
+
+  handle400(errorObj: any) {
+    this.toastService.exibirErro(`${errorObj.mensagemUsuario}`);
   }
 
   handle409(errorObj: any) {
