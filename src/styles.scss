@@ -3,6 +3,7 @@
 @import
 "assets/scss/cores",
 "assets/scss/reset",
+"assets/scss/tools/placeholders",
 "assets/scss/layout/content",
 "assets/scss/layout/header";
 
@@ -36,8 +37,7 @@ p {
 }
 
 .input-group__label {
-  color: #686b6d;
-  font-size: medium;
+  @extend %label;
   margin-right: 10px;
 }
 
@@ -48,17 +48,7 @@ p {
 }
 
 .input-group__input {
-  color: #535353;
-  border: 1px solid #cccccc;
-  border-radius: 2px;
-  padding: 6px;
-
-  &:hover {
-    border-color: #8d8d8d;
-  }
-  &:focus {
-    border-color: #3c8dbc;
-  }
+  @extend %input;
 }
 
 .input-group__mensagem {

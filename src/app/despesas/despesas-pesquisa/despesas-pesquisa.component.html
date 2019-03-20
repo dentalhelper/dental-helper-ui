@@ -1,3 +1,37 @@
-<p>
-  despesas-pesquisa works!
-</p>
+<div class="content">
+  <div class="header">
+    <h1 class="header__titulo">Despesas</h1>
+    <button type="button" class="header__botao-add header__botao-add--float" (click)="criarDespesa()">
+      <i class="fas fa-plus"></i>
+    </button>
+    <button id="add-categoria" type="button" class="header__botao-add header__botao-add--header"
+      (click)="criarDespesa()">
+      Adicionar Categoria
+    </button>
+  </div>
+
+  <div class="filtro">
+    <form>
+      <div class="filtro__group">
+        <label class="filtro__group__label" for="categoria">Categoria</label>
+        <input class="filtro__group__input" type="text" id="categoria">
+      </div>
+      <div class="filtro__group">
+        <label class="filtro__group__label" for="descricao">Descrição</label>
+        <input class="filtro__group__input" type="text" id="descricao">
+      </div>
+      <div class="filtro__group">
+        <label class="filtro__group__label" for="inicio">Data inicial</label>
+        <input class="filtro__group__input" type="text" id="inicio">
+      </div>
+      <div class="filtro__group">
+        <label class="filtro__group__label" for="fim">Data final</label>
+        <input class="filtro__group__input" type="text" id="fim">
+      </div>
+      <div class="filtro__group">
+        <label class="filtro__group__label" for="status">Status</label>
+        <input class="filtro__group__input" type="text" id="status">
+      </div>
+    </form>
+  </div>
+</div>

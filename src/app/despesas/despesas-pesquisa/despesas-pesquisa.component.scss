@@ -1,0 +1,20 @@
+@import "../../../assets/scss/tools/placeholders";
+
+.filtro {
+  display: flex;
+  flex-direction: column;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+      @extend %label;
+      padding: 10px 0 5px 10px;
+    }
+    &__input {
+      @extend %input;
+      margin: 0 10px;
+    }
+  }
+}

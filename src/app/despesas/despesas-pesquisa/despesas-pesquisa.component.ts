@@ -12,4 +12,8 @@ export class DespesasPesquisaComponent implements OnInit {
   ngOnInit() {
   }
 
+  criarDespesa(){
+    // TODO: Implementar a criação de despesa
+  }
+
 }
