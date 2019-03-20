@@ -10,6 +10,7 @@ import { ToastLinkComponent } from './toast-link/toast-link.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmationService } from 'primeng/api';
+import { Title } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { ConfirmationService } from 'primeng/api';
   providers: [
     CategoriaDespesaService,
     ToastService,
-    ConfirmationService
+    ConfirmationService,
+    Title
   ]
 })
 export class CoreModule { }

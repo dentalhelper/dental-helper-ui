@@ -8,6 +8,7 @@ import { ToastService } from 'src/app/core/services/toast.service';
 import { tap } from 'rxjs/operators';
 
 import { ConfirmationService } from 'primeng/api';
+import { Title } from '@angular/platform-browser';
 
 declare var $: any;
 const ALTURA_MODAL_MOBILE = '50';
@@ -30,10 +31,12 @@ export class CategoriaDespesaPesquisaComponent implements OnInit {
   constructor(
     private categoriaDespesaService: CategoriaDespesaService,
     private toastService: ToastService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private title: Title
   ) { }
 
   ngOnInit() {
+    this.title.setTitle('Categorias de Despesa');
     this.categoria = new CategoriaDespesa();
     this.pesquisar();
   }
