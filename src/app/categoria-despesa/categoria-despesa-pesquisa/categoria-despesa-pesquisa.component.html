@@ -38,6 +38,16 @@
             </td>
           </tr>
         </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="2">
+              Nenhuma Categoria encontrada!<br />
+              Clique <a (click)="showDialog()" style="cursor: pointer;">AQUI</a> para cadastrar.
+            </td>
+          </tr>
+        </ng-template>
+
       </p-table>
 
     </div>
