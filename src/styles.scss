@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "assets/scss/cores";
-@import "assets/scss/reset";
+@import
+"assets/scss/cores",
+"assets/scss/reset",
+"assets/scss/layout/content",
+"assets/scss/layout/header";
 
 body {
   margin: 0;

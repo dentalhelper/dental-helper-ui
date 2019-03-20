@@ -160,7 +160,12 @@ nav {
       }
     }
   }
-
+  .label-titulo {
+    display: inline;
+    position: absolute;
+    left: 70px;
+    margin-top: 4px;
+  }
   .menu-esconder {
     opacity: 0;
     z-index: 5;
@@ -254,7 +259,7 @@ nav {
 
   .item-submenu {
     a {
-      padding-left: 67px !important;
+      padding-left: 75px !important;
       background-color: #6d1a1d !important;
       transition: all 0.2s ease-in-out;
 
