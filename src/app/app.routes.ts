@@ -7,6 +7,9 @@ export const ROUTES: Routes = [
     path: 'categorias-despesa',
     component: CategoriaDespesaPesquisaComponent
   },
+  {
+    path: 'despesas',
+    loadChildren: './despesas/despesas.module#DespesasModule'
+  },
 
-
-]
+];
