@@ -76,7 +76,9 @@ button {
 }
 
 .botao--grande {
-  padding: 10px 16px;
+  height: 33px;
+  padding: 10px 18px;
+  line-height: 0;
 }
 
 @media screen and (min-width: 56.25em) {

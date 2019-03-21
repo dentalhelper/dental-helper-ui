@@ -132,11 +132,11 @@ nav {
 
 @media screen and (min-width: 56.25em) {
   nav {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 70px;
-    height: 100%;
+    height: 100vh;
     background-color: $cor-menu;
 
     .logo {

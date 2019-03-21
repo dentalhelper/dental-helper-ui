@@ -15,26 +15,6 @@
   width: 156px;
 }
 
-.operacoes button {
-  text-decoration: none;
-  display: inline-block;
-  border: none;
-  background-color: #ffffff00;
-  color: #499ddd;
-  cursor: pointer;
-  transition: all 0.1s linear;
-}
-
-.operacoes button:hover {
-  color: #19649e;
-}
-
-.botoes {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
 @media screen and (min-width: 56.25em) {
 
   .botao-adicionar {
@@ -52,12 +32,4 @@
     cursor: pointer;
     transition: all 0.2s linear;
   }
-
-  .botoes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-
 }

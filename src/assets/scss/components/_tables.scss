@@ -1,0 +1,28 @@
+.operacoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  &__button {
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    background-color: #ffffff00;
+    color: #499ddd;
+    cursor: pointer;
+    transition: all 0.1s linear;
+    &--edit {
+    }
+    &--delete {
+    }
+  }
+}
+@media screen and (min-width: 56.25em) {
+  .operacoes {
+    justify-content: space-around;
+    &__button {
+      &:hover {
+        color: #19649e;
+      }
+    }
+  }
+}
