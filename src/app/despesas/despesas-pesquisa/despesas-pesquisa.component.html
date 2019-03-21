@@ -10,28 +10,38 @@
     </button>
   </div>
 
-  <div class="filtro">
-    <form>
-      <div class="filtro__group">
-        <label class="filtro__group__label" for="categoria">Categoria</label>
-        <input class="filtro__group__input" type="text" id="categoria">
+  <div class="fieldset">
+    <!--  -->
+    <p-fieldset legend="Filtros" [toggleable]="isMobile()" [collapsed]="isMobile()">
+      <div class="filtro">
+        <form>
+          <div class="filtro__group">
+            <p-selectButton class="filtro__group__status" [options]="status"></p-selectButton>
+          </div>
+          <div class="filtro__group">
+            <label class="filtro__group__label">Categoria</label>
+            <p-dropdown class="filtro__group__dropdown" [options]="categorias" placeholder="Selecione" [filter]="!isMobile()"
+              name="categoria" emptyFilterMessage="Categoria não encontrada!" [style]="{'width': '100%'}"></p-dropdown>
+          </div>
+          <div class="filtro__group">
+            <label class="filtro__group__label" for="descricao">Descrição</label>
+            <input class="filtro__group__input" type="text" id="descricao">
+          </div>
+          <div class="filtro__group">
+            <label class="filtro__group__label" for="inicio">Data inicial</label>
+            <p-calendar class="filtro__group__calendar" [touchUI]="isMobile()" [style]="{'width': '100%'}"
+              inputId="inicio">
+            </p-calendar>
+          </div>
+          <div class="filtro__group">
+            <label class="filtro__group__label" for="fim">Data final</label>
+            <p-calendar class="filtro__group__calendar" [touchUI]="isMobile()" [style]="{'width': '100%'}"
+              inputId="fim">
+            </p-calendar>
+          </div>
+        </form>
       </div>
-      <div class="filtro__group">
-        <label class="filtro__group__label" for="descricao">Descrição</label>
-        <input class="filtro__group__input" type="text" id="descricao">
-      </div>
-      <div class="filtro__group">
-        <label class="filtro__group__label" for="inicio">Data inicial</label>
-        <input class="filtro__group__input" type="text" id="inicio">
-      </div>
-      <div class="filtro__group">
-        <label class="filtro__group__label" for="fim">Data final</label>
-        <input class="filtro__group__input" type="text" id="fim">
-      </div>
-      <div class="filtro__group">
-        <label class="filtro__group__label" for="status">Status</label>
-        <input class="filtro__group__input" type="text" id="status">
-      </div>
-    </form>
+    </p-fieldset>
   </div>
+
 </div>

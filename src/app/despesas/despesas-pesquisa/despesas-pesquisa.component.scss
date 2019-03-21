@@ -1,5 +1,13 @@
 @import "../../../assets/scss/tools/placeholders";
 
+.fieldset{
+  margin: 10px;
+}
+
+.ui-inputtext{
+  width: 100%;
+}
+
 .filtro {
   display: flex;
   flex-direction: column;
@@ -14,7 +22,16 @@
     }
     &__input {
       @extend %input;
-      margin: 0 10px;
+      margin: 0 10px 5px 10px;
+    }
+    &__dropdown{
+      margin: 0 10px 5px 10px;
+    }
+    &__calendar{
+      margin: 0 10px 5px 10px;
+    }
+    &__status{
+      margin: 3px 0 3px 10px;
     }
   }
 }
