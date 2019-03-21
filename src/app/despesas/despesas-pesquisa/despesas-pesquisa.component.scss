@@ -1,11 +1,12 @@
 @import "../../../assets/scss/tools/placeholders";
 
 .fieldset{
-  margin: 10px;
+  padding: 10px;
+  border-bottom: solid 4px #f3f3f4;
 }
 
 .ui-inputtext{
-  width: 100%;
+  width: 70%;
 }
 
 .filtro {
@@ -32,6 +33,9 @@
     }
     &__status{
       margin: 3px 0 3px 10px;
+    }
+    &__button{
+      margin: 10px;
     }
   }
 }

@@ -11,7 +11,6 @@
   </div>
 
   <div class="fieldset">
-    <!--  -->
     <p-fieldset legend="Filtros" [toggleable]="isMobile()" [collapsed]="isMobile()">
       <div class="filtro">
         <form>
@@ -20,8 +19,9 @@
           </div>
           <div class="filtro__group">
             <label class="filtro__group__label">Categoria</label>
-            <p-dropdown class="filtro__group__dropdown" [options]="categorias" placeholder="Selecione" [filter]="!isMobile()"
-              name="categoria" emptyFilterMessage="Categoria não encontrada!" [style]="{'width': '100%'}"></p-dropdown>
+            <p-dropdown class="filtro__group__dropdown" [options]="categorias" placeholder="Selecione"
+              [filter]="!isMobile()" name="categoria" emptyFilterMessage="Categoria não encontrada!"
+              [style]="{'width': '100%'}"></p-dropdown>
           </div>
           <div class="filtro__group">
             <label class="filtro__group__label" for="descricao">Descrição</label>
@@ -29,19 +29,87 @@
           </div>
           <div class="filtro__group">
             <label class="filtro__group__label" for="inicio">Data inicial</label>
-            <p-calendar class="filtro__group__calendar" [touchUI]="isMobile()" [style]="{'width': '100%'}"
-              inputId="inicio">
+            <p-calendar class="filtro__group__calendar" [showIcon]="isMobile()" [touchUI]="isMobile()"
+              [baseZIndex]="100" [readonlyInput]="isMobile()" [style]="{'width': '70%'}" inputId="inicio"
+              dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true" [yearNavigator]="true"
+              yearRange="2017:2027">
             </p-calendar>
           </div>
           <div class="filtro__group">
             <label class="filtro__group__label" for="fim">Data final</label>
-            <p-calendar class="filtro__group__calendar" [touchUI]="isMobile()" [style]="{'width': '100%'}"
-              inputId="fim">
+            <p-calendar class="filtro__group__calendar" [showIcon]="isMobile()" [touchUI]="isMobile()"
+              [baseZIndex]="100" [readonlyInput]="isMobile()" [style]="{'width': '70%'}" inputId="fim"
+              dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true" [yearNavigator]="true"
+              yearRange="2017:2027">
             </p-calendar>
           </div>
+          <app-button label="Pesquisar" icon="fas fa-search" iconPosition="right"
+            [classes]="['filtro__group__button','botao--padrao']">
+          </app-button>
         </form>
       </div>
     </p-fieldset>
+  </div>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [value]="despesas" #tabela responsive="true">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Status</th>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Valor</th>
+            <th></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-despesa>
+          <tr>
+            <td>
+              <span class="ui-column-title">Status</span>
+              PAGO
+            </td>
+            <td>
+              <span class="ui-column-title">Data</span>
+              {{despesa.dataRealizada}}
+            </td>
+            <td>
+              <span class="ui-column-title">Descrição</span>
+              {{despesa.descricao}}
+            </td>
+            <td>
+              <span class="ui-column-title">Categoria</span>
+              {{despesa.categoria}}
+            </td>
+            <td>
+              <span class="ui-column-title">Valor</span>
+              {{despesa.valor}}
+            </td>
+            <td>
+              <div>
+                <button type="button">
+                  <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+                <button type="button">
+                  <fa-icon [icon]="['fas', 'trash']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="6">
+              Nenhuma Despesa encontrada!<br />
+              Clique AQUI para cadastrar.
+              <!-- TODO: LINK para rota de cadastro -->
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
   </div>
 
 </div>

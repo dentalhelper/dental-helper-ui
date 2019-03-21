@@ -48,7 +48,31 @@ button {
       background-color: rgba(108, 185, 108, 0.815);
     }
   }
+}
 
+.botao--padrao{
+  @extend .botao--success;
+  border-color: #007ad9;
+  background-color: #007ad9;
+  &:focus {
+    box-shadow: 0 0 3px 2px#3e99df;
+  }
+  &:hover {
+    background-color: rgb(3, 97, 168);
+  }
+
+  &:active {
+    background-color: rgb(0, 100, 177);
+    box-shadow: 0 0 3px 1px rgb(0, 100, 177);
+  }
+
+  &:disabled{
+    cursor: not-allowed;
+    background-color: #0d376da1;
+    &:hover{
+      background-color: rgba(108, 148, 185, 0.815);
+    }
+  }
 }
 
 .botao--grande {
