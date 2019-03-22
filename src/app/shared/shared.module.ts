@@ -8,6 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faExclamation } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { InputContainerComponent } from './input-container/input-container.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,12 +18,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   declarations: [
     InputComponent,
-    ButtonComponent
+    ButtonComponent,
+    InputContainerComponent
   ],
   exports: [
     InputComponent,
     ButtonComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
+    InputContainerComponent
   ]
 })
 export class SharedModule {

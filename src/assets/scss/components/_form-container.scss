@@ -1,0 +1,26 @@
+@import "../../../assets/scss/tools/placeholders";
+
+.i-container {
+  display: flex;
+  flex-direction: column;
+  &__label {
+    @extend %label;
+    padding-bottom: 3px;
+    align-self: baseline;
+  }
+  &__input {
+    @extend %input;
+    &--error{
+      border-color: $erro;
+    }
+  }
+  &__message {
+    margin-left: 3px;
+    &--success {
+      color: $mensagem-sucesso;
+    }
+    &--error {
+      color: $erro;
+    }
+  }
+}
