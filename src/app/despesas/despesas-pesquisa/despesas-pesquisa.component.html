@@ -14,9 +14,6 @@
     <p-fieldset legend="Filtro" [toggleable]="isMobile()" [collapsed]="isMobile()">
         <form class="filtro">
           <div class="filtro__group">
-            <p-selectButton class="filtro__group__status" [options]="status"></p-selectButton>
-          </div>
-          <div class="filtro__group">
             <label class="filtro__group__label">Categoria</label>
             <p-dropdown class="filtro__group__dropdown" [options]="categorias" placeholder="Selecione"
               [filter]="!isMobile()" name="categoria" emptyFilterMessage="Categoria não encontrada!"
@@ -51,10 +48,9 @@
 
   <div class="ui-g">
     <div class="ui-g-12">
-      <p-table [value]="despesas" #tabela responsive="true">
+      <p-table [value]="despesas" #tabela responsive="true" [paginator]="true" [rows]="2">
         <ng-template pTemplate="header">
           <tr>
-            <th>Status</th>
             <th>Data</th>
             <th>Descrição</th>
             <th>Categoria</th>
@@ -64,15 +60,10 @@
         </ng-template>
 
         <ng-template pTemplate="body" let-despesa>
-          <!-- TODO: Aplicar os pipes -->
           <tr>
             <td>
-              <span class="ui-column-title">Status</span>
-              PAGO
-            </td>
-            <td>
               <span class="ui-column-title">Data</span>
-              {{despesa.dataRealizada}}
+              {{despesa.dataRealizada | date: 'dd/MM/yyyy'}}
             </td>
             <td>
               <span class="ui-column-title">Descrição</span>
@@ -84,7 +75,7 @@
             </td>
             <td>
               <span class="ui-column-title">Valor</span>
-              {{despesa.valor}}
+              {{despesa.valor | currency: 'BRL' : 'symbol'}}
             </td>
             <td>
               <div class="operacoes">
