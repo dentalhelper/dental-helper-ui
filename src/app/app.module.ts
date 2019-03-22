@@ -15,9 +15,7 @@ import { MessageService } from 'primeng/components/common/messageservice';
 import { OdontogramaComponent } from './odontograma/odontograma.component';
 import { OdontoComponent } from './odonto/odonto.component';
 import { AppComponent } from './app.component';
-
 import { CoreModule } from './core/core.module';
-
 import { ROUTES } from './app.routes';
 import { CategoriaDespesaModule } from './categoria-despesa/categoria-despesa.module';
 import { ErrorHandlerService } from './core/services/error-handler.service';
