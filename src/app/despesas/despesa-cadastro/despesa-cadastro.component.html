@@ -10,6 +10,7 @@
   </div>
   <div class="form">
 
+
     <form novalidate [formGroup]="formularioDeDespesa" class="i-container">
 
       <div formGroupName="pagamento">
@@ -34,7 +35,7 @@
               inputId="categoria" formControlName="codigo" [required]="true" [filter]="!isMobile()"
               [style]="{'width': '100%', 'margin-bottom':'20px'}">
             </p-dropdown>
-            <button class="categoria-button__button" (click)="novaCategoria()" ><i class="fas fa-plus"></i></button>
+            <button class="categoria-button__button" (click)="novaCategoria()"><i class="fas fa-plus"></i></button>
           </div>
 
         </app-input-container>
@@ -46,8 +47,7 @@
       </app-input-container>
 
       <div formGroupName="pagamento">
-        <app-input-container label="Data do Pagamento" for="data-pagamento"
-          errorMessage="Informe uma data.">
+        <app-input-container label="Data do Pagamento" for="data-pagamento" errorMessage="Informe uma data.">
           <p-calendar [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100" [readonlyInput]="isMobile()"
             inputId="inicio" dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true" [yearNavigator]="true"
             yearRange="2017:2027" formControlName="dataPagamento"
@@ -58,7 +58,7 @@
 
       <app-button label="Salvar" icon="fas fa-hdd" iconPosition="right"
         [classes]="['botao--success', isMobile() ? 'botao--full':'botao--grande']"
-        [desativar]="formularioDeDespesa.invalid">
+        [desativar]="formularioDeDespesa.invalid" (botaoClicado)="[salvar()]">
       </app-button>
     </form>
 

@@ -2,9 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
-import { CategoriaDespesaService } from 'src/app/core/services/categoria-despesa.service';
 import { pt_BR } from 'src/app/shared/constants/calendario.br';
-import { stringify } from '@angular/core/src/util';
+import { CategoriaDespesaService } from 'src/app/core/services/categoria-despesa.service';
+import { DespesaService } from 'src/app/core/services/despesa.service';
+import { ToastService } from 'src/app/core/services/toast.service';
+
+import { tap } from 'rxjs/operators';
+import * as moment from 'moment';
 
 declare var $: any;
 
@@ -14,9 +18,11 @@ declare var $: any;
   styleUrls: ['./despesa-cadastro.component.scss']
 })
 export class DespesaCadastroComponent implements OnInit {
+
   pt_BR = pt_BR;
   formularioDeDespesa: FormGroup;
   categorias = [];
+  descricao: string;
 
   formaDePagamento = [
     { label: 'Dinheiro', value: 'DINHEIRO' },
@@ -26,6 +32,8 @@ export class DespesaCadastroComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private categoriaDespesaService: CategoriaDespesaService,
+    private despesaService: DespesaService,
+    private toastService: ToastService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
@@ -73,6 +81,20 @@ export class DespesaCadastroComponent implements OnInit {
         this.categorias = response.map(elemento => {
           return { value: elemento.codigo, label: elemento.nome };
         });
+      });
+  }
+
+  salvar() {
+    this.despesaService.salvar(this.formularioDeDespesa.value)
+      .pipe(
+        tap((response: string) => {
+          this.descricao = response;
+        })
+      )
+      .subscribe(() => {
+        this.voltar();
+        const mensagemToast = `"${this.descricao}" foi salva.`;
+        this.toastService.exibirSucesso(mensagemToast);
       });
   }
 

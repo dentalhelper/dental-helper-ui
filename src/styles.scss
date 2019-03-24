@@ -6,7 +6,8 @@
 "assets/scss/tools/placeholders",
 "assets/scss/layout/content",
 "assets/scss/layout/header",
-"assets/scss//components/tables";
+"assets/scss/components/form-container",
+"assets/scss/components/tables";
 
 body {
   margin: 0;
@@ -77,4 +78,12 @@ p {
 
 .mensagem--sucesso{
   color: $mensagem-sucesso;
+}
+
+.has-success input[type="text"] {
+  border-color: $sucesso;
+}
+
+.has-error input[type="text"] {
+  border-color: $erro;
 }

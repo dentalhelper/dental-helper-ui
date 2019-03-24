@@ -20,6 +20,10 @@ import { ROUTES } from './app.routes';
 import { CategoriaDespesaModule } from './categoria-despesa/categoria-despesa.module';
 import { ErrorHandlerService } from './core/services/error-handler.service';
 
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { CURRENCY_MASK_CONFIG } from 'ng2-currency-mask/src/currency-mask.config';
+import { CustomCurrencyMaskConfig } from './shared/constants/currencymaskconfig';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,6 @@ import { ErrorHandlerService } from './core/services/error-handler.service';
     CoreModule,
     CategoriaDespesaModule,
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
-
   ],
   providers: [
     MessageService,
@@ -48,6 +51,10 @@ import { ErrorHandlerService } from './core/services/error-handler.service';
       provide: LOCALE_ID,
       useValue: 'pt'
     },
+    {
+      provide: CURRENCY_MASK_CONFIG,
+      useValue: CustomCurrencyMaskConfig
+    }
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
