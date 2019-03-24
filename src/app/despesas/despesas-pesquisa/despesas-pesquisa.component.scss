@@ -32,9 +32,6 @@
     &__calendar {
       margin: 0 10px 5px 10px;
     }
-    &__status {
-      margin: 3px 0 3px 10px;
-    }
     &__button {
       margin: 10px;
     }
@@ -57,21 +54,18 @@
     flex-direction: row;
     flex-wrap: wrap;
     & > :nth-child(1) {
-      width: 100%;
+      width: 50%;
     }
     & > :nth-child(2) {
       width: 50%;
     }
     & > :nth-child(3) {
-      width: 50%;
+      width: 25%;
     }
     & > :nth-child(4) {
       width: 25%;
     }
     & > :nth-child(5) {
-      width: 25%;
-    }
-    & > :nth-child(6) {
       align-self: flex-end;
       width: 40%;
     }

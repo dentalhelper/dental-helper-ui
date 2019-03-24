@@ -4,57 +4,55 @@
     <button type="button" class="header__botao-add header__botao-add--float" (click)="criarDespesa()">
       <i class="fas fa-plus"></i>
     </button>
-    <button id="add-despesa" type="button" class="header__botao-add header__botao-add--header"
-      (click)="criarDespesa()">
+    <button id="add-despesa" type="button" class="header__botao-add header__botao-add--header" (click)="criarDespesa()">
       Adicionar Despesa
     </button>
   </div>
 
   <div class="fieldset">
     <p-fieldset legend="Filtro" [toggleable]="isMobile()" [collapsed]="isMobile()">
-        <form class="filtro">
-          <div class="filtro__group">
-            <label class="filtro__group__label">Categoria</label>
-            <p-dropdown class="filtro__group__dropdown" [options]="categorias" placeholder="Selecione"
-              [filter]="!isMobile()" name="categoria" emptyFilterMessage="Categoria não encontrada!"
-              [style]="{'width': '100%'}"></p-dropdown>
-          </div>
-          <div class="filtro__group">
-            <label class="filtro__group__label" for="descricao">Descrição</label>
-            <input class="filtro__group__input" type="text" id="descricao">
-          </div>
-          <div class="filtro__group">
-            <label class="filtro__group__label" for="inicio">Data inicial (De)</label>
-            <p-calendar class="filtro__group__calendar" [showIcon]="isMobile()" [touchUI]="isMobile()"
-              [baseZIndex]="100" [readonlyInput]="isMobile()" [style]="{'width': '70%'}" inputId="inicio"
-              dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true" [yearNavigator]="true"
-              yearRange="2017:2027">
-            </p-calendar>
-          </div>
-          <div class="filtro__group">
-            <label class="filtro__group__label" for="fim">Data final (Até)</label>
-            <p-calendar class="filtro__group__calendar" [showIcon]="isMobile()" [touchUI]="isMobile()"
-              [baseZIndex]="100" [readonlyInput]="isMobile()" [style]="{'width': '70%'}" inputId="fim"
-              dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true" [yearNavigator]="true"
-              yearRange="2017:2027">
-            </p-calendar>
-          </div>
-          <app-button label="Pesquisar" icon="fas fa-search" iconPosition="right"
-            [classes]="['filtro__group__button','botao--padrao', 'botao--grande']">
-          </app-button>
-        </form>
+      <form class="filtro">
+        <div class="filtro__group">
+          <label class="filtro__group__label">Categoria</label>
+          <p-dropdown class="filtro__group__dropdown" [options]="categorias" placeholder="Selecione"
+            [filter]="!isMobile()" name="categoria" emptyFilterMessage="Categoria não encontrada!"
+            [style]="{'width': '100%'}"></p-dropdown>
+        </div>
+        <div class="filtro__group">
+          <label class="filtro__group__label" for="descricao">Descrição</label>
+          <input class="filtro__group__input" type="text" id="descricao">
+        </div>
+        <div class="filtro__group">
+          <label class="filtro__group__label" for="inicio">Data inicial (De)</label>
+          <p-calendar class="filtro__group__calendar" [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100"
+            [readonlyInput]="isMobile()" [style]="{'width': '70%'}" inputId="inicio" dateFormat="dd/mm/yy"
+            [locale]="pt_BR" [monthNavigator]="true" [yearNavigator]="true" yearRange="2017:2027">
+          </p-calendar>
+        </div>
+        <div class="filtro__group">
+          <label class="filtro__group__label" for="fim">Data final (Até)</label>
+          <p-calendar class="filtro__group__calendar" [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100"
+            [readonlyInput]="isMobile()" [style]="{'width': '70%'}" inputId="fim" dateFormat="dd/mm/yy" [locale]="pt_BR"
+            [monthNavigator]="true" [yearNavigator]="true" yearRange="2017:2027">
+          </p-calendar>
+        </div>
+        <app-button label="Pesquisar" icon="fas fa-search" iconPosition="right"
+          [classes]="['filtro__group__button','botao--padrao', 'botao--grande']">
+        </app-button>
+      </form>
     </p-fieldset>
   </div>
 
   <div class="ui-g">
     <div class="ui-g-12">
-      <p-table [value]="despesas" #tabela responsive="true" [paginator]="true" [rows]="2">
+      <p-table [value]="despesas" #tabela responsive="true" [paginator]="true" [rows]="20">
         <ng-template pTemplate="header">
           <tr>
-            <th>Data</th>
+            <th>Data de Pagamento</th>
             <th>Descrição</th>
             <th>Categoria</th>
             <th>Valor</th>
+            <th>Forma de Pagamento</th>
             <th></th>
           </tr>
         </ng-template>
@@ -63,7 +61,7 @@
           <tr>
             <td>
               <span class="ui-column-title">Data</span>
-              {{despesa.dataRealizada | date: 'dd/MM/yyyy'}}
+              {{despesa.pagamento.dataPagamento | date: 'dd/MM/yyyy'}}
             </td>
             <td>
               <span class="ui-column-title">Descrição</span>
@@ -71,11 +69,15 @@
             </td>
             <td>
               <span class="ui-column-title">Categoria</span>
-              {{despesa.categoria}}
+              {{despesa.categoria.nome}}
             </td>
             <td>
               <span class="ui-column-title">Valor</span>
               {{despesa.valor | currency: 'BRL' : 'symbol'}}
+            </td>
+            <td>
+              <span class="ui-column-title">Forma de Pagamento</span>
+              {{despesa.pagamento.forma}}
             </td>
             <td>
               <div class="operacoes">

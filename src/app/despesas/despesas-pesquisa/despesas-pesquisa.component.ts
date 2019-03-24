@@ -1,6 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Despesa } from 'src/app/domains/despesa.model';
 import { pt_BR } from '../../shared/constants/calendario.br';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CategoriaDespesa } from 'src/app/domains/categoria-despesa.model';
+import { CategoriaDespesaService } from 'src/app/core/services/categoria-despesa.service';
+import { DespesaService } from 'src/app/core/services/despesa.service';
+import { DespesaFilter } from 'src/app/core/classes/despesa-filter';
 
 declare var $: any;
 @Component({
@@ -12,59 +17,46 @@ declare var $: any;
 export class DespesasPesquisaComponent implements OnInit {
 
   pt_BR = pt_BR;
-  categorias = [
-    { label: 'Alimentação', value: '1' },
-    { label: 'Transporte', value: '2' }
-  ];
+  categorias = [];
 
-  status = [
-    { label: 'Todos', value: '1' },
-    { label: 'Pagos', value: '2' },
-    { label: 'Abertos', value: '3' }
-  ];
+  despesas: Despesa[] = [];
 
-  despesas: Despesa[] = [
-    {
-      codigo: 1,
-      dataPrevista: new Date(),
-      dataRealizada: new Date(),
-      valor: 200,
-      descricao: 'Boi forte',
-      comprovante: '',
-      categoria: null,
-      links: null
-    },
-    {
-      codigo: 2,
-      dataPrevista: new Date(),
-      dataRealizada: new Date(),
-      valor: 100,
-      descricao: 'Internet',
-      comprovante: '',
-      categoria: null,
-      links: null
-    },
-    {
-      codigo: 3,
-      dataPrevista: new Date(),
-      dataRealizada: new Date(),
-      valor: 40,
-      descricao: 'Água mineral',
-      comprovante: '',
-      categoria: null,
-      links: null
-    }
-  ];
+  filtro: DespesaFilter = new DespesaFilter();
 
-  constructor() { }
+  constructor(
+    private categoriaDespesaService: CategoriaDespesaService,
+    private despesaService: DespesaService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.carregarCategorias();
+    this.carregarDespesas();
   }
 
   criarDespesa() {
-    // TODO: Implementar a criação de despesa
+    this.router.navigate(['novo'], {
+      relativeTo: this.route
+    });
   }
+
   isMobile(): boolean {
     return $.browser.mobile;
+  }
+
+  carregarDespesas() {
+    this.despesaService.pesquisar(this.filtro).subscribe(resultado => {
+      this.despesas = resultado;
+    })
+  }
+
+  carregarCategorias() {
+    this.categoriaDespesaService.pesquisar()
+      .subscribe(response => {
+        this.categorias = response.map(elemento => {
+          return { label: elemento.nome, value: elemento.codigo };
+        });
+      });
   }
 }

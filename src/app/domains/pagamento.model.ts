@@ -1,5 +1,5 @@
 export class Pagamento {
-  data: Date;
+  dataPagamento: Date;
   forma: '';
   valor: number;
   tipo: '';
