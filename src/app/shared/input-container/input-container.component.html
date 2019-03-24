@@ -3,7 +3,7 @@
 
   <ng-content></ng-content>
 
-  <span class="i-container__message i-container__message--success" *ngIf="showTip && hasSuccess()"
+  <span class="i-container__message i-container__message--success" *ngIf="showTip && hasSuccess() && !dropdown"
     [@exibir]="messageState">
     <i class="fa fa-check"></i>
   </span>

@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .header {
   color: #757575;
   border-bottom: solid 2px #f3f3f4;
@@ -12,6 +14,26 @@
     flex: 100%;
   }
   &__botao-add {
+    border-radius: 25px;
+    color: $branco;
+    background-color: transparent;
+    text-align: center;
+    border: 0;
+    font-size: 22px;
+
+    &--float {
+      z-index: 200;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+    }
+    &--header {
+      display: none;
+    }
+  }
+  &__botao-voltar{
     border-radius: 25px;
     color: $branco;
     background-color: transparent;
@@ -46,23 +68,29 @@
         display: none;
       }
       &--header {
-        display: block;
-        border-radius: 4px;
+        @include button-header();
         border: solid 1px #007fff;
         color: #007fff;
         background-color: transparent;
-        font-size: 14px;
-        text-align: center;
-        padding: 10px 30px;
-        width: 190px;
-        height: 36px;
-        margin-top: 5px;
-        margin-right: 9px;
-        cursor: pointer;
-        transition: all 0.2s linear;
         &:hover {
           background-color: #007fff;
           border: solid 1px #0275d8;
+          color: #ffffff;
+        }
+      }
+    }
+    &__botao-voltar {
+      &--float {
+        display: none;
+      }
+      &--header {
+        @include button-header();
+        border: solid 1px #7c8288;
+        color: #ffffff;
+        background-color: #7c8288;
+        &:hover {
+          background-color: #5a6268;
+          border: solid 1px #5a6268;
           color: #ffffff;
         }
       }

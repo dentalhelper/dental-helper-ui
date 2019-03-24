@@ -4,7 +4,7 @@
     <button type="button" class="header__botao-add header__botao-add--float" (click)="criarDespesa()">
       <i class="fas fa-plus"></i>
     </button>
-    <button id="add-categoria" type="button" class="header__botao-add header__botao-add--header"
+    <button id="add-despesa" type="button" class="header__botao-add header__botao-add--header"
       (click)="criarDespesa()">
       Adicionar Despesa
     </button>
@@ -92,7 +92,7 @@
         </ng-template>
         <ng-template pTemplate="emptymessage">
           <tr>
-            <td colspan="6">
+            <td colspan="5">
               Nenhuma Despesa encontrada!<br />
               Clique AQUI para cadastrar.
               <!-- TODO: LINK para rota de cadastro -->

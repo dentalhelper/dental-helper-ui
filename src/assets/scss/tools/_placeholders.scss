@@ -1,9 +1,11 @@
+@import "../cores";
+
 %label {
   color: #686b6d;
   font-size: medium;
 }
 
-%input{
+%input {
   color: #535353;
   border: 1px solid #bebebe;
   border-radius: 3px;
@@ -17,3 +19,4 @@
     border-color: #3c8dbc;
   }
 }
+
