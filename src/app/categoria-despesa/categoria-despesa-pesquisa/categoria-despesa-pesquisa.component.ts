@@ -39,6 +39,10 @@ export class CategoriaDespesaPesquisaComponent implements OnInit {
     this.title.setTitle('Categorias de Despesa');
     this.categoria = new CategoriaDespesa();
     this.pesquisar();
+    if (localStorage.getItem('criar')) {
+      localStorage.removeItem('criar');
+      this.showDialog();
+    }
   }
 
   isMobile(): string {
@@ -108,14 +112,14 @@ export class CategoriaDespesaPesquisaComponent implements OnInit {
     this.categoria = null;
   }
 
-  confirmarExclusao(categoriaDespesa: CategoriaDespesa){
+  confirmarExclusao(categoriaDespesa: CategoriaDespesa) {
 
     this.confirmationService.confirm({
       message: `Você tem certeza que quer excluir "${categoriaDespesa.nome}"?`,
       accept: () => {
-         this.deletar(categoriaDespesa);
+        this.deletar(categoriaDespesa);
       }
-  });
+    });
   }
 
   deletar(categoriaDespesa: any) {
