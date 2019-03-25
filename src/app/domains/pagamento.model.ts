@@ -1,6 +1,6 @@
 export class Pagamento {
   dataPagamento: Date;
-  forma: '';
+  forma: string;
   valor: number;
-  tipo: '';
+  tipo: string;
 }

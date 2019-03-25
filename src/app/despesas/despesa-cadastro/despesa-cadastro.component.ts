@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 import { pt_BR } from 'src/app/shared/constants/calendario.br';
 import { CategoriaDespesaService } from 'src/app/core/services/categoria-despesa.service';
@@ -8,7 +9,6 @@ import { DespesaService } from 'src/app/core/services/despesa.service';
 import { ToastService } from 'src/app/core/services/toast.service';
 
 import { tap } from 'rxjs/operators';
-import * as moment from 'moment';
 
 declare var $: any;
 
@@ -30,34 +30,27 @@ export class DespesaCadastroComponent implements OnInit {
   ];
 
   constructor(
-    private formBuilder: FormBuilder,
     private categoriaDespesaService: CategoriaDespesaService,
     private despesaService: DespesaService,
     private toastService: ToastService,
     private router: Router,
+    private title: Title,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.carregarCategorias();
     this.prepararFormulario();
-  }
-
-  voltar() {
-    this.router.navigate(['/despesas'], {
-      relativeTo: this.route
-    });
-  }
-
-  novaCategoria() {
-    localStorage.setItem('criar', 'true');
-    this.router.navigate(['/categorias-despesa'], {
-      relativeTo: this.route
-    });
+    this.carregarCategorias();
+    this.title.setTitle('Nova Despesa');
+    const codigoDespsesa = this.route.snapshot.params['codigo'];
+    if (codigoDespsesa) {
+      this.carregarDespesa(codigoDespsesa);
+    }
   }
 
   prepararFormulario() {
     this.formularioDeDespesa = new FormGroup({
+      codigo: new FormControl(''),
       descricao: new FormControl('', Validators.maxLength(50)),
       valor: new FormControl('', Validators.required),
       categoria: new FormGroup({
@@ -75,13 +68,12 @@ export class DespesaCadastroComponent implements OnInit {
       });
   }
 
-  carregarCategorias() {
-    this.categoriaDespesaService.pesquisar()
-      .subscribe(response => {
-        this.categorias = response.map(elemento => {
-          return { value: elemento.codigo, label: elemento.nome };
-        });
-      });
+  submeterFormulario() {
+    if (this.isEditando) {
+      this.atualizar();
+    } else {
+      this.salvar();
+    }
   }
 
   salvar() {
@@ -96,6 +88,52 @@ export class DespesaCadastroComponent implements OnInit {
         const mensagemToast = `"${this.descricao}" foi salva.`;
         this.toastService.exibirSucesso(mensagemToast);
       });
+  }
+
+  atualizar() {
+    this.despesaService.atualizar(this.formularioDeDespesa.value)
+      .subscribe(() => {
+        const mensagemToast = `"A despesa foi atualizada.`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  carregarDespesa(codigo: number) {
+    this.despesaService.buscarPorCodigo(codigo)
+      .subscribe((response) => {
+        this.formularioDeDespesa.patchValue(response);
+        this.atualizarTituloDaPagina();
+      });
+  }
+
+  voltar() {
+    this.router.navigate(['/despesas'], {
+      relativeTo: this.route
+    });
+  }
+
+  novaCategoria() {
+    localStorage.setItem('criar', 'true');
+    this.router.navigate(['/categorias-despesa'], {
+      relativeTo: this.route
+    });
+  }
+
+  carregarCategorias() {
+    this.categoriaDespesaService.pesquisar()
+      .subscribe(response => {
+        this.categorias = response.map(elemento =>
+          ({ value: elemento.codigo, label: elemento.nome })
+        );
+      });
+  }
+
+  atualizarTituloDaPagina() {
+    this.title.setTitle(`Editando: ${this.formularioDeDespesa.get('descricao').value}`);
+  }
+
+  get isEditando(): boolean {
+    return Boolean(this.formularioDeDespesa.get('codigo').value);
   }
 
   isMobile(): boolean {

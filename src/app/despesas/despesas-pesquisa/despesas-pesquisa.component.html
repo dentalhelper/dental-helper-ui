@@ -82,7 +82,8 @@
             </td>
             <td>
               <div class="operacoes">
-                <button type="button" class="operacoes__button operacoes__button--edit">
+                <button type="button" class="operacoes__button operacoes__button--edit"
+                  [routerLink]="['/despesas', despesa.codigo]" pTooltip="Editar" tooltipPosition="top">
                   <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
                 <button type="button" class="operacoes__button operacoes__button--delete"
@@ -96,10 +97,9 @@
         </ng-template>
         <ng-template pTemplate="emptymessage">
           <tr>
-            <td colspan="5">
+            <td colspan="6">
               Nenhuma Despesa encontrada!<br />
-              Clique AQUI para cadastrar.
-              <!-- TODO: LINK para rota de cadastro -->
+              Clique <a [routerLink]="['/despesas/novo']">AQUI</a> para cadastrar.
             </td>
           </tr>
         </ng-template>

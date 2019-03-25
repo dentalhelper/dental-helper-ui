@@ -39,6 +39,7 @@ export class CategoriaDespesaPesquisaComponent implements OnInit {
     this.title.setTitle('Categorias de Despesa');
     this.categoria = new CategoriaDespesa();
     this.pesquisar();
+
     if (localStorage.getItem('criar')) {
       localStorage.removeItem('criar');
       this.showDialog();

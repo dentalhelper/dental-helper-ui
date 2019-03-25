@@ -10,5 +10,9 @@ export const DESPESA_ROUTES: Routes = [
   {
     path: 'novo',
     component: DespesaCadastroComponent
+  },
+  {
+    path: ':codigo',
+    component: DespesaCadastroComponent
   }
 ];
