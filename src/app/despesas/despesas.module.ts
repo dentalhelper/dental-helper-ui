@@ -9,11 +9,14 @@ import { DespesaCadastroComponent } from './despesa-cadastro/despesa-cadastro.co
 import { DespesasPesquisaComponent } from './despesas-pesquisa/despesas-pesquisa.component';
 
 import { TableModule } from 'primeng/table';
+import { TooltipModule } from 'primeng/tooltip';
 import { FieldsetModule } from 'primeng/fieldset';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
-import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 @NgModule({
   imports: [
@@ -27,6 +30,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     ReactiveFormsModule,
     CurrencyMaskModule,
     SelectButtonModule,
+    TooltipModule,
+    ConfirmDialogModule,
     RouterModule.forChild(DESPESA_ROUTES)
   ],
   declarations: [
