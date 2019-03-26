@@ -18,9 +18,8 @@ export class DespesaService {
 
   constructor(private http: HttpClient) { }
 
-  salvar(categoria: Despesa): Observable<string> {
-    categoria.pagamento.forma.toUpperCase();
-    return this.http.post<Despesa>(`${this.DESPESA_URL}/novo`, categoria)
+  salvar(despesa: Despesa): Observable<string> {
+    return this.http.post<Despesa>(`${this.DESPESA_URL}/novo`, despesa)
       .pipe(
         map(responseCategoria => responseCategoria.descricao)
       );

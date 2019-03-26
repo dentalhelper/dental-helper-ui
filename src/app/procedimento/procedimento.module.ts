@@ -12,6 +12,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { ProcedimentoCadastroComponent } from './procedimento-cadastro/procedimento-cadastro.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     RouterModule.forChild(PROCEDIMENTO_ROUTES)
   ],
   declarations: [
-    ProcedimentosPesquisaComponent
+    ProcedimentosPesquisaComponent,
+    ProcedimentoCadastroComponent
   ]
 })
 export class ProcedimentoModule { }

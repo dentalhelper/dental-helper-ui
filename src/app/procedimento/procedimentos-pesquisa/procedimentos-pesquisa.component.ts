@@ -32,7 +32,9 @@ export class ProcedimentosPesquisaComponent implements OnInit {
   }
 
   criarProcedimento() {
-
+    this.router.navigate(['novo'], {
+      relativeTo: this.route
+    });
   }
 
   carregarProcedimentos() {
