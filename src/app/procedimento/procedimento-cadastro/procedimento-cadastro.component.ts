@@ -44,11 +44,12 @@ export class ProcedimentoCadastroComponent implements OnInit {
       {
         codigo: new FormControl(''),
         descricao: new FormControl(''),
-        duracaoMinutos: new FormControl(null, [
-          Validators.required,
+        duracaoMinutos: new FormControl(null, {
+          updateOn: 'change',
+          validators: [Validators.required,
           Validators.pattern(SOMENTE_NUMEROS),
-          Validators.maxLength(3)
-        ]),
+          Validators.maxLength(3)]
+        }),
         nome: new FormControl('', [Validators.required, Validators.maxLength(50)]),
         valorBase: new FormControl(null, Validators.required),
       },
