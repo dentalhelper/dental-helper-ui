@@ -24,4 +24,12 @@ export class ProcedimentoService {
   pesquisar(): Observable<Procedimento[]> {
     return this.http.get<Procedimento[]>(this.PROCEDIMENTO_URL);
   }
+
+  buscarPorCodigo(codigo: number): Observable<Procedimento> {
+    return this.http.get<Procedimento>(`${this.PROCEDIMENTO_URL}/${codigo}`);
+  }
+
+  atualizar(procedimento: Procedimento): Observable<Procedimento> {
+    return this.http.put<Procedimento>(`${this.PROCEDIMENTO_URL}/${procedimento.codigo}`, procedimento);
+  }
 }

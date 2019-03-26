@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ToastService } from 'src/app/core/services/toast.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { ProcedimentoService } from 'src/app/core/services/procedimento.service';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { tap } from 'rxjs/operators';
+
+import { ToastService } from 'src/app/core/services/toast.service';
+import { ProcedimentoService } from 'src/app/core/services/procedimento.service';
 import { SOMENTE_NUMEROS } from 'src/app/shared/constants/validators.regex';
+
+import { tap } from 'rxjs/operators';
 
 declare var $: any;
 
@@ -30,6 +32,10 @@ export class ProcedimentoCadastroComponent implements OnInit {
   ngOnInit() {
     this.prepararFormulario();
     this.title.setTitle('Novo Procedimento');
+    const codigProcedimento = this.route.snapshot.params['codigo'];
+    if (codigProcedimento) {
+      this.carregarProcedimentoPeloCodigo(codigProcedimento);
+    }
 
   }
 
@@ -69,19 +75,35 @@ export class ProcedimentoCadastroComponent implements OnInit {
       )
       .subscribe(() => {
         this.voltar();
-        const mensagemToast = `"${this.nome}" foi salva.`;
+        const mensagemToast = `"${this.nome}" foi salva."`;
         this.toastService.exibirSucesso(mensagemToast);
       });
   }
 
   atualizar() {
+    this.procedimentoService.atualizar(this.formularioDeProcedimento.value)
+      .subscribe(() => {
+        const mensagemToast = `"O procedimento foi atualizado."`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
 
+  carregarProcedimentoPeloCodigo(codigo: number) {
+    this.procedimentoService.buscarPorCodigo(codigo)
+      .subscribe((response) => {
+        this.formularioDeProcedimento.patchValue(response);
+        this.atualizarTituloDaPagina();
+      });
   }
 
   voltar() {
     this.router.navigate(['/procedimentos'], {
       relativeTo: this.route
     });
+  }
+
+  atualizarTituloDaPagina() {
+    this.title.setTitle(`Editando: ${this.formularioDeProcedimento.get('descricao').value}`);
   }
 
   get isEditando(): boolean {

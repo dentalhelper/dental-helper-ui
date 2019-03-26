@@ -11,5 +11,9 @@ export const PROCEDIMENTO_ROUTES: Routes = [
     path: 'novo',
     component: ProcedimentoCadastroComponent
   },
+  {
+    path: ':codigo',
+    component: ProcedimentoCadastroComponent
+  }
 
 ];
