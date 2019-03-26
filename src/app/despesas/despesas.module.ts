@@ -24,12 +24,12 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     FieldsetModule,
     DropdownModule,
     CalendarModule,
+    SelectButtonModule,
     TableModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
     CurrencyMaskModule,
-    SelectButtonModule,
     TooltipModule,
     ConfirmDialogModule,
     RouterModule.forChild(DESPESA_ROUTES)

@@ -13,10 +13,10 @@
     <p-fieldset legend="Filtro" [toggleable]="isMobile()" [collapsed]="isMobile()">
       <form class="filtro" novalidate [formGroup]="formularioDeFiltro">
         <div class="filtro__group">
-          <label class="filtro__group__label">Categoria</label>
+          <label class="filtro__group__label" for="categoria-filtro" id="categoria-filtro-label">Categoria</label>
           <p-dropdown class="filtro__group__dropdown" [options]="categorias" placeholder="Selecione"
             [filter]="!isMobile()" formControlName="categoria" emptyFilterMessage="Categoria não encontrada!"
-            [style]="{'width': '100%'}"></p-dropdown>
+            [style]="{'width': '100%'}" inputId="categoria-filtro"></p-dropdown>
         </div>
         <div class="filtro__group">
           <label class="filtro__group__label" for="descricao">Descrição</label>

@@ -52,6 +52,12 @@
         </label>
 
         <ul class="drop-down">
+          <li class="item-submenu" (click)="isOpen = !isOpen">
+            <a id="procetimentos" routerLinkActive="active" [routerLink]="['/procedimentos']">Procedimentos</a>
+          </li>
+        </ul>
+
+        <ul class="drop-down">
           <li class="last item-submenu" (click)="isOpen = !isOpen">
             <a id="categorias-despesa" routerLinkActive="active" [routerLink]="['/categorias-despesa']">Categorias de
               Despesas</a>

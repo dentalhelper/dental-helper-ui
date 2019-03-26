@@ -11,5 +11,9 @@ export const ROUTES: Routes = [
     path: 'despesas',
     loadChildren: './despesas/despesas.module#DespesasModule'
   },
+  {
+    path: 'procedimentos',
+    loadChildren: './procedimento/procedimento.module#ProcedimentoModule'
+  },
 
 ];
