@@ -11,8 +11,8 @@
         <i class="fas fa-dollar-sign"></i>
       </div>
       <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)">
-          <i class="fas fa-cog"></i>
-        </div>
+        <i class="fas fa-cog"></i>
+      </div>
       <div class="botao-menu">
         <i class="fas fa-sign-out-alt"></i>
       </div>
@@ -29,9 +29,9 @@
 
       <li class="drop-down-menu">
         <input type="checkbox" class="ativar" id="financas" name="financas" #financas>
-        <label for="financas" class="item-titulo top-menu">
-          <i class="fas fa-dollar-sign icon-esq"></i> <div class="label-titulo">Finanças</div> <i id='financas-arrow'
-            class="fas fa-angle-right icon-dir"></i>
+        <label id="label-financas" for="financas" class="item-titulo top-menu">
+          <i class="fas fa-dollar-sign icon-esq"></i>
+          <div class="label-titulo">Finanças</div> <i id='financas-arrow' class="fas fa-angle-right icon-dir"></i>
         </label>
 
         <ul class="drop-down">
@@ -39,7 +39,7 @@
             <a href="#">Recebimentos</a>
           </li>
           <li class="last item-submenu" (click)="isOpen = !isOpen">
-            <a [routerLink]="['/despesas']" routerLinkActive="active">Despesas</a>
+            <a id="item-despesa" [routerLink]="['/despesas']" routerLinkActive="active">Despesas</a>
           </li>
         </ul>
       </li>
@@ -47,13 +47,14 @@
       <li class="drop-down-menu">
         <input type="checkbox" class="ativar" id="configuracoes" name="configuracoes" #configuracoes>
         <label id="label-configuracoes" for="configuracoes" class="item-titulo top-menu">
-          <i class="fas fa-cog icon-esq"></i> <div class="label-titulo">Configurações</div> <i id='financas-arrow'
-            class="fas fa-angle-right icon-dir"></i>
+          <i class="fas fa-cog icon-esq"></i>
+          <div class="label-titulo">Configurações</div> <i id='financas-arrow' class="fas fa-angle-right icon-dir"></i>
         </label>
 
         <ul class="drop-down">
           <li class="last item-submenu" (click)="isOpen = !isOpen">
-            <a id="categorias-despesa" routerLinkActive="active" [routerLink]="['/categorias-despesa']">Categorias de Despesas</a>
+            <a id="categorias-despesa" routerLinkActive="active" [routerLink]="['/categorias-despesa']">Categorias de
+              Despesas</a>
           </li>
         </ul>
 
@@ -61,7 +62,8 @@
 
       <li class="drop-down-menu">
         <label class="item-titulo top-menu">
-          <i class="fas fa-sign-out-alt icon-esq"></i> <div class="label-titulo">Sair</div>
+          <i class="fas fa-sign-out-alt icon-esq"></i>
+          <div class="label-titulo">Sair</div>
         </label>
       </li>
     </ul>
