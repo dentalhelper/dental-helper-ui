@@ -6,6 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Procedimento } from 'src/app/domains/procedimento.model';
 import { ToastService } from 'src/app/core/services/toast.service';
 import { ProcedimentoService } from 'src/app/core/services/procedimento.service';
+import { ConfirmationService } from 'primeng/api';
 
 
 @Component({
@@ -19,11 +20,12 @@ export class ProcedimentosPesquisaComponent implements OnInit {
   formularioDoFiltro: FormGroup;
 
   constructor(
-    private procedimentoService: ProcedimentoService,
-    private toastService: ToastService,
+    private title: Title,
     private router: Router,
     private route: ActivatedRoute,
-    private title: Title
+    private toastService: ToastService,
+    private procedimentoService: ProcedimentoService,
+    private confirmationService: ConfirmationService,
   ) { }
 
   ngOnInit() {
@@ -42,8 +44,24 @@ export class ProcedimentosPesquisaComponent implements OnInit {
       this.procedimentos = resultado;
     });
   }
-  confirmarExclusao() {
 
+  deletar(procedimento: any) {
+    const url = procedimento.links[0].href;
+    this.procedimentoService.deletar(url)
+      .subscribe(() => {
+        this.carregarProcedimentos();
+        const mensagemToast = `"A Despesa foi excluída."`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  confirmarExclusao(procedimento: Procedimento) {
+    this.confirmationService.confirm({
+      message: `Você tem certeza que quer excluir "${procedimento.nome}"?`,
+      accept: () => {
+        this.deletar(procedimento);
+      }
+    });
   }
 
   // TODO: Implementar filtro (aguardando do backend)

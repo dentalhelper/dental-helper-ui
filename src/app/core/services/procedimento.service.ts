@@ -32,4 +32,8 @@ export class ProcedimentoService {
   atualizar(procedimento: Procedimento): Observable<Procedimento> {
     return this.http.put<Procedimento>(`${this.PROCEDIMENTO_URL}/${procedimento.codigo}`, procedimento);
   }
+
+  deletar(url: string): Observable<string> {
+    return this.http.delete<string>(url);
+  }
 }
