@@ -10,6 +10,9 @@
       <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)">
         <i class="fas fa-dollar-sign"></i>
       </div>
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)">
+        <i class="fas fa-toolbox"></i>
+      </div>
       <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)">
         <i class="fas fa-cog"></i>
       </div>
@@ -31,7 +34,7 @@
         <input type="checkbox" class="ativar" id="financas" name="financas" #financas>
         <label id="label-financas" for="financas" class="item-titulo top-menu">
           <i class="fas fa-dollar-sign icon-esq"></i>
-          <div class="label-titulo">Finanças</div> <i id='financas-arrow' class="fas fa-angle-right icon-dir"></i>
+          <div class="label-titulo">Finanças</div> <i id='arrow' class="fas fa-angle-right icon-dir"></i>
         </label>
 
         <ul class="drop-down">
@@ -45,10 +48,24 @@
       </li>
 
       <li class="drop-down-menu">
+        <input type="checkbox" class="ativar" id="materiais" name="materiais" #materiais>
+        <label id="label-materiais" for="materiais" class="item-titulo top-menu">
+          <i class="fas fa-toolbox icon-esq"></i>
+          <div class="label-titulo">Materiais</div> <i id='arrow' class="fas fa-angle-right icon-dir"></i>
+        </label>
+
+        <ul class="drop-down">
+          <li class="last item-submenu" (click)="isOpen = !isOpen">
+            <a id="item-despesa" [routerLink]="['/materiais']" routerLinkActive="active">Catálogo</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="drop-down-menu">
         <input type="checkbox" class="ativar" id="configuracoes" name="configuracoes" #configuracoes>
         <label id="label-configuracoes" for="configuracoes" class="item-titulo top-menu">
           <i class="fas fa-cog icon-esq"></i>
-          <div class="label-titulo">Configurações</div> <i id='financas-arrow' class="fas fa-angle-right icon-dir"></i>
+          <div class="label-titulo">Configurações</div> <i id='arrow' class="fas fa-angle-right icon-dir"></i>
         </label>
 
         <ul class="drop-down">

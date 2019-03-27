@@ -181,7 +181,7 @@ nav {
 
     li {
       .ativar {
-        &:checked ~ .item-titulo #financas-arrow {
+        &:checked ~ .item-titulo #arrow {
           transform: rotate(90deg);
         }
         &:checked ~ .item-titulo {
