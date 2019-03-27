@@ -10,16 +10,14 @@
     </button>
   </div>
 
-  <!-- TODO: Implementar filtro (aguardando do backend) -->
-  <form novalidate class="filtro" (ngSubmit)="filtrar()">
+  <form novalidate class="filtro" (ngSubmit)="filtrar()" [formGroup]="formularioDoFiltro">
     <div class="filtro__group">
-      <label class="filtro__group__label" id="nome-procedimento-label" for="nome-procedimento">Pesquisar pelo
-        nome</label>
       <div class="filtro__group__search">
-        <input class="filtro__group__search__input" id="nome-procedimento" type="text" />
-        <button class="filtro__group__search__button" type="submit">
+        <input class="filtro__group__search__input" id="nome-procedimento" type="text"
+          placeholder="Pesquise pelo nome do procedimento" formControlName="nome" (keyup)="filtrar()" />
+        <div class="filtro__group__search__button">
           <i class="fa fa-search"></i>
-        </button>
+        </div>
       </div>
     </div>
   </form>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { URL_API } from 'src/app/app.api';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Procedimento } from 'src/app/domains/procedimento.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -21,8 +21,13 @@ export class ProcedimentoService {
       );
   }
 
-  pesquisar(): Observable<Procedimento[]> {
-    return this.http.get<Procedimento[]>(this.PROCEDIMENTO_URL);
+  pesquisar(filtro: any): Observable<Procedimento[]> {
+    let parametros = new HttpParams();
+
+    if (filtro.nome) {
+      parametros = parametros.append('nome', filtro.nome);
+    }
+    return this.http.get<Procedimento[]>(this.PROCEDIMENTO_URL, { params: parametros });
   }
 
   buscarPorCodigo(codigo: number): Observable<Procedimento> {

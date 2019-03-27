@@ -1,4 +1,4 @@
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -29,8 +29,9 @@ export class ProcedimentosPesquisaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.inicializarFiltro();
     this.title.setTitle('Procedimentos');
-    this.carregarProcedimentos();
+    this.filtrar();
   }
 
   criarProcedimento() {
@@ -39,8 +40,14 @@ export class ProcedimentosPesquisaComponent implements OnInit {
     });
   }
 
+  inicializarFiltro() {
+    this.formularioDoFiltro = new FormGroup({
+      nome: new FormControl('')
+    });
+  }
+
   carregarProcedimentos() {
-    this.procedimentoService.pesquisar().subscribe(resultado => {
+    this.procedimentoService.pesquisar(this.formularioDoFiltro.value).subscribe(resultado => {
       this.procedimentos = resultado;
     });
   }
@@ -64,9 +71,8 @@ export class ProcedimentosPesquisaComponent implements OnInit {
     });
   }
 
-  // TODO: Implementar filtro (aguardando do backend)
   filtrar() {
-    console.log('FILTRADO');
+    this.carregarProcedimentos();
   }
 
 }
