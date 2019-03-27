@@ -12,7 +12,7 @@ export const PROCEDIMENTO_ROUTES: Routes = [
     component: ProcedimentoCadastroComponent
   },
   {
-    path: ':codigo',
+    path: ':codigo/edit',
     component: ProcedimentoCadastroComponent
   }
 

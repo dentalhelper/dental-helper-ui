@@ -12,7 +12,7 @@ export const DESPESA_ROUTES: Routes = [
     component: DespesaCadastroComponent
   },
   {
-    path: ':codigo',
+    path: ':codigo/edit',
     component: DespesaCadastroComponent
   }
 ];
