@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { Material } from 'src/app/domains/material.model';
-import { MaterialService } from 'src/app/core/services/material.service';
-import { ConfirmationService } from 'primeng/api';
-import { ToastService } from 'src/app/core/services/toast.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { MaterialFilter } from 'src/app/core/classes/material-filter';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+
+import { Material } from 'src/app/domains/material.model';
+import { ToastService } from 'src/app/core/services/toast.service';
+import { MaterialFilter } from 'src/app/core/classes/material-filter';
+import { MaterialService } from 'src/app/core/services/material.service';
+
+import { ConfirmationService } from 'primeng/api';
 
 declare var $: any;
 
@@ -32,7 +34,7 @@ declare var $: any;
 export class MateriaisPesquisaComponent implements OnInit {
 
   messageState = 'ready';
-  formularioDeFiltro: FormGroup;
+  formularioDoFiltro: FormGroup;
 
   cols: any[];
 
@@ -50,7 +52,10 @@ export class MateriaisPesquisaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.carregarMateriais();
+    this.title.setTitle('Materiais');
+    this.inicializarFiltro();
+    this.filtrar();
+
     this.cols = [
       {
         field: 'nome', header: 'Nome'
@@ -58,16 +63,26 @@ export class MateriaisPesquisaComponent implements OnInit {
       {
         field: 'fabricante', header: 'Fabricante'
       }
-
-    ]
+    ];
   }
 
   criarMaterial() {
 
   }
 
-  filtrar() {
+  inicializarFiltro() {
+    this.formularioDoFiltro = new FormGroup({
+      nome: new FormControl(''),
+      fabricante: new FormControl(''),
+      valorAtributo: new FormControl('')
+    });
+  }
 
+  filtrar() {
+    this.filtro.nome = this.formularioDoFiltro.get('nome').value;
+    this.filtro.fabricante = this.formularioDoFiltro.get('fabricante').value;
+    this.filtro.valorAtributo = this.formularioDoFiltro.get('valorAtributo').value;
+    this.carregarMateriais();
   }
 
   carregarMateriais() {
