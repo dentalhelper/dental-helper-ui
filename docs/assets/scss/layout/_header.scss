@@ -1,0 +1,99 @@
+@import "../mixins";
+
+.header {
+  color: #757575;
+  border-bottom: solid 2px #f3f3f4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__titulo {
+    padding: 5px 15px;
+    margin: 0;
+    text-align: center;
+    flex: 100%;
+  }
+  &__botao-add {
+    border-radius: 25px;
+    color: $branco;
+    background-color: transparent;
+    text-align: center;
+    border: 0;
+    font-size: 22px;
+
+    &--float {
+      z-index: 200;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+    }
+    &--header {
+      display: none;
+    }
+  }
+  &__botao-voltar{
+    border-radius: 25px;
+    color: $branco;
+    background-color: transparent;
+    text-align: center;
+    border: 0;
+    font-size: 22px;
+
+    &--float {
+      z-index: 200;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+    }
+    &--header {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .header {
+    height: 48px;
+    &__titulo {
+      text-align: left;
+      flex: auto;
+      align-self: center;
+    }
+    &__botao-add {
+      &--float {
+        display: none;
+      }
+      &--header {
+        @include button-header();
+        border: solid 1px #007fff;
+        color: #007fff;
+        background-color: transparent;
+        &:hover {
+          background-color: #007fff;
+          border: solid 1px #0275d8;
+          color: #ffffff;
+        }
+      }
+    }
+    &__botao-voltar {
+      &--float {
+        display: none;
+      }
+      &--header {
+        @include button-header();
+        border: solid 1px #7c8288;
+        color: #ffffff;
+        background-color: #7c8288;
+        &:hover {
+          background-color: #5a6268;
+          border: solid 1px #5a6268;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}

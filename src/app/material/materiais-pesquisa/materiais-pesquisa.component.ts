@@ -93,8 +93,23 @@ export class MateriaisPesquisaComponent implements OnInit {
     });
   }
 
-  confirmarExclusao() {
+  deletar(material: any) {
+    const url = material.links[0].href;
+    this.materialService.deletar(url)
+      .subscribe(() => {
+        this.carregarMateriais();
+        const mensagemToast = `"O material foi excluído."`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
 
+  confirmarExclusao(material: Material) {
+    this.confirmationService.confirm({
+      message: `Você tem certeza que quer excluir "${material.nome}"?`,
+      accept: () => {
+        this.deletar(material);
+      }
+    });
   }
 
   isMobile(): boolean {

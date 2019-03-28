@@ -31,6 +31,7 @@ export class DespesasPesquisaComponent implements OnInit {
 
   categorias = [];
   despesas: Despesa[] = [];
+  total = 0;
 
   filtro: DespesaFilter = new DespesaFilter();
 
@@ -75,8 +76,12 @@ export class DespesasPesquisaComponent implements OnInit {
   }
 
   carregarDespesas() {
+    this.total = 0;
     this.despesaService.pesquisar(this.filtro).subscribe(resultado => {
       this.despesas = resultado;
+      resultado.forEach((d) => {
+        this.total += d.valor;
+      });
     });
   }
 
@@ -109,6 +114,13 @@ export class DespesasPesquisaComponent implements OnInit {
         });
         this.categorias.push({ label: 'Todos', value: '' });
       });
+  }
+
+  getTotal() {
+    this.despesas.forEach((d) => {
+
+      this.total = d.valor;
+    })
   }
 
   isMobile(): boolean {

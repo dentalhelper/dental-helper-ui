@@ -47,4 +47,8 @@ export class MaterialService {
     return this.http.put<Material>(`${this.MATERIAL_URL}/${material.codigo}`, material);
   }
 
+  deletar(url: string): Observable<string> {
+    return this.http.delete<string>(url);
+  }
+
 }
