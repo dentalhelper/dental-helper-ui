@@ -11,5 +11,9 @@ export const MATERIAL_ROUTES: Routes = [
     path: 'novo',
     component: MaterialCadastroComponent
   },
+  {
+    path: ':codigo/edit',
+    component: MaterialCadastroComponent
+  },
 
 ];

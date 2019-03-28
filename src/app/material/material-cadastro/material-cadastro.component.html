@@ -24,7 +24,7 @@
           *ngFor="let referencia of formData.controls; let i = index;">
           <div [formGroupName]="i" class="i-container__ref-container__group" [@linha]="estadoDaLinha">
             <app-button icon="fas fa-times" iconPosition="right" [classes]="['botao--danger', 'botao--mini']"
-              (botaoClicado)="[removerReferencia(i)]">
+              (botaoClicado)="[removerReferencia(i)]" pTooltip="Remover" tooltipPosition="top">
             </app-button>
             <app-input-container label="Referência" for="referencia" errorMessage="Permitido até 20 caracteres.">
               <input class="i-container__input" type="text" id="referencia" formControlName="nome">

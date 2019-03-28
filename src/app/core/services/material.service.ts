@@ -39,4 +39,12 @@ export class MaterialService {
     return this.http.get<Material[]>(`${this.MATERIAL_URL}`, { params: parametros });
   }
 
+  buscarPorCodigo(codigo: number): Observable<Material> {
+    return this.http.get<Material>(`${this.MATERIAL_URL}/${codigo}`);
+  }
+
+  atualizar(material: Material): Observable<Material> {
+    return this.http.put<Material>(`${this.MATERIAL_URL}/${material.codigo}`, material);
+  }
+
 }

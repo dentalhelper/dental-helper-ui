@@ -59,7 +59,7 @@
             <td>
               <div class="operacoes">
                 <button type="button" class="operacoes__button operacoes__button--edit" pTooltip="Editar"
-                  tooltipPosition="top">
+                  tooltipPosition="top" [routerLink]="['/materiais', rowData.codigo, 'edit']">
                   <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
                 <button type="button" class="operacoes__button operacoes__button--delete" (click)="confirmarExclusao()"

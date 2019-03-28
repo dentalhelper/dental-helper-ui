@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 
 import { ToastService } from 'src/app/core/services/toast.service';
-import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { MaterialService } from 'src/app/core/services/material.service';
+
 import { tap } from 'rxjs/operators';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 declare var $: any;
 
@@ -81,6 +82,10 @@ export class MaterialCadastroComponent implements OnInit {
   ngOnInit() {
     this.prepararFormulario();
     this.title.setTitle('Novo Material');
+    const codigMaterial = this.route.snapshot.params['codigo'];
+    if (codigMaterial) {
+      this.carregarMaterialPeloCodigo(codigMaterial);
+    }
   }
 
   prepararFormulario() {
@@ -95,7 +100,7 @@ export class MaterialCadastroComponent implements OnInit {
       });
   }
 
-  get formData(){
+  get formData() {
     return <FormArray>this.formularioDeMaterial.get('atributoMateriais');
   }
 
@@ -139,13 +144,32 @@ export class MaterialCadastroComponent implements OnInit {
   }
 
   atualizar() {
+    this.materialService.atualizar(this.formularioDeMaterial.value)
+      .subscribe(() => {
+        const mensagemToast = `"O material foi atualizado."`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
 
+  carregarMaterialPeloCodigo(codigo: number) {
+    this.materialService.buscarPorCodigo(codigo)
+      .subscribe((response) => {
+        response.atributoMateriais.forEach(() => {
+          this.adicionarReferencia();
+        });
+        this.formularioDeMaterial.patchValue(response);
+        this.atualizarTituloDaPagina();
+      });
   }
 
   voltar() {
     this.router.navigate(['/materiais'], {
       relativeTo: this.route
     });
+  }
+
+  atualizarTituloDaPagina() {
+    this.title.setTitle(`Editando: ${this.formularioDeMaterial.get('nome').value}`);
   }
 
   get isEditando(): boolean {
