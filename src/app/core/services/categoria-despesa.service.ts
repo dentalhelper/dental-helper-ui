@@ -31,9 +31,7 @@ export class CategoriaDespesaService {
       );
   }
 
-  deletar(url: string): Promise<void> {
-    return this.http.delete(url)
-      .toPromise()
-      .then(() => null);
+  deletar(url: string): Observable<string> {
+    return this.http.delete<string>(url);
   }
 }

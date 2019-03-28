@@ -1,0 +1,14 @@
+<div class="i-container" [class.has-success]="hasSuccess()" [class.has-error]="hasError()">
+  <label class="i-container__label" for="{{for}}"> {{ label }} </label>
+
+  <ng-content></ng-content>
+
+  <span class="i-container__message i-container__message--success" *ngIf="showTip && hasSuccess() && !dropdown"
+    [@exibir]="messageState">
+    <i class="fa fa-check"></i>
+  </span>
+
+  <span class="i-container__message i-container__message--error" *ngIf="showTip && hasError()" [@exibir]="messageState">
+    <i class="fas fa-times"> {{errorMessage}}</i>
+  </span>
+</div>

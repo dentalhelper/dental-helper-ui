@@ -1,10 +1,10 @@
 <div class="content">
   <div class="header">
-    <h1>Categorias de despesa</h1>
-    <button type="button" class="header__botao-add botao-add--float" (click)="showDialog()">
+    <h1 class="header__titulo">Categorias de despesa</h1>
+    <button type="button" class="header__botao-add header__botao-add--float" (click)="showDialog()">
       <i class="fas fa-plus"></i>
     </button>
-    <button type="button" class="header__botao-add botao-add--header" (click)="showDialog()">
+    <button id="add-categoria" type="button" class="header__botao-add header__botao-add--header" (click)="showDialog()">
       Adicionar Categoria
     </button>
   </div>
@@ -25,27 +25,36 @@
               <span class="ui-column-title">Nome</span>
               {{categoria.nome}}
             </td>
-            <td class="operacoes">
-              <div class="botoes">
-                <button type="button" (click)="showDialog(categoria)" pTooltip="Editar" tooltipPosition="top">
+            <td>
+              <div class="operacoes">
+                <button type="button" class="operacoes__button operacoes__button--edit" (click)="showDialog(categoria)" pTooltip="Editar" tooltipPosition="top">
                   <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
 
-                <button type="button" (click)="deletar(categoria)" pTooltip="Excluir" tooltipPosition="top">
+                <button type="button" class="operacoes__button operacoes__button--delete" (click)="confirmarExclusao(categoria)" pTooltip="Excluir" tooltipPosition="top">
                   <fa-icon [icon]="['fas', 'trash']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
               </div>
             </td>
           </tr>
         </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="2">
+              Nenhuma Categoria encontrada!<br />
+              Clique <a (click)="showDialog()" style="cursor: pointer;">AQUI</a> para cadastrar.
+            </td>
+          </tr>
+        </ng-template>
+
       </p-table>
 
     </div>
   </div>
 </div>
 
-<p-dialog [(visible)]="display" [modal]="true" [positionTop]="isMobile()" [resizable]="false"
-  (onHide)="limparInput()">
+<p-dialog [(visible)]="display" [modal]="true" [positionTop]="isMobile()" [resizable]="false" (onHide)="limparInput()">
   <p-header>
     <span *ngIf="isEditando();else novo">
       Editando a categoria "{{categoria?.nome}}"
@@ -93,3 +102,15 @@
     </app-button>
   </p-footer>
 </p-dialog>
+
+<p-confirmDialog #confirmDialog header="Confirmar exclusão" icon="pi pi-exclamation-triangle">
+  <p-footer>
+    <app-button label="Excluir" icon="fas fa-trash" iconPosition="right" (botaoClicado)="[confirmDialog.accept()]"
+      [classes]="['botao--success']">
+    </app-button>
+
+    <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[confirmDialog.reject()]"
+      [classes]="['ui-button-secondary']">
+    </app-button>
+  </p-footer>
+</p-confirmDialog>

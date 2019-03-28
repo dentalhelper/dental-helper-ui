@@ -1,0 +1,108 @@
+<div class="content">
+  <div class="header">
+    <h1 class="header__titulo">Catálogo de Materiais</h1>
+    <button type="button" class="header__botao-add header__botao-add--float" (click)="criarMaterial()">
+      <i class="fas fa-plus"></i>
+    </button>
+    <button id="add-material" type="button" class="header__botao-add header__botao-add--header"
+      (click)="criarMaterial()">
+      Adicionar Material
+    </button>
+  </div>
+
+  <div class="fieldset">
+    <p-fieldset legend="Filtro" [toggleable]="isMobile()" [collapsed]="isMobile()">
+      <form class="c-filtro" novalidate [formGroup]="formularioDoFiltro">
+        <div class="c-filtro__group">
+          <label class="c-filtro__group__label" for="nome">Nome</label>
+          <input class="c-filtro__group__input" type="text" id="nome" formControlName="nome">
+        </div>
+        <div class="c-filtro__group">
+          <label class="c-filtro__group__label" for="fabricante">Fabricante</label>
+          <input class="c-filtro__group__input" type="text" id="fabricante" formControlName="fabricante">
+        </div>
+        <div class="c-filtro__group">
+          <label class="c-filtro__group__label" for="referencia">Referência</label>
+          <input class="c-filtro__group__input" type="text" id="referencia" formControlName="valorAtributo">
+        </div>
+        <app-button label="Pesquisar" icon="fas fa-search" iconPosition="right"
+          [classes]="['c-filtro__group__button','botao--padrao', 'botao--grande']" (botaoClicado)="[filtrar()]">
+        </app-button>
+      </form>
+    </p-fieldset>
+  </div>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [columns]="cols" [value]="materiais" responsive="true" [paginator]="true" [rows]="20" dataKey="nome">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th style="width: 3em"></th>
+            <th *ngFor="let col of columns">
+              {{col.header}}
+            </th>
+            <th></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
+          <tr>
+            <td>
+              <a href="#" [pRowToggler]="rowData">
+                <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+              </a>
+            </td>
+            <td *ngFor="let col of columns">
+              <span class="ui-column-title">{{col.header}}</span>
+              {{rowData[col.field]}}
+            </td>
+            <td>
+              <div class="operacoes">
+                <button type="button" class="operacoes__button operacoes__button--edit" pTooltip="Editar"
+                  tooltipPosition="top" [routerLink]="['/materiais', rowData.codigo, 'edit']">
+                  <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+                <button type="button" class="operacoes__button operacoes__button--delete" (click)="confirmarExclusao(rowData)"
+                  pTooltip="Excluir" tooltipPosition="top">
+                  <fa-icon [icon]="['fas', 'trash']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+              </div>
+
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+          <tr>
+            <td [attr.colspan]="columns.length + 2" [@exibir]="messageState">
+              <div class="ui-g ui-fluid" style="font-size:1em; padding: 0 50px;">
+                <div class="ui-g-12" *ngFor="let item of rowData.atributoMateriais; let i = index">
+                  <b>{{rowData.atributoMateriais[i].nome}}:</b> {{rowData.atributoMateriais[i].valor}}
+                </div>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="4">
+              Nenhuma Despesa encontrada!<br />
+              Clique <a [routerLink]="['/materiais/novo']">AQUI</a> para cadastrar.
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
+
+<p-confirmDialog #confirmDialog header="Confirmar exclusão" icon="pi pi-exclamation-triangle">
+    <p-footer>
+      <app-button label="Excluir" icon="fas fa-trash" iconPosition="right" (botaoClicado)="[confirmDialog.accept()]"
+        [classes]="['botao--success']">
+      </app-button>
+
+      <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[confirmDialog.reject()]"
+        [classes]="['ui-button-secondary']">
+      </app-button>
+    </p-footer>
+  </p-confirmDialog>

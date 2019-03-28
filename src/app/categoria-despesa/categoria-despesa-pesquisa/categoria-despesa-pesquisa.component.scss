@@ -1,47 +1,8 @@
 @import "../../../assets/scss/cores";
-.content {
-  background-color: #ffffff;
-  margin: 10px;
-}
 
 .ui-dialog-title {
   color: #666666;
   font-weight: bold;
-}
-
-.header {
-  color: #757575;
-  border-bottom: solid 2px #f3f3f4;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  .header__botao-add {
-    border-radius: 25px;
-    color: $branco;
-    background-color: transparent;
-    text-align: center;
-    border: 0;
-    font-size: 22px;
-  }
-  .botao-add--float {
-    z-index: 200;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 50px;
-    height: 50px;
-  }
-  .botao-add--header {
-    display: none;
-  }
-}
-
-.header h1 {
-  padding: 5px 15px;
-  margin: 0;
-  text-align: center;
-  flex: 100%;
 }
 
 .botao-adicionar:hover {
@@ -54,25 +15,7 @@
   width: 156px;
 }
 
-.operacoes button {
-  text-decoration: none;
-  display: inline-block;
-  border: none;
-  background-color: #ffffff00;
-  color: #499ddd;
-  cursor: pointer;
-  transition: all 0.1s linear;
-}
-
-.operacoes button:hover {
-  color: #19649e;
-}
-
 @media screen and (min-width: 56.25em) {
-  .content {
-    border-radius: 5px;
-    box-shadow: 1px 1px 2px 1px #bdbdbd;
-  }
 
   .botao-adicionar {
     border-radius: 4px;
@@ -88,45 +31,5 @@
     margin-right: 9px;
     cursor: pointer;
     transition: all 0.2s linear;
-  }
-
-  .botoes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .header h1 {
-    text-align: left;
-    flex: auto;
-    align-self: center;
-  }
-
-  .header {
-    height: 48px;
-    .botao-add--float {
-      display: none;
-    }
-    .botao-add--header {
-      display: block;
-      border-radius: 4px;
-      border: solid 1px #007fff;
-      color: #007fff;
-      background-color: transparent;
-      font-size: 14px;
-      text-align: center;
-      padding: 10px 30px;
-      width: 190px;
-      height: 36px;
-      margin-top: 5px;
-      margin-right: 9px;
-      cursor: pointer;
-      transition: all 0.2s linear;
-      &:hover {
-        background-color: #007fff;
-        border: solid 1px #0275d8;
-        color: #ffffff;
-      }
-    }
   }
 }

@@ -1,0 +1,22 @@
+@import "../cores";
+
+%label {
+  color: #686b6d;
+  font-size: medium;
+}
+
+%input {
+  color: #535353;
+  border: 1px solid #bebebe;
+  border-radius: 3px;
+  padding: 6px;
+  height: 32.8px;
+
+  &:hover {
+    border-color: #8d8d8d;
+  }
+  &:focus {
+    border-color: #3c8dbc;
+  }
+}
+

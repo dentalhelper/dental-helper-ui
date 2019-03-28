@@ -7,6 +7,17 @@ export const ROUTES: Routes = [
     path: 'categorias-despesa',
     component: CategoriaDespesaPesquisaComponent
   },
+  {
+    path: 'despesas',
+    loadChildren: './despesas/despesas.module#DespesasModule'
+  },
+  {
+    path: 'procedimentos',
+    loadChildren: './procedimento/procedimento.module#ProcedimentoModule'
+  },
+  {
+    path: 'materiais',
+    loadChildren: './material/material.module#MaterialModule'
+  },
 
-
-]
+];

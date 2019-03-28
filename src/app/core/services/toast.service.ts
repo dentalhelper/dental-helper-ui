@@ -32,6 +32,25 @@ export class ToastService {
     });
   }
 
+  exibirAviso(detalhe: string) {
+
+    this.messageService.add({
+      key: this.key,
+      severity: 'warn',
+      summary: 'Aviso!',
+      detail: detalhe
+    });
+  }
+
+  exibirAvisoComLink(detalhe: string) {
+
+    this.messageService.add({
+      key: this.key === MOBILE ? 'toast-mobile-link' : 'toast-desktop-link',
+      severity: 'warn',
+      summary: 'Aviso!'
+    });
+  }
+
   isMobile(): string {
     return $.browser.mobile ? MOBILE : DESKTOP;
   }

@@ -132,11 +132,11 @@ nav {
 
 @media screen and (min-width: 56.25em) {
   nav {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 70px;
-    height: 100%;
+    height: 100vh;
     background-color: $cor-menu;
 
     .logo {
@@ -160,7 +160,12 @@ nav {
       }
     }
   }
-
+  .label-titulo {
+    display: inline;
+    position: absolute;
+    left: 70px;
+    margin-top: 4px;
+  }
   .menu-esconder {
     opacity: 0;
     z-index: 5;
@@ -176,7 +181,7 @@ nav {
 
     li {
       .ativar {
-        &:checked ~ .item-titulo #financas-arrow {
+        &:checked ~ .item-titulo #arrow {
           transform: rotate(90deg);
         }
         &:checked ~ .item-titulo {
@@ -254,7 +259,7 @@ nav {
 
   .item-submenu {
     a {
-      padding-left: 67px !important;
+      padding-left: 75px !important;
       background-color: #6d1a1d !important;
       transition: all 0.2s ease-in-out;
 

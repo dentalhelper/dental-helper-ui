@@ -1,0 +1,70 @@
+@import "../../../assets/scss/cores";
+
+.form {
+  padding: 20px;
+}
+
+.ui-inputtext {
+  width: 70%;
+}
+
+.categoria-button {
+  display: flex;
+  flex-direction: row;
+  &__button {
+    width: 33px;
+    height: 33px;
+    border: 1px solid $sucesso;
+    border-radius: 0 2px 2px 0;
+    color: $branco;
+    background-color: $sucesso;
+    font-size: 1.2em;
+  }
+  & > :nth-child(1) {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .form {
+    .i-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      & > :nth-child(1) {
+        width: 100%;
+      }
+      & > :nth-child(2) {
+        padding: 0 5px 5px 0;
+        width: 50%;
+      }
+      & > :nth-child(3) {
+        padding: 0 0 5px 5px;
+        width: 50%;
+      }
+      & > :nth-child(4) {
+        padding: 0 5px 5px 0;
+        width: 20%;
+      }
+      & > :nth-child(5) {
+        padding: 0 5px 5px 5px;
+        align-self: center;
+        width: 30%;
+      }
+      & > :nth-child(6) {
+        padding: 5px 0 5px 5px;
+        align-self: center;
+        width: 50%;
+      }
+    }
+    .categoria-button {
+      &__button {
+        cursor: pointer;
+        transition: all 0.2s linear;
+        &:hover {
+          background-color: darken($sucesso, 7);
+        }
+      }
+    }
+  }
+}

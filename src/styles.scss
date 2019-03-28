@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "assets/scss/cores";
-@import "assets/scss/reset";
+@import
+"assets/scss/cores",
+"assets/scss/reset",
+"assets/scss/tools/placeholders",
+"assets/scss/layout/content",
+"assets/scss/layout/header",
+"assets/scss/components/form-container",
+"assets/scss/components/fieldset-filter-form",
+"assets/scss/components/tables";
 
 body {
   margin: 0;
@@ -33,8 +40,7 @@ p {
 }
 
 .input-group__label {
-  color: #686b6d;
-  font-size: medium;
+  @extend %label;
   margin-right: 10px;
 }
 
@@ -45,17 +51,7 @@ p {
 }
 
 .input-group__input {
-  color: #535353;
-  border: 1px solid #cccccc;
-  border-radius: 2px;
-  padding: 6px;
-
-  &:hover {
-    border-color: #8d8d8d;
-  }
-  &:focus {
-    border-color: #3c8dbc;
-  }
+  @extend %input;
 }
 
 .input-group__mensagem {
@@ -83,4 +79,12 @@ p {
 
 .mensagem--sucesso{
   color: $mensagem-sucesso;
+}
+
+.has-success input[type="text"] {
+  border-color: $sucesso;
+}
+
+.has-error input[type="text"] {
+  border-color: $erro;
 }

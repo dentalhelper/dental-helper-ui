@@ -2,28 +2,27 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, ErrorHandler, LOCALE_ID } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule, PreloadAllModules } from '@angular/router';
+import { LocationStrategy, HashLocationStrategy, registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+registerLocaleData(localePt, 'pt');
 
 import { MessageService } from 'primeng/components/common/messageservice';
-import { ToastModule } from 'primeng/toast';
-import { TableModule } from 'primeng/table';
-import { TooltipModule } from 'primeng/tooltip';
-import { DialogModule } from 'primeng/dialog';
 
 import { OdontogramaComponent } from './odontograma/odontograma.component';
 import { OdontoComponent } from './odonto/odonto.component';
 import { AppComponent } from './app.component';
-
-import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-
 import { ROUTES } from './app.routes';
 import { CategoriaDespesaModule } from './categoria-despesa/categoria-despesa.module';
+import { ErrorHandlerService } from './core/services/error-handler.service';
+
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { CURRENCY_MASK_CONFIG } from 'ng2-currency-mask/src/currency-mask.config';
+import { CustomCurrencyMaskConfig } from './shared/constants/currencymaskconfig';
 
 @NgModule({
   declarations: [
@@ -36,15 +35,26 @@ import { CategoriaDespesaModule } from './categoria-despesa/categoria-despesa.mo
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-
     HttpClientModule,
     CoreModule,
     CategoriaDespesaModule,
-    RouterModule.forRoot(ROUTES),
-
+    RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
   ],
   providers: [
     MessageService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorHandlerService,
+      multi: true
+    },
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt'
+    },
+    {
+      provide: CURRENCY_MASK_CONFIG,
+      useValue: CustomCurrencyMaskConfig
+    }
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]

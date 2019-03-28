@@ -1,0 +1,28 @@
+.fieldset {
+  padding: 10px;
+  border-bottom: solid 5px #f3f3f4;
+}
+
+@media screen and (min-width: 56.25em) {
+  .c-filtro {
+    flex-direction: row;
+    flex-wrap: wrap;
+    & > :nth-child(1) {
+      width: 40%;
+    }
+    & > :nth-child(2) {
+      width: 30%;
+    }
+    & > :nth-child(3) {
+      width: 30%;
+    }
+    & > :nth-child(4) {
+      width: 30%;
+    }
+    &__group {
+      &__button {
+        margin: 5px 10px;
+      }
+    }
+  }
+}
