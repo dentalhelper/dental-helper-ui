@@ -67,7 +67,9 @@ export class MateriaisPesquisaComponent implements OnInit {
   }
 
   criarMaterial() {
-
+    this.router.navigate(['novo'], {
+      relativeTo: this.route
+    });
   }
 
   inicializarFiltro() {

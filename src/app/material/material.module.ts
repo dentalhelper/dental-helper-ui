@@ -11,6 +11,7 @@ import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { FieldsetModule } from 'primeng/fieldset';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { MaterialCadastroComponent } from './material-cadastro/material-cadastro.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     RouterModule.forChild(MATERIAL_ROUTES)
   ],
   declarations: [
-    MateriaisPesquisaComponent
+    MateriaisPesquisaComponent,
+    MaterialCadastroComponent
   ]
 })
 export class MaterialModule { }

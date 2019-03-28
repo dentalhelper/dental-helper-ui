@@ -1,0 +1,66 @@
+.form {
+  padding: 20px;
+}
+
+.i-container {
+  &__ref-container {
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-top: 1px dotted #8f8f8f;
+    border-bottom: 1px dotted #8f8f8f;
+    &__group {
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border: 1px #cccccc solid;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      & > :nth-child(1) {
+        align-self: flex-end;
+      }
+    }
+  }
+}
+@media screen and (min-width: 56.25em) {
+  .form {
+    .i-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      & > :nth-child(1) {
+        padding: 0 5px 5px 0;
+        width: 50%;
+      }
+      & > :nth-child(2) {
+        padding: 0 0 5px 5px;
+        width: 50%;
+      }
+      & > :nth-child(3) {
+        width: 100%;
+      }
+      &__ref-container {
+        &__group {
+          padding: 10px 10px 0 10px;
+          flex-direction: row;
+          justify-content: space-between;
+          & > :nth-child(1) {
+            order: 3;
+            flex-grow: 1;
+            flex-basis: 1%;
+            align-self: center;
+          }
+          & > :nth-child(2) {
+            padding-right: 5px;
+            flex-grow: 3;
+            flex-basis: 40%;
+          }
+          & > :nth-child(3) {
+            padding: 0 5px;
+            flex-grow: 3;
+            flex-basis: 40%;
+          }
+        }
+      }
+    }
+  }
+}
