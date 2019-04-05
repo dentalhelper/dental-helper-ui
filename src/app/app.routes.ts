@@ -19,5 +19,9 @@ export const ROUTES: Routes = [
     path: 'materiais',
     loadChildren: './material/material.module#MaterialModule'
   },
+  {
+    path: 'pacientes',
+    loadChildren: './paciente/paciente.module#PacienteModule'
+  },
 
 ];
