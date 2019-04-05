@@ -1,13 +1,8 @@
 <div class="content">
-  <div class="header">
-    <h1 class="header__titulo">Categorias de despesa</h1>
-    <button type="button" class="header__botao-add header__botao-add--float" (click)="showDialog()">
-      <i class="fas fa-plus"></i>
-    </button>
-    <button id="add-categoria" type="button" class="header__botao-add header__botao-add--header" (click)="showDialog()">
-      Adicionar Categoria
-    </button>
-  </div>
+  <app-default-header titulo="Categorias de despesa" buttonId="add-categoria" buttonText="Adicionar Categoria"
+    (botaoClicado)="showDialog()">
+  </app-default-header>
+
   <div class="ui-g">
     <div class="ui-g-12">
       <p-table [value]="categorias" #tabela responsive="true">
@@ -27,11 +22,13 @@
             </td>
             <td>
               <div class="operacoes">
-                <button type="button" class="operacoes__button operacoes__button--edit" (click)="showDialog(categoria)" pTooltip="Editar" tooltipPosition="top">
+                <button type="button" class="operacoes__button operacoes__button--edit" (click)="showDialog(categoria)"
+                  pTooltip="Editar" tooltipPosition="top">
                   <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
 
-                <button type="button" class="operacoes__button operacoes__button--delete" (click)="confirmarExclusao(categoria)" pTooltip="Excluir" tooltipPosition="top">
+                <button type="button" class="operacoes__button operacoes__button--delete"
+                  (click)="confirmarExclusao(categoria)" pTooltip="Excluir" tooltipPosition="top">
                   <fa-icon [icon]="['fas', 'trash']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
               </div>

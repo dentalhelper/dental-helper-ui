@@ -12,4 +12,7 @@ export class PacientesPesquisaComponent implements OnInit {
   ngOnInit() {
   }
 
+  criarPaciente() {
+    console.log('PACIENTE NOVO');
+  }
 }

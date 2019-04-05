@@ -7,19 +7,19 @@
       <div id="menu-bar" class="botao-menu" (click)="isOpen = !isOpen">
         <i class="fas fa-bars"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(pacientes)">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(pacientes)" pTooltip="Pacientes">
         <i class="fas fa-user-friends"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)" pTooltip="Finanças">
         <i class="fas fa-dollar-sign"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)" pTooltip="Materiais">
         <i class="fas fa-toolbox"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)" pTooltip="Configurações">
         <i class="fas fa-cog"></i>
       </div>
-      <div class="botao-menu">
+      <div class="botao-menu" pTooltip="Sair">
         <i class="fas fa-sign-out-alt"></i>
       </div>
     </div>

@@ -1,0 +1,10 @@
+<div class="header">
+  <h1 class="header__titulo">{{ titulo }}</h1>
+  <button type="button" class="header__botao-add header__botao-add--float" (click)="emitirAcaoDoBotao()">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button [id]="buttonId" type="button" class="header__botao-add header__botao-add--header"
+    (click)="emitirAcaoDoBotao()" [ngStyle]="buttonStyle">
+    {{ buttonText }}
+  </button>
+</div>
