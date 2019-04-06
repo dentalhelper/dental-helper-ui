@@ -5,7 +5,7 @@ import { ButtonComponent } from './button/button.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faEdit, faSearch, faCalendarAlt, faCalendarDay } from '@fortawesome/free-solid-svg-icons';
 import { faExclamation } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InputContainerComponent } from './input-container/input-container.component';
@@ -36,5 +36,7 @@ export class SharedModule {
     library.add(faTrash);
     library.add(faExclamation);
     library.add(faEdit);
+    library.add(faSearch);
+    library.add(faCalendarDay);
   }
 }
