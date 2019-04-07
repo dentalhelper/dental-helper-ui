@@ -11,12 +11,14 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { TelefonePipe } from '../pipes/telefone.pipe';
 import { CpfPipe } from '../pipes/cpf.pipe';
 import { TooltipModule } from 'primeng/tooltip';
+import { PacienteCadastroComponent } from './paciente-cadastro/paciente-cadastro.component';
 
 @NgModule({
   declarations: [
     PacientesPesquisaComponent,
     TelefonePipe,
-    CpfPipe
+    CpfPipe,
+    PacienteCadastroComponent
   ],
   imports: [
     TableModule,

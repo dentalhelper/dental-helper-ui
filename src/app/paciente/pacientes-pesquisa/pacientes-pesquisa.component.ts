@@ -4,6 +4,7 @@ import { PacienteResumoDTO } from 'src/app/domains/dtos/paciente-resumo.dto';
 import { PacienteService } from 'src/app/core/services/paciente.service';
 import { Title } from '@angular/platform-browser';
 import { ToastService } from 'src/app/core/services/toast.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pacientes-pesquisa',
@@ -17,6 +18,8 @@ export class PacientesPesquisaComponent implements OnInit {
 
   constructor(
     private title: Title,
+    private router: Router,
+    private route: ActivatedRoute,
     private toastService: ToastService,
     private pacienteService: PacienteService,
   ) { }
@@ -28,7 +31,9 @@ export class PacientesPesquisaComponent implements OnInit {
   }
 
   criarPaciente() {
-    console.log('PACIENTE NOVO');
+    this.router.navigate(['novo'], {
+      relativeTo: this.route
+    });
   }
 
   agendar(){
