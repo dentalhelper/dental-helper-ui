@@ -1,5 +1,13 @@
 <div class="i-container" [class.has-success]="hasSuccess()" [class.has-error]="hasError()">
-  <label class="i-container__label" for="{{for}}"> {{ label }} </label>
+
+  <label class="i-container__label" for="{{for}}"> {{ label }}
+    <span class="i-container__label__hint" *ngIf="hint">
+      <i>
+        - {{ hint }}
+      </i>
+    </span>
+  </label>
+
 
   <ng-content></ng-content>
 

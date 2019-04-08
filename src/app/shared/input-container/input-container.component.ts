@@ -40,6 +40,7 @@ export class InputContainerComponent implements OnInit, AfterContentInit {
   messageState = 'ready';
   input: any;
   @Input() label: string;
+  @Input() hint: string;
   @Input() errorMessage: string;
   @Input() showTip = true;
   @Input() for: string;

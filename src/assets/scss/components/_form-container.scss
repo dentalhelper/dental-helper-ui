@@ -8,12 +8,26 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  &__legend {
+    border-bottom: 2px solid #cccccc;
+    margin: 15px 0;
+    &__title {
+      color: #888888;
+      font-weight: bold;
+      font-size: x-large;
+    }
+  }
   &__label {
     @extend %label;
     padding-bottom: 3px;
     align-self: baseline;
     font-weight: bold;
+    &__hint{
+      @extend %hint;
+      display: inline-block;
+    }
   }
+
   &__input {
     @extend %input;
     margin-bottom: 20px;

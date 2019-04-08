@@ -9,13 +9,116 @@
     </button>
   </div>
 
+  {{formularioDePaciente.value |json}}
+  <br />
+  {{formularioDePaciente.valid |json}}
   <div class="form">
     <form novalidate [formGroup]="formularioDePaciente" class="i-container">
+      <div class="i-container__legend">
+        <h2 class="i-container__legend__title">Dados pessoais</h2>
+      </div>
+
       <app-input-container label="Nome" for="nome" errorMessage="Nome é obrigatório (Até 50 caracteres).">
         <input class="i-container__input" type="text" id="nome" formControlName="nome">
       </app-input-container>
 
+      <app-input-container label="Data de Nascimento" for="data-nascimento" errorMessage="Informe uma data.">
+        <p-calendar [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100" [readonlyInput]="isMobile()"
+          inputId="data-nascimento" dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true"
+          [yearNavigator]="true" yearRange="1940:2020" formControlName="dataNascimento"
+          [style]="{'width': isMobile() ?'70%':'100%', 'margin-bottom':'20px'}">
+        </p-calendar>
+      </app-input-container>
 
+      <app-input-container label="Sexo" errorMessage="Selecione uma opção.">
+        <app-radio [options]="sexoOptions" formControlName="sexo" (selected)="aplicarSexo($event)"></app-radio>
+      </app-input-container>
+
+      <app-input-container label="CPF" for="cpf" errorMessage="CPF é obrigatório.">
+        <input class="i-container__input" type="text" id="cpf" formControlName="cPF" mask="000.000.000-00">
+      </app-input-container>
+
+      <app-input-container label="RG" for="rg" errorMessage="RG é obrigatório.">
+        <input class="i-container__input" type="text" id="rg" formControlName="rG">
+      </app-input-container>
+
+      <app-input-container label="Estado Civil" errorMessage="Selecione uma opção." [dropdown]="true">
+        <p-selectButton [options]="estadoCivilOptions" formControlName="estadoCivil" [style]="{'margin-bottom':'20px'}"
+          inputId="estado-civil" [required]="true">
+        </p-selectButton>
+      </app-input-container>
+
+      <app-input-container label="Profissão" for="profissao" errorMessage="Profissão é obrigatório.">
+        <input class="i-container__input" type="text" id="profissao" formControlName="profissao">
+      </app-input-container>
+
+      <p-fileUpload chooseLabel="Enviar foto" mode="basic" name="demo[]" url="./upload.php" accept="image/*"
+        maxFileSize="1000000">
+      </p-fileUpload>
+
+      <div class="i-container__legend">
+        <h2 class="i-container__legend__title">Endereço</h2>
+      </div>
+
+      <app-input-container label="Logradouro" for="logradouro" errorMessage="Logradouro é obrigatório.">
+        <input class="i-container__input" type="text" id="logradouro" formControlName="logradouro">
+      </app-input-container>
+
+      <app-input-container label="Número" for="numero" errorMessage="Número é obrigatório.">
+        <input class="i-container__input" type="text" id="numero" formControlName="numero">
+      </app-input-container>
+
+      <app-input-container label="Bairro" for="bairro" errorMessage="Bairro é obrigatório">
+        <input class="i-container__input" type="text" id="bairro" formControlName="bairro">
+      </app-input-container>
+
+      <app-input-container label="Complemento" for="complemento" hint="opcional">
+        <input class="i-container__input" type="text" id="complemento" formControlName="complemento">
+      </app-input-container>
+
+      <app-input-container label="CEP" for="cep" errorMessage="CEP é obrigatório.">
+        <input class="i-container__input" type="text" id="cep" formControlName="cep" mask="00000-000">
+      </app-input-container>
+
+      <div style="margin-bottom:15px;">
+        <label class="i-container__label" for="categoria-filtro" id="categoria-filtro-label">Estado</label>
+        <p-dropdown [options]="estadosOptions" placeholder="Selecione" [filter]="!isMobile()"
+          emptyFilterMessage="Estado não encontrado!" [style]="{'width': '100%'}" inputId="estado"
+          (onChange)="carregarCidades($event.value)">
+        </p-dropdown>
+      </div>
+
+
+      <app-input-container label="Cidade" for="cidade" errorMessage="Selecione uma cidade." [dropdown]="true">
+        <div style="padding-bottom:20px;">
+          <p-dropdown [options]="cidadesOptions" placeholder="Selecione" [disabled]="cidadesOptions.length === 0"
+            [filter]="!isMobile()" emptyFilterMessage="Cidade não encontrada!" [style]="{'width': '100%'}"
+            inputId="cidade" formControlName="codigoCidade" [style]="{'width': '100%', 'margin-bottom':'20px'}">
+          </p-dropdown>
+        </div>
+      </app-input-container>
+
+      <div class="i-container__legend">
+        <h2 class="i-container__legend__title">Contato</h2>
+      </div>
+
+      <app-input-container label="Telefone principal" for="telefone-principal" hint="opcional">
+        <input class="i-container__input" type="text" id="telefone-principal" formControlName="telefonePrincipal"
+          mask="(00) 00000-0000">
+      </app-input-container>
+
+      <app-input-container label="Telefone" for="telefone" hint="opcional">
+        <input class="i-container__input" type="text" id="telefone" formControlName="telefone2" mask="(00) 00000-0000">
+      </app-input-container>
+
+      <app-input-container label="E-mail" for="email" errorMessage="E-mail inválido." hint="opcional">
+        <input class="i-container__input" type="text" id="email" formControlName="email">
+      </app-input-container>
+
+      <app-button label="Salvar" icon="fas fa-hdd" iconPosition="right"
+        [classes]="['botao--success', isMobile() ? 'botao--full':'botao--grande']"
+        [desativar]="formularioDePaciente.invalid" (botaoClicado)="[submeterFormulario()]">
+      </app-button>
     </form>
   </div>
 </div>
