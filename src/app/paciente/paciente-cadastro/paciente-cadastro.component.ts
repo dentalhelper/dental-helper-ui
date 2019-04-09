@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastService } from 'src/app/core/services/toast.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { EMAIL_PATTERN } from 'src/app/shared/constants/validators.regex';
+
 import { pt_BR } from 'src/app/shared/constants/calendario.br';
-import { RadioOption } from 'src/app/shared/radio/radio-option.model';
+import { ToastService } from 'src/app/core/services/toast.service';
 import { EstadoService } from 'src/app/core/services/estado.service';
-import { Estado } from 'src/app/domains/estado.model';
+import { RadioOption } from 'src/app/shared/radio/radio-option.model';
+import { PacienteService } from 'src/app/core/services/paciente.service';
+import { EMAIL_PATTERN } from 'src/app/shared/constants/validators.regex';
+
+import { tap } from 'rxjs/operators';
 
 declare var $: any;
 @Component({
@@ -16,6 +19,7 @@ declare var $: any;
   styleUrls: ['./paciente-cadastro.component.scss']
 })
 export class PacienteCadastroComponent implements OnInit {
+
   pt_BR = pt_BR;
   formularioDePaciente: FormGroup;
   nome: string;
@@ -42,6 +46,7 @@ export class PacienteCadastroComponent implements OnInit {
     private route: ActivatedRoute,
     private toastService: ToastService,
     private estadoService: EstadoService,
+    private pacienteService: PacienteService,
   ) { }
 
   ngOnInit() {
@@ -83,8 +88,22 @@ export class PacienteCadastroComponent implements OnInit {
     );
   }
 
-  submeterFormulario(){
+  submeterFormulario() {
+    this.salvar();
+  }
 
+  salvar() {
+    this.pacienteService.salvar(this.formularioDePaciente.value)
+      .pipe(
+        tap((response: string) => {
+          this.nome = response;
+        })
+      )
+      .subscribe(() => {
+        this.voltar();
+        const mensagemToast = `"${this.nome}" foi salva."`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
   }
 
   voltar() {
@@ -107,7 +126,6 @@ export class PacienteCadastroComponent implements OnInit {
         value: cidade.codigo, label: cidade.nome
       }));
     });
-    console.log(codigoEstado);
   }
 
   aplicarSexo(sexo: number) {

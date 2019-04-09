@@ -19,3 +19,15 @@
   cursor: pointer;
   transition: all 0.2s linear;
 }
+
+@mixin input-padding-right() {
+  padding: 0 5px 5px 0;
+}
+
+@mixin input-padding-left() {
+  padding: 0 0 5px 5px;
+}
+
+@mixin input-padding-both() {
+  padding: 0 5px 5px 5px;
+}

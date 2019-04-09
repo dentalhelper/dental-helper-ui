@@ -41,8 +41,15 @@
         </label>
 
         <ul class="drop-down">
+          <li class="item-submenu" (click)="isOpen = !isOpen">
+            <a id="item-paciente" [routerLink]="['/pacientes']" [routerLinkActiveOptions]="{exact: true}"
+              routerLinkActive="active">Pesquisar</a>
+          </li>
+        </ul>
+        <ul class="drop-down">
           <li class="last item-submenu" (click)="isOpen = !isOpen">
-            <a id="item-paciente" [routerLink]="['/pacientes']" routerLinkActive="active">Pesquisar</a>
+            <a id="item-paciente-cadastro" [routerLink]="['/pacientes/novo']" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact: true}">Cadastrar</a>
           </li>
         </ul>
       </li>

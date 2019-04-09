@@ -5,7 +5,7 @@
   font-size: medium;
 }
 
-%hint{
+%hint {
   color: #888888;
   font-size: small;
   font-weight: lighter;
@@ -26,3 +26,14 @@
   }
 }
 
+%input-padding-right {
+  padding: 0 5px 5px 0;
+}
+
+%input-padding-left {
+  padding: 0 0 5px 5px;
+}
+
+%input-padding-both {
+  padding: 0 5px 5px 5px;
+}
