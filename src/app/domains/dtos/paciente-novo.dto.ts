@@ -8,6 +8,7 @@ export interface PacienteNovoDTO {
   email: string;
   profissao: number;
   fotoPerfil: string;
+  urlDaFoto: string;
   telefonePrincipal: string;
   telefone2: number;
   logradouro: string;

@@ -18,19 +18,25 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { FileUploadModule } from 'primeng/fileupload';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { NgxMaskModule } from 'ngx-mask';
 import { DropdownModule } from 'primeng/dropdown';
+import { ProntuarioComponent } from './prontuario/prontuario.component';
+import { PacienteDadosComponent } from './paciente-dados/paciente-dados.component';
 
 @NgModule({
   declarations: [
     CpfPipe,
     TelefonePipe,
+    ProntuarioComponent,
     PacienteCadastroComponent,
     PacientesPesquisaComponent,
+    PacienteDadosComponent,
   ],
   imports: [
     TableModule,
+
     CommonModule,
     SharedModule,
     TooltipModule,
@@ -42,6 +48,7 @@ import { DropdownModule } from 'primeng/dropdown';
     SelectButtonModule,
     ReactiveFormsModule,
     ConfirmDialogModule,
+    ProgressSpinnerModule,
     NgxMaskModule.forRoot(),
     RouterModule.forChild(PACIENTE_ROUTES)
   ]

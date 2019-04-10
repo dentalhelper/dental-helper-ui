@@ -3,7 +3,6 @@
 .form {
   padding: 10px;
 }
-
 @media screen and (min-width: 56.25em) {
   .form {
     .i-container {
@@ -20,7 +19,6 @@
 
       & > :nth-child(3) {
         align-self: center;
-        align-items: flex-end;
         width: 30%;
         @include input-padding-left();
       }

@@ -101,6 +101,11 @@ button {
     }
   }
 }
+
+.botao--no-top-border {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 .botao--mini {
   height: 30px;
   width: 30px;
@@ -117,7 +122,7 @@ button {
 }
 .botao--grande {
   height: 33px;
-  padding: 10px 18px;
+  padding: 10px 30px;
   line-height: 0;
 }
 

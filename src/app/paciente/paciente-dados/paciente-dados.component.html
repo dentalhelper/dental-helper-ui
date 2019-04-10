@@ -1,20 +1,11 @@
 <div class="content">
   <div class="header">
-    <h1 class="header__titulo">Cadastro de Paciente</h1>
-    <button type="button" class="header__botao-voltar header__botao-voltar--float" (click)="voltar()">
-      <i class="fas fa-undo-alt"></i>
-    </button>
-    <button id="voltar" type="button" class="header__botao-voltar header__botao-voltar--header" (click)="voltar()">
-      Cancelar
-    </button>
-  </div>
+    <h1 class="header__titulo">Dados do Paciente</h1>
 
+  </div>
   <div class="form">
     <form novalidate [formGroup]="formularioDePaciente" class="i-container">
-      <div class="i-container__legend">
-        <h2 class="i-container__legend__title">Dados pessoais</h2>
-      </div>
-
+      <div></div>
       <div class="i-container__pessoais">
         <app-input-container label="Nome" for="nome" errorMessage="Nome é obrigatório (Até 50 caracteres).">
           <input class="i-container__input" type="text" id="nome" formControlName="nome">
@@ -37,14 +28,14 @@
         </app-input-container>
 
         <app-input-container label="Profissão" for="profissao" errorMessage="Profissão é obrigatório.">
-            <input class="i-container__input" type="text" id="profissao" formControlName="profissao">
-          </app-input-container>
+          <input class="i-container__input" type="text" id="profissao" formControlName="profissao">
+        </app-input-container>
 
-          <app-input-container label="Estado Civil" errorMessage="Selecione uma opção." [dropdown]="true">
-            <p-selectButton [options]="estadoCivilOptions" formControlName="estadoCivil" [style]="{'margin-bottom':'20px'}"
-              inputId="estado-civil" [required]="true">
-            </p-selectButton>
-          </app-input-container>
+        <app-input-container label="Estado Civil" errorMessage="Selecione uma opção." [dropdown]="true">
+          <p-selectButton [options]="estadoCivilOptions" formControlName="estadoCivil"
+            [style]="{'margin-bottom':'20px'}" inputId="estado-civil" [required]="true">
+          </p-selectButton>
+        </app-input-container>
       </div>
 
       <div>
@@ -105,14 +96,14 @@
         <label class="i-container__label" for="categoria-filtro" id="categoria-filtro-label">Estado</label>
         <p-dropdown [options]="estadosOptions" placeholder="Selecione" [filter]="!isMobile()"
           emptyFilterMessage="Estado não encontrado!" [style]="{'width': '100%'}" inputId="estado"
-          (onChange)="carregarCidades($event.value)">
+          (onChange)="carregarCidades($event.value)" formControlName="codigoEstado">
         </p-dropdown>
       </div>
 
 
       <app-input-container label="Cidade" for="cidade" errorMessage="Selecione uma cidade." [dropdown]="true">
         <div style="padding-bottom:20px;">
-          <p-dropdown [options]="cidadesOptions" placeholder="Selecione" [disabled]="cidadesOptions.length === 0"
+          <p-dropdown [options]="cidadesOptions" placeholder="Selecione"
             [filter]="!isMobile()" emptyFilterMessage="Cidade não encontrada!" [style]="{'width': '100%'}"
             inputId="cidade" formControlName="codigoCidade" [style]="{'width': '100%', 'margin-bottom':'20px'}">
           </p-dropdown>

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { PacienteResumoDTO } from 'src/app/domains/dtos/paciente-resumo.dto';
 import { PacienteNovoDTO } from 'src/app/domains/dtos/paciente-novo.dto';
 import { map } from 'rxjs/operators';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,40 @@ export class PacienteService {
       parametros = parametros.append('filtro', form.filtro);
     }
     return this.http.get<PacienteResumoDTO[]>(this.PACIENTE_URL, { params: parametros });
+  }
+
+  buscarPorCodigo(codigo: number): Observable<PacienteNovoDTO> {
+    return this.http.get<PacienteNovoDTO>(`${this.PACIENTE_URL}/${codigo}/edit`).pipe(
+      map((response) => {
+        const paciente = response;
+        this.converterStringsParaDatas([paciente]);
+        return paciente;
+      })
+    );
+  }
+
+  urlUploadImagem(): string {
+    return `${this.PACIENTE_URL}/foto`;
+  }
+
+  atualizar(paciente: PacienteNovoDTO, codigo: number): Observable<PacienteNovoDTO> {
+    return this.http.put<PacienteNovoDTO>(`${this.PACIENTE_URL}/${codigo}`, paciente)
+      .pipe(
+        map((response) => {
+          const pacienteAlterado = response;
+          this.converterStringsParaDatas([pacienteAlterado]);
+          return pacienteAlterado;
+        })
+      );
+  }
+
+  deletar(url: string): Observable<string> {
+    return this.http.delete<string>(url);
+  }
+
+  private converterStringsParaDatas(pacientes: PacienteNovoDTO[]) {
+    for (const paciente of pacientes) {
+      paciente.dataNascimento = moment(paciente.dataNascimento, 'YYYY-MM-DD').toDate();
+    }
   }
 }

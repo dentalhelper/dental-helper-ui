@@ -1,30 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { pt_BR } from 'src/app/shared/constants/calendario.br';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { RadioOption } from 'src/app/shared/radio/radio-option.model';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
-
-import { pt_BR } from 'src/app/shared/constants/calendario.br';
 import { ToastService } from 'src/app/core/services/toast.service';
 import { EstadoService } from 'src/app/core/services/estado.service';
-import { RadioOption } from 'src/app/shared/radio/radio-option.model';
 import { PacienteService } from 'src/app/core/services/paciente.service';
 import { EMAIL_PATTERN } from 'src/app/shared/constants/validators.regex';
-
-import { tap } from 'rxjs/operators';
 import { NO_IMAGE_URL } from 'src/app/shared/constants/image.defeut';
+import { tap } from 'rxjs/operators';
 
 declare var $: any;
 @Component({
-  selector: 'app-paciente-cadastro',
-  templateUrl: './paciente-cadastro.component.html',
-  styleUrls: ['./paciente-cadastro.component.scss']
+  selector: 'app-paciente-dados',
+  templateUrl: './paciente-dados.component.html',
+  styleUrls: ['./paciente-dados.component.scss']
 })
-export class PacienteCadastroComponent implements OnInit {
+export class PacienteDadosComponent implements OnInit {
 
   pt_BR = pt_BR;
   formularioDePaciente: FormGroup;
   nome: string;
   uploadEmAndamento = false;
+  codigPaciente: number;
 
   estadosOptions = [];
   cidadesOptions = [];
@@ -53,7 +52,9 @@ export class PacienteCadastroComponent implements OnInit {
 
   ngOnInit() {
     this.prepararFormulario();
-    this.title.setTitle('Novo Paciente');
+    this.title.setTitle('Dados do Paciente');
+    this.codigPaciente = this.route.snapshot.parent.params['codigo'];
+    this.carregarPacientePeloCodigo(this.codigPaciente);
     this.carregarEstados();
   }
 
@@ -80,6 +81,7 @@ export class PacienteCadastroComponent implements OnInit {
         bairro: new FormControl('', [Validators.required, Validators.maxLength(30)]),
         cep: new FormControl('', Validators.required),
         complemento: new FormControl(''),
+        codigoEstado: new FormControl(''),
         codigoCidade: new FormControl('', {
           updateOn: 'change',
           validators: [Validators.required]
@@ -92,7 +94,7 @@ export class PacienteCadastroComponent implements OnInit {
   }
 
   submeterFormulario() {
-    this.salvar();
+    this.atualizar();
   }
 
   salvar() {
@@ -103,15 +105,41 @@ export class PacienteCadastroComponent implements OnInit {
         })
       )
       .subscribe(() => {
-        this.voltar();
         const mensagemToast = `"${this.nome}" foi salvo(a)."`;
         this.toastService.exibirSucesso(mensagemToast);
       });
   }
 
-  voltar() {
-    this.router.navigate(['/pacientes'], {
-      relativeTo: this.route
+  atualizar() {
+    delete this.formularioDePaciente.value.codigoEstado;
+    this.pacienteService.atualizar(this.formularioDePaciente.value, this.codigPaciente)
+      .subscribe(() => {
+        const mensagemToast = `"O Paciente foi atualizado."`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  carregarPacientePeloCodigo(codigo: number) {
+    this.pacienteService.buscarPorCodigo(codigo)
+      .subscribe((response) => {
+        this.formularioDePaciente.patchValue(response);
+        this.atualizarTituloDaPagina();
+        this.carregarEstadoDoPaciente();
+      });
+  }
+
+  carregarEstadoDoPaciente() {
+    this.estadoService.pesquisar().subscribe((response) => {
+      response.forEach((estado) => {
+        this.estadoService.pesquisarCidades(estado.codigo).subscribe((response) => {
+          response.forEach((cidade) => {
+            if (cidade.codigo === this.formularioDePaciente.get('codigoCidade').value) {
+              this.carregarCidades(estado.codigo);
+              this.formularioDePaciente.get('codigoEstado').setValue(estado.codigo);
+            }
+          });
+        });
+      });
     });
   }
 
@@ -158,6 +186,10 @@ export class PacienteCadastroComponent implements OnInit {
 
   get urlUploadImagem() {
     return this.pacienteService.urlUploadImagem();
+  }
+
+  atualizarTituloDaPagina() {
+    this.title.setTitle(`${this.formularioDePaciente.get('nome').value}`);
   }
 
   aplicarSexo(sexo: number) {

@@ -5,6 +5,7 @@ import { PacienteService } from 'src/app/core/services/paciente.service';
 import { Title } from '@angular/platform-browser';
 import { ToastService } from 'src/app/core/services/toast.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-pacientes-pesquisa',
@@ -22,6 +23,7 @@ export class PacientesPesquisaComponent implements OnInit {
     private route: ActivatedRoute,
     private toastService: ToastService,
     private pacienteService: PacienteService,
+    private confirmationService: ConfirmationService,
   ) { }
 
   ngOnInit() {
@@ -36,9 +38,9 @@ export class PacientesPesquisaComponent implements OnInit {
     });
   }
 
-  agendar(){
+  agendar() {
     const mensagemToast = `"Operação não implementada."`;
-        this.toastService.exibirAviso(mensagemToast);
+    this.toastService.exibirAviso(mensagemToast);
   }
 
   inicializarFiltro() {
@@ -50,6 +52,28 @@ export class PacientesPesquisaComponent implements OnInit {
   carregarPacientes() {
     this.pacienteService.pesquisar(this.formularioDoFiltro.value).subscribe(resultado => {
       this.pacientes = resultado;
+    });
+  }
+
+  deletar(paciente: PacienteResumoDTO) {
+    const [url] = paciente.links;
+    this.pacienteService.deletar(url.href)
+      .subscribe(() => {
+        this.carregarPacientes();
+        const mensagemToast = `"O paciente foi excluído."`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  confirmarExclusao(paciente: PacienteResumoDTO) {
+    this.confirmationService.confirm({
+      message: `
+      Você tem certeza que quer excluir "${paciente.nome}"?
+      <br />
+      <strong>Todas as informações desse paciente será deletada permanentemente.</strong>`,
+      accept: () => {
+        this.deletar(paciente);
+      }
     });
   }
 
