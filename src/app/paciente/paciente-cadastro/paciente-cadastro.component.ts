@@ -5,13 +5,13 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 import { pt_BR } from 'src/app/shared/constants/calendario.br';
 import { ToastService } from 'src/app/core/services/toast.service';
+import { NO_IMAGE_URL } from 'src/app/shared/constants/image.defeut';
 import { EstadoService } from 'src/app/core/services/estado.service';
 import { RadioOption } from 'src/app/shared/radio/radio-option.model';
 import { PacienteService } from 'src/app/core/services/paciente.service';
 import { EMAIL_PATTERN } from 'src/app/shared/constants/validators.regex';
 
 import { tap } from 'rxjs/operators';
-import { NO_IMAGE_URL } from 'src/app/shared/constants/image.defeut';
 
 declare var $: any;
 @Component({
@@ -158,10 +158,6 @@ export class PacienteCadastroComponent implements OnInit {
 
   get urlUploadImagem() {
     return this.pacienteService.urlUploadImagem();
-  }
-
-  aplicarSexo(sexo: number) {
-    this.formularioDePaciente.get('sexo').setValue(sexo);
   }
 
   isMobile(): boolean {

@@ -3,6 +3,7 @@ import { PacientesPesquisaComponent } from './pacientes-pesquisa/pacientes-pesqu
 import { PacienteCadastroComponent } from './paciente-cadastro/paciente-cadastro.component';
 import { ProntuarioComponent } from './prontuario/prontuario.component';
 import { PacienteDadosComponent } from './paciente-dados/paciente-dados.component';
+import { AnamneseComponent } from './anamnese/anamnese.component';
 
 export const PACIENTE_ROUTES: Routes = [
   {
@@ -24,6 +25,10 @@ export const PACIENTE_ROUTES: Routes = [
       {
         path: 'edit',
         component: PacienteDadosComponent
+      },
+      {
+        path: 'anamnese',
+        component: AnamneseComponent
       }
     ]
   }

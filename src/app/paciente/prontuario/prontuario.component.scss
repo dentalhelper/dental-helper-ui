@@ -71,26 +71,31 @@
       justify-content: flex-end;
       border-bottom: 1px #727272 solid;
 
-
       &__tab {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         height: 30px;
         line-height: 30px;
         padding: 0 8px;
-        margin-right: 3px;
+        margin-right: 3.5px;
         cursor: pointer;
         transition: background-color 0.2s ease-in;
         &:hover {
-
           background-color: darken(#e6e6e6, 7);
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
           border-bottom: 2px #727272 solid;
         }
+        &:focus {
+          box-shadow: 0 0 3px 2px #cccccc;
+          border: none;
+          outline: 0;
+        }
 
-        &--active{
+        &--active {
           background-color: #e6e6e6;
           border-top-left-radius: 5px;
           border-top-right-radius: 5px;
+          box-shadow: 0 0 3px 2px #cccccc;
+          border-bottom: 1.5px #cccccc solid;
         }
       }
     }

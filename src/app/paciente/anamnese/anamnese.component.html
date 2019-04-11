@@ -1,0 +1,30 @@
+<div class="content">
+  <div class="header">
+    <h1 class="header__titulo">Anamnese</h1>
+  </div>
+
+  <div class="form">
+    <form novalidate [formGroup]="form" class="i-container">
+      <div class="i-container__ref-container">
+        <div formArrayName="questoes" *ngFor="let questao of formData.controls; let i = index;">
+          <div [formGroupName]="i" class="i-container__ref-container__group">
+
+            <app-input-container [label]="questoes.at(i).get('descricao').value">
+              <p-selectButton [options]="respostas" formControlName="resposta" [style]="{'margin-bottom':'5px'}"
+                [required]="true">
+              </p-selectButton>
+              <input class="i-container__input" type="text" formControlName="informAdicionais"
+                placeholder="Informações adicionais.">
+            </app-input-container>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="float-button">
+    <app-button label="Salvar" icon="fas fa-hdd" iconPosition="right" [classes]="['botao--success', 'botao--grande']"
+      [desativar]="false" (botaoClicado)="[submeterFormulario()]">
+    </app-button>
+  </div>
+</div>

@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { pt_BR } from 'src/app/shared/constants/calendario.br';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { RadioOption } from 'src/app/shared/radio/radio-option.model';
 import { Title } from '@angular/platform-browser';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { pt_BR } from 'src/app/shared/constants/calendario.br';
 import { ToastService } from 'src/app/core/services/toast.service';
+import { NO_IMAGE_URL } from 'src/app/shared/constants/image.defeut';
 import { EstadoService } from 'src/app/core/services/estado.service';
+import { RadioOption } from 'src/app/shared/radio/radio-option.model';
 import { PacienteService } from 'src/app/core/services/paciente.service';
 import { EMAIL_PATTERN } from 'src/app/shared/constants/validators.regex';
-import { NO_IMAGE_URL } from 'src/app/shared/constants/image.defeut';
-import { tap } from 'rxjs/operators';
 
 declare var $: any;
 @Component({
@@ -19,11 +19,11 @@ declare var $: any;
 })
 export class PacienteDadosComponent implements OnInit {
 
-  pt_BR = pt_BR;
-  formularioDePaciente: FormGroup;
   nome: string;
-  uploadEmAndamento = false;
+  pt_BR = pt_BR;
   codigPaciente: number;
+  uploadEmAndamento = false;
+  formularioDePaciente: FormGroup;
 
   estadosOptions = [];
   cidadesOptions = [];
@@ -43,7 +43,6 @@ export class PacienteDadosComponent implements OnInit {
 
   constructor(
     private title: Title,
-    private router: Router,
     private route: ActivatedRoute,
     private toastService: ToastService,
     private estadoService: EstadoService,
@@ -73,7 +72,7 @@ export class PacienteDadosComponent implements OnInit {
         email: new FormControl('', [Validators.pattern(EMAIL_PATTERN)]),
         profissao: new FormControl('', Validators.required),
         fotoPerfil: new FormControl(''),
-        urlDaFoto: new FormControl(NO_IMAGE_URL),
+        urlDaFoto: new FormControl(''),
         telefonePrincipal: new FormControl(''),
         telefone2: new FormControl(''),
         logradouro: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -97,19 +96,6 @@ export class PacienteDadosComponent implements OnInit {
     this.atualizar();
   }
 
-  salvar() {
-    this.pacienteService.salvar(this.formularioDePaciente.value)
-      .pipe(
-        tap((response: string) => {
-          this.nome = response;
-        })
-      )
-      .subscribe(() => {
-        const mensagemToast = `"${this.nome}" foi salvo(a)."`;
-        this.toastService.exibirSucesso(mensagemToast);
-      });
-  }
-
   atualizar() {
     delete this.formularioDePaciente.value.codigoEstado;
     this.pacienteService.atualizar(this.formularioDePaciente.value, this.codigPaciente)
@@ -125,14 +111,18 @@ export class PacienteDadosComponent implements OnInit {
         this.formularioDePaciente.patchValue(response);
         this.atualizarTituloDaPagina();
         this.carregarEstadoDoPaciente();
+        if (!response.urlDaFoto) {
+          this.formularioDePaciente.get('urlDaFoto').setValue(NO_IMAGE_URL);
+          this.formularioDePaciente.get('fotoPerfil').setValue(null);
+        }
       });
   }
 
   carregarEstadoDoPaciente() {
     this.estadoService.pesquisar().subscribe((response) => {
       response.forEach((estado) => {
-        this.estadoService.pesquisarCidades(estado.codigo).subscribe((response) => {
-          response.forEach((cidade) => {
+        this.estadoService.pesquisarCidades(estado.codigo).subscribe((cidadeResponse) => {
+          cidadeResponse.forEach((cidade) => {
             if (cidade.codigo === this.formularioDePaciente.get('codigoCidade').value) {
               this.carregarCidades(estado.codigo);
               this.formularioDePaciente.get('codigoEstado').setValue(estado.codigo);
@@ -190,10 +180,6 @@ export class PacienteDadosComponent implements OnInit {
 
   atualizarTituloDaPagina() {
     this.title.setTitle(`${this.formularioDePaciente.get('nome').value}`);
-  }
-
-  aplicarSexo(sexo: number) {
-    this.formularioDePaciente.get('sexo').setValue(sexo);
   }
 
   isMobile(): boolean {

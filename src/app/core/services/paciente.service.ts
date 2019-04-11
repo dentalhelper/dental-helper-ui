@@ -6,6 +6,8 @@ import { PacienteResumoDTO } from 'src/app/domains/dtos/paciente-resumo.dto';
 import { PacienteNovoDTO } from 'src/app/domains/dtos/paciente-novo.dto';
 import { map } from 'rxjs/operators';
 import * as moment from 'moment';
+import { PacienteAnamneseDTO } from 'src/app/domains/dtos/paciente-anamnese.dto';
+import { Anamnese } from 'src/app/domains/interfaces/anamnese.model';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +44,10 @@ export class PacienteService {
     );
   }
 
+  buscarAnamnese(codigo: number): Observable<PacienteAnamneseDTO> {
+    return this.http.get<PacienteAnamneseDTO>(`${this.PACIENTE_URL}/${codigo}/anamnese`);
+  }
+
   urlUploadImagem(): string {
     return `${this.PACIENTE_URL}/foto`;
   }
@@ -55,6 +61,10 @@ export class PacienteService {
           return pacienteAlterado;
         })
       );
+  }
+
+  atualizarAnamnese(anamnese: Anamnese, codigo: number): Observable<Anamnese> {
+    return this.http.put<Anamnese>(`${this.PACIENTE_URL}/${codigo}/anamnese`, anamnese);
   }
 
   deletar(url: string): Observable<string> {

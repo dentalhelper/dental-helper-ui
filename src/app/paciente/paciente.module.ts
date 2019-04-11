@@ -24,6 +24,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { DropdownModule } from 'primeng/dropdown';
 import { ProntuarioComponent } from './prontuario/prontuario.component';
 import { PacienteDadosComponent } from './paciente-dados/paciente-dados.component';
+import { AnamneseComponent } from './anamnese/anamnese.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { PacienteDadosComponent } from './paciente-dados/paciente-dados.componen
     PacienteCadastroComponent,
     PacientesPesquisaComponent,
     PacienteDadosComponent,
+    AnamneseComponent,
   ],
   imports: [
     TableModule,

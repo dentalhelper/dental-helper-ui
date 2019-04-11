@@ -1,0 +1,28 @@
+.form {
+  padding: 10px;
+}
+
+.i-container__input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: none;
+}
+
+.float-button{
+  position: fixed;
+	float: bottom;
+	bottom: 25px;
+	left: 90px;
+	z-index: 100;
+}
+
+@media screen and (min-width: 56.25em) {
+  .form {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+}

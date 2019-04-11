@@ -33,18 +33,24 @@
         </app-input-container>
 
         <app-input-container label="RG" for="rg" errorMessage="RG é obrigatório.">
-          <input class="i-container__input" type="text" id="rg" formControlName="rG">
+          <input class="i-container__input" type="text" id="rg" formControlName="rG" mask="0.000.000">
         </app-input-container>
 
         <app-input-container label="Profissão" for="profissao" errorMessage="Profissão é obrigatório.">
-            <input class="i-container__input" type="text" id="profissao" formControlName="profissao">
-          </app-input-container>
+          <input class="i-container__input" type="text" id="profissao" formControlName="profissao">
+        </app-input-container>
 
-          <app-input-container label="Estado Civil" errorMessage="Selecione uma opção." [dropdown]="true">
-            <p-selectButton [options]="estadoCivilOptions" formControlName="estadoCivil" [style]="{'margin-bottom':'20px'}"
-              inputId="estado-civil" [required]="true">
-            </p-selectButton>
-          </app-input-container>
+        <app-input-container label="Estado Civil" errorMessage="Selecione uma opção." [dropdown]="true">
+          <p-selectButton [options]="estadoCivilOptions" formControlName="estadoCivil"
+            [style]="{'margin-bottom':'20px'}" inputId="estado-civil" [required]="true">
+          </p-selectButton>
+        </app-input-container>
+
+        <app-input-container label="Sexo" errorMessage="Selecione uma opção." [dropdown]="true">
+          <p-selectButton [options]="sexoOptions" formControlName="sexo" [style]="{'margin-bottom':'20px'}"
+            inputId="sexo" [required]="true">
+          </p-selectButton>
+        </app-input-container>
       </div>
 
       <div>
@@ -72,9 +78,6 @@
           </p-progressSpinner>
         </div>
 
-        <app-input-container label="Sexo" errorMessage="Selecione uma opção.">
-          <app-radio [options]="sexoOptions" formControlName="sexo" (selected)="aplicarSexo($event)"></app-radio>
-        </app-input-container>
       </div>
 
       <div class="i-container__legend">
