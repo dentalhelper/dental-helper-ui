@@ -1,14 +1,8 @@
 <div class="content">
-  <div class="header">
-    <h1 class="header__titulo">Catálogo de Procedimentos</h1>
-    <button type="button" class="header__botao-add header__botao-add--float" (click)="criarProcedimento()">
-      <i class="fas fa-plus"></i>
-    </button>
-    <button id="add-procedimento" type="button" class="header__botao-add header__botao-add--header"
-      (click)="criarProcedimento()">
-      Adicionar Procedimento
-    </button>
-  </div>
+  <app-default-header titulo="Catálogo de Procedimentos" buttonId="add-procedimento" buttonText="Adicionar Procedimento"
+    (botaoClicado)="criarProcedimento()" [buttonStyle]="{'width': '200px',
+    'font-size': '13px'}">
+  </app-default-header>
 
   <form novalidate class="filtro" (ngSubmit)="filtrar()" [formGroup]="formularioDoFiltro">
     <div class="filtro__group">

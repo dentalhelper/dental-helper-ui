@@ -1,0 +1,110 @@
+.tab-container {
+  display: flex;
+  flex-direction: row;
+
+  background-color: #ffffff;
+  margin: 10px;
+  border-radius: 5px;
+
+  &__left {
+    display: flex;
+    flex-direction: row;
+
+    &__voltar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 110px;
+      width: 30px;
+      background-color: #cccccc;
+      border: 1px solid #bfbfbf;
+      color: #333333;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in;
+
+      &:focus {
+        box-shadow: 0 0 3px 2px #cccccc;
+      }
+      &:hover {
+        background-color: darken(#cccccc, 10);
+        font-size: large;
+      }
+      &:active {
+        background-color: darken(#cccccc, 17);
+        box-shadow: -1px -1px 3px #cccccc, -1px 1px 3px #cccccc;
+        font-size: x-large;
+      }
+    }
+
+    &__foto {
+      margin: 0 10px;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      border: 3px solid #eeeeee;
+      box-shadow: inset 0 0 10px #8a8a8a;
+      align-self: center;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__dados {
+      margin-top: 10px;
+      color: #333333;
+      &__nome {
+      }
+      &__cpf {
+        font-size: 0.8em;
+      }
+    }
+
+    &__nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      border-bottom: 1px #727272 solid;
+
+      &__tab {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 8px;
+        margin-right: 3.5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in;
+        &:hover {
+          background-color: darken(#e6e6e6, 7);
+          border-bottom: 2px #727272 solid;
+        }
+        &:focus {
+          box-shadow: 0 0 3px 2px #cccccc;
+          border: none;
+          outline: 0;
+        }
+
+        &--active {
+          background-color: #e6e6e6;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          box-shadow: 0 0 3px 2px #cccccc;
+          border-bottom: 1.5px #cccccc solid;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .tab-container {
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px #bdbdbd;
+  }
+}

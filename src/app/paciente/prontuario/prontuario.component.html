@@ -1,0 +1,28 @@
+<div class="tab-container">
+  <div class="tab-container__left">
+    <div class="tab-container__left__voltar" [routerLink]="['/pacientes']">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="tab-container__left__foto"
+      [ngStyle]="imagem">
+    </div>
+  </div>
+  <div class="tab-container__right">
+    <div class="tab-container__right__dados">
+      <h2 class="tab-container__right__dados__nome">{{ paciente?.nome }}</h2>
+      <p class="tab-container__right__dados__cpf">{{ paciente?.cPF | cpf }}</p>
+    </div>
+
+    <div>
+      <ul class="tab-container__right__nav">
+        <li class="tab-container__right__nav__tab" routerLinkActive="tab-container__right__nav__tab--active" [routerLink]="['/pacientes', codigPaciente, 'edit']">
+          <a>Dados do Paciente</a>
+        </li>
+        <li class="tab-container__right__nav__tab" routerLinkActive="tab-container__right__nav__tab--active" [routerLink]="['/pacientes', codigPaciente, 'anamnese']">
+          <a>Anamnese</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

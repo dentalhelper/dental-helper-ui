@@ -7,16 +7,19 @@
       <div id="menu-bar" class="botao-menu" (click)="isOpen = !isOpen">
         <i class="fas fa-bars"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(pacientes)" pTooltip="Pacientes">
+        <i class="fas fa-user-friends"></i>
+      </div>
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)" pTooltip="Finanças">
         <i class="fas fa-dollar-sign"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)" pTooltip="Materiais">
         <i class="fas fa-toolbox"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)" pTooltip="Configurações">
         <i class="fas fa-cog"></i>
       </div>
-      <div class="botao-menu">
+      <div class="botao-menu" pTooltip="Sair">
         <i class="fas fa-sign-out-alt"></i>
       </div>
     </div>
@@ -31,6 +34,27 @@
       </li>
 
       <li class="drop-down-menu">
+        <input type="checkbox" class="ativar" id="pacientes" name="pacientes" #pacientes>
+        <label id="label-pacientes" for="pacientes" class="item-titulo top-menu">
+          <i class="fas fa-user-friends icon-esq"></i>
+          <div class="label-titulo">Pacientes</div> <i id='arrow' class="fas fa-angle-right icon-dir"></i>
+        </label>
+
+        <ul class="drop-down">
+          <li class="item-submenu" (click)="isOpen = !isOpen">
+            <a id="item-paciente" [routerLink]="['/pacientes']" [routerLinkActiveOptions]="{exact: true}"
+              routerLinkActive="active">Pesquisar</a>
+          </li>
+        </ul>
+        <ul class="drop-down">
+          <li class="last item-submenu" (click)="isOpen = !isOpen">
+            <a id="item-paciente-cadastro" [routerLink]="['/pacientes/novo']" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact: true}">Cadastrar</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="drop-down-menu">
         <input type="checkbox" class="ativar" id="financas" name="financas" #financas>
         <label id="label-financas" for="financas" class="item-titulo top-menu">
           <i class="fas fa-dollar-sign icon-esq"></i>
@@ -38,9 +62,13 @@
         </label>
 
         <ul class="drop-down">
+          <!-- TODO: Implementar na iteração de pagamentos
+
           <li class="item-submenu">
             <a href="#">Recebimentos</a>
           </li>
+           -->
+
           <li class="last item-submenu" (click)="isOpen = !isOpen">
             <a id="item-despesa" [routerLink]="['/despesas']" routerLinkActive="active">Despesas</a>
           </li>

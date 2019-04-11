@@ -28,7 +28,7 @@ import { CustomCurrencyMaskConfig } from './shared/constants/currencymaskconfig'
   declarations: [
     AppComponent,
     OdontogramaComponent,
-    OdontoComponent
+    OdontoComponent,
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,0 +1,91 @@
+@import "../../../assets/scss/mixins";
+
+.form {
+  padding: 10px;
+}
+
+@media screen and (min-width: 56.25em) {
+  .form {
+    .i-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      & > :nth-child(1) {
+        width: 100%;
+      }
+      & > :nth-child(2) {
+        width: 70%;
+        @include input-padding-right();
+      }
+
+      & > :nth-child(3) {
+        align-self: center;
+        align-items: flex-end;
+        width: 30%;
+        @include input-padding-left();
+      }
+
+      & > :nth-child(4) {
+        width: 100%;
+      }
+
+      & > :nth-child(5) {
+        width: 75%;
+        @include input-padding-right();
+      }
+
+      & > :nth-child(6) {
+        width: 25%;
+        @include input-padding-left();
+      }
+
+      & > :nth-child(7) {
+        width: 40%;
+        @include input-padding-right();
+      }
+
+      & > :nth-child(8) {
+        width: 35%;
+        @include input-padding-both();
+      }
+
+      & > :nth-child(9) {
+        width: 25%;
+        @include input-padding-left();
+      }
+
+      & > :nth-child(10) {
+        width: 50%;
+        @include input-padding-right();
+      }
+
+      & > :nth-child(11) {
+        width: 50%;
+        @include input-padding-left();
+      }
+
+      & > :nth-child(12) {
+        width: 100%;
+      }
+
+      & > :nth-child(13) {
+        width: 35%;
+        @include input-padding-right();
+      }
+
+      & > :nth-child(14) {
+        width: 35%;
+        @include input-padding-both();
+      }
+
+      & > :nth-child(15) {
+        width: 30%;
+        @include input-padding-left();
+      }
+
+      & > :nth-child(16) {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.i-radio {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background: url("../../../assets/images/components/radio/blue.png") no-repeat;
+  border: none;
+  cursor: pointer;
+  background-position: -88px 0;
+  &__label{
+    display: inline;
+    padding-left: 24px;
+    color: #686b6d;
+
+  }
+  &--checked {
+    background-position: -110px 0;
+  }
+  &--disabled {
+    background-position: -132px 0;
+    cursor: default;
+  }
+  &--checked-disabled {
+    background-position: -154px 0;
+  }
+}

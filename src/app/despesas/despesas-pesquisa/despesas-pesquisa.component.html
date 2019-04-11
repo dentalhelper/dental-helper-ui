@@ -1,13 +1,7 @@
 <div class="content">
-  <div class="header">
-    <h1 class="header__titulo">Despesas</h1>
-    <button type="button" class="header__botao-add header__botao-add--float" (click)="criarDespesa()">
-      <i class="fas fa-plus"></i>
-    </button>
-    <button id="add-despesa" type="button" class="header__botao-add header__botao-add--header" (click)="criarDespesa()">
-      Adicionar Despesa
-    </button>
-  </div>
+  <app-default-header titulo="Despesas" buttonId="add-despesa" buttonText="Adicionar Despesa"
+    (botaoClicado)="criarDespesa()">
+  </app-default-header>
 
   <div class="fieldset">
     <p-fieldset legend="Filtro" [toggleable]="isMobile()" [collapsed]="isMobile()">
@@ -47,11 +41,11 @@
   <div class="ui-g">
     <div class="ui-g-12">
       <p-table [value]="despesas" #tabela responsive="true" [paginator]="true" [rows]="20">
-          <ng-template pTemplate="caption">
-              <div style="display: flex; flex-direction: row-reverse;">
-                Total: {{total | currency: 'BRL' : 'symbol'}}
-              </div>
-          </ng-template>
+        <ng-template pTemplate="caption">
+          <div style="display: flex; flex-direction: row-reverse;">
+            Total: {{total | currency: 'BRL' : 'symbol'}}
+          </div>
+        </ng-template>
         <ng-template pTemplate="header">
           <tr>
             <th>Data de Pagamento</th>
