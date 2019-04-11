@@ -25,9 +25,11 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ProntuarioComponent } from './prontuario/prontuario.component';
 import { PacienteDadosComponent } from './paciente-dados/paciente-dados.component';
 import { AnamneseComponent } from './anamnese/anamnese.component';
+import { RgPipe } from '../pipes/rg.pipe';
 
 @NgModule({
   declarations: [
+    RgPipe,
     CpfPipe,
     TelefonePipe,
     ProntuarioComponent,
