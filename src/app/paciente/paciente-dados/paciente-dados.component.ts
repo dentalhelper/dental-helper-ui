@@ -100,6 +100,7 @@ export class PacienteDadosComponent implements OnInit {
     delete this.formularioDePaciente.value.codigoEstado;
     this.pacienteService.atualizar(this.formularioDePaciente.value, this.codigPaciente)
       .subscribe(() => {
+        this.pacienteService.updateHeader.next();
         const mensagemToast = `"O Paciente foi atualizado."`;
         this.toastService.exibirSucesso(mensagemToast);
       });
