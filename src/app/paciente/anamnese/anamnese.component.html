@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" [@linha]="activeTab">
   <div class="header">
     <h1 class="header__titulo">Anamnese</h1>
   </div>
@@ -10,7 +10,7 @@
           <div [formGroupName]="i" class="i-container__ref-container__group">
 
             <app-input-container [label]="questoes.at(i).get('descricao').value">
-              <p-selectButton [options]="respostas" formControlName="resposta" [style]="{'margin-bottom':'5px'}"
+              <p-selectButton [options]="respostas" formControlName="resposta" [style]="{'margin-bottom':'10px'}"
                 [required]="true">
               </p-selectButton>
               <input class="i-container__input" type="text" formControlName="informAdicionais"
