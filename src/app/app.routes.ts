@@ -23,5 +23,9 @@ export const ROUTES: Routes = [
     path: 'pacientes',
     loadChildren: './paciente/paciente.module#PacienteModule'
   },
+  {
+    path: 'agendamentos',
+    loadChildren: './agendamentos/agendamentos.module#AgendamentosModule'
+  },
 
 ];

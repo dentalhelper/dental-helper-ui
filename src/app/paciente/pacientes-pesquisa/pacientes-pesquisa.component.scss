@@ -36,3 +36,16 @@
     }
   }
 }
+
+@media screen and (min-width: 56.25em) {
+
+  .filtro {
+    &__group {
+      &__search {
+        &__input {
+          width: 330px;
+        }
+      }
+    }
+  }
+}
