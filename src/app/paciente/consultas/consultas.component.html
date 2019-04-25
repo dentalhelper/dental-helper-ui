@@ -1,0 +1,71 @@
+<div class="content" [@linha]="activeTab">
+  <app-default-header titulo="Consultas Agendadas" buttonId="add-consulta" buttonText="Agendar"
+    (botaoClicado)="agendarConsulta()">
+  </app-default-header>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [value]="consultas" #tabela responsive="true" [paginator]="true" [rows]="20">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Procedimento</th>
+            <th>Dentista</th>
+            <th>Agendado por</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-consulta>
+          <tr>
+            <td>
+              <!-- TODO: Model DTO de agendamento -->
+              <span class="ui-column-title">Data</span>
+              {{ "Data" }}
+            </td>
+            <td>
+              <span class="ui-column-title">Hora</span>
+              {{ "Hora" }}
+            </td>
+            <td>
+              <span class="ui-column-title">Procedimento</span>
+              {{ "Procedimento" }}
+            </td>
+            <td>
+              <span class="ui-column-title">Dentista</span>
+              {{ "Dentista" }}
+            </td>
+            <td>
+              <span class="ui-column-title">Agendado por</span>
+              {{ "Agendado por" }}
+            </td>
+            <td>
+              <span class="ui-column-title">Status</span>
+              {{ "Status" }}
+            </td>
+            <td>
+              <div class="operacoes">
+
+                <button type="button" class="operacoes__button operacoes__button--calendar" pTooltip="Agendar"
+                  tooltipPosition="top" (click)="alterarAgendamento()">
+                  <fa-icon [icon]="['fas', 'fa-calendar-alt']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="7">
+              Nenhuma Consulta marcada!<br />
+              <!-- TODO: Criar routerLink de agendamento -->
+              Clique <a [routerLink]="['/pacientes/novo']">AQUI</a> para Agendar.
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
