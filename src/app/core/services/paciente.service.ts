@@ -11,6 +11,7 @@ import { map } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
 
 import * as moment from 'moment';
+import { PacienteSelectComFotoDTO } from 'src/app/domains/dtos/paciente-select-com-foto.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,10 @@ export class PacienteService {
         return paciente;
       })
     );
+  }
+
+  buscarComFotoParaSelect(): Observable<PacienteSelectComFotoDTO[]> {
+    return this.http.get<PacienteSelectComFotoDTO[]>(`${this.PACIENTE_URL}/nome-foto`);
   }
 
   buscarAnamnese(codigo: number): Observable<PacienteAnamneseDTO> {
