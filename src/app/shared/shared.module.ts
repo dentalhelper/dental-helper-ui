@@ -12,6 +12,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faExclamation } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTrash, faEdit, faSearch, faCalendarDay } from '@fortawesome/free-solid-svg-icons';
+import { CalendarOptionsComponent } from './calendar-options/calendar-options.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -25,6 +26,7 @@ import { faTrash, faEdit, faSearch, faCalendarDay } from '@fortawesome/free-soli
     ButtonComponent,
     DefaultHeaderComponent,
     InputContainerComponent,
+    CalendarOptionsComponent,
   ],
   exports: [
     InputComponent,
@@ -33,6 +35,7 @@ import { faTrash, faEdit, faSearch, faCalendarDay } from '@fortawesome/free-soli
     FontAwesomeModule,
     DefaultHeaderComponent,
     InputContainerComponent,
+    CalendarOptionsComponent,
   ]
 })
 export class SharedModule {

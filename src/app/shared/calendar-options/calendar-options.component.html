@@ -1,0 +1,6 @@
+<div class="box" [ngClass]="{'menu-esconder' : !isOpen}">
+  <i class="far fa-times-circle box__close" (click)="isOpen = false; emitirAcaoDoBotao()"></i>
+  <p [ngStyle]="style">
+    calendar-options works!
+  </p>
+</div>
