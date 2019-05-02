@@ -4,9 +4,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 import { pt_BR } from 'src/app/shared/constants/calendario.br';
-import { CategoriaDespesaService } from 'src/app/core/services/categoria-despesa.service';
-import { DespesaService } from 'src/app/core/services/despesa.service';
 import { ToastService } from 'src/app/core/services/toast.service';
+import { DespesaService } from 'src/app/core/services/despesa.service';
+import { CategoriaDespesaService } from 'src/app/core/services/categoria-despesa.service';
 
 import { tap } from 'rxjs/operators';
 
@@ -30,12 +30,12 @@ export class DespesaCadastroComponent implements OnInit {
   ];
 
   constructor(
-    private categoriaDespesaService: CategoriaDespesaService,
-    private despesaService: DespesaService,
-    private toastService: ToastService,
-    private router: Router,
     private title: Title,
-    private route: ActivatedRoute
+    private router: Router,
+    private route: ActivatedRoute,
+    private toastService: ToastService,
+    private despesaService: DespesaService,
+    private categoriaDespesaService: CategoriaDespesaService,
   ) { }
 
   ngOnInit() {

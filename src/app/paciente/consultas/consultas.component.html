@@ -8,8 +8,8 @@
       <p-table [value]="consultas?.agendamentos" #tabela responsive="true" [paginator]="true" [rows]="20">
         <ng-template pTemplate="header">
           <tr>
-            <th>Data</th>
-            <th>Hora</th>
+            <th class="cell--small">Data</th>
+            <th class="cell--small">Hora</th>
             <th>Procedimento</th>
             <!-- TODO: DENTISTA E FUNCIONÁRIO
             <th>Dentista</th>
@@ -21,11 +21,11 @@
         </ng-template>
         <ng-template pTemplate="body" let-consulta>
           <tr>
-            <td>
+            <td class="cell--center">
               <span class="ui-column-title">Data</span>
               {{ consulta.dataAgendamento | date: 'dd/MM/yyyy'}}
             </td>
-            <td>
+            <td class="cell--center">
               <span class="ui-column-title">Hora</span>
               {{ consulta.horaInicio }}
             </td>
@@ -43,17 +43,18 @@
               {{ "Funcionário" }}
             </td>
             -->
-            <td>
+            <td class="cell--center">
               <span class="ui-column-title">Status</span>
-              <!-- TODO: ESTILIZAR BADGE -->
-              <span>{{ consulta.statusAgendamento }}</span>
+              <span class="cell__badge"
+                [ngStyle]="{'backgroundColor': definirCorBadge(consulta.statusAgendamento)}">{{ consulta.statusAgendamento }}</span>
             </td>
             <td>
               <div class="operacoes">
 
-                <button type="button" class="operacoes__button operacoes__button--calendar" pTooltip="Agendar"
-                  tooltipPosition="top" (click)="alterarAgendamento()">
-                  <fa-icon [icon]="['fas', 'fa-calendar-alt']" size="lg" [fixedWidth]="true"></fa-icon>
+                <button type="button" class="operacoes__button operacoes__button--edit"
+                  [routerLink]="['/agendamentos', consulta.codigoAgendamento, 'edit']" pTooltip="Editar"
+                  tooltipPosition="top">
+                  <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
 
                 <button type="button" class="operacoes__button operacoes__button--delete"
@@ -67,9 +68,8 @@
         </ng-template>
         <ng-template pTemplate="emptymessage">
           <tr>
-            <td colspan="7">
+            <td colspan="5">
               Nenhuma Consulta marcada!<br />
-              <!-- TODO: Criar routerLink de agendamento -->
               Clique <a [routerLink]="['/agendamentos/novo']">AQUI</a> para Agendar.
             </td>
           </tr>

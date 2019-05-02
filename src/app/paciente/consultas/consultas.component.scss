@@ -1,0 +1,14 @@
+.cell{
+  &--center{
+    text-align: center;
+  }
+  &--small{
+    width: 120px;
+  }
+  &__badge{
+    background-color: red;
+    padding: 3px 12px;
+    border-radius: 5px;
+    color: #ffffff;
+  }
+}

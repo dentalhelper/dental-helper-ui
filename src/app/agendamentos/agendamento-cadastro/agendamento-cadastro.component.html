@@ -23,7 +23,7 @@
           <p-dropdown [options]="pacientes" placeholder="Selecione" emptyFilterMessage="Paciente não encontrado!"
             inputId="paciente" formControlName="codigoPaciente" [required]="true" [filter]="!isMobile()"
             [style]="{'width': '100%', 'margin-bottom':'20px', 'border-top-right-radius' : '0', 'border-bottom-right-radius' : '0'}"
-            (onChange)="pacienteSelecionado($event.value)">
+            (onChange)="pacienteSelecionado($event.value)" [disabled]="isEditando">
 
             <ng-template let-paciente pTemplate="item">
               <div class="ui-helper-clearfix" style="position: relative;height: 50px;">
@@ -33,7 +33,7 @@
             </ng-template>
           </p-dropdown>
           <button type="button" class="paciente-group__button" (click)="novoPaciente()" pTooltip="Cadastrar Paciente"
-            tooltipPosition="bottom" *ngIf="!isMobile()">
+            tooltipPosition="bottom" *ngIf="!isMobile() && !isEditando">
             <i class="fas fa-plus"></i>
           </button>
         </div>
@@ -86,7 +86,13 @@
         </app-input-container>
       </div>
 
-      <app-button label="Salvar" icon="fas fa-calendar-check" iconPosition="right"
+      <app-input-container label="Status da consulta" [dropdown]="true" *ngIf="isEditando">
+        <p-selectButton [options]="statusAgendamento" formControlName="statusAgendamento"
+          [style]="{'margin-bottom':'20px'}" inputId="status" [required]="true">
+        </p-selectButton>
+      </app-input-container>
+
+      <app-button label="{{isEditando ? 'Atualizar': 'Salvar'}}" icon="fas fa-calendar-check" iconPosition="right"
         [classes]="['botao--success', isMobile() ? 'botao--full':'botao--grande']" [desativar]="formulario.invalid"
         (botaoClicado)="[submeterFormulario()]">
       </app-button>
@@ -181,7 +187,6 @@
       </app-input-container>
 
     </div>
-
 
     <div class="i-container__legend">
       <h2 class="i-container__legend__title">Contato</h2>

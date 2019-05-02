@@ -38,9 +38,10 @@ export class PacientesPesquisaComponent implements OnInit {
     });
   }
 
-  agendar() {
-    const mensagemToast = `"Operação não implementada."`;
-    this.toastService.exibirAviso(mensagemToast);
+  agendar(codigoPaciente:string) {
+    this.router.navigate([codigoPaciente, 'consultas'], {
+      relativeTo: this.route
+    });
   }
 
   inicializarFiltro() {

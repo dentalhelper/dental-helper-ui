@@ -1,18 +1,23 @@
 import { Location } from '@angular/common';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+
+import { pt_BR } from 'src/app/shared/constants/calendario.br';
+import { ToastService } from 'src/app/core/services/toast.service';
+import { EstadoService } from 'src/app/core/services/estado.service';
+import { NO_IMAGE_URL } from 'src/app/shared/constants/image.defeut';
+import { RadioOption } from 'src/app/shared/radio/radio-option.model';
 import { PacienteService } from 'src/app/core/services/paciente.service';
 import { EMAIL_PATTERN } from 'src/app/shared/constants/validators.regex';
-import { NO_IMAGE_URL } from 'src/app/shared/constants/image.defeut';
-import { pt_BR } from 'src/app/shared/constants/calendario.br';
-import { RadioOption } from 'src/app/shared/radio/radio-option.model';
-import { EstadoService } from 'src/app/core/services/estado.service';
-import { tap } from 'rxjs/operators';
-import { ToastService } from 'src/app/core/services/toast.service';
-import { ProcedimentoService } from 'src/app/core/services/procedimento.service';
 import { AgendamentoService } from 'src/app/core/services/agendamento.service';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { ProcedimentoService } from 'src/app/core/services/procedimento.service';
+
+import { tap } from 'rxjs/operators';
+
+import * as moment from 'moment';
 
 declare var $: any;
 @Component({
@@ -88,6 +93,8 @@ export class AgendamentoCadastroComponent implements OnInit {
   selecionado: string;
   sidebar: boolean;
   pt_BR = pt_BR;
+  edicao = false;
+  codigoAgendamento: number;
 
   estadosOptions = [];
   cidadesOptions = [];
@@ -105,9 +112,18 @@ export class AgendamentoCadastroComponent implements OnInit {
     { label: 'Masculino', value: 2 }
   ];
 
+  statusAgendamento = [
+    { label: 'Agendado', value: 1 },
+    { label: 'Confirmado', value: 2 },
+    { label: 'Finalizado', value: 3 },
+    { label: 'Faltou', value: 4 },
+    { label: 'Cancelado', value: 5 }
+  ];
+
   constructor(
     private title: Title,
     private location: Location,
+    private route: ActivatedRoute,
     private toastService: ToastService,
     private estadoService: EstadoService,
     private pacienteService: PacienteService,
@@ -121,7 +137,14 @@ export class AgendamentoCadastroComponent implements OnInit {
     this.prepararFormularioDePaciente();
     this.carregarPacientes();
     this.carregarProcedimentos();
-    this.title.setTitle('Nova Despesa');
+    this.title.setTitle('Nova Consulta');
+
+    const codigoAgendamento = this.route.snapshot.params['codigo'];
+    if (codigoAgendamento) {
+      this.edicao = true;
+      this.codigoAgendamento = codigoAgendamento;
+      this.carregarAgendamento(codigoAgendamento);
+    }
   }
 
   prepararFormulario() {
@@ -138,11 +161,12 @@ export class AgendamentoCadastroComponent implements OnInit {
         updateOn: 'change',
         validators: [Validators.required]
       }),
-      horaFim: new FormControl(''),
+      horaFim: new FormControl(null),
       codigoProcedimento: new FormControl('', {
         updateOn: 'change',
         validators: [Validators.required]
       }),
+      statusAgendamento: new FormControl(1),
       primeiraAvalicao: new FormControl(false),
       observacao: new FormControl('')
     },
@@ -186,13 +210,27 @@ export class AgendamentoCadastroComponent implements OnInit {
   }
 
   submeterFormulario() {
-    this.salvar();
+    if (this.isEditando) {
+      this.atualizar();
+    } else {
+      this.salvar();
+    }
   }
 
   salvar() {
     this.agendamentoService.salvar(this.formulario.value)
       .subscribe(() => {
+        this.voltar();
         const mensagemToast = `Consulta agendada!`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  atualizar() {
+    this.agendamentoService.atualizar(this.codigoAgendamento, this.formulario.value)
+      .subscribe(() => {
+        this.voltar();
+        const mensagemToast = `O Agendamento foi atualizado.`;
         this.toastService.exibirSucesso(mensagemToast);
       });
   }
@@ -263,13 +301,31 @@ export class AgendamentoCadastroComponent implements OnInit {
     });
   }
 
+  carregarAgendamento(codigo: number) {
+    this.agendamentoService.buscarPorCodigo(codigo)
+      .subscribe((response) => {
+        response.horaInicio = this.converterStringsParaDatas(response.horaInicio);
+        response.horaFim = this.converterStringsParaDatas(response.horaFim);
+        this.formulario.patchValue(response);
+        this.atualizarTituloDaPagina();
+        this.pacienteSelecionado(response.codigoPaciente);
+      });
+  }
+
+  converterStringsParaDatas(hora) {
+    return moment(hora, 'HH:mm').toDate();
+
+  }
   voltar() {
     this.location.back();
   }
 
+  atualizarTituloDaPagina() {
+    this.title.setTitle(`Editando Agendamento`);
+  }
+
   get isEditando(): boolean {
-    // TODO: iseditando
-    return false;
+    return this.edicao;
   }
 
   isMobile(): boolean {

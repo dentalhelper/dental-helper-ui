@@ -1,8 +1,8 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild, HostListener, OnDestroy } from '@angular/core';
 
 import { PacienteService } from 'src/app/core/services/paciente.service';
 import { AgendamentoService } from 'src/app/core/services/agendamento.service';
-import { ProcedimentoService } from 'src/app/core/services/procedimento.service';
 import { AgendamentoResumoDTO } from 'src/app/domains/dtos/agendamento-resumo.dto';
 
 import listPlugin from '@fullcalendar/list';
@@ -34,9 +34,9 @@ export class AgendamentoPesquisaComponent implements OnInit, OnDestroy {
   isOpen: boolean;
 
   constructor(
+    private router: Router,
     private pacienteService: PacienteService,
-    private agendamentoService: AgendamentoService,
-    private procedimentoService: ProcedimentoService,
+    private agendamentoService: AgendamentoService
   ) {
 
   }
@@ -58,14 +58,14 @@ export class AgendamentoPesquisaComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     window.removeEventListener('scroll', this.scroll, true);
-}
+  }
 
   closeMenu() {
     this.isOpen = false;
   }
 
   criarConsulta() {
-
+    this.router.navigate(['agendamentos/novo']);
   }
 
   carregarAgendamentos() {

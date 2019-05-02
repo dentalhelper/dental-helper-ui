@@ -11,8 +11,9 @@ import { DespesaFilter } from 'src/app/core/classes/despesa-filter';
 import { DespesaService } from 'src/app/core/services/despesa.service';
 import { CategoriaDespesaService } from 'src/app/core/services/categoria-despesa.service';
 
-import * as moment from 'moment';
 import { ConfirmationService } from 'primeng/api';
+
+import * as moment from 'moment';
 
 declare var $: any;
 @Component({
@@ -36,13 +37,13 @@ export class DespesasPesquisaComponent implements OnInit {
   filtro: DespesaFilter = new DespesaFilter();
 
   constructor(
-    private categoriaDespesaService: CategoriaDespesaService,
-    private despesaService: DespesaService,
-    private confirmationService: ConfirmationService,
-    private toastService: ToastService,
+    private title: Title,
     private router: Router,
     private route: ActivatedRoute,
-    private title: Title
+    private toastService: ToastService,
+    private despesaService: DespesaService,
+    private confirmationService: ConfirmationService,
+    private categoriaDespesaService: CategoriaDespesaService,
   ) { }
 
   ngOnInit() {
@@ -120,7 +121,7 @@ export class DespesasPesquisaComponent implements OnInit {
     this.despesas.forEach((d) => {
 
       this.total = d.valor;
-    })
+    });
   }
 
   isMobile(): boolean {

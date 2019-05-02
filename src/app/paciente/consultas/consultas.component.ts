@@ -5,11 +5,11 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 
 import { ToastService } from 'src/app/core/services/toast.service';
 import { PacienteService } from 'src/app/core/services/paciente.service';
-
-import { ConfirmationService } from 'primeng/api';
+import { AgendamentoService } from 'src/app/core/services/agendamento.service';
 import { PacienteAgendamentoDTO } from 'src/app/domains/dtos/paciente-agendamento.dto';
 import { AgendamentoResumoPacienteDTO } from 'src/app/domains/dtos/agendamento-resumo-paciente.dto';
-import { AgendamentoService } from 'src/app/core/services/agendamento.service';
+
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-consultas',
@@ -91,11 +91,7 @@ export class ConsultasComponent implements OnInit {
   }
 
   agendarConsulta() {
-
-  }
-
-  alterarAgendamento() {
-
+    this.router.navigate(['agendamentos/novo']);
   }
 
   deletar(codigoConsulta: any) {
@@ -108,7 +104,6 @@ export class ConsultasComponent implements OnInit {
   }
 
   confirmarExclusao(consulta: AgendamentoResumoPacienteDTO) {
-console.log(consulta);
     this.confirmationService.confirm({
       message: `Você tem certeza que quer excluir este agendamento?`,
       accept: () => {
@@ -128,5 +123,25 @@ console.log(consulta);
 
   atualizarTituloDaPagina() {
     this.title.setTitle(`Consultas`);
+  }
+
+  definirCorBadge(statusAgendamento: string): string {
+    switch (statusAgendamento) {
+      case 'Agendado': {
+        return '#116FBF';
+      }
+      case 'Confirmado': {
+        return '#cda86f';
+      }
+      case 'Finalizado': {
+        return '#56a83b';
+      }
+      case 'Faltou': {
+        return '#505050';
+      }
+      case 'Cancelado': {
+        return '#df1616';
+      }
+    }
   }
 }

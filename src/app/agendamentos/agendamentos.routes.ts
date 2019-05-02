@@ -11,5 +11,9 @@ export const AGENDAMENTO_ROUTES: Routes = [
   {
     path: 'novo',
     component: AgendamentoCadastroComponent
+  },
+  {
+    path: ':codigo/edit',
+    component: AgendamentoCadastroComponent
   }
 ];
