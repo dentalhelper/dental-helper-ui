@@ -65,6 +65,13 @@
         </label>
 
         <ul class="drop-down">
+          <li class="item-submenu" (click)="isOpen = !isOpen">
+            <a id="item-agendamentos" [routerLink]="['/agendamentos']" [routerLinkActiveOptions]="{exact: true}"
+              routerLinkActive="active">Calendário</a>
+          </li>
+        </ul>
+
+        <ul class="drop-down">
           <li class="last item-submenu" (click)="isOpen = !isOpen">
             <a id="item-agendamentos-cadastro" [routerLink]="['/agendamentos/novo']"
               routerLinkActive="active">Agendar</a>

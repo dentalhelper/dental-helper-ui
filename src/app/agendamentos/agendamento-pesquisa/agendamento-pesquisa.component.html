@@ -1,0 +1,17 @@
+<div class="content">
+  <app-default-header titulo="Agendamentos" buttonId="add-agendamento" buttonText="Marcar Consulta"
+    (botaoClicado)="criarConsulta()">
+  </app-default-header>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <full-calendar #calendar defaultView="dayGridMonth" [events]="calendario" [plugins]="calendarPlugins"
+        (dateClick)="handleDateClick($event)" [selectable]="true" locale="pt-br" allDayText="Dia todo"
+        nowIndicator="true" defaultDate="2019-05-01T12:30:00-05:00" (eventClick)="asa($event)"
+        [titleFormat]="{ year: 'numeric', month: 'long', day: 'numeric' }" [eventLimit]="true">
+      </full-calendar>
+    </div>
+  </div>
+</div>
+<app-calendar-options [ngStyle]="style" [isOpen]="isOpen" (menuFechado)="isOpen = false" *ngIf="isOpen">
+</app-calendar-options>
