@@ -30,7 +30,11 @@ export class AgendamentoService {
     return this.http.get<AgendamentoResumoDTO[]>(`${this.AGENDAMENTO_URL}`, { params: parametros });
   }
 
-  converterDataHoraParaString(hora: any): string {
+  deletar(codigo: string): Observable<string> {
+    return this.http.delete<string>(`${this.AGENDAMENTO_URL}/${codigo}`);
+  }
+
+  private converterDataHoraParaString(hora: any): string {
     return moment(hora).format('H:mm');
   }
 }

@@ -70,7 +70,7 @@ export class PacientesPesquisaComponent implements OnInit {
       message: `
       Você tem certeza que quer excluir "${paciente.nome}"?
       <br />
-      <strong>Todas as informações desse paciente será deletada permanentemente.</strong>`,
+      <strong>Todas as informações desse paciente serão deletadas permanentemente.</strong>`,
       accept: () => {
         this.deletar(paciente);
       }
