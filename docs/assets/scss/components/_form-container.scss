@@ -19,7 +19,7 @@
     }
   }
   &__label {
-    max-width: 400px;
+    max-width: 500px;
     @extend %label;
     padding-bottom: 3px;
     align-self: baseline;
@@ -27,6 +27,12 @@
     &__hint {
       @extend %hint;
       display: inline-block;
+    }
+  }
+
+  &__ref-container{
+    &__group{
+      padding-bottom: 18px;
     }
   }
 
