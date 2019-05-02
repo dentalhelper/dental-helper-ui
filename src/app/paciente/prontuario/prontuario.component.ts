@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PacienteNovoDTO } from 'src/app/domains/dtos/paciente-novo.dto';
 import { PacienteService } from 'src/app/core/services/paciente.service';
 import { NO_IMAGE_URL } from 'src/app/shared/constants/image.defeut';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-prontuario',
   templateUrl: './prontuario.component.html',
   styleUrls: ['./prontuario.component.scss']
 })
-export class ProntuarioComponent implements OnInit {
+export class ProntuarioComponent implements OnInit, OnDestroy {
 
+
+  private subscription: Subscription;
   paciente: PacienteNovoDTO;
   codigPaciente: number;
   imagem: Object = {};
@@ -21,7 +24,17 @@ export class ProntuarioComponent implements OnInit {
 
   ngOnInit() {
     this.codigPaciente = this.route.snapshot.params['codigo'];
+    this.subscription = this.pacienteService.updateHeader.subscribe(() => {
+      this.imagem = null;
+      this.carregarPacientePeloCodigo(this.codigPaciente);
+    });
     this.carregarPacientePeloCodigo(this.codigPaciente);
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   carregarPacientePeloCodigo(codigo: number) {

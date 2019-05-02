@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
-import { URL_API } from 'src/app/app.api';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { PacienteResumoDTO } from 'src/app/domains/dtos/paciente-resumo.dto';
-import { PacienteNovoDTO } from 'src/app/domains/dtos/paciente-novo.dto';
-import { map } from 'rxjs/operators';
-import * as moment from 'moment';
-import { PacienteAnamneseDTO } from 'src/app/domains/dtos/paciente-anamnese.dto';
+
+import { URL_API } from 'src/app/app.api';
 import { Anamnese } from 'src/app/domains/interfaces/anamnese.model';
+import { PacienteNovoDTO } from 'src/app/domains/dtos/paciente-novo.dto';
+import { PacienteResumoDTO } from 'src/app/domains/dtos/paciente-resumo.dto';
+import { PacienteAnamneseDTO } from 'src/app/domains/dtos/paciente-anamnese.dto';
+import { PacienteAgendamentoDTO } from 'src/app/domains/dtos/paciente-agendamento.dto';
+import { PacienteSelectComFotoDTO } from 'src/app/domains/dtos/paciente-select-com-foto.dto';
+
+import { map } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PacienteService {
+
+  updateHeader = new Subject<any>();
 
   PACIENTE_URL = `${URL_API}/pacientes`;
 
@@ -44,8 +51,16 @@ export class PacienteService {
     );
   }
 
+  buscarComFotoParaSelect(): Observable<PacienteSelectComFotoDTO[]> {
+    return this.http.get<PacienteSelectComFotoDTO[]>(`${this.PACIENTE_URL}/nome-foto`);
+  }
+
   buscarAnamnese(codigo: number): Observable<PacienteAnamneseDTO> {
     return this.http.get<PacienteAnamneseDTO>(`${this.PACIENTE_URL}/${codigo}/anamnese`);
+  }
+
+  buscarConsultas(codigo: number): Observable<PacienteAgendamentoDTO> {
+    return this.http.get<PacienteAgendamentoDTO>(`${this.PACIENTE_URL}/${codigo}/agendamentos`);
   }
 
   urlUploadImagem(): string {

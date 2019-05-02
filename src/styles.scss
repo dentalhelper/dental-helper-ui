@@ -9,7 +9,10 @@
 "assets/scss/components/form-container",
 "assets/scss/components/fieldset-filter-form",
 "assets/scss/components/tables";
-
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+@import '~@fullcalendar/list/main.css';
 body {
   margin: 0;
   font: 100%/1.4 "Roboto", sans-serif;
@@ -87,4 +90,8 @@ p {
 
 .has-error input[type="text"] {
   border-color: $erro;
+}
+
+div.fc-content{
+  cursor:pointer;
 }

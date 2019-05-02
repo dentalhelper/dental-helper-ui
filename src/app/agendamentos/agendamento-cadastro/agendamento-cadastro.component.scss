@@ -1,0 +1,187 @@
+@import "../../../assets/scss/cores";
+@import "../../../assets/scss/mixins";
+
+.form {
+  padding: 20px;
+}
+.foto-agenda {
+  display: none;
+}
+.overflow {
+  overflow: auto;
+  height: 100vh;
+}
+
+.paciente-group {
+  display: flex;
+  flex-direction: row;
+  &__button {
+    height: 33px;
+    border: 1px solid $sucesso;
+    border-radius: 0 2px 2px 0;
+    color: $branco;
+    background-color: $sucesso;
+    font-size: 1.2em;
+  }
+  & > :nth-child(1) {
+    width: 100%;
+  }
+}
+
+.i-container {
+  &__pessoais {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    & > :nth-child(1) {
+      width: 64%;
+      @include input-padding-right();
+    }
+
+    & > :nth-child(2) {
+      width: 36%;
+      @include input-padding-left();
+    }
+
+    & > :nth-child(3) {
+      width: 32%;
+      @include input-padding-right();
+    }
+
+    & > :nth-child(4) {
+      width: 32%;
+      @include input-padding-both();
+    }
+
+    & > :nth-child(5) {
+      width: 36%;
+      @include input-padding-left();
+    }
+
+    & > :nth-child(6) {
+      width: 100%;
+      @include input-padding-right();
+    }
+
+    & > :nth-child(7) {
+      width: 40%;
+      @include input-padding-right();
+    }
+  }
+  &__endereco {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    & > :nth-child(1) {
+      width: 65%;
+      @include input-padding-right();
+    }
+
+    & > :nth-child(2) {
+      width: 35%;
+      @include input-padding-left();
+    }
+
+    & > :nth-child(3) {
+      width: 65%;
+      @include input-padding-right();
+    }
+
+    & > :nth-child(4) {
+      width: 35%;
+      @include input-padding-left();
+    }
+
+    & > :nth-child(5) {
+      width: 50%;
+      @include input-padding-right();
+    }
+
+    & > :nth-child(6) {
+      width: 50%;
+      @include input-padding-left();
+    }
+  }
+  &__contato {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    & > :nth-child(1) {
+      width: 50%;
+      @include input-padding-right();
+    }
+
+    & > :nth-child(2) {
+      width: 50%;
+      @include input-padding-left();
+    }
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .foto-agenda {
+    display: block;
+  }
+  .paciente-group {
+    &__button {
+      cursor: pointer;
+      transition: all 0.2s linear;
+      &:hover {
+        background-color: darken($sucesso, 7);
+      }
+    }
+    & > :nth-child(1) {
+      max-width: 400px;
+    }
+  }
+
+  .form {
+    .i-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      &__hora {
+        flex-direction: row;
+        flex-wrap: wrap;
+        display: flex;
+        & > :nth-child(1) {
+          width: 200px;
+          @include input-padding-right();
+        }
+        & > :nth-child(2) {
+          width: 200px;
+          @include input-padding-left();
+        }
+      }
+      & > :nth-child(1) {
+        width: 100%;
+      }
+
+      & > :nth-child(2) {
+        width: 400px;
+      }
+      & > :nth-child(3) {
+        width: 100%;
+      }
+
+      & > :nth-child(4) {
+        width: 400px;
+      }
+      & > :nth-child(5) {
+        width: 100%;
+      }
+      & > :nth-child(6) {
+        width: 400px;
+      }
+      & > :nth-child(7) {
+        width: 100%;
+      }
+      & > :nth-child(8) {
+        width: 100%;
+      }
+    }
+  }
+}

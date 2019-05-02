@@ -48,8 +48,8 @@
       <div formGroupName="pagamento">
         <app-input-container label="Data do Pagamento" for="data-pagamento" errorMessage="Informe uma data.">
           <p-calendar [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100" [readonlyInput]="isMobile()"
-            inputId="data-pagamento" dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true" [yearNavigator]="true"
-            yearRange="2017:2027" formControlName="dataPagamento"
+            inputId="data-pagamento" dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true"
+            [yearNavigator]="true" yearRange="2017:2027" formControlName="dataPagamento"
             [style]="{'width': isMobile() ?'70%':'100%', 'margin-bottom':'20px'}">
           </p-calendar>
         </app-input-container>

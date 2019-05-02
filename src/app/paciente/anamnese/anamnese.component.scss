@@ -9,20 +9,23 @@
   border-radius: none;
 }
 
-.float-button{
+.float-button {
   position: fixed;
-	float: bottom;
-	bottom: 25px;
-	left: 90px;
-	z-index: 100;
+  float: bottom;
+  bottom: 25px;
+  right: 10px;
+  z-index: 100;
 }
 
 @media screen and (min-width: 56.25em) {
+  .float-button {
+    left: 90px;
+  }
+
   .form {
     padding-top: 30px;
     display: flex;
     flex-direction: column;
-
     align-items: center;
   }
 }

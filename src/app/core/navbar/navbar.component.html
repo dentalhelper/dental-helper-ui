@@ -10,6 +10,9 @@
       <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(pacientes)" pTooltip="Pacientes">
         <i class="fas fa-user-friends"></i>
       </div>
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(agendamentos)" pTooltip="Agendamentos">
+        <i class="fas fa-calendar-alt"></i>
+      </div>
       <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)" pTooltip="Finanças">
         <i class="fas fa-dollar-sign"></i>
       </div>
@@ -50,6 +53,28 @@
           <li class="last item-submenu" (click)="isOpen = !isOpen">
             <a id="item-paciente-cadastro" [routerLink]="['/pacientes/novo']" routerLinkActive="active"
               [routerLinkActiveOptions]="{exact: true}">Cadastrar</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="drop-down-menu">
+        <input type="checkbox" class="ativar" id="agendamentos" name="agendamentos" #agendamentos>
+        <label id="label-agendamentos" for="agendamentos" class="item-titulo top-menu">
+          <i class="fas fa-calendar-alt icon-esq"></i>
+          <div class="label-titulo">Agendamentos</div> <i id='arrow' class="fas fa-angle-right icon-dir"></i>
+        </label>
+
+        <ul class="drop-down">
+          <li class="item-submenu" (click)="isOpen = !isOpen">
+            <a id="item-agendamentos" [routerLink]="['/agendamentos']" [routerLinkActiveOptions]="{exact: true}"
+              routerLinkActive="active">Calendário</a>
+          </li>
+        </ul>
+
+        <ul class="drop-down">
+          <li class="last item-submenu" (click)="isOpen = !isOpen">
+            <a id="item-agendamentos-cadastro" [routerLink]="['/agendamentos/novo']"
+              routerLinkActive="active">Agendar</a>
           </li>
         </ul>
       </li>
