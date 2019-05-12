@@ -13,8 +13,10 @@ import { faExclamation } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTrash, faEdit, faSearch, faCalendarDay } from '@fortawesome/free-solid-svg-icons';
 import { CalendarOptionsComponent } from './calendar-options/calendar-options.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
+    RouterModule,
     CommonModule,
     FontAwesomeModule,
     ReactiveFormsModule,

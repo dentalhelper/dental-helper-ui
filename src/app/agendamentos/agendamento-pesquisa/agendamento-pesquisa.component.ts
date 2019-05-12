@@ -139,13 +139,12 @@ export class AgendamentoPesquisaComponent implements OnInit, OnDestroy {
     }));
   }
 
-  handleDateClick(event) {
-    console.log(event);
-    console.log('asdg');
+  handleDateClick(event: any) {
     this.isOpen = false;
+    this.router.navigate(['agendamentos/novo'], { fragment: event.date });
   }
 
-  abrirEvento(event) {
+  abrirEvento(event: any) {
     this.positionY = event.jsEvent.y;
     this.positionX = event.jsEvent.x;
     this.style = {
@@ -155,7 +154,6 @@ export class AgendamentoPesquisaComponent implements OnInit, OnDestroy {
       'left': `${this.positionX - 50}px`,
       'z-index': '99999999'
     };
-    console.log(event);
     this.isOpen = true;
     this.codigoPaciente = event.event.groupId;
     this.codigoAgendamento = event.event.id;
