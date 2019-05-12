@@ -14,12 +14,40 @@
   </div>
 
   <div class="legenda">
-    <fieldset>
-      <legend>Status</legend>
+    <fieldset class="legenda__group">
+      <legend class="legenda__group__title">
+        Status dos agendamentos
+      </legend>
+
+      <div class="legenda__group__status">
+        <div class="legenda__group__status__item">
+          <i class="fas fa-circle legenda__group__status__item__icon legenda__group__status__item__icon--agendado"></i>
+          <span class="legenda__group__status__item__name">Agendado</span>
+        </div>
+        <div class="legenda__group__status__item">
+          <i
+            class="fas fa-circle legenda__group__status__item__icon legenda__group__status__item__icon--confirmado"></i>
+          <span class="legenda__group__status__item__name">Confirmado</span>
+        </div>
+        <div class="legenda__group__status__item">
+          <i
+            class="fas fa-circle legenda__group__status__item__icon legenda__group__status__item__icon--finalizado"></i>
+          <span class="legenda__group__status__item__name">Finalizado</span>
+        </div>
+        <div class="legenda__group__status__item">
+          <i class="fas fa-circle legenda__group__status__item__icon legenda__group__status__item__icon--cancelado"></i>
+          <span class="legenda__group__status__item__name">Cancelado</span>
+        </div>
+        <div class="legenda__group__status__item">
+          <i class="fas fa-circle legenda__group__status__item__icon legenda__group__status__item__icon--faltou"></i>
+          <span class="legenda__group__status__item__name">Faltou</span>
+        </div>
+      </div>
     </fieldset>
   </div>
 </div>
 
-<app-calendar-options [ngStyle]="style" [isOpen]="isOpen" (menuFechado)="isOpen = false" (statusAtualizado)="carregarAgendamentos()" *ngIf="isOpen"
-  [codigoPaciente]="codigoPaciente" [codigoAgendamento]="codigoAgendamento" [@linha]="activeTab">
+<app-calendar-options [ngStyle]="style" [isOpen]="isOpen" (menuFechado)="isOpen = false"
+  (statusAtualizado)="carregarAgendamentos()" *ngIf="isOpen" [codigoPaciente]="codigoPaciente"
+  [codigoAgendamento]="codigoAgendamento" [@linha]="activeTab">
 </app-calendar-options>

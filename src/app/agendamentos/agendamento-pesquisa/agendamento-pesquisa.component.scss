@@ -1,0 +1,52 @@
+.legenda {
+  padding: 5px 0 15px 0;
+  display: flex;
+  justify-content: center;
+
+  &__group {
+    border: 1px solid #c8c8c8;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    border-color: #c8c8c8;
+
+    &__title {
+      color: #757575;
+      border: 1px solid #c8c8c8;
+      padding: 3px 5px;
+      border-radius: 5px;
+      margin: 0 auto;
+    }
+
+    &__status {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      &__item {
+        &__icon {
+          padding-right: 3px;
+          &--agendado {
+            color: #116fbf;
+          }
+          &--confirmado {
+            color: #cda86f;
+          }
+          &--finalizado {
+            color: #56a83b;
+          }
+          &--cancelado {
+            color: #df1616;
+          }
+          &--faltou {
+            color: #505050;
+          }
+        }
+
+        &__name {
+          padding-right: 7px;
+          color: #777777;
+        }
+      }
+    }
+  }
+}
