@@ -10,17 +10,70 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timegridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { FullCalendarComponent } from '@fullcalendar/angular';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+
 
 @Component({
   selector: 'app-agendamento-pesquisa',
   templateUrl: './agendamento-pesquisa.component.html',
-  styleUrls: ['./agendamento-pesquisa.component.scss']
+  styleUrls: ['./agendamento-pesquisa.component.scss'],
+  animations: [
+    trigger('linha', [
+      state('pronto', style({
+        opacity: 1
+      })),
+      transition('void => pronto',
+        animate('300ms 0s ease-in',
+          keyframes([
+            style({
+              opacity: 0,
+              transform: 'translateY(-20px)',
+              offset: 0
+            }),
+            style({
+              opacity: 0.8,
+              transform: 'translateY(-10px)',
+              offset: 0.8
+            }),
+            style({
+              opacity: 1,
+              transform: 'translateY(0px)',
+              offset: 1
+            })
+          ]))
+      ),
+      transition('pronto => void',
+        animate('200ms 0s ease-out',
+          keyframes([
+            style({
+              opacity: 1,
+              transform: 'translateY(0px)',
+              offset: 0
+            }),
+            style({
+              opacity: 0.8,
+              transform: 'translateY(-10px)',
+              offset: 0.5
+            }),
+            style({
+              opacity: 0.2,
+              transform: 'translateY(-20px)',
+              offset: 1
+            })
+          ]))
+      )
+    ])
+  ]
 })
 export class AgendamentoPesquisaComponent implements OnInit, OnDestroy {
+
+  activeTab = 'pronto';
 
   @ViewChild('calendar') calendarComponent: FullCalendarComponent;
 
   agendamentos: AgendamentoResumoDTO[] = [];
+  codigoPaciente: number;
+  codigoAgendamento: number;
 
   calendario = [];
 
@@ -80,7 +133,9 @@ export class AgendamentoPesquisaComponent implements OnInit, OnDestroy {
       title: elemento.nomePaciente,
       start: `${elemento.dataAgendamento}T${elemento.horaInicio}`,
       end: `${elemento.dataAgendamento}T${elemento.horaFim}`,
-      color: this.definirCor(elemento.statusAgendamento)
+      color: this.definirCor(elemento.statusAgendamento),
+      groupId: elemento.codigoPaciente,
+      id: elemento.codigoAgendamento
     }));
   }
 
@@ -90,7 +145,7 @@ export class AgendamentoPesquisaComponent implements OnInit, OnDestroy {
     this.isOpen = false;
   }
 
-  asa(event) {
+  abrirEvento(event) {
     this.positionY = event.jsEvent.y;
     this.positionX = event.jsEvent.x;
     this.style = {
@@ -100,7 +155,11 @@ export class AgendamentoPesquisaComponent implements OnInit, OnDestroy {
       'left': `${this.positionX - 50}px`,
       'z-index': '99999999'
     };
+    console.log(event);
     this.isOpen = true;
+    this.codigoPaciente = event.event.groupId;
+    this.codigoAgendamento = event.event.id;
+    this.agendamentoService.updateEvent.next(event.event.id);
   }
 
   buscarPaciente(codigo: any): string {
@@ -155,8 +214,14 @@ export class AgendamentoPesquisaComponent implements OnInit, OnDestroy {
       startTime: '09:00',
       endTime: '14:00'
     }];
+    this.calendarComponent.views = {
+      dayGrid: {
+        eventLimit: 4
+      }
+    };
     this.calendarComponent.hiddenDays = [0];
     this.calendarComponent.noEventsMessage = 'Sem consultas agendadas.';
     this.calendarComponent.height = 'parent';
+    this.calendarComponent.aspectRatio = 2.5;
   }
 }

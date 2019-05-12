@@ -1,4 +1,5 @@
 export interface AgendamentoResumoDTO {
+  codigoAgendamento: number;
   codigoPaciente: number;
   codigoProcedimento: number;
   dataAgendamento: string;

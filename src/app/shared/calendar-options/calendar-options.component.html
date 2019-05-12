@@ -1,6 +1,19 @@
 <div class="box" [ngClass]="{'menu-esconder' : !isOpen}">
   <i class="far fa-times-circle box__close" (click)="isOpen = false; emitirAcaoDoBotao()"></i>
-  <p [ngStyle]="style">
-    calendar-options works!
-  </p>
+
+  <ul class="box__menu">
+    <li class="box__menu__group" [routerLink]="['/pacientes', codigoPaciente, 'consultas']">
+      <i class="fas fa-id-card box__menu__group__icon"></i>
+      <a>Paciente</a>
+    </li>
+    <li class="box__menu__group" [routerLink]="['/agendamentos', codigoAgendamento, 'edit']">
+      <i class="fas fa-calendar-alt box__menu__group__icon" style="width: 25.31px;"></i>
+      <a>Alterar</a>
+    </li>
+
+    <li class="box__menu__group" *ngFor="let item of status" (click)="atualizarStatus(item)" >
+      <i class="fas fa-square box__menu__group__icon" [ngStyle]="{'width': '25.31px', 'color': item.color}"></i>
+      <a>{{item.label}}</a>
+    </li>
+  </ul>
 </div>

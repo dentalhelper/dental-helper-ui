@@ -7,11 +7,19 @@
     <div class="ui-g-12">
       <full-calendar #calendar defaultView="dayGridMonth" [events]="calendario" [plugins]="calendarPlugins"
         (dateClick)="handleDateClick($event)" [selectable]="true" locale="pt-br" allDayText="Dia todo"
-        nowIndicator="true" defaultDate="2019-05-01T12:30:00-05:00" (eventClick)="asa($event)"
+        nowIndicator="true" defaultDate="2019-05-01T12:30:00-05:00" (eventClick)="abrirEvento($event)"
         [titleFormat]="{ year: 'numeric', month: 'long', day: 'numeric' }" [eventLimit]="true">
       </full-calendar>
     </div>
   </div>
+
+  <div class="legenda">
+    <fieldset>
+      <legend>Status</legend>
+    </fieldset>
+  </div>
 </div>
-<app-calendar-options [ngStyle]="style" [isOpen]="isOpen" (menuFechado)="isOpen = false" *ngIf="isOpen">
+
+<app-calendar-options [ngStyle]="style" [isOpen]="isOpen" (menuFechado)="isOpen = false" (statusAtualizado)="carregarAgendamentos()" *ngIf="isOpen"
+  [codigoPaciente]="codigoPaciente" [codigoAgendamento]="codigoAgendamento" [@linha]="activeTab">
 </app-calendar-options>
