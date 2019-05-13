@@ -133,6 +133,11 @@ button {
   width: 100%;
 }
 
+.botao--badge {
+  padding: 3px 12px;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 56.25em) {
   button {
     &:hover {

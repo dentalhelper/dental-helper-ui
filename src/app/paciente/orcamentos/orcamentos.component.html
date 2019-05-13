@@ -1,0 +1,68 @@
+<div class="content" [@linha]="activeTab">
+  <app-default-header titulo="Orçamentos" buttonId="add-orcamento" buttonText="Criar Orçamento"
+    (botaoClicado)="criarOrcamento()">
+  </app-default-header>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [value]="orcamentos" #tabela responsive="true" [paginator]="true" [rows]="20">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-orcamento>
+          <tr>
+            <td class="cell--center">
+              <span class="ui-column-title">Data</span>
+              {{ orcamento.dataOrcamento | date: 'dd/MM/yyyy' }}
+            </td>
+
+            <td class="cell--center">
+              <span class="ui-column-title">Valor</span>
+              {{ orcamento.valorTotal | currency: 'BRL' : 'symbol' }}
+            </td>
+
+            <td class="cell--center">
+              <span class="ui-column-title">Status</span>
+              <span class="cell__badge cell__badge--success" *ngIf="orcamento.aprovado; else botaoAprovar">
+                APROVADO
+              </span>
+
+              <ng-template #botaoAprovar>
+                <app-button label="Aprovar" (botaoClicado)="[aprovar()]"
+                  [classes]="['ui-button-secondary', 'botao--badge']">
+                </app-button>
+              </ng-template>
+            </td>
+
+            <td>
+              <div class="operacoes">
+                <button type="button" class="operacoes__button operacoes__button--edit" pTooltip="Visualizar"
+                  tooltipPosition="top" *ngIf="orcamento.aprovado; else botaoVer">
+                  <fa-icon [icon]="['fas', 'search']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+
+                <ng-template #botaoVer>
+                  <button type="button" class="operacoes__button operacoes__button--edit" pTooltip="Editar"
+                    tooltipPosition="top">
+                    <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
+                  </button>
+                </ng-template>
+
+                <button type="button" class="operacoes__button operacoes__button--delete" pTooltip="Excluir"
+                  tooltipPosition="top">
+                  <fa-icon [icon]="['fas', 'trash']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

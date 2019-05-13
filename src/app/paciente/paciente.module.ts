@@ -27,6 +27,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { NgxMaskModule } from 'ngx-mask';
+import { OrcamentosComponent } from './orcamentos/orcamentos.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NgxMaskModule } from 'ngx-mask';
     PacienteDadosComponent,
     PacienteCadastroComponent,
     PacientesPesquisaComponent,
+    OrcamentosComponent,
   ],
   imports: [
     TableModule,

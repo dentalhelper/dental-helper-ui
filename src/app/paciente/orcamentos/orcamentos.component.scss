@@ -1,0 +1,19 @@
+@import "../../../assets/scss/cores";
+
+.cell{
+  &--center{
+    text-align: center;
+  }
+  &--small{
+    width: 120px;
+  }
+  &__badge{
+    padding: 2px 12px;
+    border-radius: 5px;
+    color: $branco;
+
+    &--success{
+      background-color: $sucesso;
+    }
+  }
+}
