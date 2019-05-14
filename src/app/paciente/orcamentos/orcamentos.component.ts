@@ -89,7 +89,7 @@ export class OrcamentosComponent implements OnInit {
   }
 
   criarOrcamento() {
-
+    this.router.navigate(['orcamentos/novo']);
   }
 
   carregarOrcamentos() {
