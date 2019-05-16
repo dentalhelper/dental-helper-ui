@@ -8,4 +8,73 @@
       Cancelar
     </button>
   </div>
+
+  <div class="form">
+    <form novalidate [formGroup]="formulario" class="i-container">
+
+      <div>
+        <div class="i-container__item" formArrayName="procedimentos"
+          *ngFor="let procedimento of formData.controls; let i = index;">
+          <div [formGroupName]="i">
+
+            <div class="i-container__item__procedimento">
+              <app-input-container label="Procedimento" errorMessage="Procedimento é obrigatório." [dropdown]="true">
+
+                <p-dropdown [options]="procedimentosOptions" placeholder="Selecione" [filter]="!isMobile()"
+                  emptyFilterMessage="Procedimento não encontrado!" formControlName="codigo"
+                  [style]="{'width': '100%', 'margin-bottom':'20px'}" (onChange)="aplicarValor($event.value, i)">
+                </p-dropdown>
+              </app-input-container>
+            </div>
+
+            <div class="i-container__item__button-group">
+              <div class="i-container__item__button-group__valor">
+                <app-input-container label="Valor" *ngIf="temValor(i)" [dropdown]="true">
+                  <input class="i-container__input" type="text" currencyMask formControlName="valor"
+                    (keyup)="calcularTotal()" />
+                </app-input-container>
+              </div>
+
+              <div class="i-container__item__button-group__button">
+                <app-button icon="fas fa-times" iconPosition="right" [classes]="['botao--danger', 'botao--grande']"
+                  (botaoClicado)="[removerProcedimento(i)]" pTooltip="Remover" tooltipPosition="top">
+                </app-button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="i-container__add-procedimento">
+          <app-button label="Adicionar procedimento" icon="fas fa-plus" iconPosition="right"
+            [classes]="['botao--padrao', isMobile() ? 'botao--full':'botao--grande']"
+            (botaoClicado)="[adicionarProcedimento()]">
+          </app-button>
+        </div>
+      </div>
+
+      <div class="i-container__resumo-box">
+        <div class="i-container__resumo-box__desconto">
+          <app-input-container label="Desconto" for="desconto" [dropdown]="true">
+            <input class="i-container__input" type="text" currencyMask id="desconto" formControlName="desconto"
+              (keyup)="aplicarDesconto()" (blur)="aplicarDesconto()">
+          </app-input-container>
+        </div>
+
+        <div class="i-container__resumo-box__valor">
+          <h1 style="color: #686b6d">Total:
+            <span class="i-container__resumo-box__valor__real">{{total | currency: 'BRL' : 'symbol'}}</span>
+          </h1>
+
+          <div class="i-container__resumo-box__valor__botao">
+            <app-button label="Salvar Orçamento" icon="fas fa-hdd" iconPosition="right"
+              [classes]="['botao--success', isMobile() ? 'botao--full':'botao--grande']"
+              (botaoClicado)="[submeterFormulario()]" [desativar]="formulario.invalid"
+              [pTooltip]="formulario.invalid ? 'Orçamento incompleto': ''" tooltipPosition="bottom">
+            </app-button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

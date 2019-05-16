@@ -5,5 +5,9 @@ export const ORCAMENTO_ROUTES: Routes = [
   {
     path: 'novo',
     component: OrcamentoCadastroComponent
+  },
+  {
+    path: ':codigo/edit',
+    component: OrcamentoCadastroComponent
   }
 ];

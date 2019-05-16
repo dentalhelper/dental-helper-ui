@@ -12,6 +12,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 
 import { NgxMaskModule } from 'ngx-mask';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NgxMaskModule } from 'ngx-mask';
     TooltipModule,
     DropdownModule,
     CalendarModule,
+    CurrencyMaskModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
     RouterModule.forChild(ORCAMENTO_ROUTES)

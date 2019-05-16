@@ -69,7 +69,7 @@ import { PacienteOrcamentoDTO } from 'src/app/domains/dtos/paciente-orcamento.dt
 export class OrcamentosComponent implements OnInit {
 
   activeTab = 'pronto';
-  codigPaciente: number;
+  codigPaciente: any;
 
   orcamentos: OrcamentoResumoDTO[];
 
@@ -89,7 +89,7 @@ export class OrcamentosComponent implements OnInit {
   }
 
   criarOrcamento() {
-    this.router.navigate(['orcamentos/novo']);
+    this.router.navigate(['orcamentos/novo'], { fragment: this.codigPaciente });
   }
 
   carregarOrcamentos() {
@@ -100,8 +100,45 @@ export class OrcamentosComponent implements OnInit {
       });
   }
 
-  aprovar(){
+  aprovar(codigoOrcamento: any) {
+    this.orcamentoService.atualizarStatus(codigoOrcamento).subscribe(() => {
+      this.carregarOrcamentos();
+      const mensagemToast = `"O Orçamento foi Aprovado."`;
+      this.toastService.exibirSucesso(mensagemToast);
+    });
+  }
 
+  confirmarAprovacao(codigoOrcamento: any) {
+    this.confirmationService.confirm({
+      header: `Aprovar Orçamento.`,
+      message: `Você tem certeza que quer aprovar este orçamento?
+      <br/>
+      <br/>
+      Após aprovar os procedimentos ficarão disponíveis na área de "Procedimentos"`,
+      accept: () => {
+        this.aprovar(codigoOrcamento);
+      }
+    });
+
+  }
+
+  deletar(codigoOrcamento: any) {
+    this.orcamentoService.deletar(codigoOrcamento)
+      .subscribe(() => {
+        this.carregarOrcamentos();
+        const mensagemToast = `"O Orçamento foi excluído."`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  confirmarExclusao(codigoOrcamento: any) {
+    this.confirmationService.confirm({
+      header: `Confirmar exclusão.`,
+      message: `Você tem certeza que quer excluir este orçamento?`,
+      accept: () => {
+        this.deletar(codigoOrcamento);
+      }
+    });
   }
 
   atualizarTituloDaPagina() {
