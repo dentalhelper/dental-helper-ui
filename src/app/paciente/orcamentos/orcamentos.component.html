@@ -43,7 +43,8 @@
             <td>
               <div class="operacoes">
                 <button type="button" class="operacoes__button operacoes__button--edit" pTooltip="Visualizar"
-                  tooltipPosition="top" *ngIf="orcamento.aprovado; else botaoVer">
+                  tooltipPosition="top" *ngIf="orcamento.aprovado; else botaoVer"
+                  (click)="visualizar(orcamento.codigoOrcamento, orcamento.dataOrcamento)">
                   <fa-icon [icon]="['fas', 'search']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
 
@@ -80,3 +81,40 @@
     </app-button>
   </p-footer>
 </p-confirmDialog>
+
+<p-sidebar [(visible)]="exibirModal" position="right" [baseZIndex]="0" [style]="{width:'40em', 'overflow': 'auto'}">
+  <div class="i-container__legend">
+    <h2 class="i-container__legend__title">Dados do Orçamento - {{ dataModal | date: 'dd/MM/yyyy' }}</h2>
+
+
+  </div>
+
+  <table class="o-table">
+    <thead class="o-table__head">
+      <tr class="o-table__head__row">
+        <th>Procedimento</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+
+    <tbody class="o-table__body">
+
+      <tr class="o-table__body__row" *ngFor="let procedimento of orcamentoModal?.procedimentos">
+        <td class="o-table__body__row__data o-table__body__row__data--left">{{procedimento.nome}}</td>
+        <td class="o-table__body__row__data o-table__body__row__data--right">
+          {{procedimento.valor| currency: 'BRL' : 'symbol'}}</td>
+      </tr>
+    </tbody>
+
+    <tfoot class="o-table__foot">
+      <tr class="o-table__foot__row o-table__foot__row--desconto">
+        <th>Desconto</th>
+        <td>{{ orcamentoModal?.desconto | currency: 'BRL' : 'symbol' }}</td>
+      </tr>
+      <tr class="o-table__foot__row o-table__foot__row--total">
+        <th>Total</th>
+        <td>{{orcamentoModal?.valorTotal | currency: 'BRL' : 'symbol'}}</td>
+      </tr>
+    </tfoot>
+  </table>
+</p-sidebar>

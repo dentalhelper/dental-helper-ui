@@ -1,4 +1,4 @@
-import { Procedimento } from '../procedimento.model';
+import { ProcedimentoPrevistoNovoDTO } from './procedimento-novo.dto';
 
 export interface OrcamentoNovoDTO {
   codigoOrcamento: number;
@@ -6,5 +6,6 @@ export interface OrcamentoNovoDTO {
   codPaciente: number;
   dataOrcamento: Date;
   aprovado: boolean;
-  procedimentos: Procedimento[];
+  desconto: number;
+  procedimentos: ProcedimentoPrevistoNovoDTO[];
 }

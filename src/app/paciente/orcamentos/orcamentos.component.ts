@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+
 import { ToastService } from 'src/app/core/services/toast.service';
 import { PacienteService } from 'src/app/core/services/paciente.service';
-import { ConfirmationService } from 'primeng/api';
+import { OrcamentoNovoDTO } from 'src/app/domains/dtos/orcamento-novo.dto';
 import { OrcamentoService } from 'src/app/core/services/orcamento.service';
 import { OrcamentoResumoDTO } from 'src/app/domains/dtos/orcamento-resumo.dto';
-import { PacienteOrcamentoDTO } from 'src/app/domains/dtos/paciente-orcamento.dto';
+
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-orcamentos',
@@ -68,6 +70,9 @@ import { PacienteOrcamentoDTO } from 'src/app/domains/dtos/paciente-orcamento.dt
 })
 export class OrcamentosComponent implements OnInit {
 
+  exibirModal: boolean;
+  orcamentoModal: OrcamentoNovoDTO;
+  dataModal: Date;
   activeTab = 'pronto';
   codigPaciente: any;
 
@@ -114,7 +119,7 @@ export class OrcamentosComponent implements OnInit {
       message: `Você tem certeza que quer aprovar este orçamento?
       <br/>
       <br/>
-      Após aprovar os procedimentos ficarão disponíveis na área de "Procedimentos"`,
+      Após aprovar, os procedimentos ficarão disponíveis na área de "Procedimentos"`,
       accept: () => {
         this.aprovar(codigoOrcamento);
       }
@@ -138,6 +143,14 @@ export class OrcamentosComponent implements OnInit {
       accept: () => {
         this.deletar(codigoOrcamento);
       }
+    });
+  }
+
+  visualizar(codigo: number, data: Date) {
+    this.exibirModal = true;
+    this.dataModal = data;
+    this.orcamentoService.buscarPorCodigo(codigo).subscribe((response) => {
+      this.orcamentoModal = response;
     });
   }
 

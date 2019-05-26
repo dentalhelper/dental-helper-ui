@@ -68,7 +68,6 @@ export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
     this.formulario = new FormGroup({
       aprovado: new FormControl(null),
       codPaciente: new FormControl(''),
-      dataOrcamento: new FormControl(new Date),
       desconto: new FormControl({ value: 0, disabled: true }, {
         updateOn: 'change'
       }

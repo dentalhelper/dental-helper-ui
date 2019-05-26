@@ -16,12 +16,14 @@ import { PacienteCadastroComponent } from './paciente-cadastro/paciente-cadastro
 import { PacientesPesquisaComponent } from './pacientes-pesquisa/pacientes-pesquisa.component';
 
 import { TableModule } from 'primeng/table';
+import { SidebarModule } from 'primeng/sidebar';
 import { TooltipModule } from 'primeng/tooltip';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { FieldsetModule } from 'primeng/fieldset';
 import { InputMaskModule } from 'primeng/inputmask';
 import { FileUploadModule } from 'primeng/fileupload';
+
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -36,16 +38,17 @@ import { OrcamentosComponent } from './orcamentos/orcamentos.component';
     TelefonePipe,
     AnamneseComponent,
     ConsultasComponent,
+    OrcamentosComponent,
     ProntuarioComponent,
     PacienteDadosComponent,
     PacienteCadastroComponent,
     PacientesPesquisaComponent,
-    OrcamentosComponent,
   ],
   imports: [
     TableModule,
     CommonModule,
     SharedModule,
+    SidebarModule,
     TooltipModule,
     DropdownModule,
     FieldsetModule,
