@@ -1,3 +1,44 @@
-<p>
-  pagamentos works!
-</p>
+<div class="content" [@linha]="activeTab">
+  <div class="header">
+    <h1 class="header__titulo">Pagamentos</h1>
+  </div>
+
+  <div class="summary">
+    <div class="summary__badge">
+      <div class="summary__badge__left summary__badge__left--success">
+        <div class="summary__badge__left__name">Valor pago</div>
+        <div class="summary__badge__left__value">100,00 R$</div>
+      </div>
+      <div class="summary__badge__right summary__badge__right--success">
+        <div class="summary__badge__right__icon">
+          <i class="fas fa-check"></i>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="summary__badge">
+      <div class="summary__badge__left summary__badge__left--warn">
+        <div class="summary__badge__left__name">Valor em aberto</div>
+        <div class="summary__badge__left__value">200,00 R$</div>
+      </div>
+      <div class="summary__badge__right summary__badge__right--warn">
+        <div class="summary__badge__right__icon">
+          <i class="fas fa-exclamation"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary__badge">
+      <div class="summary__badge__left summary__badge__left--primary">
+        <div class="summary__badge__left__name">Total</div>
+        <div class="summary__badge__left__value">300,00 R$</div>
+      </div>
+      <div class="summary__badge__right summary__badge__right--primary">
+        <div class="summary__badge__right__icon">
+          <i class="fas fa-money-bill-wave"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
