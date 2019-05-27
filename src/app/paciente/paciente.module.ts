@@ -11,6 +11,8 @@ import { SharedModule } from '../shared/shared.module';
 import { AnamneseComponent } from './anamnese/anamnese.component';
 import { ConsultasComponent } from './consultas/consultas.component';
 import { ProntuarioComponent } from './prontuario/prontuario.component';
+import { OrcamentosComponent } from './orcamentos/orcamentos.component';
+import { PagamentosComponent } from './pagamentos/pagamentos.component';
 import { PacienteDadosComponent } from './paciente-dados/paciente-dados.component';
 import { PacienteCadastroComponent } from './paciente-cadastro/paciente-cadastro.component';
 import { PacientesPesquisaComponent } from './pacientes-pesquisa/pacientes-pesquisa.component';
@@ -23,13 +25,11 @@ import { CalendarModule } from 'primeng/calendar';
 import { FieldsetModule } from 'primeng/fieldset';
 import { InputMaskModule } from 'primeng/inputmask';
 import { FileUploadModule } from 'primeng/fileupload';
-
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { NgxMaskModule } from 'ngx-mask';
-import { OrcamentosComponent } from './orcamentos/orcamentos.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +40,7 @@ import { OrcamentosComponent } from './orcamentos/orcamentos.component';
     ConsultasComponent,
     OrcamentosComponent,
     ProntuarioComponent,
+    PagamentosComponent,
     PacienteDadosComponent,
     PacienteCadastroComponent,
     PacientesPesquisaComponent,
