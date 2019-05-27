@@ -10,15 +10,64 @@ import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@ang
 import { pt_BR } from 'src/app/shared/constants/calendario.br';
 import { Procedimento } from 'src/app/domains/procedimento.model';
 import { OrcamentoService } from 'src/app/core/services/orcamento.service';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 declare var $: any;
 @Component({
   selector: 'app-orcamento-cadastro',
   templateUrl: './orcamento-cadastro.component.html',
-  styleUrls: ['./orcamento-cadastro.component.scss']
+  styleUrls: ['./orcamento-cadastro.component.scss'],
+  animations: [
+    trigger('linha', [
+      state('pronto', style({
+        opacity: 1
+      })),
+      transition('void => pronto',
+        animate('300ms 0s ease-in',
+          keyframes([
+            style({
+              opacity: 0,
+              transform: 'translateX(-30px)',
+              offset: 0
+            }),
+            style({
+              opacity: 0.8,
+              transform: 'translateX(-10px)',
+              offset: 0.8
+            }),
+            style({
+              opacity: 1,
+              transform: 'translateX(0px)',
+              offset: 1
+            })
+          ]))
+      ),
+      transition('pronto => void',
+        animate('300ms 0s ease-out',
+          keyframes([
+            style({
+              opacity: 1,
+              transform: 'translateX(0px)',
+              offset: 0
+            }),
+            style({
+              opacity: 0.8,
+              transform: 'translateX(-10px)',
+              offset: 0.2
+            }),
+            style({
+              opacity: 0,
+              transform: 'translateX(30px)',
+              offset: 1
+            })
+          ]))
+      )
+    ])
+  ]
 })
 export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
 
+  estadoDoItem = 'pronto';
   pt_BR = pt_BR;
   edicao = false;
   procedimentos: Procedimento[] = [];
@@ -147,7 +196,7 @@ export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
 
         // TODO: RESOLVER REFERENCIA DO PROCEDIMENTO
         for (let index = 0; index < this.items.length; index++) {
-          this.items.at(index).get('valor').setValue(response.procedimentos[index].valorBase);
+          this.items.at(index).get('valor').setValue(response.procedimentos[index].valor);
         }
         this.formulario.patchValue(response);
 

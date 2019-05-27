@@ -14,7 +14,7 @@
 
       <div>
         <div class="i-container__item" formArrayName="procedimentos"
-          *ngFor="let procedimento of formData.controls; let i = index;">
+          *ngFor="let procedimento of formData.controls; let i = index;" [@linha]="estadoDoItem">
           <div [formGroupName]="i">
 
             <div class="i-container__item__procedimento">
