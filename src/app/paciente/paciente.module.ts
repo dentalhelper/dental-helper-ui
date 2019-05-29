@@ -9,6 +9,7 @@ import { PACIENTE_ROUTES } from './pacientes.routes';
 import { TelefonePipe } from '../pipes/telefone.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { AnamneseComponent } from './anamnese/anamnese.component';
+import { StatusPagamentoPipe } from '../pipes/status-pagamento.pipe';
 import { ConsultasComponent } from './consultas/consultas.component';
 import { ProntuarioComponent } from './prontuario/prontuario.component';
 import { OrcamentosComponent } from './orcamentos/orcamentos.component';
@@ -30,14 +31,17 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { NgxMaskModule } from 'ngx-mask';
+import { ShortenPipe } from '../pipes/shorten.pipe';
 
 @NgModule({
   declarations: [
     RgPipe,
     CpfPipe,
+    ShortenPipe,
     TelefonePipe,
     AnamneseComponent,
     ConsultasComponent,
+    StatusPagamentoPipe,
     OrcamentosComponent,
     ProntuarioComponent,
     PagamentosComponent,

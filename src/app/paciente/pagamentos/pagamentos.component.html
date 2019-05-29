@@ -7,7 +7,7 @@
     <div class="summary__badge">
       <div class="summary__badge__left summary__badge__left--success">
         <div class="summary__badge__left__name">Valor pago</div>
-        <div class="summary__badge__left__value">100,00 R$</div>
+        <div class="summary__badge__left__value">{{ valorPago | currency: 'BRL' : 'symbol' }}</div>
       </div>
       <div class="summary__badge__right summary__badge__right--success">
         <div class="summary__badge__right__icon">
@@ -20,7 +20,7 @@
     <div class="summary__badge">
       <div class="summary__badge__left summary__badge__left--warn">
         <div class="summary__badge__left__name">Valor em aberto</div>
-        <div class="summary__badge__left__value">200,00 R$</div>
+        <div class="summary__badge__left__value">{{ valorEmAberto | currency: 'BRL' : 'symbol' }}</div>
       </div>
       <div class="summary__badge__right summary__badge__right--warn">
         <div class="summary__badge__right__icon">
@@ -32,13 +32,70 @@
     <div class="summary__badge">
       <div class="summary__badge__left summary__badge__left--primary">
         <div class="summary__badge__left__name">Total</div>
-        <div class="summary__badge__left__value">300,00 R$</div>
+        <div class="summary__badge__left__value">{{ valorTotal | currency: 'BRL' : 'symbol' }}</div>
       </div>
       <div class="summary__badge__right summary__badge__right--primary">
         <div class="summary__badge__right__icon">
           <i class="fas fa-money-bill-wave"></i>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [value]="pagamentos" #tabela responsive="true" [paginator]="true" [rows]="20">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Data de pagamento</th>
+            <th>Tratamento</th>
+            <th>Valor em aberto</th>
+            <th>Valor pago</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-pagamento>
+          <tr>
+            <td>
+              <span class="ui-column-title">Data</span>
+              {{ pagamento.dataPagamento | date: 'dd/MM/yyyy' }}
+            </td>
+            <td>
+              <span class="ui-column-title">Tratamentos</span>
+              <span [title]="pagamento.tratamentos">{{ pagamento.tratamentos | shorten:22 }}</span>
+            </td>
+            <td>
+              <span class="ui-column-title">Valor em aberto</span>
+              {{ pagamento.valorEmAberto | currency: 'BRL' : 'symbol' }}
+            </td>
+            <td>
+              <span class="ui-column-title">Valor pago</span>
+              {{ pagamento.valorPago | currency: 'BRL' : 'symbol' }}
+            </td>
+            <td class="cell--center">
+              <span class="ui-column-title">Status</span>
+              <span class="cell__badge cell__badge--success"
+                [ngClass]="{'cell__badge--success': pagamento.statusPagamento === 2,
+                'cell__badge--warn': pagamento.statusPagamento === 1,
+                'cell__badge--danger': pagamento.statusPagamento === 3}">
+                {{ pagamento.statusPagamento | statusPagamento }}
+              </span>
+            </td>
+            <td>
+
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="6">
+              Nenhum Pagamento registrado!
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
   </div>
 </div>

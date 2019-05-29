@@ -1,3 +1,31 @@
+@import "../../../assets/scss/cores";
+
+.cell {
+  &--center {
+    text-align: center;
+  }
+  &--small {
+    width: 120px;
+  }
+  &__badge {
+    padding: 2px 12px;
+    border-radius: 5px;
+    color: $branco;
+
+    &--success {
+      background-color: $sucesso;
+    }
+
+    &--warn {
+      background-color: $warn;
+    }
+
+    &--danger {
+      background-color: $danger;
+    }
+  }
+}
+
 .summary {
   width: 80%;
   margin: 20px auto;
@@ -22,7 +50,8 @@
       }
 
       &__value {
-        font-size: 1.5em;
+        text-align: right;
+        font-size: 1.6em;
         font-weight: bold;
         color: #ffffff;
         padding: 10px 10px 10px 10px;
@@ -43,8 +72,8 @@
 
     &__right {
       width: 30%;
-      height: 95px;
-      line-height: 95px;
+      height: 97px;
+      line-height: 97px;
       float: right;
       border-radius: 0 5px 5px 0;
 
