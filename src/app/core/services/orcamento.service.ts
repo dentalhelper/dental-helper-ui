@@ -54,6 +54,13 @@ export class OrcamentoService {
     return this.http.patch<string>(`${this.ORCAMENTO_URL}/${codigoOrcamento}`, { 'true': true });
   }
 
+  cancelar(codigoOrcamento: number): Observable<string> {
+    return this.http.patch<string>(`${this.ORCAMENTO_URL}/${codigoOrcamento}/pagamento`,
+      {
+        codigo: codigoOrcamento
+      });
+  }
+
   deletar(codigo: string): Observable<string> {
     return this.http.delete<string>(`${this.ORCAMENTO_URL}/${codigo}`);
   }
