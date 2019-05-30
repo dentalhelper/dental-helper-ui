@@ -31,5 +31,9 @@ export const ROUTES: Routes = [
     path: 'orcamentos',
     loadChildren: './orcamentos/orcamentos.module#OrcamentosModule'
   },
+  {
+    path: 'usuarios',
+    loadChildren: './usuarios/usuarios.module#UsuariosModule'
+  },
 
 ];

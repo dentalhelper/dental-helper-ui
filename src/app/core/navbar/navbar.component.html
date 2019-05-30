@@ -123,6 +123,12 @@
 
         <ul class="drop-down">
           <li class="item-submenu" (click)="isOpen = !isOpen">
+            <a id="usuarios" routerLinkActive="active" [routerLink]="['/usuarios']">Usuários</a>
+          </li>
+        </ul>
+
+        <ul class="drop-down">
+          <li class="item-submenu" (click)="isOpen = !isOpen">
             <a id="procetimentos" routerLinkActive="active" [routerLink]="['/procedimentos']">Procedimentos</a>
           </li>
         </ul>
