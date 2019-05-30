@@ -47,44 +47,64 @@
       <p-table [value]="pagamentos" #tabela responsive="true" [paginator]="true" [rows]="20">
         <ng-template pTemplate="header">
           <tr>
-            <th>Data de pagamento</th>
-            <th>Tratamento</th>
-            <th>Valor em aberto</th>
-            <th>Valor pago</th>
-            <th>Status</th>
-            <th></th>
+            <th class="cell--small">Pago em</th>
+            <th class="cell--adapt">Tratamento</th>
+            <th class="cell--large">Valor em aberto</th>
+            <th class="cell--large">Valor pago</th>
+            <th class="cell--medium">Status</th>
+            <th class="cell--medium"></th>
           </tr>
         </ng-template>
 
         <ng-template pTemplate="body" let-pagamento>
           <tr>
-            <td>
+            <td class="cell--center">
               <span class="ui-column-title">Data</span>
               {{ pagamento.dataPagamento | date: 'dd/MM/yyyy' }}
             </td>
             <td>
               <span class="ui-column-title">Tratamentos</span>
-              <span [title]="pagamento.tratamentos">{{ pagamento.tratamentos | shorten:22 }}</span>
+              <span [title]="pagamento.tratamentos">{{ pagamento.tratamentos | shorten:40 }}</span>
             </td>
-            <td>
+            <td class="cell--right">
               <span class="ui-column-title">Valor em aberto</span>
               {{ pagamento.valorEmAberto | currency: 'BRL' : 'symbol' }}
             </td>
-            <td>
+            <td class="cell--right">
               <span class="ui-column-title">Valor pago</span>
               {{ pagamento.valorPago | currency: 'BRL' : 'symbol' }}
             </td>
             <td class="cell--center">
               <span class="ui-column-title">Status</span>
-              <span class="cell__badge cell__badge--success"
-                [ngClass]="{'cell__badge--success': pagamento.statusPagamento === 2,
+              <span class="cell__badge cell__badge--success" [ngClass]="{'cell__badge--success': pagamento.statusPagamento === 2,
                 'cell__badge--warn': pagamento.statusPagamento === 1,
                 'cell__badge--danger': pagamento.statusPagamento === 3}">
                 {{ pagamento.statusPagamento | statusPagamento }}
               </span>
             </td>
             <td>
+              <div class="operacoes">
+                <div *ngIf="pagamento.statusPagamento !== 3" >
 
+                  <button type="button" class="operacoes__button operacoes__button--pay" pTooltip="Pagar"
+                    tooltipPosition="top" *ngIf="pagamento.statusPagamento === 1; else botaoCancelar"
+                    (click)="abrirModalPagamento(pagamento)">
+                    <fa-icon [icon]="['fas', 'money-bill']" size="lg" [fixedWidth]="true"></fa-icon>
+                  </button>
+
+                  <ng-template #botaoCancelar>
+                    <button type="button" class="operacoes__button operacoes__button--cancel" pTooltip="Cancelar"
+                      tooltipPosition="top" (click)="confirmarCancelamento(pagamento.codigoOrcamento)">
+                      <fa-icon [icon]="['fas', 'window-close']" size="lg" [fixedWidth]="true"></fa-icon>
+                    </button>
+                  </ng-template>
+                </div>
+
+                <button type="button" class="operacoes__button operacoes__button--check" pTooltip="Visualizar"
+                  tooltipPosition="top" (click)="visualizar()">
+                  <fa-icon [icon]="['fas', 'clipboard-list']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+              </div>
             </td>
           </tr>
         </ng-template>
@@ -99,3 +119,69 @@
     </div>
   </div>
 </div>
+
+<p-dialog [(visible)]="exibirModal" modal="true" #modal (onHide)="resetarFormulario()">
+  <p-header>
+    <span [title]="pagamentoModal?.tratamentos" *ngIf="pagamentoModal">
+      Pagar: {{ pagamentoModal?.tratamentos | shorten:25 }}
+    </span>
+  </p-header>
+  <div>
+    <p-selectButton [options]="pagamentoOptions" [style]="{'margin':'10px 0'}" inputId="opcao-pagamento"
+      [(ngModel)]="opcaoDePagamento" (onChange)="alterarModoPagamento()">
+    </p-selectButton>
+    <hr />
+
+    <h2 style="color: #686b6d; margin: 10px 0 13px 0;">
+      Valor Total
+      <br />
+      <span style="color: #b63616; font-size: 1.2em">
+        {{ pagamentoModal?.valorEmAberto | currency: 'BRL' : 'symbol' }}
+      </span>
+    </h2>
+
+    <form novalidate [formGroup]="formulario" class="i-container">
+
+      <app-input-container label="Valor do pagamento" for="valor" errorMessage="Valor é obrigatório."
+        *ngIf="opcaoDePagamento === 2">
+        <input class="i-container__input" type="text" id="valor" currencyMask formControlName="valor">
+      </app-input-container>
+
+      <app-input-container label="Data do pagamento" for="data-pagamento" errorMessage="Informe uma data.">
+        <p-calendar [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100" [readonlyInput]="isMobile()"
+          [appendTo]="modal" inputId="data-pagamento" dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true"
+          [yearNavigator]="true" yearRange="2019:2025" formControlName="dataPagamento"
+          [style]="{'width': isMobile() ?'70%':'100%', 'margin-bottom':'20px'}">
+        </p-calendar>
+      </app-input-container>
+
+      <p-selectButton [options]="formasDePagamento" [style]="{'margin-bottom':'20px'}" inputId="formas-pagamento"
+        formControlName="forma">
+      </p-selectButton>
+    </form>
+
+
+  </div>
+  <p-footer>
+    <app-button label="Pagar" icon="fas fa-hand-holding-usd" iconPosition="right" (botaoClicado)="[salvarPagamento()]"
+      [classes]="['botao--success']">
+    </app-button>
+
+    <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[fecharModal()]"
+      [classes]="['ui-button-secondary']">
+    </app-button>
+  </p-footer>
+</p-dialog>
+
+
+<p-confirmDialog #confirmDialog icon="pi pi-exclamation-triangle">
+  <p-footer>
+    <app-button label="Confirmar" icon="fas fa-trash" iconPosition="right" (botaoClicado)="[confirmDialog.accept()]"
+      [classes]="['botao--success']">
+    </app-button>
+
+    <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[confirmDialog.reject()]"
+      [classes]="['ui-button-secondary']">
+    </app-button>
+  </p-footer>
+</p-confirmDialog>

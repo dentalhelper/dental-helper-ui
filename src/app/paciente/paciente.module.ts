@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { RgPipe } from '../pipes/rg.pipe';
 import { CpfPipe } from '../pipes/cpf.pipe';
@@ -19,6 +19,7 @@ import { PacienteCadastroComponent } from './paciente-cadastro/paciente-cadastro
 import { PacientesPesquisaComponent } from './pacientes-pesquisa/pacientes-pesquisa.component';
 
 import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/dialog';
 import { SidebarModule } from 'primeng/sidebar';
 import { TooltipModule } from 'primeng/tooltip';
 import { DropdownModule } from 'primeng/dropdown';
@@ -32,6 +33,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { NgxMaskModule } from 'ngx-mask';
 import { ShortenPipe } from '../pipes/shorten.pipe';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 @NgModule({
   declarations: [
@@ -51,8 +53,10 @@ import { ShortenPipe } from '../pipes/shorten.pipe';
   ],
   imports: [
     TableModule,
+    FormsModule,
     CommonModule,
     SharedModule,
+    DialogModule,
     SidebarModule,
     TooltipModule,
     DropdownModule,
@@ -60,6 +64,7 @@ import { ShortenPipe } from '../pipes/shorten.pipe';
     CalendarModule,
     InputMaskModule,
     FileUploadModule,
+    CurrencyMaskModule,
     SelectButtonModule,
     ReactiveFormsModule,
     ConfirmDialogModule,
