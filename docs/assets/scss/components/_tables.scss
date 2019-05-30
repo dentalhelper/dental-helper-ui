@@ -10,6 +10,13 @@
     color: #499ddd;
     cursor: pointer;
     transition: all 0.1s linear;
+    &:disabled {
+      cursor: not-allowed;
+      color: $erro-disabled;
+      &:hover {
+        color: rgba(185, 113, 108, 0.815);
+      }
+    }
     &--edit {
     }
     &--delete {
@@ -17,6 +24,12 @@
     &--search {
     }
     &--calendar {
+    }
+    &--pay {
+    }
+    &--cancel {
+    }
+    &--check {
     }
   }
 }
