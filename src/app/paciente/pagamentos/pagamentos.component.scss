@@ -1,0 +1,117 @@
+@import "../../../assets/scss/cores";
+
+.cell {
+  &--center {
+    text-align: center;
+  }
+  &--right {
+    text-align: right;
+  }
+  &--small {
+    width: 120px;
+  }
+  &--medium {
+    width: 150px;
+  }
+  &--large {
+    width: 200px;
+  }
+  &--adapt {
+    width: 329px;
+  }
+  &__badge {
+    padding: 2px 12px;
+    border-radius: 5px;
+    color: $branco;
+
+    &--success {
+      background-color: $sucesso;
+    }
+
+    &--warn {
+      background-color: $warn;
+    }
+
+    &--danger {
+      background-color: $danger;
+    }
+  }
+}
+
+.summary {
+  width: 80%;
+  margin: 20px auto;
+  position: relative;
+
+  &__badge {
+    width: 31%;
+    display: inline-block;
+    margin: 0 20px 0 0;
+    border-radius: 5px;
+
+    &__left {
+      display: inline-block;
+      border-radius: 5px 0 0 5px;
+      width: 70%;
+
+      &__name {
+        font-size: 1em;
+        padding: 10px;
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      &__value {
+        text-align: right;
+        font-size: 1.6em;
+        font-weight: bold;
+        color: #ffffff;
+        padding: 10px 10px 10px 10px;
+      }
+
+      &--success {
+        background-color: #57c285;
+      }
+
+      &--warn {
+        background-color: #f5aa1a;
+      }
+
+      &--primary {
+        background-color: #45b5df;
+      }
+    }
+
+    &__right {
+      width: 30%;
+      height: 97px;
+      line-height: 97px;
+      float: right;
+      border-radius: 0 5px 5px 0;
+
+      &__icon {
+        color: #ffffff;
+        font-size: 2em;
+        height: 100%;
+        padding: 0 10px 10px 10px;
+        text-align: center;
+      }
+
+      &--success {
+        background-color: #78cd9c;
+      }
+
+      &--warn {
+        background-color: #fac052;
+      }
+
+      &--primary {
+        background-color: #69c3e4;
+      }
+    }
+  }
+
+  &__badge:last-child {
+    margin-right: 0;
+  }
+}

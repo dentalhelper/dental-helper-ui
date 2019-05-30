@@ -38,7 +38,7 @@ export class PacientesPesquisaComponent implements OnInit {
     });
   }
 
-  agendar(codigoPaciente:string) {
+  agendar(codigoPaciente: string) {
     this.router.navigate([codigoPaciente, 'consultas'], {
       relativeTo: this.route
     });
@@ -51,9 +51,10 @@ export class PacientesPesquisaComponent implements OnInit {
   }
 
   carregarPacientes() {
-    this.pacienteService.pesquisar(this.formularioDoFiltro.value).subscribe(resultado => {
-      this.pacientes = resultado;
-    });
+    this.pacienteService.pesquisar(this.formularioDoFiltro.value)
+      .subscribe(resultado => {
+        this.pacientes = resultado;
+      });
   }
 
   deletar(paciente: PacienteResumoDTO) {

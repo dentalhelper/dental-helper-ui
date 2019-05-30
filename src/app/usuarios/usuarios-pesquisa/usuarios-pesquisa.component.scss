@@ -1,0 +1,39 @@
+@import "../../../assets/scss/cores";
+
+.cell {
+  &--center {
+    text-align: center;
+  }
+  &--right {
+    text-align: right;
+  }
+  &--small {
+    width: 120px;
+  }
+  &--medium {
+    width: 150px;
+  }
+  &--large {
+    width: 200px;
+  }
+  &--adapt {
+    width: 329px;
+  }
+  &__badge {
+    padding: 2px 12px;
+    border-radius: 5px;
+    color: $branco;
+
+    &--success {
+      background-color: $sucesso;
+    }
+
+    &--warn {
+      background-color: $warn;
+    }
+
+    &--danger {
+      background-color: $danger;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+@import "../../../assets/scss/cores";
+
+.cell {
+  &--center {
+    text-align: center;
+  }
+  &--small {
+    width: 120px;
+  }
+  &__badge {
+    padding: 2px 12px;
+    border-radius: 5px;
+    color: $branco;
+
+    &--success {
+      background-color: $sucesso;
+    }
+  }
+}
+
+.o-table {
+  color: #333333;
+  width: 100%;
+  border-spacing: 0;
+
+  th,
+  td {
+    padding: 10px 15px 10px 15px;
+    border-spacing: 0px;
+    font: 100%/1.4 "Roboto", sans-serif;
+  }
+
+  &__head {
+    &__row {
+      & th:first-child {
+        border-top-left-radius: 5px;
+      }
+      & th:last-child {
+        border-top-right-radius: 5px;
+      }
+      & th {
+        margin: 0px;
+        border-spacing: 0;
+        color: #ffffff;
+        text-shadow: -1px -1px 1px #666666;
+        letter-spacing: 0.15em;
+        background-color: #90b4d6;
+        border-bottom: 2px solid #547ca0;
+        border-right: 1px solid #749abe;
+        border-top: 1px solid #90b4d6;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__body {
+    &__row {
+      background-color: #e0e9f0;
+
+      &:hover {
+        background-color: #e0e9f0;
+      }
+      &__data {
+        border-top: 1px solid #f1f8fe;
+        border-bottom: 1px solid #cbd2d8;
+        border-right: 1px solid #cbd2d8;
+        &--left {
+          text-align: left;
+        }
+        &--right {
+          text-align: right;
+        }
+      }
+    }
+    tr:nth-child(even) {
+      background-color: #e0e9f0;
+    }
+    tr:nth-child(odd) {
+      background-color: lighten(#e0e9f0, 5%);
+    }
+  }
+
+  &__foot {
+    & tr:last-child th {
+      border-bottom-left-radius: 5px;
+    }
+
+    & tr:last-child td {
+      border-bottom-right-radius: 5px;
+    }
+
+    &__row {
+      text-align: right;
+
+      th {
+        font-weight: bold;
+        border-top: 1px solid #f1f8fe;
+        border-bottom: 1px solid #cbd2d8;
+        border-right: 1px solid #cbd2d8;
+      }
+      td {
+        border-top: 1px solid #f1f8fe;
+        border-bottom: 1px solid #cbd2d8;
+        border-right: 1px solid #cbd2d8;
+      }
+      &--desconto {
+        background-color: lighten(#90b4d6, 15%);
+      }
+      &--total {
+        background-color: lighten(#90b4d6, 15%);
+      }
+    }
+  }
+}

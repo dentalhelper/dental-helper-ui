@@ -6,6 +6,8 @@ import { Anamnese } from 'src/app/domains/interfaces/anamnese.model';
 import { PacienteNovoDTO } from 'src/app/domains/dtos/paciente-novo.dto';
 import { PacienteResumoDTO } from 'src/app/domains/dtos/paciente-resumo.dto';
 import { PacienteAnamneseDTO } from 'src/app/domains/dtos/paciente-anamnese.dto';
+import { PacienteOrcamentoDTO } from 'src/app/domains/dtos/paciente-orcamento.dto';
+import { OrcamentoPagamentoDTO } from 'src/app/domains/dtos/orcamento-pagamento.dto';
 import { PacienteAgendamentoDTO } from 'src/app/domains/dtos/paciente-agendamento.dto';
 import { PacienteSelectComFotoDTO } from 'src/app/domains/dtos/paciente-select-com-foto.dto';
 
@@ -61,6 +63,14 @@ export class PacienteService {
 
   buscarConsultas(codigo: number): Observable<PacienteAgendamentoDTO> {
     return this.http.get<PacienteAgendamentoDTO>(`${this.PACIENTE_URL}/${codigo}/agendamentos`);
+  }
+
+  buscarOrcamentos(codigo: number): Observable<PacienteOrcamentoDTO> {
+    return this.http.get<PacienteOrcamentoDTO>(`${this.PACIENTE_URL}/${codigo}/orcamentos`);
+  }
+
+  buscarPagamentos(codigo: number): Observable<OrcamentoPagamentoDTO[]> {
+    return this.http.get<OrcamentoPagamentoDTO[]>(`${this.PACIENTE_URL}/${codigo}/pagamentos`);
   }
 
   urlUploadImagem(): string {

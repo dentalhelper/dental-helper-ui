@@ -1,43 +1,43 @@
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { registerLocaleData } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, ErrorHandler, LOCALE_ID } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
-import { LocationStrategy, HashLocationStrategy, registerLocaleData } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, LOCALE_ID } from '@angular/core';
 import localePt from '@angular/common/locales/pt';
 
 registerLocaleData(localePt, 'pt');
 
 import { MessageService } from 'primeng/components/common/messageservice';
 
-import { OdontogramaComponent } from './odontograma/odontograma.component';
-import { OdontoComponent } from './odonto/odonto.component';
+import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { ROUTES } from './app.routes';
-import { CategoriaDespesaModule } from './categoria-despesa/categoria-despesa.module';
+import { OdontoComponent } from './odonto/odonto.component';
+import { OdontogramaComponent } from './odontograma/odontograma.component';
 import { ErrorHandlerService } from './core/services/error-handler.service';
-
-import { CurrencyMaskModule } from 'ng2-currency-mask';
-import { CURRENCY_MASK_CONFIG } from 'ng2-currency-mask/src/currency-mask.config';
 import { CustomCurrencyMaskConfig } from './shared/constants/currencymaskconfig';
+import { CategoriaDespesaModule } from './categoria-despesa/categoria-despesa.module';
+
+import { CURRENCY_MASK_CONFIG } from 'ng2-currency-mask/src/currency-mask.config';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    OdontogramaComponent,
     OdontoComponent,
+    OdontogramaComponent,
   ],
   imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
     CoreModule,
+    FormsModule,
+    BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     CategoriaDespesaModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
   ],
   providers: [

@@ -1,18 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import
-"assets/scss/cores",
-"assets/scss/reset",
-"assets/scss/tools/placeholders",
-"assets/scss/layout/content",
-"assets/scss/layout/header",
-"assets/scss/components/form-container",
-"assets/scss/components/fieldset-filter-form",
-"assets/scss/components/tables";
-@import '~@fullcalendar/core/main.css';
-@import '~@fullcalendar/daygrid/main.css';
-@import '~@fullcalendar/timegrid/main.css';
-@import '~@fullcalendar/list/main.css';
+@import "assets/scss/cores", "assets/scss/reset", "assets/scss/tools/placeholders", "assets/scss/layout/content",
+  "assets/scss/layout/header", "assets/scss/components/form-container", "assets/scss/components/fieldset-filter-form",
+  "assets/scss/components/tables";
+@import "~@fullcalendar/core/main.css";
+@import "~@fullcalendar/daygrid/main.css";
+@import "~@fullcalendar/timegrid/main.css";
+@import "~@fullcalendar/list/main.css";
 body {
   margin: 0;
   font: 100%/1.4 "Roboto", sans-serif;
@@ -47,7 +41,7 @@ p {
   margin-right: 10px;
 }
 
-.input-group__input-message{
+.input-group__input-message {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
@@ -80,7 +74,7 @@ p {
   color: $mensagem-erro;
 }
 
-.mensagem--sucesso{
+.mensagem--sucesso {
   color: $mensagem-sucesso;
 }
 
@@ -92,6 +86,19 @@ p {
   border-color: $erro;
 }
 
-div.fc-content{
-  cursor:pointer;
+/*-------------------------------*/
+/*----------Calendar-------------*/
+div.fc-content {
+  cursor: pointer;
 }
+
+div.fc-center > h2 {
+  color: #757575;
+  text-transform: capitalize;
+}
+
+.fc-day-header {
+  text-transform: capitalize;
+}
+/*-------------------------------*/
+/*-------------------------------*/

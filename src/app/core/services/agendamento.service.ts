@@ -5,7 +5,7 @@ import { URL_API } from 'src/app/app.api';
 import { AgendamentoNovoDTO } from 'src/app/domains/dtos/agendamento-novo.dto';
 import { AgendamentoResumoDTO } from 'src/app/domains/dtos/agendamento-resumo.dto';
 
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import * as moment from 'moment';
@@ -14,6 +14,8 @@ import * as moment from 'moment';
   providedIn: 'root'
 })
 export class AgendamentoService {
+
+  updateEvent = new Subject<any>();
 
   AGENDAMENTO_URL = `${URL_API}/agendamentos`;
 
@@ -56,6 +58,10 @@ export class AgendamentoService {
           return agendamentoAlterado;
         })
       );
+  }
+
+  atualizarStatus(codigoAgendamento: number, status: number): Observable<string> {
+    return this.http.patch<string>(`${this.AGENDAMENTO_URL}/${codigoAgendamento}`, status);
   }
 
   deletar(codigo: string): Observable<string> {

@@ -1,0 +1,65 @@
+.form {
+  padding: 20px;
+}
+
+@media screen and (min-width: 56.25em) {
+  .form {
+    .i-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      &__resumo-box {
+        margin: 20px 20px;
+        &__desconto {
+          padding: 15px 15px 0 15px;
+          border: 1px solid #dddddd;
+          border-radius: 5px 5px 0 0;
+        }
+        &__valor {
+          padding: 15px;
+          border: 1px solid #dddddd;
+          border-top: none;
+          border-radius: 0 0 5px 5px;
+          background-color: #f3f3f3;
+
+          &__real {
+            color: #b63616;
+            text-align: end;
+            float: right;
+          }
+
+          &__botao {
+            padding: 10px 0 0 0;
+          }
+        }
+      }
+
+      &__add-procedimento{
+        padding: 20px 0 0 30px;
+      }
+
+      &__item {
+        border-bottom: 1px solid #dddddd;
+        margin-right: 50px;
+        &__procedimento {
+          padding: 20px 30px 0 30px;
+          width: 400px;
+        }
+
+        &__button-group {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          &__valor {
+            padding: 0 30px 0 30px;
+            width: 200px;
+          }
+          &__button {
+            padding-right: 30px;
+            padding-top: 5px;
+            align-self: center;
+          }
+        }
+      }
+    }
+  }
+}

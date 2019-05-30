@@ -9,12 +9,14 @@ import { DefaultHeaderComponent } from './default-header/default-header.componen
 import { InputContainerComponent } from './input-container/input-container.component';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faExclamation, faMoneyBill, faWindowClose, faClipboardList, faBan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTrash, faEdit, faSearch, faCalendarDay } from '@fortawesome/free-solid-svg-icons';
 import { CalendarOptionsComponent } from './calendar-options/calendar-options.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
+    RouterModule,
     CommonModule,
     FontAwesomeModule,
     ReactiveFormsModule,
@@ -40,10 +42,14 @@ import { CalendarOptionsComponent } from './calendar-options/calendar-options.co
 })
 export class SharedModule {
   constructor() {
+    library.add(faBan);
     library.add(faEdit);
     library.add(faTrash);
     library.add(faSearch);
+    library.add(faMoneyBill);
     library.add(faExclamation);
     library.add(faCalendarDay);
+    library.add(faWindowClose);
+    library.add(faClipboardList);
   }
 }

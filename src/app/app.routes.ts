@@ -27,5 +27,13 @@ export const ROUTES: Routes = [
     path: 'agendamentos',
     loadChildren: './agendamentos/agendamentos.module#AgendamentosModule'
   },
+  {
+    path: 'orcamentos',
+    loadChildren: './orcamentos/orcamentos.module#OrcamentosModule'
+  },
+  {
+    path: 'usuarios',
+    loadChildren: './usuarios/usuarios.module#UsuariosModule'
+  },
 
 ];

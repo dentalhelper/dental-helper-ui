@@ -1,8 +1,8 @@
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, OnDestroy, AfterContentInit } from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 import { pt_BR } from 'src/app/shared/constants/calendario.br';
@@ -12,9 +12,11 @@ import { NO_IMAGE_URL } from 'src/app/shared/constants/image.defeut';
 import { RadioOption } from 'src/app/shared/radio/radio-option.model';
 import { PacienteService } from 'src/app/core/services/paciente.service';
 import { EMAIL_PATTERN } from 'src/app/shared/constants/validators.regex';
+import { STATUS_AGENDAMENTO } from 'src/app/shared/constants/domains.enums';
 import { AgendamentoService } from 'src/app/core/services/agendamento.service';
 import { ProcedimentoService } from 'src/app/core/services/procedimento.service';
 
+import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import * as moment from 'moment';
@@ -82,7 +84,10 @@ declare var $: any;
     ])
   ]
 })
-export class AgendamentoCadastroComponent implements OnInit {
+export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterContentInit {
+
+
+  private subscription: Subscription;
 
   activeTab = 'pronto';
   formulario: FormGroup;
@@ -112,13 +117,7 @@ export class AgendamentoCadastroComponent implements OnInit {
     { label: 'Masculino', value: 2 }
   ];
 
-  statusAgendamento = [
-    { label: 'Agendado', value: 1 },
-    { label: 'Confirmado', value: 2 },
-    { label: 'Finalizado', value: 3 },
-    { label: 'Faltou', value: 4 },
-    { label: 'Cancelado', value: 5 }
-  ];
+  statusAgendamento = STATUS_AGENDAMENTO;
 
   constructor(
     private title: Title,
@@ -128,10 +127,11 @@ export class AgendamentoCadastroComponent implements OnInit {
     private estadoService: EstadoService,
     private pacienteService: PacienteService,
     private agendamentoService: AgendamentoService,
-    private procedimentoService: ProcedimentoService
+    private procedimentoService: ProcedimentoService,
   ) { }
 
   ngOnInit() {
+
     this.carregarEstados();
     this.prepararFormulario();
     this.prepararFormularioDePaciente();
@@ -140,11 +140,36 @@ export class AgendamentoCadastroComponent implements OnInit {
     this.title.setTitle('Nova Consulta');
 
     const codigoAgendamento = this.route.snapshot.params['codigo'];
+
     if (codigoAgendamento) {
       this.edicao = true;
       this.codigoAgendamento = codigoAgendamento;
       this.carregarAgendamento(codigoAgendamento);
     }
+  }
+
+  ngAfterContentInit(): void {
+    this.subscription = this.route.fragment.subscribe((event) => {
+      if (event) {
+        this.predefirnirData(moment(event).format('DD/MM/YYYY'));
+        this.predefinirHora(moment(event).format('hh:mm'));
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
+  predefirnirData(data: any) {
+    this.formulario.get('dataAgendamento').setValue(data);
+
+  }
+
+  predefinirHora(data: any) {
+    this.formulario.get('horaInicio').setValue(data);
   }
 
   prepararFormulario() {
@@ -255,6 +280,7 @@ export class AgendamentoCadastroComponent implements OnInit {
         this.selecionado = response.urlDaFoto;
       });
   }
+
   carregarProcedimentos() {
     this.procedimentoService.pesquisar('')
       .subscribe((response) => {
