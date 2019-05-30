@@ -6,6 +6,8 @@ import { Anamnese } from 'src/app/domains/interfaces/anamnese.model';
 import { PacienteNovoDTO } from 'src/app/domains/dtos/paciente-novo.dto';
 import { PacienteResumoDTO } from 'src/app/domains/dtos/paciente-resumo.dto';
 import { PacienteAnamneseDTO } from 'src/app/domains/dtos/paciente-anamnese.dto';
+import { PacienteOrcamentoDTO } from 'src/app/domains/dtos/paciente-orcamento.dto';
+import { OrcamentoPagamentoDTO } from 'src/app/domains/dtos/orcamento-pagamento.dto';
 import { PacienteAgendamentoDTO } from 'src/app/domains/dtos/paciente-agendamento.dto';
 import { PacienteSelectComFotoDTO } from 'src/app/domains/dtos/paciente-select-com-foto.dto';
 
@@ -13,8 +15,6 @@ import { map } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
 
 import * as moment from 'moment';
-import { PacienteOrcamentoDTO } from 'src/app/domains/dtos/paciente-orcamento.dto';
-import { OrcamentoPagamentoDTO } from 'src/app/domains/dtos/orcamento-pagamento.dto';
 
 @Injectable({
   providedIn: 'root'

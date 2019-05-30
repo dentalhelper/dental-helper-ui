@@ -1,3 +1,74 @@
-<p>
-  usuarios-pesquisa works!
-</p>
+<div class="content">
+  <app-default-header titulo="Usuários" buttonId="add-usuario" buttonText="Adicionar Usuário"
+    (botaoClicado)="criarUsuario()">
+  </app-default-header>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [value]="usuarios" #tabela responsive="true" [paginator]="true" [rows]="20">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Status</th>
+            <th>Nome</th>
+            <th>Login</th>
+            <th>Cargo</th>
+            <th>Telefone</th>
+            <th></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-usuario>
+          <tr>
+            <td class="cell--center">
+              <span class="ui-column-title">Status</span>
+              <span class="cell__badge cell__badge--success"
+                [ngClass]="{'cell__badge--success': usuario.ativo, 'cell__badge--danger': !usuario.ativo}">
+                {{ usuario.ativo | statusUsuario }}
+              </span>
+            </td>
+            <td>
+              <span class="ui-column-title">Nome</span>
+              {{ usuario.nome }}
+            </td>
+            <td>
+              <span class="ui-column-title">Login</span>
+              {{ usuario.login }}
+            </td>
+            <td>
+              <span class="ui-column-title">Cargo</span>
+              {{ usuario.tipo }}
+            </td>
+            <td>
+              <!-- TODO: Busca de telefones na API -->
+              <span class="ui-column-title">Telefone</span>
+              {{ usuario.telefone }}
+            </td>
+            <td>
+              <div class="operacoes">
+                <!-- TODO: implementar edição [routerLink]="['/usuarios', usuario.codigo, 'edit']" -->
+                <button type="button" class="operacoes__button operacoes__button--edit"
+                   pTooltip="Editar" tooltipPosition="top" (click)="editar(usuario)">
+                  <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+                <button type="button" class="operacoes__button operacoes__button--delete" (click)="desativar(usuario)"
+                  pTooltip="Desativar" tooltipPosition="top">
+                  <fa-icon [icon]="['fas', 'ban']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="6">
+              Nenhum Usuário encontrado!<br />
+              Clique <a [routerLink]="['/usuarios/novo']">AQUI</a> para cadastrar.
+            </td>
+          </tr>
+        </ng-template>
+
+      </p-table>
+    </div>
+  </div>
+</div>
