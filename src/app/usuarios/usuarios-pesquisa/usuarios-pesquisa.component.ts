@@ -32,6 +32,7 @@ export class UsuariosPesquisaComponent implements OnInit {
 
   carregarUsuarios() {
     this.usuarioService.pesquisar('').subscribe(resultado => {
+      console.log(resultado);
       this.usuarios = resultado;
     });
   }
