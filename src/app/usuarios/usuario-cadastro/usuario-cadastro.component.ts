@@ -9,6 +9,7 @@ import { RadioOption } from 'src/app/shared/radio/radio-option.model';
 import { EMAIL_PATTERN } from 'src/app/shared/constants/validators.regex';
 import { UsuarioService } from 'src/app/core/services/usuario.service';
 import { tap } from 'rxjs/operators';
+import { UsuarioNovoDTO } from 'src/app/domains/dtos/usuario-novo.dto';
 
 
 declare var $: any;
@@ -22,6 +23,7 @@ export class UsuarioCadastroComponent implements OnInit {
   pt_BR = pt_BR;
   formulario: FormGroup;
   nomeToastSucesso: string;
+  codigo: any;
 
   estadosOptions = [];
   cidadesOptions = [];
@@ -71,6 +73,11 @@ export class UsuarioCadastroComponent implements OnInit {
     this.prepararFormulario();
     this.title.setTitle('Novo Usuário');
     this.carregarEstados();
+    const codigUsuario = this.route.snapshot.params['codigo'];
+    if (codigUsuario) {
+      this.codigo = codigUsuario;
+      this.carregarUsuarioPeloCodigo(codigUsuario);
+    }
   }
 
   prepararFormulario() {
@@ -94,6 +101,7 @@ export class UsuarioCadastroComponent implements OnInit {
         cep: new FormControl('', Validators.required),
         complemento: new FormControl(''),
         tipo: new FormControl(''),
+        codigoEstado: new FormControl(''),
         login: new FormControl('', Validators.required),
         senha: new FormControl('', Validators.required),
         senhaconfirm: new FormControl('', {
@@ -115,12 +123,17 @@ export class UsuarioCadastroComponent implements OnInit {
 
 
   submeterFormulario() {
-    this.salvar();
+    if (this.codigo) {
+      this.atualizar();
+    } else {
+      this.salvar();
+    }
   }
 
   salvar() {
-    this.formulario.removeControl('senhaconfirm');
-    this.usuarioService.salvar(this.formulario.value)
+    const form = this.formulario.value;
+    delete form['senhaconfirm'];
+    this.usuarioService.salvar(form)
       .pipe(
         tap((response: string) => {
           this.nomeToastSucesso = response;
@@ -131,6 +144,42 @@ export class UsuarioCadastroComponent implements OnInit {
         const mensagemToast = `"Usuário para ${this.nomeToastSucesso}" foi criado."`;
         this.toastService.exibirSucesso(mensagemToast);
       });
+  }
+
+  atualizar() {
+    const form = this.formulario.value;
+    delete form['senhaconfirm'];
+    delete form['codigoEstado'];
+    this.usuarioService.atualizar(form, this.codigo)
+      .subscribe(() => {
+        const mensagemToast = `"O Usuário foi atualizado."`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  carregarUsuarioPeloCodigo(codigo: number) {
+    this.usuarioService.buscarPorCodigo(codigo)
+      .subscribe((response) => {
+        this.formulario.patchValue(response);
+        //this.atualizarTituloDaPagina();
+        this.carregarEstadoDoPaciente();
+
+      });
+  }
+
+  carregarEstadoDoPaciente() {
+    this.estadoService.pesquisar().subscribe((response) => {
+      response.forEach((estado) => {
+        this.estadoService.pesquisarCidades(estado.codigo).subscribe((cidadeResponse) => {
+          cidadeResponse.forEach((cidade) => {
+            if (cidade.codigo === this.formulario.get('codigoCidade').value) {
+              this.carregarCidades(estado.codigo);
+              this.formulario.get('codigoEstado').setValue(estado.codigo);
+            }
+          });
+        });
+      });
+    });
   }
 
   voltar() {
@@ -153,6 +202,10 @@ export class UsuarioCadastroComponent implements OnInit {
         value: cidade.codigo, label: cidade.nome
       }));
     });
+  }
+
+  atualizarTituloDaPagina() {
+    this.title.setTitle(`Editando: ${this.formulario.get('nome').value}`);
   }
 
   isMobile(): boolean {
