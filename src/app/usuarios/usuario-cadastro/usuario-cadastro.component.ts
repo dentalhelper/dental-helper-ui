@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastService } from 'src/app/core/services/toast.service';
 import { EstadoService } from 'src/app/core/services/estado.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { pt_BR } from 'src/app/shared/constants/calendario.br';
 import { RadioOption } from 'src/app/shared/radio/radio-option.model';
 import { EMAIL_PATTERN } from 'src/app/shared/constants/validators.regex';
@@ -42,6 +42,19 @@ export class UsuarioCadastroComponent implements OnInit {
     { label: 'Recepcionista', value: 3 }
   ];
 
+  static equalsTo(group: AbstractControl): { [key: string]: boolean } {
+    const senha = group.get('senha');
+    const senhaConfirmacao = group.get('senhaconfirm');
+    if (!senha || !senhaConfirmacao) {
+      return undefined;
+    }
+
+    if (senha.value !== senhaConfirmacao.value) {
+      return { senhaDiferente: true };
+    }
+    return undefined;
+  }
+
   constructor(
     private title: Title,
     private router: Router,
@@ -68,7 +81,7 @@ export class UsuarioCadastroComponent implements OnInit {
         rG: new FormControl('', [Validators.required, Validators.maxLength(20)]),
         estadoCivil: new FormControl('', Validators.required),
         sexo: new FormControl('', Validators.required),
-        email: new FormControl('', [Validators.pattern(EMAIL_PATTERN)]),
+        email: new FormControl('', [Validators.pattern(EMAIL_PATTERN), Validators.required]),
         telefonePrincipal: new FormControl(''),
         telefone2: new FormControl(''),
         logradouro: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -79,19 +92,25 @@ export class UsuarioCadastroComponent implements OnInit {
         tipo: new FormControl(''),
         login: new FormControl('', Validators.required),
         senha: new FormControl('', Validators.required),
-        senhaconfirm: new FormControl('', Validators.required),
+        senhaconfirm: new FormControl('', {
+          updateOn: 'change',
+          validators: [Validators.required]
+        }),
         codigoCidade: new FormControl('', {
           updateOn: 'change',
           validators: [Validators.required]
         }),
       },
       {
-        updateOn: 'blur'
+        updateOn: 'blur',
+        validators: [UsuarioCadastroComponent.equalsTo]
       }
     );
   }
 
-  submeterFormulario(){
+
+
+  submeterFormulario() {
 
   }
 
