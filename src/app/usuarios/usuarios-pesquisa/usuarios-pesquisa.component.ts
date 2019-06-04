@@ -32,7 +32,6 @@ export class UsuariosPesquisaComponent implements OnInit {
 
   carregarUsuarios() {
     this.usuarioService.pesquisar('').subscribe(resultado => {
-      console.log(resultado);
       this.usuarios = resultado;
     });
   }
@@ -41,11 +40,6 @@ export class UsuariosPesquisaComponent implements OnInit {
     this.router.navigate(['novo'], {
       relativeTo: this.route
     });
-  }
-
-  editar() {
-    const mensagemToast = `"Operação não implementada"`;
-    this.toastService.exibirAviso(mensagemToast);
   }
 
   desativar(usuario: any) {

@@ -12,4 +12,8 @@ export const USUARIO_ROUTES: Routes = [
     path: 'novo',
     component: UsuarioCadastroComponent
   },
+  {
+    path: ':codigo/edit',
+    component: UsuarioCadastroComponent
+  }
 ];

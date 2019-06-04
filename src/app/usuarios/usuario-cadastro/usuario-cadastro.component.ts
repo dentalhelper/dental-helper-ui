@@ -7,6 +7,8 @@ import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/fo
 import { pt_BR } from 'src/app/shared/constants/calendario.br';
 import { RadioOption } from 'src/app/shared/radio/radio-option.model';
 import { EMAIL_PATTERN } from 'src/app/shared/constants/validators.regex';
+import { UsuarioService } from 'src/app/core/services/usuario.service';
+import { tap } from 'rxjs/operators';
 
 
 declare var $: any;
@@ -19,6 +21,7 @@ export class UsuarioCadastroComponent implements OnInit {
 
   pt_BR = pt_BR;
   formulario: FormGroup;
+  nomeToastSucesso: string;
 
   estadosOptions = [];
   cidadesOptions = [];
@@ -61,6 +64,7 @@ export class UsuarioCadastroComponent implements OnInit {
     private route: ActivatedRoute,
     private toastService: ToastService,
     private estadoService: EstadoService,
+    private usuarioService: UsuarioService,
   ) { }
 
   ngOnInit() {
@@ -111,7 +115,22 @@ export class UsuarioCadastroComponent implements OnInit {
 
 
   submeterFormulario() {
+    this.salvar();
+  }
 
+  salvar() {
+    this.formulario.removeControl('senhaconfirm');
+    this.usuarioService.salvar(this.formulario.value)
+      .pipe(
+        tap((response: string) => {
+          this.nomeToastSucesso = response;
+        })
+      )
+      .subscribe(() => {
+        this.voltar();
+        const mensagemToast = `"Usuário para ${this.nomeToastSucesso}" foi criado."`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
   }
 
   voltar() {

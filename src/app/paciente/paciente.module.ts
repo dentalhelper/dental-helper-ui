@@ -6,7 +6,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RgPipe } from '../pipes/rg.pipe';
 import { CpfPipe } from '../pipes/cpf.pipe';
 import { PACIENTE_ROUTES } from './pacientes.routes';
-import { TelefonePipe } from '../pipes/telefone.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { AnamneseComponent } from './anamnese/anamnese.component';
 import { StatusPagamentoPipe } from '../pipes/status-pagamento.pipe';
@@ -40,7 +39,6 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     RgPipe,
     CpfPipe,
     ShortenPipe,
-    TelefonePipe,
     AnamneseComponent,
     ConsultasComponent,
     StatusPagamentoPipe,
