@@ -22,6 +22,7 @@ import { CustomCurrencyMaskConfig } from './shared/constants/currencymaskconfig'
 import { CategoriaDespesaModule } from './categoria-despesa/categoria-despesa.module';
 
 import { CURRENCY_MASK_CONFIG } from 'ng2-currency-mask/src/currency-mask.config';
+import { SegurancaModule } from './seguranca/seguranca.module';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { CURRENCY_MASK_CONFIG } from 'ng2-currency-mask/src/currency-mask.config
     CoreModule,
     FormsModule,
     BrowserModule,
+    SegurancaModule,
     HttpClientModule,
     ReactiveFormsModule,
     CategoriaDespesaModule,

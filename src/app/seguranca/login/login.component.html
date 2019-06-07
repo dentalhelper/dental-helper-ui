@@ -1,0 +1,37 @@
+<div class="screen">
+  <div class="screen__top">
+    <div class="screen__top__login">
+      <div class="screen__top__login__icon">
+        <i class="fas fa-sign-in-alt"></i>
+      </div>
+
+      <h1 class="screen__top__login__title">Entrar</h1>
+
+      <form class="screen__top__login__form" novalidate [formGroup]="formulario" (ngSubmit)="submeterFormulario()">
+        <span class="ui-float-label screen__top__login__form__input">
+          <input id="float-input" type="text" size="30" pInputText formControlName="login">
+          <label for="float-input"><i class="fas fa-user"></i> Usuário</label>
+        </span>
+
+        <span class="ui-float-label screen__top__login__form__password">
+          <i class="far fa-eye icon-eye" *ngIf="!verSenha && formulario.get('senha').value !== ''; else iconEye"
+            (click)="exibirSenha()"></i>
+          <ng-template #iconEye>
+            <i class="far fa-eye-slash icon-eye" *ngIf="verSenha && formulario.get('senha').value !== ''"
+              (click)="ocultarSenha()"></i>
+          </ng-template>
+          <input id="float-input" [type]="!verSenha ? 'password' : 'text'" size="30" pInputText autocomplete="none"
+            formControlName="senha">
+          <label for="float-input"><i class="fas fa-lock"></i> Senha</label>
+        </span>
+
+        <p class="screen__top__login__form__forgot">
+          <a>Recuperar senha.</a>
+        </p>
+
+        <button class="screen__top__login__form__button" type="submit" [disabled]="formulario.invalid">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+</div>

@@ -55,6 +55,7 @@ export class UsuarioService {
           tipo: response.tipo,
           login: response.login
         };
+        // TODO: UTILIZAR DTO
         this.converterStringsParaDatas([usuario]);
         console.log(usuario);
         return usuario;

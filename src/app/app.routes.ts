@@ -1,8 +1,13 @@
 import { Routes } from '@angular/router';
 import { CategoriaDespesaPesquisaComponent } from './categoria-despesa/categoria-despesa-pesquisa/categoria-despesa-pesquisa.component';
+import { LoginComponent } from './seguranca/login/login.component';
 
 export const ROUTES: Routes = [
 
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'categorias-despesa',
     component: CategoriaDespesaPesquisaComponent
