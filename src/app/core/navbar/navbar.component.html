@@ -135,8 +135,10 @@
 
         <ul class="drop-down">
           <li class="last item-submenu" (click)="isOpen = !isOpen">
-            <a id="categorias-despesa" routerLinkActive="active" [routerLink]="['/categorias-despesa']">Categorias de
-              Despesas</a>
+            <a id="categorias-despesa" routerLinkActive="active" [routerLink]="['/categorias-despesa']">
+              Categorias de
+              Despesas
+            </a>
           </li>
         </ul>
 
@@ -145,7 +147,11 @@
       <li class="drop-down-menu">
         <label class="item-titulo top-menu">
           <i class="fas fa-sign-out-alt icon-esq"></i>
-          <div class="label-titulo">Sair</div>
+          <div class="label-titulo">
+            <a routerLink="/login">
+              Sair
+            </a>
+          </div>
         </label>
       </li>
     </ul>

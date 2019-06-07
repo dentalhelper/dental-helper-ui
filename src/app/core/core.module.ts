@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-import { NavbarComponent } from './navbar/navbar.component';
-import { CategoriaDespesaService } from './services/categoria-despesa.service';
-import { ToastService } from './services/toast.service';
-import { ToastLinkComponent } from './toast-link/toast-link.component';
-
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ToastModule } from 'primeng/toast';
-import { ConfirmationService } from 'primeng/api';
 import { Title } from '@angular/platform-browser';
-import { TooltipModule } from 'primeng/tooltip';
 
+import { AppHttp } from '../seguranca/app-http';
+import { ToastService } from './services/toast.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ToastLinkComponent } from './toast-link/toast-link.component';
+import { CategoriaDespesaService } from './services/categoria-despesa.service';
+
+import { ToastModule } from 'primeng/toast';
+import { TooltipModule } from 'primeng/tooltip';
+import { ConfirmationService } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
+import { JwtHelperService } from '@auth0/angular-jwt';
 @NgModule({
   imports: [
+    ToastModule,
     CommonModule,
     RouterModule,
-    ToastModule,
     TooltipModule,
     ConfirmDialogModule
   ],
@@ -26,15 +28,17 @@ import { TooltipModule } from 'primeng/tooltip';
     ToastLinkComponent
   ],
   exports: [
-    NavbarComponent,
     ToastModule,
+    NavbarComponent,
     ToastLinkComponent
   ],
   providers: [
-    CategoriaDespesaService,
+    Title,
+    AppHttp,
     ToastService,
+    JwtHelperService,
     ConfirmationService,
-    Title
+    CategoriaDespesaService,
   ]
 })
 export class CoreModule { }

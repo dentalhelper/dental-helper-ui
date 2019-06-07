@@ -20,8 +20,8 @@
             <i class="far fa-eye-slash icon-eye" *ngIf="verSenha && formulario.get('senha').value !== ''"
               (click)="ocultarSenha()"></i>
           </ng-template>
-          <input id="float-input" [type]="!verSenha ? 'password' : 'text'" size="30" pInputText autocomplete="none"
-            formControlName="senha">
+          <input id="float-input" [type]="!verSenha ? 'password' : 'text'" size="30" pInputText
+            autocomplete="new-password" formControlName="senha">
           <label for="float-input"><i class="fas fa-lock"></i> Senha</label>
         </span>
 
