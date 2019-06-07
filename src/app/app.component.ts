@@ -12,6 +12,6 @@ export class AppComponent {
   constructor(private router: Router) { }
 
   isLogin() {
-    return this.router.url !== '/login';
+    return this.router.url !== '/login' && this.router.url !== '/';
   }
 }

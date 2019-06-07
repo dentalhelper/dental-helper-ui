@@ -1,6 +1,6 @@
 <div class="screen">
   <div class="screen__top">
-    <div class="screen__top__login">
+    <div class="screen__top__login" [@login-create]="estadoLoginCriado" [@login-error]="estadoLogin">
       <div class="screen__top__login__icon">
         <i class="fas fa-sign-in-alt"></i>
       </div>
@@ -9,7 +9,7 @@
 
       <form class="screen__top__login__form" novalidate [formGroup]="formulario" (ngSubmit)="submeterFormulario()">
         <span class="ui-float-label screen__top__login__form__input">
-          <input id="float-input" type="text" size="30" pInputText formControlName="login">
+          <input id="float-input" type="text" size="30" pInputText formControlName="login" autofocus autocomplete="username">
           <label for="float-input"><i class="fas fa-user"></i> Usuário</label>
         </span>
 
@@ -20,9 +20,9 @@
             <i class="far fa-eye-slash icon-eye" *ngIf="verSenha && formulario.get('senha').value !== ''"
               (click)="ocultarSenha()"></i>
           </ng-template>
-          <input id="float-input" [type]="!verSenha ? 'password' : 'text'" size="30" pInputText
+          <input id="float-input-p" [type]="!verSenha ? 'password' : 'text'" size="30" pInputText
             autocomplete="new-password" formControlName="senha">
-          <label for="float-input"><i class="fas fa-lock"></i> Senha</label>
+          <label for="float-input-p"><i class="fas fa-lock"></i> Senha</label>
         </span>
 
         <p class="screen__top__login__form__forgot">

@@ -33,8 +33,13 @@ export class ErrorHandlerService implements HttpInterceptor {
           this.router.navigate(['/login']);
         }
 
+        if (error.status === 0) {
+          const mensagem = 'Desculpe, sem conexão com o servidor.';
+          this.toastService.exibirErro(mensagem);
+        }
+
         if (error.status === 400) {
-          if(error.error.error === 'invalid_grant'){
+          if (error.error.error === 'invalid_grant') {
             this.toastService.exibirErro('Usuário e/ou senha incorretos.');
           }
         }
