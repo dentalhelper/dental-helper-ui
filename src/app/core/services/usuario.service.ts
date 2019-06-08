@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpParams } from '@angular/common/http';
+
 import { URL_API } from 'src/app/app.api';
-import { Observable } from 'rxjs';
-import { HttpParams, HttpClient } from '@angular/common/http';
+import { AppHttp } from 'src/app/seguranca/app-http';
 import { UsuarioNovoDTO } from 'src/app/domains/dtos/usuario-novo.dto';
+
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import * as moment from 'moment';
@@ -13,7 +16,7 @@ export class UsuarioService {
 
   USUARIO_URL = `${URL_API}/usuarios`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: AppHttp) { }
 
   salvar(usuario: UsuarioNovoDTO): Observable<string> {
     return this.http.post<UsuarioNovoDTO>(`${this.USUARIO_URL}/novo`, usuario)

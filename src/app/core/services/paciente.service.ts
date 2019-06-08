@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 
 import { URL_API } from 'src/app/app.api';
+import { AppHttp } from 'src/app/seguranca/app-http';
 import { Anamnese } from 'src/app/domains/interfaces/anamnese.model';
 import { PacienteNovoDTO } from 'src/app/domains/dtos/paciente-novo.dto';
 import { PacienteResumoDTO } from 'src/app/domains/dtos/paciente-resumo.dto';
@@ -25,7 +26,7 @@ export class PacienteService {
 
   PACIENTE_URL = `${URL_API}/pacientes`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: AppHttp) { }
 
   salvar(paciente: PacienteNovoDTO): Observable<string> {
     return this.http.post<PacienteNovoDTO>(`${this.PACIENTE_URL}/novo`, paciente)

@@ -6,8 +6,8 @@ import { AppHttp } from 'src/app/seguranca/app-http';
 import { AgendamentoNovoDTO } from 'src/app/domains/dtos/agendamento-novo.dto';
 import { AgendamentoResumoDTO } from 'src/app/domains/dtos/agendamento-resumo.dto';
 
-import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
 
 import * as moment from 'moment';
 

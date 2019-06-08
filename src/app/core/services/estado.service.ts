@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+
 import { URL_API } from 'src/app/app.api';
-import { Observable } from 'rxjs';
+import { AppHttp } from 'src/app/seguranca/app-http';
 import { Estado } from 'src/app/domains/estado.model';
-import { HttpClient } from '@angular/common/http';
 import { Cidade } from 'src/app/domains/cidade.model.';
+
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class EstadoService {
 
   ESTADO_URL = `${URL_API}/estados`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: AppHttp) { }
 
   pesquisar(): Observable<Estado[]> {
     return this.http.get<Estado[]>(this.ESTADO_URL);

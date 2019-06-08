@@ -8,6 +8,7 @@ import { ToastService } from './services/toast.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ToastLinkComponent } from './toast-link/toast-link.component';
 import { CategoriaDespesaService } from './services/categoria-despesa.service';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
@@ -15,7 +16,6 @@ import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 @NgModule({
   imports: [
     ToastModule,

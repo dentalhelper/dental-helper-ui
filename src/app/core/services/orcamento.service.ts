@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 import { URL_API } from 'src/app/app.api';
+import { AppHttp } from 'src/app/seguranca/app-http';
 import { OrcamentoNovoDTO } from 'src/app/domains/dtos/orcamento-novo.dto';
 import { OrcamentoResumoDTO } from 'src/app/domains/dtos/orcamento-resumo.dto';
 
@@ -17,7 +17,7 @@ export class OrcamentoService {
 
   ORCAMENTO_URL = `${URL_API}/orcamentos`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: AppHttp) { }
 
   salvar(orcamento: any): Observable<any> {
     return this.http.post<any>(`${this.ORCAMENTO_URL}/novo`, orcamento);
