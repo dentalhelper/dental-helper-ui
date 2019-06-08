@@ -34,7 +34,7 @@ export class ErrorHandlerService implements HttpInterceptor {
             this.toastService.exibirErro(mensagem);
             this.router.navigate(['/login']);
           } else {
-            mensagem = 'Olá, sua sessão expirou, realize o login novamente.';
+            mensagem = 'Desculpe, sua sessão expirou, realize o login novamente.';
             this.toastService.exibirErro(mensagem);
             this.router.navigate(['/login']);
           }

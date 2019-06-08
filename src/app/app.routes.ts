@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { CategoriaDespesaPesquisaComponent } from './categoria-despesa/categoria-despesa-pesquisa/categoria-despesa-pesquisa.component';
 import { LoginComponent } from './seguranca/login/login.component';
+import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
 
 export const ROUTES: Routes = [
 
@@ -39,6 +40,14 @@ export const ROUTES: Routes = [
   {
     path: 'usuarios',
     loadChildren: './usuarios/usuarios.module#UsuariosModule'
+  },
+  {
+    path: 'page-not-found',
+    component: PageNotFoundComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'page-not-found'
   },
 
 ];
