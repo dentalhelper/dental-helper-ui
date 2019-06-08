@@ -12,7 +12,7 @@ export class InputComponent implements OnInit, AfterContentInit {
   @Input() inputId: string;
   @Input() label: string;
 
-  @ContentChild(FormControlName) control: FormControlName;
+  @ContentChild(FormControlName, {static: false}) control: FormControlName;
 
   constructor() { }
 

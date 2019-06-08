@@ -46,8 +46,8 @@ export class InputContainerComponent implements OnInit, AfterContentInit {
   @Input() for: string;
   @Input() dropdown = false;
 
-  @ContentChild(NgModel) model: NgModel;
-  @ContentChild(FormControlName) control: FormControlName;
+  @ContentChild(NgModel, {static: false}) model: NgModel;
+  @ContentChild(FormControlName, {static: false}) control: FormControlName;
 
   constructor() { }
 

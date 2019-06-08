@@ -15,31 +15,31 @@ export const ROUTES: Routes = [
   },
   {
     path: 'despesas',
-    loadChildren: './despesas/despesas.module#DespesasModule'
+    loadChildren: () => import('./despesas/despesas.module').then(m => m.DespesasModule)
   },
   {
     path: 'procedimentos',
-    loadChildren: './procedimento/procedimento.module#ProcedimentoModule'
+    loadChildren: () => import('./procedimento/procedimento.module').then(m => m.ProcedimentoModule)
   },
   {
     path: 'materiais',
-    loadChildren: './material/material.module#MaterialModule'
+    loadChildren: () => import('./material/material.module').then(m => m.MaterialModule)
   },
   {
     path: 'pacientes',
-    loadChildren: './paciente/paciente.module#PacienteModule'
+    loadChildren: () => import('./paciente/paciente.module').then(m => m.PacienteModule)
   },
   {
     path: 'agendamentos',
-    loadChildren: './agendamentos/agendamentos.module#AgendamentosModule'
+    loadChildren: () => import('./agendamentos/agendamentos.module').then(m => m.AgendamentosModule)
   },
   {
     path: 'orcamentos',
-    loadChildren: './orcamentos/orcamentos.module#OrcamentosModule'
+    loadChildren: () => import('./orcamentos/orcamentos.module').then(m => m.OrcamentosModule)
   },
   {
     path: 'usuarios',
-    loadChildren: './usuarios/usuarios.module#UsuariosModule'
+    loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule)
   },
   {
     path: 'page-not-found',

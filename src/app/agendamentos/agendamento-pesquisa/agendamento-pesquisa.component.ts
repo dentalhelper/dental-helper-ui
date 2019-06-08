@@ -69,7 +69,7 @@ export class AgendamentoPesquisaComponent implements OnInit, OnDestroy {
 
   activeTab = 'pronto';
 
-  @ViewChild('calendar') calendarComponent: FullCalendarComponent;
+  @ViewChild('calendar', {static: false}) calendarComponent: FullCalendarComponent;
 
   agendamentos: AgendamentoResumoDTO[] = [];
   codigoPaciente: number;
