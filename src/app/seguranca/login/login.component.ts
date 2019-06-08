@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { ToastService } from 'src/app/core/services/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -112,7 +113,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private title: Title,
     private router: Router,
-    private authService: AuthService
+    public authService: AuthService,
+    private toastService: ToastService,
   ) { }
 
   ngOnInit() {
@@ -143,10 +145,11 @@ export class LoginComponent implements OnInit {
   submeterFormulario() {
     this.authService.login(this.formulario.value).then(() => {
       this.router.navigate(['/pacientes']);
+      const mensagemToast = `Bem vindo ${this.authService.jwtPayload.user_name}.`;
+        this.toastService.exibirSucesso(mensagemToast);
     }).catch(() => {
+      this.formulario.get('senha').setValue('');
       this.estadoLogin = this.estadoLogin === 'onErrorIn' ? 'onErrorOut' : 'onErrorIn';
-
-      console.log('asdigdsiagoitgasd');
     });
   }
 }

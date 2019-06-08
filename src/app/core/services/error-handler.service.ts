@@ -26,22 +26,32 @@ export class ErrorHandlerService implements HttpInterceptor {
       }
 
       if (errorObj === undefined) {
+        let mensagem: string;
         console.log(error);
         if (error.status === 401) {
-          const mensagem = 'Olá, sua sessão expirou, realize o login novamente.';
-          this.toastService.exibirErro(mensagem);
-          this.router.navigate(['/login']);
+          if (error.error.error === 'unauthorized') {
+            mensagem = 'Você precisa estar autenticado para acessar este recurso.';
+            this.toastService.exibirErro(mensagem);
+            this.router.navigate(['/login']);
+          } else {
+            mensagem = 'Olá, sua sessão expirou, realize o login novamente.';
+            this.toastService.exibirErro(mensagem);
+            this.router.navigate(['/login']);
+          }
+
         }
 
         if (error.status === 0) {
-          const mensagem = 'Desculpe, sem conexão com o servidor.';
+          mensagem = 'Desculpe, sem conexão com o servidor.';
           this.toastService.exibirErro(mensagem);
         }
 
         if (error.status === 400) {
           if (error.error.error === 'invalid_grant') {
-            this.toastService.exibirErro('Usuário e/ou senha incorretos.');
+            mensagem = 'Usuário e/ou senha incorretos.';
+            this.toastService.exibirErro(mensagem);
           }
+
         }
       }
 
