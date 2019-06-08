@@ -1,4 +1,8 @@
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, HostListener, ElementRef } from '@angular/core';
+
+import { LogoutService } from '../services/logout.service';
+import { ToastService } from '../services/toast.service';
 
 declare var $: any;
 @Component({
@@ -7,7 +11,7 @@ declare var $: any;
   styleUrls: ['./navbar.component.scss']
 })
 
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   hideMenu = '';
 
@@ -23,16 +27,23 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  constructor(private eRef: ElementRef) {
-
-  }
-
-  ngOnInit() {
-
-  }
+  constructor(
+    private router: Router,
+    private eRef: ElementRef,
+    private toastService: ToastService,
+    private logoutService: LogoutService
+  ) { }
 
   abrirMenuExtendido(event: any) {
     return event.checked = true;
+  }
+
+  logout() {
+    this.logoutService.logout().then(() => {
+      this.router.navigate(['/login']);
+      const mensagemToast = `Sua sessão foi finalizada.`;
+      this.toastService.exibirSucesso(mensagemToast);
+    });
   }
 
 }

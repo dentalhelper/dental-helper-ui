@@ -62,6 +62,9 @@ export class ErrorHandlerService implements HttpInterceptor {
         case 403:
           this.handle403(errorObj);
           break;
+        case 404:
+          this.handle404(errorObj);
+          break;
         case 409:
           this.handle409(errorObj);
           break;
@@ -78,6 +81,11 @@ export class ErrorHandlerService implements HttpInterceptor {
   }
 
   handle403(errorObj: any) {
+    this.toastService.exibirErro(`${errorObj.mensagemUsuario}`);
+  }
+
+  handle404(errorObj: any) {
+    this.router.navigate(['/page-not-found']);
     this.toastService.exibirErro(`${errorObj.mensagemUsuario}`);
   }
 

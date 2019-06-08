@@ -22,7 +22,7 @@
       <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)" pTooltip="Configurações">
         <i class="fas fa-cog"></i>
       </div>
-      <div class="botao-menu" pTooltip="Sair">
+      <div class="botao-menu" pTooltip="Sair" (click)="logout()">
         <i class="fas fa-sign-out-alt"></i>
       </div>
     </div>
@@ -144,13 +144,11 @@
 
       </li>
 
-      <li class="drop-down-menu">
+      <li class="drop-down-menu" (click)="logout()">
         <label class="item-titulo top-menu">
           <i class="fas fa-sign-out-alt icon-esq"></i>
           <div class="label-titulo">
-            <a routerLink="/login">
-              Sair
-            </a>
+            Sair
           </div>
         </label>
       </li>
