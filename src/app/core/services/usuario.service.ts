@@ -70,6 +70,18 @@ export class UsuarioService {
     return this.http.put<UsuarioNovoDTO>(`${this.USUARIO_URL}/${codigo}`, usuario);
   }
 
+  alterarStatus(codigo: number): Observable<any> {
+    return this.http.patch<any>(`${this.USUARIO_URL}/${codigo}`)
+      .pipe(
+        map((response) => {
+          return {
+            user: response.login,
+            status: response.ativo
+          };
+        })
+      );
+  }
+
   private converterStringsParaDatas(usuarios: any[]) {
     for (const usuario of usuarios) {
       usuario.dataNascimento = moment(usuario.dataNascimento, 'YYYY-MM-DD').toDate();

@@ -21,8 +21,8 @@ export class AppHttp extends HttpClient {
     return this.fazerRequisicao<T>(() => super.delete<T>(url, options));
   }
 
-  public patch<T>(url: string, body: any, options?: any): Observable<T> {
-    return this.fazerRequisicao<T>(() => super.patch<T>(url, options));
+  public patch<T>(url: string, body?: any, options?: any): Observable<T> {
+    return this.fazerRequisicao<T>(() => super.patch<T>(url, body, options));
   }
 
   public head<T>(url: string, options?: any): Observable<T> {

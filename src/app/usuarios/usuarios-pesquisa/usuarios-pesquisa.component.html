@@ -48,9 +48,11 @@
                   tooltipPosition="top" [routerLink]="['/usuarios', usuario.codigo, 'edit']">
                   <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
-                <button type="button" class="operacoes__button operacoes__button--delete" (click)="desativar(usuario)"
-                  pTooltip="Desativar" tooltipPosition="top">
-                  <fa-icon [icon]="['fas', 'ban']" size="lg" [fixedWidth]="true"></fa-icon>
+                <button type="button" class="operacoes__button operacoes__button--delete"
+                  (click)="alterarStatus(usuario.codigo)" [pTooltip]="usuario.ativo ? 'Desativar' : 'Ativar'"
+                  tooltipPosition="top">
+                  <fa-icon [icon]="['fas', usuario.ativo ? 'user-check' : 'user-times']" size="lg" [fixedWidth]="true">
+                  </fa-icon>
                 </button>
               </div>
             </td>

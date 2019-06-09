@@ -46,4 +46,17 @@ export class UsuariosPesquisaComponent implements OnInit {
     const mensagemToast = `"Operação não implementada (via PATCH)"`;
     this.toastService.exibirAviso(mensagemToast);
   }
+
+  alterarStatus(codigoUsuario: number) {
+    this.usuarioService.alterarStatus(codigoUsuario)
+      .subscribe((response) => {
+        if (response.status) {
+          this.toastService.exibirSucesso(`O usuário "${response.user}" está ativo.`);
+        } else if (!response.status) {
+          this.toastService.exibirAviso(`O usuário "${response.user}" foi desativado e não possui mais acesso ao sistema.`);
+        }
+
+        this.carregarUsuarios();
+      });
+  }
 }

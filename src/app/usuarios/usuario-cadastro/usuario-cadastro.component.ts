@@ -133,6 +133,7 @@ export class UsuarioCadastroComponent implements OnInit {
   salvar() {
     const form = this.formulario.value;
     delete form['senhaconfirm'];
+    delete form['codigoEstado'];
     this.usuarioService.salvar(form)
       .pipe(
         tap((response: string) => {
