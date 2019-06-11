@@ -42,7 +42,7 @@ export class NavbarComponent {
     this.logoutService.logout().then(() => {
       this.router.navigate(['/login']);
       const mensagemToast = `Sua sessão foi finalizada.`;
-      this.toastService.exibirSucesso(mensagemToast);
+      this.toastService.exibirInfo('Desconectado', mensagemToast);
     });
   }
 

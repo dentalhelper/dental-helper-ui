@@ -146,7 +146,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.formulario.value).then(() => {
       this.router.navigate(['/pacientes']);
       const mensagemToast = `Bem vindo ${this.authService.jwtPayload.user_name}.`;
-        this.toastService.exibirSucesso(mensagemToast);
+      this.toastService.exibirInfo('Conectado', mensagemToast);
     }).catch(() => {
       this.formulario.get('senha').setValue('');
       this.estadoLogin = this.estadoLogin === 'onErrorIn' ? 'onErrorOut' : 'onErrorIn';

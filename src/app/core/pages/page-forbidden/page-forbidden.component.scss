@@ -1,0 +1,52 @@
+@import "../../../../assets/scss/cores";
+
+.content {
+  &__image {
+    padding-top: 30px;
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  &__contagem {
+    padding: 0 5px 30px 5px;
+    color: #808080;
+    text-align: center;
+
+    h2 {
+      font-size: 1.2em;
+      margin: 0 auto;
+      padding: 0 5px 30px 5px;
+      color: $cor-menu;
+    }
+    p {
+      margin: 0 auto;
+    }
+    span {
+      font-weight: bold;
+      color: $cor-menu;
+    }
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .content {
+    &__image {
+      width: 400px;
+    }
+
+    &__contagem {
+      padding: 0 20px 20px 20px;
+      text-align: center;
+
+      h2 {
+        font-size: 1.4em;
+        padding: 0 100px 30px 100px;
+      }
+      span {
+        font-weight: bold;
+        color: $cor-menu;
+      }
+    }
+  }
+}

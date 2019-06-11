@@ -56,6 +56,19 @@ export class AuthService {
     return !token || this.jwtHelper.isTokenExpired(token);
   }
 
+  hasAuthority(role: string) {
+    return this.jwtPayload && this.jwtPayload.authorities.includes(role);
+  }
+
+  hasAnyAuthority(roles: string[]) {
+    for (const role of roles) {
+      if (this.hasAuthority(role)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   obterNovoAccessToken(): Promise<void> {
     let headers = new HttpHeaders();
     headers = headers.append('Authorization', 'Basic dGVzdGU6dGVzdGU=');

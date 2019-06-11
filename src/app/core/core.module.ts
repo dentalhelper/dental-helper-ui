@@ -16,6 +16,7 @@ import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { PageForbiddenComponent } from './pages/page-forbidden/page-forbidden.component';
 @NgModule({
   imports: [
     ToastModule,
@@ -27,7 +28,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   declarations: [
     NavbarComponent,
     ToastLinkComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PageForbiddenComponent
   ],
   exports: [
     ToastModule,

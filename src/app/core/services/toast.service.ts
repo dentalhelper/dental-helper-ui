@@ -22,6 +22,16 @@ export class ToastService {
     });
   }
 
+  exibirInfo(sumario: string, detalhe: string) {
+
+    this.messageService.add({
+      key: this.key,
+      severity: 'info',
+      summary: sumario,
+      detail: detalhe
+    });
+  }
+
   exibirErro(detalhe: string) {
 
     this.messageService.add({

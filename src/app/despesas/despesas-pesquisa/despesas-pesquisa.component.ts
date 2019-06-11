@@ -6,6 +6,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { Despesa } from 'src/app/domains/despesa.model';
 import { pt_BR } from '../../shared/constants/calendario.br';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { ToastService } from 'src/app/core/services/toast.service';
 import { DespesaFilter } from 'src/app/core/classes/despesa-filter';
 import { DespesaService } from 'src/app/core/services/despesa.service';
@@ -40,6 +41,7 @@ export class DespesasPesquisaComponent implements OnInit {
     private title: Title,
     private router: Router,
     private route: ActivatedRoute,
+    private authService: AuthService,
     private toastService: ToastService,
     private despesaService: DespesaService,
     private confirmationService: ConfirmationService,
@@ -93,7 +95,7 @@ export class DespesasPesquisaComponent implements OnInit {
         this.filtrar();
         const mensagemToast = `"A Despesa foi excluída."`;
         this.toastService.exibirSucesso(mensagemToast);
-      });
+      }, (error) => { console.log(error); });
   }
 
   confirmarExclusao(despesa: Despesa) {
@@ -115,6 +117,10 @@ export class DespesasPesquisaComponent implements OnInit {
         });
         this.categorias.push({ label: 'Todos', value: '' });
       });
+  }
+
+  hideForRole(role: string) {
+    return !this.authService.hasAuthority(role);
   }
 
   getTotal() {

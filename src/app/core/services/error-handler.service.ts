@@ -50,7 +50,12 @@ export class ErrorHandlerService implements HttpInterceptor {
             mensagem = 'Usuário e/ou senha incorretos.';
             this.toastService.exibirErro(mensagem);
           }
+        }
 
+        if (error.status === 403) {
+          mensagem = 'Você não possui permissão para realizar essa operação.';
+          this.toastService.exibirErro(mensagem);
+          return throwError(error.status);
         }
       }
 
