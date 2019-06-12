@@ -3,6 +3,7 @@ import { Component, HostListener, ElementRef } from '@angular/core';
 
 import { LogoutService } from '../services/logout.service';
 import { ToastService } from '../services/toast.service';
+import { AuthService } from '../services/auth.service';
 
 declare var $: any;
 @Component({
@@ -30,6 +31,7 @@ export class NavbarComponent {
   constructor(
     private router: Router,
     private eRef: ElementRef,
+    private authService: AuthService,
     private toastService: ToastService,
     private logoutService: LogoutService
   ) { }
@@ -46,4 +48,15 @@ export class NavbarComponent {
     });
   }
 
+  hideForRole(role: string) {
+    return !this.hasAuthority(role);
+  }
+
+  showOnlyForRole(role: string) {
+    return this.hasAuthority(role);
+  }
+
+  private hasAuthority(role: string) {
+    return this.authService.hasAuthority(role);
+  }
 }

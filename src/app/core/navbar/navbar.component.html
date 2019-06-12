@@ -16,7 +16,7 @@
       <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)" pTooltip="Finanças">
         <i class="fas fa-dollar-sign"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)" pTooltip="Materiais">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)" pTooltip="Materiais" *ngIf="hideForRole('RECEPCIONISTA')">
         <i class="fas fa-toolbox"></i>
       </div>
       <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)" pTooltip="Configurações">
@@ -100,7 +100,7 @@
         </ul>
       </li>
 
-      <li class="drop-down-menu">
+      <li class="drop-down-menu" *ngIf="hideForRole('RECEPCIONISTA')">
         <input type="checkbox" class="ativar" id="materiais" name="materiais" #materiais>
         <label id="label-materiais" for="materiais" class="item-titulo top-menu">
           <i class="fas fa-toolbox icon-esq"></i>
@@ -121,7 +121,7 @@
           <div class="label-titulo">Configurações</div> <i id='arrow' class="fas fa-angle-right icon-dir"></i>
         </label>
 
-        <ul class="drop-down">
+        <ul class="drop-down" *ngIf="showOnlyForRole('ADMINISTRADOR')">
           <li class="item-submenu" (click)="isOpen = !isOpen">
             <a id="usuarios" routerLinkActive="active" [routerLink]="['/usuarios']">Usuários</a>
           </li>

@@ -25,6 +25,8 @@ export const ROUTES: Routes = [
   },
   {
     path: 'materiais',
+    canActivate: [AuthGuard],
+    data: { roles: ['ADMINISTRADOR', 'ASSISTENTE'] },
     loadChildren: './material/material.module#MaterialModule'
   },
   {
@@ -42,7 +44,7 @@ export const ROUTES: Routes = [
   {
     path: 'usuarios',
     canActivate: [AuthGuard],
-    data: { roles: ['ADMNISTRADOR'] },
+    data: { roles: ['ADMINISTRADOR'] },
     loadChildren: './usuarios/usuarios.module#UsuariosModule'
   },
   {
