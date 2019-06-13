@@ -48,6 +48,25 @@ export class NavbarComponent {
     });
   }
 
+  isActiveRoute(mainRoute: string, subRoutes: string[]): boolean {
+    let routeActive = false;
+    const activeSubRoute = this.router.url.split('/').pop();
+    const [, activeRouteResource] = this.router.url.split('/');
+
+    subRoutes.forEach(element => {
+      if (activeSubRoute === element && activeRouteResource === mainRoute) {
+        routeActive = true;
+      }
+    });
+
+    if (routeActive === false) {
+      if (activeSubRoute === mainRoute && activeRouteResource === mainRoute) {
+        routeActive = true;
+      }
+    }
+    return routeActive;
+  }
+
   hideForRole(role: string) {
     return !this.hasAuthority(role);
   }

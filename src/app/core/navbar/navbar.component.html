@@ -7,19 +7,24 @@
       <div id="menu-bar" class="botao-menu" (click)="isOpen = !isOpen">
         <i class="fas fa-bars"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(pacientes)" pTooltip="Pacientes">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(pacientes)" pTooltip="Pacientes"
+        [ngClass]="{'active-menu' : isActiveRoute('pacientes', ['novo', 'edit', 'consultas', 'orcamentos', 'pagamentos', 'anamnese'])}">
         <i class="fas fa-user-friends"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(agendamentos)" pTooltip="Agendamentos">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(agendamentos)" pTooltip="Agendamentos"
+        [ngClass]="{'active-menu' : isActiveRoute('agendamentos', ['novo', 'edit'])}">
         <i class="fas fa-calendar-alt"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)" pTooltip="Finanças">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)" pTooltip="Finanças"
+        [ngClass]="{'active-menu' : isActiveRoute('despesas', ['novo', 'edit'])}">
         <i class="fas fa-dollar-sign"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)" pTooltip="Materiais" *ngIf="hideForRole('RECEPCIONISTA')">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)" pTooltip="Materiais"
+        *ngIf="hideForRole('RECEPCIONISTA')" [ngClass]="{'active-menu' : isActiveRoute('materiais', ['novo', 'edit'])}">
         <i class="fas fa-toolbox"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)" pTooltip="Configurações">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)" pTooltip="Configurações"
+        [ngClass]="{'active-menu' : isActiveRoute('usuarios', ['novo', 'edit']) || isActiveRoute('procedimentos', ['novo', 'edit']) || isActiveRoute('categorias-despesa', ['categorias-despesa'])}">
         <i class="fas fa-cog"></i>
       </div>
       <div class="botao-menu" pTooltip="Sair" (click)="logout()">
@@ -100,7 +105,7 @@
         </ul>
       </li>
 
-      <li class="drop-down-menu" *ngIf="hideForRole('RECEPCIONISTA')">
+      <li class="drop-down-menu" [ngStyle]="{'display': hideForRole('RECEPCIONISTA') ? '' :'none'}">
         <input type="checkbox" class="ativar" id="materiais" name="materiais" #materiais>
         <label id="label-materiais" for="materiais" class="item-titulo top-menu">
           <i class="fas fa-toolbox icon-esq"></i>
