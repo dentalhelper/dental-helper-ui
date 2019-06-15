@@ -1,6 +1,7 @@
 <div class="screen">
   <div class="screen__top">
-    <div class="screen__top__login" [@login-create]="estadoLoginCriado" [@login-error]="estadoLogin">
+    <div class="screen__top__login" [@login-create]="estadoLoginCriado" [@login-error]="estadoLogin"
+      [@login-rotate2]="estadoEmail2">
       <div class="screen__top__login__icon">
         <i class="fas fa-sign-in-alt"></i>
       </div>
@@ -9,16 +10,17 @@
 
       <form class="screen__top__login__form" novalidate [formGroup]="formulario" (ngSubmit)="submeterFormulario()">
         <span class="ui-float-label screen__top__login__form__input">
-          <input id="float-input" type="text" size="30" pInputText formControlName="login" autofocus autocomplete="username">
+          <input id="float-input" type="text" size="30" pInputText formControlName="login" autofocus
+            autocomplete="username">
           <label for="float-input"><i class="fas fa-user"></i> Usuário</label>
         </span>
 
         <span class="ui-float-label screen__top__login__form__password">
           <i class="far fa-eye icon-eye" *ngIf="!verSenha && formulario.get('senha').value !== ''; else iconEye"
-            (click)="exibirSenha()"></i>
+            (click)="togglePasswordVisibility()"></i>
           <ng-template #iconEye>
             <i class="far fa-eye-slash icon-eye" *ngIf="verSenha && formulario.get('senha').value !== ''"
-              (click)="ocultarSenha()"></i>
+              (click)="togglePasswordVisibility()"></i>
           </ng-template>
           <input id="float-input-p" [type]="!verSenha ? 'password' : 'text'" size="30" pInputText
             autocomplete="new-password" formControlName="senha">
@@ -26,10 +28,39 @@
         </span>
 
         <p class="screen__top__login__form__forgot">
-          <a>Recuperar senha.</a>
+          <a (click)="exibirRecuperarSenha()">Recuperar senha.</a>
         </p>
 
         <button class="screen__top__login__form__button" type="submit" [disabled]="formulario.invalid">Entrar</button>
+      </form>
+    </div>
+
+    <div class="screen__top__login" [@login-rotate]="estadoEmail" [@login-error]="estadoLogin" [hidden]="!recuperarSenha">
+      <div class="screen__top__login__icon">
+        <i class="fas fa-key"></i>
+      </div>
+
+      <i class="fas fa-arrow-left screen__top__login__icon-back" (click)="exibirLogin()" *ngIf="!aguarde"></i>
+      <h1 class="screen__top__login__title">Solicitar senha</h1>
+
+      <form class="screen__top__login__form" novalidate [formGroup]="formularioEmail">
+        <span class="ui-float-label screen__top__login__form__input">
+          <input id="float-input-e" type="email" size="30" pInputText formControlName="email" autocomplete="email">
+          <label for="float-input"><i class="fas fa-envelope"></i> E-mail</label>
+        </span>
+
+        <button class="screen__top__login__form__button" type="button" [disabled]="formularioEmail.invalid || aguarde"
+          (click)="submeterEmail()">Enviar</button>
+
+        <div class="mail-spinner" *ngIf="aguarde">
+          <p>Enviando e-mail, aguarde...</p>
+          <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+
       </form>
     </div>
   </div>

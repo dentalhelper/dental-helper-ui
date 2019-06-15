@@ -25,7 +25,6 @@ export class UsuarioService {
       );
   }
 
-
   pesquisar(form: any): Observable<any[]> {
     let parametros = new HttpParams();
 
@@ -80,6 +79,10 @@ export class UsuarioService {
           };
         })
       );
+  }
+
+  recuperarSenha(email: string) {
+    return this.http.patch<any>(`${this.USUARIO_URL}/senha/redefinir`, email);
   }
 
   private converterStringsParaDatas(usuarios: any[]) {

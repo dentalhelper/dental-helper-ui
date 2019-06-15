@@ -32,6 +32,16 @@ export class ToastService {
     });
   }
 
+  exibirInfoMail(sumario: string, detalhe: string) {
+    this.messageService.add({
+      life: 60000,
+      key: 'toast-center',
+      severity: 'info',
+      summary: sumario,
+      detail: detalhe
+    });
+  }
+
   exibirErro(detalhe: string) {
 
     this.messageService.add({
@@ -59,6 +69,10 @@ export class ToastService {
       severity: 'warn',
       summary: 'Aviso!'
     });
+  }
+
+  clearToasts() {
+    this.messageService.clear();
   }
 
   isMobile(): string {
