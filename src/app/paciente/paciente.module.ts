@@ -38,7 +38,6 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
   declarations: [
     RgPipe,
     CpfPipe,
-    ShortenPipe,
     AnamneseComponent,
     ConsultasComponent,
     StatusPagamentoPipe,

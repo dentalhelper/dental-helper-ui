@@ -48,6 +48,12 @@
                   tooltipPosition="top" [routerLink]="['/usuarios', usuario.codigo, 'edit']">
                   <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
+
+                <button type="button" class="operacoes__button operacoes__button--password" pTooltip="Alterar Senha"
+                  tooltipPosition="top" (click)="abrirModalSenha(usuario)">
+                  <fa-icon [icon]="['fas', 'unlock-alt']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+
                 <button type="button" class="operacoes__button operacoes__button--delete"
                   (click)="alterarStatus(usuario.codigo)" [pTooltip]="usuario.ativo ? 'Desativar' : 'Ativar'"
                   tooltipPosition="top">
@@ -72,3 +78,43 @@
     </div>
   </div>
 </div>
+
+
+<p-dialog [(visible)]="exibirModal" modal="true" #modal (onHide)="resetarFormulario()" [style]="{width: '400px'}">
+  <p-header>
+    <span [title]="usuarioModal?.nome">
+      Alterar senha de {{ usuarioModal?.nome | shorten:25 }}
+    </span>
+  </p-header>
+  <div class="modal">
+    <form novalidate [formGroup]="formulario" class="i-container">
+
+      <app-input-container label="Senha atual" for="senha-atual" errorMessage="Senha atual é obrigatória.">
+        <input class="i-container__input" type="password" id="senha-atual" formControlName="senhaAtual"
+          autocomplete="none">
+      </app-input-container>
+
+      <app-input-container label="Nova senha" for="nova-senha" errorMessage="Nova senha é obrigatório.">
+        <input class="i-container__input" type="password" id="nova-senha" formControlName="novaSenha"
+          autocomplete="new-password">
+      </app-input-container>
+
+      <app-input-container label="Confirmação da nova senha" for="confirm-senha"
+        errorMessage="Confirmação da senha é obrigatório.">
+        <input class="i-container__input" type="password" id="confirm-senha" formControlName="confirmacaoDeSenhaAtual"
+          autocomplete="new-password">
+      </app-input-container>
+
+    </form>
+
+  </div>
+  <p-footer>
+    <app-button label="Salvar" icon="fas fa-hdd" iconPosition="right" (botaoClicado)="[alterarSenha()]"
+      [classes]="['botao--success']">
+    </app-button>
+
+    <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[fecharModal()]"
+      [classes]="['ui-button-secondary']">
+    </app-button>
+  </p-footer>
+</p-dialog>

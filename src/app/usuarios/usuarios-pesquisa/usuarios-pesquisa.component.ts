@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -6,15 +6,20 @@ import { ToastService } from 'src/app/core/services/toast.service';
 import { UsuarioService } from 'src/app/core/services/usuario.service';
 
 import { ConfirmationService } from 'primeng/api';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-usuarios-pesquisa',
   templateUrl: './usuarios-pesquisa.component.html',
-  styleUrls: ['./usuarios-pesquisa.component.scss']
+  styleUrls: ['./usuarios-pesquisa.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class UsuariosPesquisaComponent implements OnInit {
 
   usuarios: any[];
+  formulario: FormGroup;
+  exibirModal: boolean;
+  usuarioModal: any;
 
   constructor(
     private title: Title,
@@ -26,6 +31,7 @@ export class UsuariosPesquisaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.prepararFormulario();
     this.title.setTitle('Usuários');
     this.carregarUsuarios();
   }
@@ -42,11 +48,6 @@ export class UsuariosPesquisaComponent implements OnInit {
     });
   }
 
-  desativar(usuario: any) {
-    const mensagemToast = `"Operação não implementada (via PATCH)"`;
-    this.toastService.exibirAviso(mensagemToast);
-  }
-
   alterarStatus(codigoUsuario: number) {
     this.usuarioService.alterarStatus(codigoUsuario)
       .subscribe((response) => {
@@ -58,5 +59,33 @@ export class UsuariosPesquisaComponent implements OnInit {
 
         this.carregarUsuarios();
       });
+  }
+
+  alterarSenha(){
+
+  }
+
+  prepararFormulario() {
+    this.formulario = new FormGroup(
+      {
+        confirmacaoDeSenhaAtual: new FormControl('', Validators.required),
+        novaSenha: new FormControl('', [Validators.required, Validators.minLength(6)]),
+        senhaAtual: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      }
+    );
+  }
+
+  fecharModal() {
+    this.exibirModal = false;
+  }
+
+  resetarFormulario() {
+    this.prepararFormulario();
+  }
+
+  abrirModalSenha(usuario) {
+    this.prepararFormulario();
+    this.usuarioModal = usuario;
+    this.exibirModal = true;
   }
 }
