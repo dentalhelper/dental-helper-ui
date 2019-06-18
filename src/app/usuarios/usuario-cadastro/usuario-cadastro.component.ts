@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastService } from 'src/app/core/services/toast.service';
@@ -20,7 +20,9 @@ declare var $: any;
 })
 export class UsuarioCadastroComponent implements OnInit {
 
+
   pt_BR = pt_BR;
+  edicao = false;
   formulario: FormGroup;
   nomeToastSucesso: string;
   codigo: any;
@@ -75,7 +77,10 @@ export class UsuarioCadastroComponent implements OnInit {
     this.carregarEstados();
     const codigUsuario = this.route.snapshot.params['codigo'];
     if (codigUsuario) {
+      this.edicao = true;
       this.codigo = codigUsuario;
+      this.formulario.get('senhaconfirm').setValue('******');
+      this.formulario.get('codigoCidade').enable();
       this.carregarUsuarioPeloCodigo(codigUsuario);
     }
   }
@@ -108,7 +113,7 @@ export class UsuarioCadastroComponent implements OnInit {
           updateOn: 'change',
           validators: [Validators.required]
         }),
-        codigoCidade: new FormControl('', {
+        codigoCidade: new FormControl({ value: '', disabled: true }, {
           updateOn: 'change',
           validators: [Validators.required]
         }),
@@ -162,13 +167,13 @@ export class UsuarioCadastroComponent implements OnInit {
     this.usuarioService.buscarPorCodigo(codigo)
       .subscribe((response) => {
         this.formulario.patchValue(response);
-        //this.atualizarTituloDaPagina();
-        this.carregarEstadoDoPaciente();
+        this.atualizarTituloDaPagina();
+        this.carregarEstadoDoUsuario();
 
       });
   }
 
-  carregarEstadoDoPaciente() {
+  carregarEstadoDoUsuario() {
     this.estadoService.pesquisar().subscribe((response) => {
       response.forEach((estado) => {
         this.estadoService.pesquisarCidades(estado.codigo).subscribe((cidadeResponse) => {
@@ -198,6 +203,7 @@ export class UsuarioCadastroComponent implements OnInit {
   }
 
   carregarCidades(codigoEstado: number) {
+    this.formulario.get('codigoCidade').enable();
     this.estadoService.pesquisarCidades(codigoEstado).subscribe((response) => {
       this.cidadesOptions = response.map(cidade => ({
         value: cidade.codigo, label: cidade.nome
@@ -207,6 +213,10 @@ export class UsuarioCadastroComponent implements OnInit {
 
   atualizarTituloDaPagina() {
     this.title.setTitle(`Editando: ${this.formulario.get('nome').value}`);
+  }
+
+  get isEditando(): boolean {
+    return this.edicao;
   }
 
   isMobile(): boolean {

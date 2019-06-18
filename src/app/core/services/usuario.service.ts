@@ -35,32 +35,10 @@ export class UsuarioService {
   }
 
   buscarPorCodigo(codigo: number): Observable<UsuarioNovoDTO> {
-    return this.http.get<any>(`${this.USUARIO_URL}/${codigo}`).pipe(
-      map((response) => {
-        const usuario: UsuarioNovoDTO = {
-          bairro: response.endereco.bairro,
-          nome: response.nome,
-          dataNascimento: response.dataNascimento,
-          cPF: response.cPF,
-          rG: response.rG,
-          estadoCivil: response.estadoCivil,
-          sexo: response.sexo,
-          email: response.email,
-          telefonePrincipal: response.telefonePrincipal,
-          telefone2: response.telefoneSecundario,
-          logradouro: response.endereco.logradouro,
-          numero: response.endereco.numero,
-          cep: response.endereco.cep,
-          complemento: response.endereco.complemento,
-          codigoCidade: response.endereco.cidade.codigo,
-          senha: null,
-          tipo: response.tipo,
-          login: response.login
-        };
-        // TODO: UTILIZAR DTO
-        this.converterStringsParaDatas([usuario]);
-        console.log(usuario);
-        return usuario;
+    return this.http.get<any>(`${this.USUARIO_URL}/${codigo}/edit`).pipe(
+      map((usuarioResponse: UsuarioNovoDTO) => {
+        this.converterStringsParaDatas([usuarioResponse]);
+        return usuarioResponse;
       })
     );
   }
