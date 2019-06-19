@@ -24,7 +24,7 @@
         <i class="fas fa-toolbox"></i>
       </div>
       <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)" pTooltip="Configurações"
-        [ngClass]="{'active-menu' : isActiveRoute('usuarios', ['novo', 'edit']) || isActiveRoute('procedimentos', ['novo', 'edit']) || isActiveRoute('categorias-despesa', ['categorias-despesa'])}">
+        [ngClass]="{'active-menu' : isActiveRoute('usuarios', ['novo', 'edit', 'senha']) || isActiveRoute('procedimentos', ['novo', 'edit']) || isActiveRoute('categorias-despesa', ['categorias-despesa'])}">
         <i class="fas fa-cog"></i>
       </div>
       <div class="botao-menu" pTooltip="Sair" (click)="logout()">

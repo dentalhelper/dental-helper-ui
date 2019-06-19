@@ -1,0 +1,36 @@
+.form {
+  padding: 20px 10px 10px 10px;
+}
+
+.i-container {
+  padding: 0 20px 0 20px;
+  &__message {
+    position: static;
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .form {
+    .i-container {
+      & > :nth-child(1) {
+        width: 300px;
+        padding-bottom: 10px;
+      }
+
+      & > :nth-child(2) {
+        width: 300px;
+        padding-bottom: 10px;
+      }
+
+      & > :nth-child(3) {
+        width: 300px;
+        padding-bottom: 10px;
+      }
+
+      & > :nth-child(4) {
+        width: 300px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

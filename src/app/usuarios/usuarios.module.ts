@@ -4,14 +4,13 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { USUARIO_ROUTES } from './usuarios.routes';
-import { ShortenPipe } from '../pipes/shorten.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { StatusUsuarioPipe } from '../pipes/status-usuario.pipe';
+import { UsuariosSenhaComponent } from './usuarios-senha/usuarios-senha.component';
 import { UsuarioCadastroComponent } from './usuario-cadastro/usuario-cadastro.component';
 import { UsuariosPesquisaComponent } from './usuarios-pesquisa/usuarios-pesquisa.component';
 
 import { TableModule } from 'primeng/table';
-import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
@@ -25,6 +24,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 @NgModule({
   declarations: [
     StatusUsuarioPipe,
+    UsuariosSenhaComponent,
     UsuarioCadastroComponent,
     UsuariosPesquisaComponent,
   ],
@@ -33,7 +33,6 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     FormsModule,
     CommonModule,
     SharedModule,
-    DialogModule,
     TooltipModule,
     DropdownModule,
     CalendarModule,

@@ -31,7 +31,6 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { NgxMaskModule } from 'ngx-mask';
-import { ShortenPipe } from '../pipes/shorten.pipe';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 @NgModule({

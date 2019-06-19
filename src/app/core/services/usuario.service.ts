@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import * as moment from 'moment';
+import { NovaSenha } from 'src/app/domains/interfaces/nova-senha.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -57,6 +58,10 @@ export class UsuarioService {
           };
         })
       );
+  }
+
+  alterarSenha(senha: NovaSenha, codigo: number): Observable<any> {
+    return this.http.put<any>(`${this.USUARIO_URL}/${codigo}/senha`, senha);
   }
 
   recuperarSenha(email: string) {
