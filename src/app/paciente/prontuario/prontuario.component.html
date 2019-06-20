@@ -31,6 +31,10 @@
           <a>Pagamentos</a>
         </li>
         <li class="tab-container__right__nav__tab" routerLinkActive="tab-container__right__nav__tab--active"
+          [routerLink]="['/pacientes', codigPaciente, 'odontograma']">
+          <a>Odontograma</a>
+        </li>
+        <li class="tab-container__right__nav__tab" routerLinkActive="tab-container__right__nav__tab--active"
           [routerLink]="['/pacientes', codigPaciente, 'anamnese']">
           <a>Anamnese</a>
         </li>

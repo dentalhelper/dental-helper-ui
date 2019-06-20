@@ -32,6 +32,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { NgxMaskModule } from 'ngx-mask';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { OdontogramaComponent } from './odontograma/odontograma.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     PacienteDadosComponent,
     PacienteCadastroComponent,
     PacientesPesquisaComponent,
+    OdontogramaComponent,
   ],
   imports: [
     TableModule,
