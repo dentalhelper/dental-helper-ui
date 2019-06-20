@@ -66,7 +66,9 @@ export class UsuariosSenhaComponent implements OnInit {
   }
 
   salvar() {
-    this.usuarioService.alterarSenha(this.formulario.value, this.codigoUsuario)
+    const form = this.formulario.value;
+    delete form['confirmacaoDeSenhaAtual'];
+    this.usuarioService.alterarSenha(form, this.codigoUsuario)
       .subscribe(() => {
         this.voltar();
         const mensagemToast = `A senha de ${this.nomeUsuario} foi alterada!`;
