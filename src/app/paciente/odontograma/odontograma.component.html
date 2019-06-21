@@ -1,3 +1,59 @@
-<p>
-  odontograma works!
-</p>
+<div class="content" [@linha]="activeTab">
+  <app-default-header titulo="Odontograma" buttonId="edit-odontograma" buttonText="Editar Odontograma"
+    (botaoClicado)="alterarOdontograma()">
+  </app-default-header>
+
+  <div class="container">
+    <div class="odontograma__container">
+      <div class="odontograma__container__dados">
+        <label class="odontograma__container__dados__label">Forma</label>
+        <img class="odontograma__container__dados__image" src="../../../assets/images/formas/circle.png"
+          alt="Formato do rosto">
+      </div>
+
+      <div class="odontograma__container__dados odontograma__container__dados--col">
+        <div class="odontograma__container__dados odontograma__container__dados--space">
+          <label class="odontograma__container__dados__label">Escala</label>
+          <span class="odontograma__container__dados__data">ESC</span>
+        </div>
+
+        <div class="odontograma__container__dados odontograma__container__dados--space">
+          <label class="odontograma__container__dados__label">Cor</label>
+          <span class="odontograma__container__dados__data">COR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="grid__container">
+      <div class="grid__container__dentes" *ngFor="let dente of dentesTop">
+        <img class="grid__container__dentes__image" src="../../assets/images/dentes/{{dente}}.png"
+          alt="Dente {{dente}}">
+        <p class="grid__container__dentes__number">{{dente}}</p>
+      </div>
+
+      <div class="grid__container__dentes" *ngFor="let dente of dentesBot">
+        <p class="grid__container__dentes__number">{{dente}}</p>
+        <img class="grid__container__dentes__image" src="../../assets/images/dentes/{{dente}}.png"
+          alt="Dente {{dente}}">
+      </div>
+    </div>
+  </div>
+
+  <div class="status">
+    <div class="status__label status__label--empty">
+      <div class="status__label__square status__label__square--empty"></div>
+      <span class="status__label__name">Sem tratamentos</span>
+    </div>
+    <div class="status__label status__label--course">
+      <div class="status__label__square status__label__square--course"></div>
+      <span class="status__label__name">Em andamento</span>
+    </div>
+    <div class="status__label status__label--end">
+      <div class="status__label__square status__label__square--end"></div>
+      <span class="status__label__name">Finalizado</span>
+    </div>
+  </div>
+
+</div>
