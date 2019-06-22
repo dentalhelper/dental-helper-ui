@@ -16,6 +16,7 @@ import { map } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
 
 import * as moment from 'moment';
+import { OdontogramaResumoDTO } from 'src/app/domains/dtos/odontograma-resumo.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -68,6 +69,10 @@ export class PacienteService {
 
   buscarOrcamentos(codigo: number): Observable<PacienteOrcamentoDTO> {
     return this.http.get<PacienteOrcamentoDTO>(`${this.PACIENTE_URL}/${codigo}/orcamentos`);
+  }
+
+  buscarOdontograma(codigo: number): Observable<OdontogramaResumoDTO> {
+    return this.http.get<OdontogramaResumoDTO>(`${this.PACIENTE_URL}/${codigo}/odontograma`);
   }
 
   buscarPagamentos(codigo: number): Observable<OrcamentoPagamentoDTO[]> {

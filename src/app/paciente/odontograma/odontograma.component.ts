@@ -1,5 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { Router, ActivatedRoute } from '@angular/router';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+
+import { ToastService } from 'src/app/core/services/toast.service';
+import { PacienteService } from 'src/app/core/services/paciente.service';
+
+import { ConfirmationService } from 'primeng/api';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { OdontogramaResumoDTO } from 'src/app/domains/dtos/odontograma-resumo.dto';
+import { DenteOdontogramaResumoDTO } from 'src/app/domains/dtos/dente-odontograma-resumo.dto';
 
 @Component({
   selector: 'app-odontograma',
@@ -60,15 +70,53 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 })
 export class OdontogramaComponent implements OnInit {
 
+  codigPaciente: number;
   activeTab = 'pronto';
 
-  dentesTop = ['18', '17', '16', '15', '14', '13', '12', '11', '21', '22', '23', '24', '25', '26', '27', '28'];
+  dentesTop: any[] = [];
 
-  dentesBot = ['48', '47', '46', '45', '44', '43', '42', '41', '31', '32', '33', '34', '35', '36', '37', '38'];
+  dentesBot: any[] = [];
 
-  constructor() { }
+  constructor(
+    private title: Title,
+    private router: Router,
+    private route: ActivatedRoute,
+    private toastService: ToastService,
+    private pacienteService: PacienteService,
+    private confirmationService: ConfirmationService,
+  ) { }
 
   ngOnInit() {
+    this.codigPaciente = this.route.snapshot.parent.params['codigo'];
+    this.carregarOdontograma(this.codigPaciente);
+  }
+
+  carregarOdontograma(codigo: number) {
+    this.pacienteService.buscarOdontograma(codigo)
+      .subscribe((response: OdontogramaResumoDTO) => {
+        const dentes = response.dentes;
+        dentes.forEach((dente) => {
+          if (dente.numero <= 28) {
+            this.dentesTop.push(dente);
+          } else {
+            this.dentesBot.push(dente);
+          }
+        });
+      });
+  }
+
+  verificarStatusDoDente(dente: DenteOdontogramaResumoDTO): any {
+    if (!this.temTratamento(dente.status)) {
+      return dente.numero;
+    } else if (dente.status === 2) {
+      return dente.numero + 'a';
+    } else if (dente.status === 3) {
+      return dente.numero + 'f';
+    }
+  }
+
+  temTratamento(statusDente: number): boolean {
+    return statusDente === 1 ? false : true;
   }
 
   alterarOdontograma() {

@@ -27,16 +27,16 @@
 
   <div class="grid">
     <div class="grid__container">
-      <div class="grid__container__dentes" *ngFor="let dente of dentesTop">
-        <img class="grid__container__dentes__image" src="../../assets/images/dentes/{{dente}}.png"
-          alt="Dente {{dente}}">
-        <p class="grid__container__dentes__number">{{dente}}</p>
+      <div class="grid__container__dentes grid__container__dentes--top" *ngFor="let dente of dentesTop">
+        <img class="grid__container__dentes__image"
+          src="../../assets/images/dentes/{{verificarStatusDoDente(dente)}}.png" alt="Dente {{dente.numero}}">
+        <p class="grid__container__dentes__number">{{dente.numero}}</p>
       </div>
 
-      <div class="grid__container__dentes" *ngFor="let dente of dentesBot">
-        <p class="grid__container__dentes__number">{{dente}}</p>
-        <img class="grid__container__dentes__image" src="../../assets/images/dentes/{{dente}}.png"
-          alt="Dente {{dente}}">
+      <div class="grid__container__dentes grid__container__dentes--bottom" *ngFor="let dente of dentesBot">
+        <p class="grid__container__dentes__number">{{dente.numero}}</p>
+        <img class="grid__container__dentes__image"
+          src="../../assets/images/dentes/{{verificarStatusDoDente(dente)}}.png" alt="Dente {{dente.numero}}">
       </div>
     </div>
   </div>

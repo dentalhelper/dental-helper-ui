@@ -31,3 +31,10 @@
 @mixin input-padding-both() {
   padding: 0 5px 5px 5px;
 }
+
+@mixin round-border($top-left: 0, $top-right: 0, $bottom-left: 0, $bottom-right: 0) {
+  border-top-left-radius: $top-left;
+  border-top-right-radius: $top-right;
+  border-bottom-left-radius: $bottom-left;
+  border-bottom-right-radius: $bottom-right;
+}
