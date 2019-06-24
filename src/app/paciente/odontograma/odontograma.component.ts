@@ -72,6 +72,7 @@ export class OdontogramaComponent implements OnInit {
 
   codigPaciente: number;
   activeTab = 'pronto';
+  odontograma: OdontogramaResumoDTO;
 
   dentesTop: any[] = [];
 
@@ -94,6 +95,7 @@ export class OdontogramaComponent implements OnInit {
   carregarOdontograma(codigo: number) {
     this.pacienteService.buscarOdontograma(codigo)
       .subscribe((response: OdontogramaResumoDTO) => {
+        this.odontograma = response;
         const dentes = response.dentes;
         dentes.forEach((dente) => {
           if (dente.numero <= 28) {

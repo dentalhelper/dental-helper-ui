@@ -7,19 +7,19 @@
     <div class="odontograma__container">
       <div class="odontograma__container__dados">
         <label class="odontograma__container__dados__label">Forma</label>
-        <img class="odontograma__container__dados__image" src="../../../assets/images/formas/circle.png"
-          alt="Formato do rosto">
+        <img class="odontograma__container__dados__image"
+          src="../../../assets/images/formas/{{ odontograma?.formaRosto | formaRosto }}" alt="Formato do rosto">
       </div>
 
       <div class="odontograma__container__dados odontograma__container__dados--col">
         <div class="odontograma__container__dados odontograma__container__dados--space">
           <label class="odontograma__container__dados__label">Escala</label>
-          <span class="odontograma__container__dados__data">ESC</span>
+          <span class="odontograma__container__dados__data">{{ odontograma?.escalaDente | uppercase }}</span>
         </div>
 
         <div class="odontograma__container__dados odontograma__container__dados--space">
           <label class="odontograma__container__dados__label">Cor</label>
-          <span class="odontograma__container__dados__data">COR</span>
+          <span class="odontograma__container__dados__data">{{ odontograma?.corDente | uppercase }}</span>
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ import { ShortenPipe } from '../pipes/shorten.pipe';
 import { TelefonePipe } from '../pipes/telefone.pipe';
 import { InputComponent } from './input/input.component';
 import { RadioComponent } from './radio/radio.component';
+import { FormaRostoPipe } from '../pipes/forma-rosto.pipe';
 import { ButtonComponent } from './button/button.component';
 import { DefaultHeaderComponent } from './default-header/default-header.component';
 import { InputContainerComponent } from './input-container/input-container.component';
@@ -38,6 +39,7 @@ import { faTrash, faEdit, faSearch, faCalendarDay } from '@fortawesome/free-soli
     ShortenPipe,
     TelefonePipe,
     InputComponent,
+    FormaRostoPipe,
     RadioComponent,
     ButtonComponent,
     DefaultHeaderComponent,
@@ -49,6 +51,7 @@ import { faTrash, faEdit, faSearch, faCalendarDay } from '@fortawesome/free-soli
     TelefonePipe,
     InputComponent,
     RadioComponent,
+    FormaRostoPipe,
     ButtonComponent,
     FontAwesomeModule,
     DefaultHeaderComponent,
