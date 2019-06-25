@@ -90,6 +90,64 @@
       }
     }
   }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #cacaca;
+    box-shadow: 0 0 20px #cccccc;
+    z-index: 100;
+    background-color: $branco;
+    border-radius: 6px;
+
+    &__title {
+      padding: 5px 10px;
+      border-radius: 6px 6px 0 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background-color: #f3f3f3;
+
+      &__name {
+        font-weight: bold;
+        color: $titles;
+      }
+
+      &__icon {
+        color: $danger;
+        cursor: pointer;
+      }
+    }
+
+    &__tratamentos {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 10px 0 10px;
+
+      &__title {
+        &--andamento {
+          color: #dc8035;
+        }
+        &--finalizado {
+          color: #4bb627;
+        }
+      }
+
+      &__item {
+        color: #757575;
+        margin: 0;
+        padding: 0 0 0 25px;
+        list-style-type: square;
+      }
+    }
+
+    &__link {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 10px;
+    }
+  }
 }
 
 .status {

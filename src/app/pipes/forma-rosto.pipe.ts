@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FormaRostoPipe implements PipeTransform {
 
   transform(value: any): any {
-    console.log(value);
     if (value === 1) {
       return 'square.png';
     } else if (value === 2) {

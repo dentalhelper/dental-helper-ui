@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
@@ -73,14 +73,28 @@ export class OdontogramaComponent implements OnInit {
   codigPaciente: number;
   activeTab = 'pronto';
   odontograma: OdontogramaResumoDTO;
+  exibirInformacao = false;
+  denteSelecionado: DenteOdontogramaResumoDTO;
+  y;
+  x;
 
   dentesTop: any[] = [];
 
   dentesBot: any[] = [];
 
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    if (event.target.className === 'grid__container__dentes__image') {
+      this.exibirInformacao = true;
+    } else {
+      this.exibirInformacao = false;
+    }
+  }
+
   constructor(
     private title: Title,
     private router: Router,
+    private eRef: ElementRef,
     private route: ActivatedRoute,
     private toastService: ToastService,
     private pacienteService: PacienteService,
@@ -125,4 +139,11 @@ export class OdontogramaComponent implements OnInit {
 
   }
 
+  exibirInformacoes(event, denteSelecionado, y) {
+    this.exibirInformacao = false;
+    this.exibirInformacao = this.exibirInformacao ? false : true;
+    this.x = event.x + 'px';
+    this.y = y;
+    this.denteSelecionado = denteSelecionado;
+  }
 }
