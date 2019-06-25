@@ -77,6 +77,7 @@ export class OdontogramaComponent implements OnInit {
   denteSelecionado: DenteOdontogramaResumoDTO;
   y;
   x;
+  temProcedimento = false;
 
   dentesTop: any[] = [];
 
@@ -84,7 +85,7 @@ export class OdontogramaComponent implements OnInit {
 
   @HostListener('document:click', ['$event'])
   clickout(event) {
-    if (event.target.className === 'grid__container__dentes__image') {
+    if (event.target.className === 'grid__container__dentes__image' && this.temProcedimento) {
       this.exibirInformacao = true;
     } else {
       this.exibirInformacao = false;
@@ -122,6 +123,7 @@ export class OdontogramaComponent implements OnInit {
   }
 
   verificarStatusDoDente(dente: DenteOdontogramaResumoDTO): any {
+
     if (!this.temTratamento(dente.status)) {
       return dente.numero;
     } else if (dente.status === 2) {
@@ -139,11 +141,17 @@ export class OdontogramaComponent implements OnInit {
 
   }
 
-  exibirInformacoes(event, denteSelecionado, y) {
-    this.exibirInformacao = false;
-    this.exibirInformacao = this.exibirInformacao ? false : true;
-    this.x = event.x + 'px';
-    this.y = y;
-    this.denteSelecionado = denteSelecionado;
+  exibirInformacoes(event, denteSelecionado: DenteOdontogramaResumoDTO, y) {
+    if (denteSelecionado.procedimentos.length === 0) {
+      this.exibirInformacao = false;
+      this.temProcedimento = false;
+    } else {
+      this.temProcedimento = true;
+      this.exibirInformacao = false;
+      this.exibirInformacao = this.exibirInformacao ? false : true;
+      this.x = event.x + 'px';
+      this.y = y;
+      this.denteSelecionado = denteSelecionado;
+    }
   }
 }

@@ -142,10 +142,13 @@
     }
 
     &__link {
+      border-top: 1px solid #cccccc;
       display: flex;
       flex-direction: row;
       justify-content: center;
-      padding: 10px;
+      margin-top: 10px;
+      padding: 10px 0;
+      font-size: 0.8em;
     }
   }
 }

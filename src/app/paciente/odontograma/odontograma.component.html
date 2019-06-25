@@ -52,7 +52,7 @@
           Tratamentos em andamento:
         </span>
         <ol class="grid__info__tratamentos__item" *ngFor="let procedimento of denteSelecionado.procedimentos">
-          <li>{{procedimento}}</li>
+          <li *ngIf="!procedimento.finalizado">{{procedimento.nome}}</li>
         </ol>
       </div>
 
@@ -60,7 +60,7 @@
         <span class="grid__info__tratamentos__title grid__info__tratamentos__title--finalizado">Tratamentos
           finalizados:</span>
         <ol class="grid__info__tratamentos__item" *ngFor="let procedimento of denteSelecionado.procedimentos">
-          <li>{{procedimento}}</li>
+          <li *ngIf="procedimento.finalizado">{{procedimento.nome}}</li>
         </ol>
       </div>
 
