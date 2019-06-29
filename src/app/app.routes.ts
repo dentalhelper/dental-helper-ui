@@ -4,12 +4,17 @@ import { LoginComponent } from './seguranca/login/login.component';
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
 import { PageForbiddenComponent } from './core/pages/page-forbidden/page-forbidden.component';
 import { AuthGuard } from './seguranca/guards/auth.guard';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 
 export const ROUTES: Routes = [
 
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
   },
   {
     path: 'categorias-despesa',

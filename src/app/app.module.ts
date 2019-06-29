@@ -16,6 +16,7 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { OdontoComponent } from './odonto/odonto.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { SegurancaModule } from './seguranca/seguranca.module';
 import { OdontogramaComponent } from './odontograma/odontograma.component';
 import { ErrorHandlerService } from './core/services/error-handler.service';
@@ -35,6 +36,7 @@ import { CURRENCY_MASK_CONFIG } from 'ng2-currency-mask/src/currency-mask.config
     CoreModule,
     FormsModule,
     BrowserModule,
+    DashboardModule,
     SegurancaModule,
     HttpClientModule,
     ReactiveFormsModule,

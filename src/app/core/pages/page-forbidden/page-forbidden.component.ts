@@ -37,7 +37,7 @@ export class PageForbiddenComponent implements OnInit, OnDestroy {
       }, 1000);
     }
     if (this.tempo === 0) {
-      this.router.navigate(['/pacientes']);
+      this.router.navigate(['/dashboard']);
     }
   }
 
