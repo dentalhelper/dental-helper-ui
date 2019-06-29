@@ -1,6 +1,7 @@
 export interface AgendamentoNovoDTO {
   codigoPaciente: number;
-  codigoProcedimento: number;
+  codigoOrcamento: number;
+  codigoProcedimentoPrevisto: number;
   dataAgendamento: Date;
   horaFim: Date;
   horaInicio: Date;

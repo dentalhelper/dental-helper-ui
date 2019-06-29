@@ -12,7 +12,6 @@
     *ngIf="!isMobile() && selecionado !== undefined" [@linha]="activeTab">
     <img class="i-container__upload__box__image" [src]="selecionado" alt="Foto do paciente">
   </div>
-
   <div class="form">
     <form novalidate [formGroup]="formulario" class="i-container">
 
@@ -32,7 +31,7 @@
             </ng-template>
           </p-dropdown>
           <button type="button" class="paciente-group__button" (click)="novoPaciente()" pTooltip="Cadastrar Paciente"
-            tooltipPosition="bottom" *ngIf="!isMobile() && !isEditando">
+            tooltipPosition="bottom" *ngIf="!isMobile() && !isEditando && !codigoPaciente">
             <i class="fas fa-plus"></i>
           </button>
         </div>

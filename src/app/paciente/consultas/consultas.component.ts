@@ -91,7 +91,10 @@ export class ConsultasComponent implements OnInit {
   }
 
   agendarConsulta() {
-    this.router.navigate(['agendamentos/novo']);
+    this.router.navigate(['agendamentos/novo', {
+      data: this.codigPaciente
+
+    }]);
   }
 
   deletar(codigoConsulta: any) {
