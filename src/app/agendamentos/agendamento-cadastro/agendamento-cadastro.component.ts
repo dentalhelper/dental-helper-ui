@@ -20,6 +20,8 @@ import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import * as moment from 'moment';
+import { ProcedimentoPrevistoResumoDTO } from 'src/app/domains/dtos/procedimento-previsto-resumo.dto';
+import { PacienteProcedimentoDTO } from 'src/app/domains/dtos/paciente-procedimento.dto';
 
 declare var $: any;
 @Component({
@@ -136,7 +138,6 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
     this.prepararFormulario();
     this.prepararFormularioDePaciente();
     this.carregarPacientes();
-    this.carregarProcedimentos();
     this.title.setTitle('Nova Consulta');
 
     const codigoAgendamento = this.route.snapshot.params['codigo'];
@@ -178,6 +179,7 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
         updateOn: 'change',
         validators: [Validators.required]
       }),
+      codigoOrcamento: new FormControl(''),
       dataAgendamento: new FormControl('', {
         updateOn: 'change',
         validators: [Validators.required]
@@ -187,7 +189,7 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
         validators: [Validators.required]
       }),
       horaFim: new FormControl(null),
-      codigoProcedimento: new FormControl('', {
+      codigoProcedimentoPrevisto: new FormControl({ value: '', disabled: true }, {
         updateOn: 'change',
         validators: [Validators.required]
       }),
@@ -243,6 +245,8 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
   }
 
   salvar() {
+    const form = this.formulario.value;
+    delete form['codigoPaciente'];
     this.agendamentoService.salvar(this.formulario.value)
       .subscribe(() => {
         this.voltar();
@@ -274,21 +278,30 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
   }
 
   pacienteSelecionado(event) {
+    console.log(event);
     this.selecionado = undefined;
     this.pacienteService.buscarPorCodigo(event)
       .subscribe((response) => {
         this.selecionado = response.urlDaFoto;
+
+
+        this.pacienteService.buscarProcedimentos(event)
+          .subscribe((procedimentosResponse: PacienteProcedimentoDTO) => {
+            console.log(procedimentosResponse);
+            this.carregarProcedimentos(procedimentosResponse.procedimentos);
+
+          });
+
       });
   }
 
-  carregarProcedimentos() {
-    this.procedimentoService.pesquisar('')
-      .subscribe((response) => {
-        this.procedimentos = response.map(elemento => ({
-          value: elemento.codigo,
-          label: elemento.nome
-        }));
-      });
+  carregarProcedimentos(procedimentos: ProcedimentoPrevistoResumoDTO[]) {
+    this.formulario.get('codigoProcedimentoPrevisto').enable();
+    this.procedimentos = procedimentos.map(elemento => ({
+      value: elemento.codigo,
+      label: elemento.nomeProcedimento
+    }));
+
   }
 
   novoPaciente() {

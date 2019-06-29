@@ -7,7 +7,7 @@
     <div class="ui-g-12">
       <full-calendar #calendar defaultView="dayGridMonth" [events]="calendario" [plugins]="calendarPlugins"
         (dateClick)="handleDateClick($event)" [selectable]="true" locale="pt-br" allDayText="Dia todo"
-        nowIndicator="true" defaultDate="2019-05-01T12:30:00-05:00" (eventClick)="abrirEvento($event)"
+        nowIndicator="true" [defaultDate]="obterDataAtual()" (eventClick)="abrirEvento($event)"
         [titleFormat]="{ year: 'numeric', month: 'long', day: 'numeric' }" [eventLimit]="true">
       </full-calendar>
     </div>
