@@ -57,7 +57,7 @@
       &__name {
         font-size: 1em;
         padding: 10px;
-        color: #ffffff;
+        color: $branco;
         font-weight: bold;
       }
 
@@ -65,20 +65,20 @@
         text-align: right;
         font-size: 1.6em;
         font-weight: bold;
-        color: #ffffff;
+        color: $branco;
         padding: 10px 10px 10px 10px;
       }
 
       &--success {
-        background-color: #57c285;
+        background-color: $badge-success;
       }
 
       &--warn {
-        background-color: #f5aa1a;
+        background-color: $badge-warn;
       }
 
       &--primary {
-        background-color: #45b5df;
+        background-color: $badge-primary;
       }
     }
 
@@ -90,7 +90,7 @@
       border-radius: 0 5px 5px 0;
 
       &__icon {
-        color: #ffffff;
+        color: $branco;
         font-size: 2em;
         height: 100%;
         padding: 0 10px 10px 10px;
@@ -98,15 +98,15 @@
       }
 
       &--success {
-        background-color: #78cd9c;
+        background-color: $badge-success-light;
       }
 
       &--warn {
-        background-color: #fac052;
+        background-color: $badge-warn-light;
       }
 
       &--primary {
-        background-color: #69c3e4;
+        background-color: $badge-primary-light;
       }
     }
   }
