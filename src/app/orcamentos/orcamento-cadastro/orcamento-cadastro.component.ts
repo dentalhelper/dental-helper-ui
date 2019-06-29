@@ -73,6 +73,10 @@ export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
   procedimentos: Procedimento[] = [];
   codigoOrcamento: number;
   items: FormArray;
+  aprovadoOpcoes = [
+    { label: 'Sim', value: true },
+    { label: 'Não', value: false }
+  ];
   procedimentosOptions = [];
   total = 0;
 
@@ -115,7 +119,7 @@ export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
 
   prepararFormulario() {
     this.formulario = new FormGroup({
-      aprovado: new FormControl(null),
+      aprovado: new FormControl(false),
       codPaciente: new FormControl(''),
       desconto: new FormControl({ value: 0, disabled: true }, {
         updateOn: 'change'
@@ -156,11 +160,11 @@ export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
 
   atualizar() {
     this.orcamentoService.atualizar(this.codigoOrcamento, this.formulario.value)
-    .subscribe(() => {
-      this.voltar();
-      const mensagemToast = `O Orçamento foi atualizado.`;
-      this.toastService.exibirSucesso(mensagemToast);
-    });
+      .subscribe(() => {
+        this.voltar();
+        const mensagemToast = `O Orçamento foi atualizado.`;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
   }
 
   adicionarProcedimento(): void {

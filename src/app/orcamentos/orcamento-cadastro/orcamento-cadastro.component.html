@@ -55,10 +55,16 @@
 
       <div class="i-container__resumo-box">
         <div class="i-container__resumo-box__desconto">
+          <app-input-container label="Aprovar orçamento" [dropdown]="true" *ngIf="!isEditando" >
+            <p-selectButton [options]="aprovadoOpcoes" formControlName="aprovado" [style]="{'margin-bottom':'10px'}">
+            </p-selectButton>
+          </app-input-container>
+
           <app-input-container label="Desconto" for="desconto" [dropdown]="true">
             <input class="i-container__input" type="text" currencyMask id="desconto" formControlName="desconto"
               (keyup)="aplicarDesconto()" (blur)="aplicarDesconto()">
           </app-input-container>
+
         </div>
 
         <div class="i-container__resumo-box__valor">
