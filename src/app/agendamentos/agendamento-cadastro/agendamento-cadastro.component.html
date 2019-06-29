@@ -75,8 +75,9 @@
       </app-input-container>
 
       <app-input-container label="Primeira avaliação?" for="avaliacao" [dropdown]="true">
-        <p-toggleButton formControlName="primeiraAvalicao" onLabel="Sim" offLabel="Não" onIcon="pi pi-check-circle"
-          offIcon="pi pi-circle-off" iconPos="right"></p-toggleButton>
+        <p-selectButton [options]="primeiraAvaliacaoSelect" formControlName="primeiraAvalicao"
+          [style]="{'margin-bottom':'10px'}" [required]="true">
+        </p-selectButton>
       </app-input-container>
 
       <div style="margin: 10px 0;">

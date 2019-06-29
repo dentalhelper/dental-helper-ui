@@ -119,6 +119,11 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
     { label: 'Masculino', value: 2 }
   ];
 
+  primeiraAvaliacaoSelect = [
+    { label: 'Sim', value: true, icon: 'fa fa-check-circle' },
+    { label: 'Não', value: false, icon: 'fa fa-times' }
+  ];
+
   statusAgendamento = STATUS_AGENDAMENTO;
 
   constructor(
