@@ -4,7 +4,7 @@
       {{ title }}
     </div>
     <div class="badge__left__value">
-      {{ value }}
+      {{ monetary ? (value | currency: 'BRL' : 'symbol') : value }}
     </div>
   </div>
 

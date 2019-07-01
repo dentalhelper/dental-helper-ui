@@ -1,7 +1,7 @@
 <div class="grid-consultas">
   <h1 class="grid-consultas__title">Consultas de hoje</h1>
 
-  <div class="top">
+  <div class="badge-grid">
     <app-badge title="Consultas Marcadas" icon="fa-calendar-day" value="20" styleFor="total"></app-badge>
 
     <app-badge title="Realizadas" icon="fa-calendar-check" value="6" styleFor="success"></app-badge>
@@ -153,6 +153,18 @@
     <div class="grid-consultas__details__dados grid-consultas__details__dados--toleft">
       <i class="fas fa-tooth"></i> 18 MV
     </div>
+  </div>
+</div>
+
+<div class="grid">
+  <h1 class="grid__title">Fluxo de caixa</h1>
+
+  <div class="badge-grid">
+    <app-badge title="Receitas" icon="fa-level-down-alt" value="500" styleFor="success" [monetary]="true"></app-badge>
+
+    <app-badge title="Despesas" icon="fa-level-up-alt" value="200" styleFor="cancel" [monetary]="true"></app-badge>
+
+    <app-badge title="Saldo" icon="fa-cash-register" value="300" styleFor="total" [monetary]="true"></app-badge>
   </div>
 </div>
 

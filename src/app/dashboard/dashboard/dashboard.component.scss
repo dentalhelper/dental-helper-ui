@@ -1,7 +1,7 @@
 @import "../../../assets/scss/cores";
 @import "../../../assets/scss/mixins";
 
-.top {
+.badge-grid {
   grid-area: badges;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -25,16 +25,6 @@
     @include padding-bottom(5);
     border-bottom: 1px solid darken($cor-fundo, 15%);
   }
-}
-
-.d1 {
-  background-color: rgb(60, 255, 0);
-  grid-area: dados;
-}
-
-.d2 {
-  background-color: rgb(98, 0, 255);
-  grid-area: detalhe;
 }
 
 .consultas {
@@ -310,5 +300,22 @@
 
   .scroll::-webkit-scrollbar-thumb:hover {
     background: darken($cor-menu, 10%);
+  }
+
+  .grid {
+    margin: 20px 10px;
+    display: grid;
+    grid-template-areas:
+      "titulo titulo titulo"
+      "badges badges badges"
+      "dados dados detalhe";
+    grid-gap: 10px 0;
+
+    &__title {
+      grid-area: titulo;
+      color: $titles;
+      @include padding-bottom(5);
+      border-bottom: 1px solid darken($cor-fundo, 15%);
+    }
   }
 }

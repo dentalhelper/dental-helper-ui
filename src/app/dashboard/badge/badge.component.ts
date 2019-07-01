@@ -11,6 +11,7 @@ export class BadgeComponent implements OnInit {
   @Input() value: string;
   @Input() icon = 'fa-file-excel';
   @Input() styleFor: string;
+  @Input() monetary = false;
 
   constructor() { }
 
