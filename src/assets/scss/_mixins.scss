@@ -42,3 +42,25 @@
 @mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
   padding: $top $right $bottom $left;
 }
+
+@mixin padding-all($value) {
+  padding: $value $value $value $value;
+}
+
+@mixin padding-top-left($top, $left) {
+  padding-top: #{$top}px;
+  padding-left: #{$left}px;
+}
+
+@mixin padding-top-bottom($top, $bottom) {
+  padding-top: #{$top}px;
+  padding-bottom: #{$bottom}px;
+}
+
+@mixin padding-bottom($bottom) {
+  padding-bottom: #{$bottom}px;
+}
+
+@mixin padding-right($right) {
+  padding-right: #{$right}px;
+}
