@@ -32,6 +32,14 @@
   padding: 0 5px 5px 5px;
 }
 
+/*
+* === BORDER ===
+*/
+
+@mixin reset-round-border() {
+  border-radius: 0;
+}
+
 @mixin round-border($top-left: 0, $top-right: 0, $bottom-left: 0, $bottom-right: 0) {
   border-top-left-radius: $top-left;
   border-top-right-radius: $top-right;
@@ -39,12 +47,16 @@
   border-bottom-right-radius: $bottom-right;
 }
 
+/*
+* === PADDING ===
+*/
+
 @mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
   padding: $top $right $bottom $left;
 }
 
 @mixin padding-all($value) {
-  padding: $value $value $value $value;
+  padding: #{$value}px #{$value}px #{$value}px #{$value}px;
 }
 
 @mixin padding-top-left($top, $left) {
@@ -57,8 +69,17 @@
   padding-bottom: #{$bottom}px;
 }
 
+@mixin padding-sides($left, $right) {
+  @include padding-left($left);
+  @include padding-right($right);
+}
+
 @mixin padding-bottom($bottom) {
   padding-bottom: #{$bottom}px;
+}
+
+@mixin padding-left($left) {
+  padding-left: #{$left}px;
 }
 
 @mixin padding-right($right) {

@@ -4,6 +4,8 @@ import { LoginComponent } from './seguranca/login/login.component';
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
 import { PageForbiddenComponent } from './core/pages/page-forbidden/page-forbidden.component';
 import { AuthGuard } from './seguranca/guards/auth.guard';
+import { OdontoComponent } from './odonto/odonto.component';
+import { OdontogramaComponent } from './odontograma/odontograma.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 
 export const ROUTES: Routes = [
@@ -19,6 +21,14 @@ export const ROUTES: Routes = [
   {
     path: 'categorias-despesa',
     component: CategoriaDespesaPesquisaComponent
+  },
+  {
+    path: 'dentes',
+    component: OdontoComponent
+  },
+  {
+    path: 'dentes2',
+    component: OdontogramaComponent
   },
   {
     path: 'despesas',

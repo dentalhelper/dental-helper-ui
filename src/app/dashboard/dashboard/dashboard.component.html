@@ -159,45 +159,83 @@
 <div class="grid">
   <h1 class="grid__title">Fluxo de caixa</h1>
 
-  <div class="badge-grid">
-    <app-badge title="Receitas" icon="fa-level-down-alt" value="500" styleFor="success" [monetary]="true"></app-badge>
+  <div class="badge-grid-chart">
+    <app-badge title="Receitas" icon="fa-arrow-down" value="500" styleFor="success" [monetary]="true"></app-badge>
 
-    <app-badge title="Despesas" icon="fa-level-up-alt" value="200" styleFor="cancel" [monetary]="true"></app-badge>
+    <app-badge title="Despesas" icon="fa-arrow-up" value="200" styleFor="cancel" [monetary]="true"></app-badge>
 
     <app-badge title="Saldo" icon="fa-cash-register" value="300" styleFor="total" [monetary]="true"></app-badge>
   </div>
+
+  <div class="grid__data">
+    <div class="grid__data__head">
+      Registros do dia
+    </div>
+    <div class="scroll">
+
+      <div class="grid__data__row">
+        <i class="fas fa-arrow-down grid__data__row__icon grid__data__row__icon--success"></i>
+        <span class="grid__data__row__value grid__data__row__value--money">R$ 200,00</span>
+        <span class="grid__data__row__value">Restauração</span>
+      </div>
+
+      <div class="grid__data__row">
+        <i class="fas fa-arrow-up grid__data__row__icon grid__data__row__icon--danger"></i>
+        <span class="grid__data__row__value grid__data__row__value--money">R$ 180,90</span>
+        <span class="grid__data__row__value">Conta de Energias</span>
+      </div>
+
+      <div class="grid__data__row">
+        <i class="fas fa-arrow-up grid__data__row__icon grid__data__row__icon--danger"></i>
+        <span class="grid__data__row__value grid__data__row__value--money">R$ 1.000,50</span>
+        <span class="grid__data__row__value">Internet</span>
+      </div>
+
+      <div class="grid__data__row">
+        <i class="fas fa-arrow-down grid__data__row__icon grid__data__row__icon--success"></i>
+        <span class="grid__data__row__value grid__data__row__value--money">R$ 500,00</span>
+        <span class="grid__data__row__value">Canal</span>
+      </div>
+
+      <div class="grid__data__row">
+        <i class="fas fa-arrow-down grid__data__row__icon grid__data__row__icon--success"></i>
+        <span class="grid__data__row__value grid__data__row__value--money">R$ 500,00</span>
+        <span class="grid__data__row__value">Canal</span>
+      </div>
+
+      <div class="grid__data__row">
+        <i class="fas fa-arrow-down grid__data__row__icon grid__data__row__icon--success"></i>
+        <span class="grid__data__row__value grid__data__row__value--money">R$ 500,00</span>
+        <span class="grid__data__row__value">Canal</span>
+      </div>
+
+      <div class="grid__data__row">
+        <i class="fas fa-arrow-up grid__data__row__icon grid__data__row__icon--danger"></i>
+        <span class="grid__data__row__value grid__data__row__value--money">R$ 180,90</span>
+        <span class="grid__data__row__value">Conta de Energias</span>
+      </div>
+
+      <div class="grid__data__row">
+        <i class="fas fa-arrow-up grid__data__row__icon grid__data__row__icon--danger"></i>
+        <span class="grid__data__row__value grid__data__row__value--money">R$ 180,90</span>
+        <span class="grid__data__row__value">Conta de Energias</span>
+      </div>
+
+      <div class="grid__data__row">
+        <i class="fas fa-arrow-up grid__data__row__icon grid__data__row__icon--danger"></i>
+        <span class="grid__data__row__value grid__data__row__value--money">R$ 180,90</span>
+        <span class="grid__data__row__value">Conta de Energias</span>
+      </div>
+    </div>
+  </div>
+  <div class="grid__data grid__data--chart">
+    <p-chart type="doughnut" [data]="caixa" width="100%" height="100%"></p-chart>
+  </div>
 </div>
 
-
-
-
-
-
-<!--
-
-  <div class="consultas">
-    <h1 class="consultas__header">Consultas de hoje</h1>
-    <table class="consultas__table">
-      <thead>
-        <tr class="consultas__table__header">
-          <th class="consultas__table__header__head">Status</th>
-          <th class="consultas__table__header__head">Hora</th>
-          <th class="consultas__table__header__head">Paciente</th>
-          <th class="consultas__table__header__head">Telefone</th>
-          <th class="consultas__table__header__head">Procedimento</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr class="consultas__table__body">
-          <td class="consultas__table__body__data consultas__table__body__data--center">CONFIRMADO</td>
-          <td class="consultas__table__body__data consultas__table__body__data--center">CONFIRMADO</td>
-          <td class="consultas__table__body__data">CONFIRMADO</td>
-          <td class="consultas__table__body__data">CONFIRMADO</td>
-          <td class="consultas__table__body__data">CONFIRMADO</td>
-        </tr>
-      </tbody>
-    </table>
+<div class="grid-semanal">
+  <h1 class="grid-semanal__title">Fluxo financeiro semanal</h1>
+  <div class="grid-semanal__data">
+    <p-chart type="line" [data]="semana" width="100%" height="100%"></p-chart>
   </div>
-
- -->
+</div>
