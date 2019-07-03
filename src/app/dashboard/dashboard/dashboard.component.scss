@@ -40,6 +40,10 @@
     grid-area: dados;
     @include round-border($top-left: 10px, $bottom-left: 10px);
     background-color: $branco;
+
+    &--sem-consulta {
+      @include round-border($top-right: 10px, $bottom-right: 10px, $top-left: 10px, $bottom-left: 10px);
+    }
     &__data {
       color: $titles;
       display: flex;
@@ -72,6 +76,7 @@
       margin: 10px 15px;
       grid-template-columns: 7px auto;
       grid-template-rows: auto;
+
       &__left {
         @include round-border($top-left: 10px, $bottom-left: 10px);
         &--success {
@@ -92,6 +97,7 @@
         @include round-border($top-right: 10px, $bottom-right: 10px);
         background-color: lighten($cor-fundo, 1%);
         color: $titles;
+
         &__name {
           width: 360px;
           font-size: 1.2em;
@@ -135,6 +141,28 @@
             cursor: pointer;
           }
         }
+
+        &--set-success {
+          background-color: lighten($badge-success, $amount: 32%);
+        }
+
+        &--set-warn {
+          background-color: lighten($badge-warn, $amount: 32%);
+        }
+
+        &--set-danger {
+          background-color: lighten($badge-error, $amount: 32%);
+        }
+
+        &--success:hover {
+          background-color: lighten($badge-success, $amount: 25%);
+        }
+        &--warn:hover {
+          background-color: lighten($badge-warn, $amount: 25%);
+        }
+        &--danger:hover {
+          background-color: lighten($badge-error, $amount: 25%);
+        }
       }
     }
   }
@@ -144,6 +172,7 @@
     box-shadow: 1px 1px 2px 1px #bdbdbd;
     @include round-border($top-right: 10px, $bottom-right: 10px);
     background-color: darken($branco, 1%);
+    min-width: 400px;
 
     &__header {
       color: $cor-menu;
@@ -358,6 +387,13 @@
       "badges badges badges"
       "dados dados detalhe";
     grid-gap: 10px 0;
+
+    &--sem-consulta {
+      grid-template-areas:
+        "titulo titulo titulo"
+        "badges badges badges"
+        "dados dados dados";
+    }
   }
 
   .grid {

@@ -1,154 +1,90 @@
-<div class="grid-consultas">
+<div class="grid-consultas {{consultaSelecionada ? '' : 'grid-consultas--sem-consulta'}} ">
   <h1 class="grid-consultas__title">Consultas de hoje</h1>
 
   <div class="badge-grid">
-    <app-badge title="Consultas Marcadas" icon="fa-calendar-day" value="20" styleFor="total"></app-badge>
+    <app-badge title="Consultas Marcadas" icon="fa-calendar-day" [value]="badgeConsultas.total" styleFor="total">
+    </app-badge>
 
-    <app-badge title="Realizadas" icon="fa-calendar-check" value="6" styleFor="success"></app-badge>
+    <app-badge title="Realizadas" icon="fa-calendar-check" [value]="badgeConsultas.realizada" styleFor="success">
+    </app-badge>
 
-    <app-badge title="Pendentes" icon="fa-calendar-alt" value="10" styleFor="waiting"></app-badge>
+    <app-badge title="Pendentes" icon="fa-calendar-alt" [value]="badgeConsultas.pendente" styleFor="waiting">
+    </app-badge>
 
-    <app-badge title="Canceladas" icon="fa-calendar-times" value="4" styleFor="cancel"></app-badge>
+    <app-badge title="Canceladas" icon="fa-calendar-times" [value]="badgeConsultas.cancelada" styleFor="cancel">
+    </app-badge>
   </div>
 
-  <div class="grid-consultas__dados">
+  <div class="grid-consultas__dados {{consultaSelecionada ? '' : 'grid-consultas__dados--sem-consulta'}}">
     <div class="grid-consultas__dados__data">
       <div class="grid-consultas__dados__data__numero">
-        17
+        {{dataHoje.dia}}
       </div>
       <div class="grid-consultas__dados__data__group">
-        <div class="grid-consultas__dados__data__group__dia">Segunda-feira</div>
-        <div class="grid-consultas__dados__data__group__mes">Maio 2019</div>
+        <div class="grid-consultas__dados__data__group__dia">{{ dataHoje.diaSemana }}</div>
+        <div class="grid-consultas__dados__data__group__mes">{{ dataHoje.mes }} {{ dataHoje.ano }}</div>
       </div>
     </div>
 
     <div class="scroll">
-      <div class="grid-consultas__dados__row">
-        <div class="grid-consultas__dados__row__left grid-consultas__dados__row__left--success"></div>
-        <div class="grid-consultas__dados__row__right">
-          <div>
-            <h3 class="grid-consultas__dados__row__right__name">Ana Maria da Silva Rodrigues</h3>
-            <div class="grid-consultas__dados__row__right__procedimento">Restauração</div>
-          </div>
-          <div class="grid-consultas__dados__row__right__arrow">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div class="grid-consultas__dados__row__right__hora">
-            <div class="grid-consultas__dados__row__right__hora__label">Hora</div>
-            <div class="grid-consultas__dados__row__right__hora__value">10:00</div>
-          </div>
-          <div class="grid-consultas__dados__row__right__option">
-            <i class="fas fa-ellipsis-v"></i>
-          </div>
+      <div class="grid-consultas__dados__row" *ngFor="let consulta of consultas">
+        <div
+          class="grid-consultas__dados__row__left grid-consultas__dados__row__left--{{consulta.status | corStatusAgendamento}}">
         </div>
-      </div>
-      <div class="grid-consultas__dados__row">
-        <div class="grid-consultas__dados__row__left grid-consultas__dados__row__left--warn"></div>
-        <div class="grid-consultas__dados__row__right">
+        <div
+          class="grid-consultas__dados__row__right grid-consultas__dados__row__right--{{consulta.status | corStatusAgendamento}} {{consulta?.horaInicio === consultaSelecionada?.horaInicio ? 'grid-consultas__dados__row__right--set-' : ''}}{{consulta.status | corStatusAgendamento}}">
           <div>
-            <h3 class="grid-consultas__dados__row__right__name">Anderson Tavares de Oliveira</h3>
-            <div class="grid-consultas__dados__row__right__procedimento">Clareamento</div>
+            <h3 class="grid-consultas__dados__row__right__name">
+              {{ consulta.nomePaciente }}
+            </h3>
+            <div class="grid-consultas__dados__row__right__procedimento">
+              {{ consulta.nomeProcedimento }}
+            </div>
           </div>
+
           <div class="grid-consultas__dados__row__right__arrow">
             <i class="fas fa-clock"></i>
           </div>
           <div class="grid-consultas__dados__row__right__hora">
             <div class="grid-consultas__dados__row__right__hora__label">Hora</div>
-            <div class="grid-consultas__dados__row__right__hora__value">12:00</div>
+            <div class="grid-consultas__dados__row__right__hora__value">{{ consulta.horaInicio }}</div>
           </div>
           <div class="grid-consultas__dados__row__right__option">
-            <i class="fas fa-ellipsis-v"></i>
-          </div>
-        </div>
-      </div>
-      <div class="grid-consultas__dados__row">
-        <div class="grid-consultas__dados__row__left grid-consultas__dados__row__left--danger"></div>
-        <div class="grid-consultas__dados__row__right">
-          <div>
-            <h3 class="grid-consultas__dados__row__right__name">Renata Moreira Costa</h3>
-            <div class="grid-consultas__dados__row__right__procedimento">Raspagem</div>
-          </div>
-          <div class="grid-consultas__dados__row__right__arrow">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div class="grid-consultas__dados__row__right__hora">
-            <div class="grid-consultas__dados__row__right__hora__label">Hora</div>
-            <div class="grid-consultas__dados__row__right__hora__value">13:00</div>
-          </div>
-          <div class="grid-consultas__dados__row__right__option">
-            <i class="fas fa-ellipsis-v"></i>
-          </div>
-        </div>
-      </div>
-      <div class="grid-consultas__dados__row">
-        <div class="grid-consultas__dados__row__left grid-consultas__dados__row__left--success"></div>
-        <div class="grid-consultas__dados__row__right">
-          <div>
-            <h3 class="grid-consultas__dados__row__right__name">Ana Maria da Silva Rodrigues</h3>
-            <div class="grid-consultas__dados__row__right__procedimento">Restauração</div>
-          </div>
-          <div class="grid-consultas__dados__row__right__arrow">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div class="grid-consultas__dados__row__right__hora">
-            <div class="grid-consultas__dados__row__right__hora__label">Hora</div>
-            <div class="grid-consultas__dados__row__right__hora__value">10:00</div>
-          </div>
-          <div class="grid-consultas__dados__row__right__option">
-            <i class="fas fa-ellipsis-v"></i>
-          </div>
-        </div>
-      </div>
-      <div class="grid-consultas__dados__row">
-        <div class="grid-consultas__dados__row__left grid-consultas__dados__row__left--success"></div>
-        <div class="grid-consultas__dados__row__right">
-          <div>
-            <h3 class="grid-consultas__dados__row__right__name">Ana Maria da Silva Rodrigues</h3>
-            <div class="grid-consultas__dados__row__right__procedimento">Restauração</div>
-          </div>
-          <div class="grid-consultas__dados__row__right__arrow">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div class="grid-consultas__dados__row__right__hora">
-            <div class="grid-consultas__dados__row__right__hora__label">Hora</div>
-            <div class="grid-consultas__dados__row__right__hora__value">10:00</div>
-          </div>
-          <div class="grid-consultas__dados__row__right__option">
-            <i class="fas fa-ellipsis-v"></i>
+            <i class="fas fa-ellipsis-v" (click)="exibirConsulta(consulta)"></i>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="grid-consultas__details">
+  <div class="grid-consultas__details" *ngIf="consultaSelecionada">
     <div class="grid-consultas__details__header">
       Ficha do paciente
-      <i class="fas fa-external-link-alt grid-consultas__details__header__link"></i>
+      <i class="fas fa-external-link-alt grid-consultas__details__header__link" (click)="navegarParaPaciente()"></i>
     </div>
-    <div class="grid-consultas__details__image" [ngStyle]="imagem"></div>
+    <div class="grid-consultas__details__image" [ngStyle]="imagem" style="background-size: cover;"></div>
 
     <div class="grid-consultas__details__dados">
-      <small>#205</small>
+      <small>#{{ consultaSelecionada.codPaciente }}</small>
     </div>
 
     <div
-      class="grid-consultas__details__dados grid-consultas__details__dados--main grid-consultas__details__dados--female">
-      Ana Maria da Silva Rodrigues <i class="fas fa-venus"></i>
+      class="grid-consultas__details__dados grid-consultas__details__dados--main grid-consultas__details__dados--{{consultaSelecionada.sexo === 1 ? 'female':'male'}}">
+      {{ consultaSelecionada.nomePaciente }} <i class="fas fa-{{consultaSelecionada.sexo === 1 ? 'venus':'mars'}}"></i>
     </div>
 
     <div class="grid-consultas__details__dados">
-      27 Anos
+      {{ calcularIdade() }} Anos
     </div>
     <div class="grid-consultas__details__dados">
-      (83)98587-9878
+      {{consultaSelecionada.telefonePrincipal | telefone}}
     </div>
 
     <div class="grid-consultas__details__header grid-consultas__details__header--mid">
       Procedimento
     </div>
     <div class="grid-consultas__details__dados grid-consultas__details__dados--toleft">
-      <i class="fas fa-stethoscope"></i> Restauração
+      <i class="fas fa-stethoscope"></i> {{ consultaSelecionada.nomeProcedimento }}
     </div>
     <div class="grid-consultas__details__dados grid-consultas__details__dados--toleft">
       <i class="fas fa-tooth"></i> 18 MV
@@ -160,11 +96,13 @@
   <h1 class="grid__title">Fluxo de caixa</h1>
 
   <div class="badge-grid-chart">
-    <app-badge title="Receitas" icon="fa-arrow-down" value="500" styleFor="success" [monetary]="true"></app-badge>
+    <app-badge title="Receitas" icon="fa-arrow-down" [value]="receitaTotal" styleFor="success" [monetary]="true">
+    </app-badge>
 
-    <app-badge title="Despesas" icon="fa-arrow-up" value="200" styleFor="cancel" [monetary]="true"></app-badge>
+    <app-badge title="Despesas" icon="fa-arrow-up" [value]="despesaTotal" styleFor="cancel" [monetary]="true">
+    </app-badge>
 
-    <app-badge title="Saldo" icon="fa-cash-register" value="300" styleFor="total" [monetary]="true"></app-badge>
+    <app-badge title="Saldo" icon="fa-cash-register" [value]="saldo" styleFor="total" [monetary]="true"></app-badge>
   </div>
 
   <div class="grid__data">
@@ -173,69 +111,24 @@
     </div>
     <div class="scroll">
 
-      <div class="grid__data__row">
-        <i class="fas fa-arrow-down grid__data__row__icon grid__data__row__icon--success"></i>
-        <span class="grid__data__row__value grid__data__row__value--money">R$ 200,00</span>
-        <span class="grid__data__row__value">Restauração</span>
+      <div class="grid__data__row" *ngFor="let pagamento of pagamentos" (click)="navegarParaPagamento(pagamento)">
+        <i
+          class="fas fa-arrow-{{pagamento.tipo === 1 ? 'up':'down'}} grid__data__row__icon grid__data__row__icon--{{pagamento.tipo === 1 ? 'danger':'success'}}"></i>
+        <span
+          class="grid__data__row__value grid__data__row__value--money">{{pagamento.valor | currency: 'BRL' : 'symbol'}}</span>
+        <span class="grid__data__row__value">{{ pagamento.descricao }}</span>
       </div>
 
-      <div class="grid__data__row">
-        <i class="fas fa-arrow-up grid__data__row__icon grid__data__row__icon--danger"></i>
-        <span class="grid__data__row__value grid__data__row__value--money">R$ 180,90</span>
-        <span class="grid__data__row__value">Conta de Energias</span>
-      </div>
-
-      <div class="grid__data__row">
-        <i class="fas fa-arrow-up grid__data__row__icon grid__data__row__icon--danger"></i>
-        <span class="grid__data__row__value grid__data__row__value--money">R$ 1.000,50</span>
-        <span class="grid__data__row__value">Internet</span>
-      </div>
-
-      <div class="grid__data__row">
-        <i class="fas fa-arrow-down grid__data__row__icon grid__data__row__icon--success"></i>
-        <span class="grid__data__row__value grid__data__row__value--money">R$ 500,00</span>
-        <span class="grid__data__row__value">Canal</span>
-      </div>
-
-      <div class="grid__data__row">
-        <i class="fas fa-arrow-down grid__data__row__icon grid__data__row__icon--success"></i>
-        <span class="grid__data__row__value grid__data__row__value--money">R$ 500,00</span>
-        <span class="grid__data__row__value">Canal</span>
-      </div>
-
-      <div class="grid__data__row">
-        <i class="fas fa-arrow-down grid__data__row__icon grid__data__row__icon--success"></i>
-        <span class="grid__data__row__value grid__data__row__value--money">R$ 500,00</span>
-        <span class="grid__data__row__value">Canal</span>
-      </div>
-
-      <div class="grid__data__row">
-        <i class="fas fa-arrow-up grid__data__row__icon grid__data__row__icon--danger"></i>
-        <span class="grid__data__row__value grid__data__row__value--money">R$ 180,90</span>
-        <span class="grid__data__row__value">Conta de Energias</span>
-      </div>
-
-      <div class="grid__data__row">
-        <i class="fas fa-arrow-up grid__data__row__icon grid__data__row__icon--danger"></i>
-        <span class="grid__data__row__value grid__data__row__value--money">R$ 180,90</span>
-        <span class="grid__data__row__value">Conta de Energias</span>
-      </div>
-
-      <div class="grid__data__row">
-        <i class="fas fa-arrow-up grid__data__row__icon grid__data__row__icon--danger"></i>
-        <span class="grid__data__row__value grid__data__row__value--money">R$ 180,90</span>
-        <span class="grid__data__row__value">Conta de Energias</span>
-      </div>
     </div>
   </div>
   <div class="grid__data grid__data--chart">
-    <p-chart type="doughnut" [data]="caixa" width="100%" height="100%"></p-chart>
+    <p-chart type="doughnut" [data]="caixa" width="100%" height="100%" [options]="options"></p-chart>
   </div>
 </div>
 
 <div class="grid-semanal">
   <h1 class="grid-semanal__title">Fluxo financeiro semanal</h1>
   <div class="grid-semanal__data">
-    <p-chart type="line" [data]="semana" width="100%" height="100%"></p-chart>
+    <p-chart type="line" [data]="chartSemana" width="100%" height="100%" [options]="options"></p-chart>
   </div>
 </div>
