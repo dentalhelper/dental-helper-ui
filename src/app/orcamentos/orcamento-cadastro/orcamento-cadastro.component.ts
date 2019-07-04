@@ -1,16 +1,19 @@
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-
-import { ToastService } from 'src/app/core/services/toast.service';
-import { PacienteService } from 'src/app/core/services/paciente.service';
-import { ProcedimentoService } from 'src/app/core/services/procedimento.service';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
+
 import { pt_BR } from 'src/app/shared/constants/calendario.br';
 import { Procedimento } from 'src/app/domains/procedimento.model';
+import { ToastService } from 'src/app/core/services/toast.service';
+import { FACES_DO_DENTE } from 'src/app/shared/constants/domains.enums';
+import { PacienteService } from 'src/app/core/services/paciente.service';
 import { OrcamentoService } from 'src/app/core/services/orcamento.service';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { ProcedimentoService } from 'src/app/core/services/procedimento.service';
+import { OdontogramaResumoDTO } from 'src/app/domains/dtos/odontograma-resumo.dto';
+import { DenteOdontogramaResumoDTO } from 'src/app/domains/dtos/dente-odontograma-resumo.dto';
 
 declare var $: any;
 @Component({
@@ -66,7 +69,7 @@ declare var $: any;
   ]
 })
 export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
-
+  isExibindo = false;
   estadoDoItem = 'pronto';
   pt_BR = pt_BR;
   edicao = false;
@@ -79,6 +82,9 @@ export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
   ];
   procedimentosOptions = [];
   total = 0;
+  codigoPaciente;
+  dentes: DenteOdontogramaResumoDTO[];
+  facesDoDente = FACES_DO_DENTE;
 
   formulario: FormGroup;
 
@@ -112,9 +118,17 @@ export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
   ngAfterContentInit(): void {
     this.route.fragment.subscribe((codPaciente) => {
       if (codPaciente) {
+        this.codigoPaciente = codPaciente;
         this.formulario.get('codPaciente').setValue(codPaciente);
       }
     });
+    if (this.codigoPaciente) {
+
+      this.pacienteService.buscarOdontograma(this.codigoPaciente)
+        .subscribe((odontograma: OdontogramaResumoDTO) => {
+          this.dentes = odontograma.dentes;
+        });
+    }
   }
 
   prepararFormulario() {
@@ -129,8 +143,12 @@ export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
       procedimentos: this.formBuilder.array([], Validators.required)
     },
       {
-        updateOn: 'blur'
+        updateOn: 'change'
       });
+  }
+
+  toggleDentes(event) {
+    event.exibir = event.exibir === true ? false : true;
   }
 
   validarValorPositivo(input: FormControl) {
@@ -185,6 +203,8 @@ export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
     return this.formBuilder.group({
       codigo: new FormControl('', Validators.required),
       valor: new FormControl(null),
+      faceDente: new FormControl(null, Validators.required),
+      codDentes: new FormControl([], Validators.required),
     },
       {
         updateOn: 'change'
@@ -194,6 +214,7 @@ export class OrcamentoCadastroComponent implements OnInit, AfterContentInit {
   carregarOrcamento(codigo: number) {
     this.orcamentoService.buscarPorCodigo(codigo)
       .subscribe((response) => {
+        this.codigoPaciente = response.codPaciente;
         response.procedimentos.forEach(() => {
           this.adicionarProcedimento();
         });

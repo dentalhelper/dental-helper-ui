@@ -12,6 +12,7 @@ import { ButtonComponent } from './button/button.component';
 import { DefaultHeaderComponent } from './default-header/default-header.component';
 import { InputContainerComponent } from './input-container/input-container.component';
 import { CalendarOptionsComponent } from './calendar-options/calendar-options.component';
+import { OdontogramaSelectComponent } from './odontograma-select/odontograma-select.component';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -27,6 +28,7 @@ import {
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTrash, faEdit, faSearch, faCalendarDay } from '@fortawesome/free-solid-svg-icons';
+
 @NgModule({
   imports: [
     RouterModule,
@@ -45,6 +47,7 @@ import { faTrash, faEdit, faSearch, faCalendarDay } from '@fortawesome/free-soli
     DefaultHeaderComponent,
     InputContainerComponent,
     CalendarOptionsComponent,
+    OdontogramaSelectComponent,
   ],
   exports: [
     ShortenPipe,
@@ -57,6 +60,7 @@ import { faTrash, faEdit, faSearch, faCalendarDay } from '@fortawesome/free-soli
     DefaultHeaderComponent,
     InputContainerComponent,
     CalendarOptionsComponent,
+    OdontogramaSelectComponent,
   ]
 })
 export class SharedModule {

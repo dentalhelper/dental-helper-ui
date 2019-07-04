@@ -52,6 +52,33 @@ button {
   }
 }
 
+.botao--optional {
+  color: #ffffff;
+  border-color: #a75ba5;
+  background-color: #a75ba5;
+  &:focus {
+    box-shadow: 0 0 3px 2px rgb(139, 71, 137);
+  }
+  &:hover {
+    background-color: rgb(114, 63, 112);
+  }
+
+  &:active {
+    background-color: rgb(92, 30, 90);
+    box-shadow: 0 0 3px 1px#0d6d22;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #a75ba5a1;
+    border: none;
+    box-shadow: none;
+    &:hover {
+      background-color: rgba(167, 91, 164, 0.815);
+    }
+  }
+}
+
 .botao--padrao {
   @extend .botao--success;
   border-color: #007ad9;
