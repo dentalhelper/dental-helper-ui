@@ -1,0 +1,1366 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>dental-helper-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">dental-helper-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>DespesaCadastroComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-despesa-cadastro</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./despesa-cadastro.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./despesa-cadastro.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#categorias">categorias</a>
+                            </li>
+                            <li>
+                                <a href="#descricao">descricao</a>
+                            </li>
+                            <li>
+                                <a href="#formaDePagamento">formaDePagamento</a>
+                            </li>
+                            <li>
+                                <a href="#formularioDeDespesa">formularioDeDespesa</a>
+                            </li>
+                            <li>
+                                <a href="#pt_BR">pt_BR</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#atualizar">atualizar</a>
+                            </li>
+                            <li>
+                                <a href="#atualizarTituloDaPagina">atualizarTituloDaPagina</a>
+                            </li>
+                            <li>
+                                <a href="#carregarCategorias">carregarCategorias</a>
+                            </li>
+                            <li>
+                                <a href="#carregarDespesa">carregarDespesa</a>
+                            </li>
+                            <li>
+                                <a href="#isMobile">isMobile</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#novaCategoria">novaCategoria</a>
+                            </li>
+                            <li>
+                                <a href="#prepararFormulario">prepararFormulario</a>
+                            </li>
+                            <li>
+                                <a href="#salvar">salvar</a>
+                            </li>
+                            <li>
+                                <a href="#submeterFormulario">submeterFormulario</a>
+                            </li>
+                            <li>
+                                <a href="#voltar">voltar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#isEditando">isEditando</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, toastService: <a href="../injectables/ToastService.html">ToastService</a>, despesaService: <a href="../injectables/DespesaService.html">DespesaService</a>, categoriaDespesaService: <a href="../injectables/CategoriaDespesaService.html">CategoriaDespesaService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToastService.html" target="_self" >ToastService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>despesaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DespesaService.html" target="_self" >DespesaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>categoriaDespesaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CategoriaDespesaService.html" target="_self" >CategoriaDespesaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="atualizar"></a>
+                    <span class="name">
+                        <b>
+                            atualizar
+                        </b>
+                        <a href="#atualizar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>atualizar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="atualizarTituloDaPagina"></a>
+                    <span class="name">
+                        <b>
+                            atualizarTituloDaPagina
+                        </b>
+                        <a href="#atualizarTituloDaPagina"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>atualizarTituloDaPagina()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:131</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarCategorias"></a>
+                    <span class="name">
+                        <b>
+                            carregarCategorias
+                        </b>
+                        <a href="#carregarCategorias"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarCategorias()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarDespesa"></a>
+                    <span class="name">
+                        <b>
+                            carregarDespesa
+                        </b>
+                        <a href="#carregarDespesa"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarDespesa(codigo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMobile"></a>
+                    <span class="name">
+                        <b>
+                            isMobile
+                        </b>
+                        <a href="#isMobile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isMobile()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="139"
+                            class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:139</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="novaCategoria"></a>
+                    <span class="name">
+                        <b>
+                            novaCategoria
+                        </b>
+                        <a href="#novaCategoria"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>novaCategoria()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prepararFormulario"></a>
+                    <span class="name">
+                        <b>
+                            prepararFormulario
+                        </b>
+                        <a href="#prepararFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>prepararFormulario()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="salvar"></a>
+                    <span class="name">
+                        <b>
+                            salvar
+                        </b>
+                        <a href="#salvar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>salvar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:79</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submeterFormulario"></a>
+                    <span class="name">
+                        <b>
+                            submeterFormulario
+                        </b>
+                        <a href="#submeterFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submeterFormulario()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="voltar"></a>
+                    <span class="name">
+                        <b>
+                            voltar
+                        </b>
+                        <a href="#voltar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>voltar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="categorias"></a>
+                        <span class="name">
+                            <b>
+                            categorias</b>
+                            <a href="#categorias"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="descricao"></a>
+                        <span class="name">
+                            <b>
+                            descricao</b>
+                            <a href="#descricao"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formaDePagamento"></a>
+                        <span class="name">
+                            <b>
+                            formaDePagamento</b>
+                            <a href="#formaDePagamento"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    { label: &#x27;Dinheiro&#x27;, value: &#x27;DINHEIRO&#x27; },
+    { label: &#x27;Cartão&#x27;, value: &#x27;CARTAO&#x27; }
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formularioDeDespesa"></a>
+                        <span class="name">
+                            <b>
+                            formularioDeDespesa</b>
+                            <a href="#formularioDeDespesa"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pt_BR"></a>
+                        <span class="name">
+                            <b>
+                            pt_BR</b>
+                            <a href="#pt_BR"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>pt_BR</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isEditando"></a>
+                        <span class="name"><b>isEditando</b><a href="#isEditando"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isEditando()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/app/despesas/despesa-cadastro/despesa-cadastro.component.ts:135</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { FormGroup, Validators, FormControl } from &#x27;@angular/forms&#x27;;
+
+import { pt_BR } from &#x27;src/app/shared/constants/calendario.br&#x27;;
+import { ToastService } from &#x27;src/app/core/services/toast.service&#x27;;
+import { DespesaService } from &#x27;src/app/core/services/despesa.service&#x27;;
+import { CategoriaDespesaService } from &#x27;src/app/core/services/categoria-despesa.service&#x27;;
+
+import { tap } from &#x27;rxjs/operators&#x27;;
+
+declare var $: any;
+
+@Component({
+  selector: &#x27;app-despesa-cadastro&#x27;,
+  templateUrl: &#x27;./despesa-cadastro.component.html&#x27;,
+  styleUrls: [&#x27;./despesa-cadastro.component.scss&#x27;]
+})
+export class DespesaCadastroComponent implements OnInit {
+
+  pt_BR &#x3D; pt_BR;
+  formularioDeDespesa: FormGroup;
+  categorias &#x3D; [];
+  descricao: string;
+
+  formaDePagamento &#x3D; [
+    { label: &#x27;Dinheiro&#x27;, value: &#x27;DINHEIRO&#x27; },
+    { label: &#x27;Cartão&#x27;, value: &#x27;CARTAO&#x27; }
+  ];
+
+  constructor(
+    private title: Title,
+    private router: Router,
+    private route: ActivatedRoute,
+    private toastService: ToastService,
+    private despesaService: DespesaService,
+    private categoriaDespesaService: CategoriaDespesaService,
+  ) { }
+
+  ngOnInit() {
+    this.prepararFormulario();
+    this.carregarCategorias();
+    this.title.setTitle(&#x27;Nova Despesa&#x27;);
+    const codigoDespsesa &#x3D; this.route.snapshot.params[&#x27;codigo&#x27;];
+    if (codigoDespsesa) {
+      this.carregarDespesa(codigoDespsesa);
+    }
+  }
+
+  prepararFormulario() {
+    this.formularioDeDespesa &#x3D; new FormGroup({
+      codigo: new FormControl(&#x27;&#x27;),
+      descricao: new FormControl(&#x27;&#x27;, Validators.maxLength(50)),
+      valor: new FormControl(&#x27;&#x27;, Validators.required),
+      categoria: new FormGroup({
+        codigo: new FormControl(&#x27;&#x27;, Validators.required)
+      }),
+      pagamento: new FormGroup({
+        forma: new FormControl(&#x27;&#x27;, Validators.required),
+        dataPagamento: new FormControl(&#x27;&#x27;, Validators.required)
+      }, {
+          updateOn: &#x27;change&#x27;
+        })
+    },
+      {
+        updateOn: &#x27;blur&#x27;
+      });
+  }
+
+  submeterFormulario() {
+    if (this.isEditando) {
+      this.atualizar();
+    } else {
+      this.salvar();
+    }
+  }
+
+  salvar() {
+    this.despesaService.salvar(this.formularioDeDespesa.value)
+      .pipe(
+        tap((response: string) &#x3D;&gt; {
+          this.descricao &#x3D; response;
+        })
+      )
+      .subscribe(() &#x3D;&gt; {
+        this.voltar();
+        const mensagemToast &#x3D; &#x60;&quot;${this.descricao}&quot; foi salva.&#x60;;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  atualizar() {
+    this.despesaService.atualizar(this.formularioDeDespesa.value)
+      .subscribe(() &#x3D;&gt; {
+        const mensagemToast &#x3D; &#x60;&quot;A despesa foi atualizada.&#x60;;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  carregarDespesa(codigo: number) {
+    this.despesaService.buscarPorCodigo(codigo)
+      .subscribe((response) &#x3D;&gt; {
+        this.formularioDeDespesa.patchValue(response);
+        this.atualizarTituloDaPagina();
+      });
+  }
+
+  voltar() {
+    this.router.navigate([&#x27;/despesas&#x27;], {
+      relativeTo: this.route
+    });
+  }
+
+  novaCategoria() {
+    localStorage.setItem(&#x27;criar&#x27;, &#x27;true&#x27;);
+    this.router.navigate([&#x27;/categorias-despesa&#x27;], {
+      relativeTo: this.route
+    });
+  }
+
+  carregarCategorias() {
+    this.categoriaDespesaService.pesquisar()
+      .subscribe(response &#x3D;&gt; {
+        this.categorias &#x3D; response.map(elemento &#x3D;&gt;
+          ({ value: elemento.codigo, label: elemento.nome })
+        );
+      });
+  }
+
+  atualizarTituloDaPagina() {
+    this.title.setTitle(&#x60;Editando: ${this.formularioDeDespesa.get(&#x27;descricao&#x27;).value}&#x60;);
+  }
+
+  get isEditando(): boolean {
+    return Boolean(this.formularioDeDespesa.get(&#x27;codigo&#x27;).value);
+  }
+
+  isMobile(): boolean {
+    return $.browser.mobile;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content&quot;&gt;
+  &lt;div class&#x3D;&quot;header&quot;&gt;
+    &lt;h1 class&#x3D;&quot;header__titulo&quot;&gt;{{isEditando ? &#x27;Editando &#x27;: &#x27;Cadastro de &#x27;}}Despesa&lt;/h1&gt;
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;header__botao-voltar header__botao-voltar--float&quot; (click)&#x3D;&quot;voltar()&quot;&gt;
+      &lt;i class&#x3D;&quot;fas fa-undo-alt&quot;&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;button id&#x3D;&quot;voltar&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;header__botao-voltar header__botao-voltar--header&quot; (click)&#x3D;&quot;voltar()&quot;&gt;
+      Cancelar
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;form&quot;&gt;
+
+    &lt;form novalidate [formGroup]&#x3D;&quot;formularioDeDespesa&quot; class&#x3D;&quot;i-container&quot;&gt;
+
+      &lt;div formGroupName&#x3D;&quot;pagamento&quot;&gt;
+        &lt;app-input-container label&#x3D;&quot;Forma do Pagamento&quot; errorMessage&#x3D;&quot;Selecione uma forma de pagamento.&quot;
+          [dropdown]&#x3D;&quot;true&quot;&gt;
+          &lt;p-selectButton [options]&#x3D;&quot;formaDePagamento&quot; formControlName&#x3D;&quot;forma&quot; [style]&#x3D;&quot;{&#x27;margin-bottom&#x27;:&#x27;20px&#x27;}&quot;
+            inputId&#x3D;&quot;forma-pagamento&quot; [required]&#x3D;&quot;true&quot;&gt;
+          &lt;/p-selectButton&gt;
+        &lt;/app-input-container&gt;
+      &lt;/div&gt;
+
+      &lt;app-input-container label&#x3D;&quot;Descrição&quot; for&#x3D;&quot;descricao&quot; errorMessage&#x3D;&quot;Permitido até 50 caracteres.&quot;&gt;
+        &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;descricao&quot; formControlName&#x3D;&quot;descricao&quot;&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;div formGroupName&#x3D;&quot;categoria&quot;&gt;
+        &lt;app-input-container label&#x3D;&quot;Categoria&quot; for&#x3D;&quot;categoria&quot; errorMessage&#x3D;&quot;Categoria é obrigatório.&quot;
+          [dropdown]&#x3D;&quot;true&quot;&gt;
+
+          &lt;div class&#x3D;&quot;categoria-button&quot;&gt;
+            &lt;p-dropdown [options]&#x3D;&quot;categorias&quot; placeholder&#x3D;&quot;Selecione&quot; emptyFilterMessage&#x3D;&quot;Categoria não encontrada!&quot;
+              inputId&#x3D;&quot;categoria&quot; formControlName&#x3D;&quot;codigo&quot; [required]&#x3D;&quot;true&quot; [filter]&#x3D;&quot;!isMobile()&quot;
+              [style]&#x3D;&quot;{&#x27;width&#x27;: &#x27;100%&#x27;, &#x27;margin-bottom&#x27;:&#x27;20px&#x27;}&quot;&gt;
+            &lt;/p-dropdown&gt;
+            &lt;button class&#x3D;&quot;categoria-button__button&quot; (click)&#x3D;&quot;novaCategoria()&quot;&gt;&lt;i class&#x3D;&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;/div&gt;
+
+        &lt;/app-input-container&gt;
+      &lt;/div&gt;
+
+      &lt;app-input-container label&#x3D;&quot;Valor&quot; for&#x3D;&quot;valor&quot; errorMessage&#x3D;&quot;Informe o valor.&quot;&gt;
+        &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;valor&quot; formControlName&#x3D;&quot;valor&quot; currencyMask
+          [options]&#x3D;&quot;{ prefix: &#x27;R$ &#x27;, thousands: &#x27;.&#x27;, decimal: &#x27;,&#x27;, allowNegative: &#x27;false&#x27; }&quot; /&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;div formGroupName&#x3D;&quot;pagamento&quot;&gt;
+        &lt;app-input-container label&#x3D;&quot;Data do Pagamento&quot; for&#x3D;&quot;data-pagamento&quot; errorMessage&#x3D;&quot;Informe uma data.&quot;&gt;
+          &lt;p-calendar [showIcon]&#x3D;&quot;isMobile()&quot; [touchUI]&#x3D;&quot;isMobile()&quot; [baseZIndex]&#x3D;&quot;100&quot; [readonlyInput]&#x3D;&quot;isMobile()&quot;
+            inputId&#x3D;&quot;data-pagamento&quot; dateFormat&#x3D;&quot;dd/mm/yy&quot; [locale]&#x3D;&quot;pt_BR&quot; [monthNavigator]&#x3D;&quot;true&quot;
+            [yearNavigator]&#x3D;&quot;true&quot; yearRange&#x3D;&quot;2017:2027&quot; formControlName&#x3D;&quot;dataPagamento&quot;
+            [style]&#x3D;&quot;{&#x27;width&#x27;: isMobile() ?&#x27;70%&#x27;:&#x27;100%&#x27;, &#x27;margin-bottom&#x27;:&#x27;20px&#x27;}&quot;&gt;
+          &lt;/p-calendar&gt;
+        &lt;/app-input-container&gt;
+      &lt;/div&gt;
+
+      &lt;app-button label&#x3D;&quot;{{isEditando ? &#x27;Atualizar&#x27;: &#x27;Salvar&#x27;}}&quot; icon&#x3D;&quot;fas fa-hdd&quot; iconPosition&#x3D;&quot;right&quot;
+        [classes]&#x3D;&quot;[&#x27;botao--success&#x27;, isMobile() ? &#x27;botao--full&#x27;:&#x27;botao--grande&#x27;]&quot;
+        [desativar]&#x3D;&quot;formularioDeDespesa.invalid&quot; (botaoClicado)&#x3D;&quot;[submeterFormulario()]&quot;&gt;
+      &lt;/app-button&gt;
+    &lt;/form&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./despesa-cadastro.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../../assets/scss/cores&quot;;
+
+.form {
+  padding: 20px;
+}
+
+.ui-inputtext {
+  width: 70%;
+}
+
+.categoria-button {
+  display: flex;
+  flex-direction: row;
+  &amp;__button {
+    width: 33px;
+    height: 33px;
+    border: 1px solid $sucesso;
+    border-radius: 0 2px 2px 0;
+    color: $branco;
+    background-color: $sucesso;
+    font-size: 1.2em;
+  }
+  &amp; &gt; :nth-child(1) {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .form {
+    .i-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      &amp; &gt; :nth-child(1) {
+        width: 100%;
+      }
+      &amp; &gt; :nth-child(2) {
+        padding: 0 5px 5px 0;
+        width: 50%;
+      }
+      &amp; &gt; :nth-child(3) {
+        padding: 0 0 5px 5px;
+        width: 50%;
+      }
+      &amp; &gt; :nth-child(4) {
+        padding: 0 5px 5px 0;
+        width: 20%;
+      }
+      &amp; &gt; :nth-child(5) {
+        padding: 0 5px 5px 5px;
+        align-self: center;
+        width: 30%;
+      }
+      &amp; &gt; :nth-child(6) {
+        padding: 5px 0 5px 5px;
+        align-self: center;
+        width: 50%;
+      }
+    }
+    .categoria-button {
+      &amp;__button {
+        cursor: pointer;
+        transition: all 0.2s linear;
+        &amp;:hover {
+          background-color: darken($sucesso, 7);
+        }
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="content">  <div class="header">    <h1 class="header__titulo">{{isEditando ? \'Editando \': \'Cadastro de \'}}Despesa</h1>    <button type="button" class="header__botao-voltar header__botao-voltar--float" (click)="voltar()">      <i class="fas fa-undo-alt"></i>    </button>    <button id="voltar" type="button" class="header__botao-voltar header__botao-voltar--header" (click)="voltar()">      Cancelar    </button>  </div>  <div class="form">    <form novalidate [formGroup]="formularioDeDespesa" class="i-container">      <div formGroupName="pagamento">        <app-input-container label="Forma do Pagamento" errorMessage="Selecione uma forma de pagamento."          [dropdown]="true">          <p-selectButton [options]="formaDePagamento" formControlName="forma" [style]="{\'margin-bottom\':\'20px\'}"            inputId="forma-pagamento" [required]="true">          </p-selectButton>        </app-input-container>      </div>      <app-input-container label="Descrição" for="descricao" errorMessage="Permitido até 50 caracteres.">        <input class="i-container__input" type="text" id="descricao" formControlName="descricao">      </app-input-container>      <div formGroupName="categoria">        <app-input-container label="Categoria" for="categoria" errorMessage="Categoria é obrigatório."          [dropdown]="true">          <div class="categoria-button">            <p-dropdown [options]="categorias" placeholder="Selecione" emptyFilterMessage="Categoria não encontrada!"              inputId="categoria" formControlName="codigo" [required]="true" [filter]="!isMobile()"              [style]="{\'width\': \'100%\', \'margin-bottom\':\'20px\'}">            </p-dropdown>            <button class="categoria-button__button" (click)="novaCategoria()"><i class="fas fa-plus"></i></button>          </div>        </app-input-container>      </div>      <app-input-container label="Valor" for="valor" errorMessage="Informe o valor.">        <input class="i-container__input" type="text" id="valor" formControlName="valor" currencyMask          [options]="{ prefix: \'R$ \', thousands: \'.\', decimal: \',\', allowNegative: \'false\' }" />      </app-input-container>      <div formGroupName="pagamento">        <app-input-container label="Data do Pagamento" for="data-pagamento" errorMessage="Informe uma data.">          <p-calendar [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100" [readonlyInput]="isMobile()"            inputId="data-pagamento" dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true"            [yearNavigator]="true" yearRange="2017:2027" formControlName="dataPagamento"            [style]="{\'width\': isMobile() ?\'70%\':\'100%\', \'margin-bottom\':\'20px\'}">          </p-calendar>        </app-input-container>      </div>      <app-button label="{{isEditando ? \'Atualizar\': \'Salvar\'}}" icon="fas fa-hdd" iconPosition="right"        [classes]="[\'botao--success\', isMobile() ? \'botao--full\':\'botao--grande\']"        [desativar]="formularioDeDespesa.invalid" (botaoClicado)="[submeterFormulario()]">      </app-button>    </form>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AgendamentoCadastroComponent', 'selector': 'app-agendamento-cadastro'},{'name': 'AgendamentoPesquisaComponent', 'selector': 'app-agendamento-pesquisa'},{'name': 'AnamneseComponent', 'selector': 'app-anamnese'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalendarOptionsComponent', 'selector': 'app-calendar-options'},{'name': 'CategoriaDespesaPesquisaComponent', 'selector': 'app-categoria-despesa-pesquisa'},{'name': 'ConsultasComponent', 'selector': 'app-consultas'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DespesaCadastroComponent', 'selector': 'app-despesa-cadastro'},{'name': 'DespesasPesquisaComponent', 'selector': 'app-despesas-pesquisa'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputContainerComponent', 'selector': 'app-input-container'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MateriaisListaComponent', 'selector': 'app-materiais-lista'},{'name': 'MateriaisPesquisaComponent', 'selector': 'app-materiais-pesquisa'},{'name': 'MaterialCadastroComponent', 'selector': 'app-material-cadastro'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'OdontogramaComponent', 'selector': 'app-odontograma'},{'name': 'OdontogramaEditComponent', 'selector': 'app-odontograma-edit'},{'name': 'OdontogramaSelectComponent', 'selector': 'app-odontograma-select'},{'name': 'OrcamentoCadastroComponent', 'selector': 'app-orcamento-cadastro'},{'name': 'OrcamentosComponent', 'selector': 'app-orcamentos'},{'name': 'PacienteCadastroComponent', 'selector': 'app-paciente-cadastro'},{'name': 'PacienteDadosComponent', 'selector': 'app-paciente-dados'},{'name': 'PacientesPesquisaComponent', 'selector': 'app-pacientes-pesquisa'},{'name': 'PagamentosComponent', 'selector': 'app-pagamentos'},{'name': 'PageForbiddenComponent', 'selector': 'app-page-forbidden'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProcedimentoCadastroComponent', 'selector': 'app-procedimento-cadastro'},{'name': 'ProcedimentosComponent', 'selector': 'app-procedimentos'},{'name': 'ProcedimentosPesquisaComponent', 'selector': 'app-procedimentos-pesquisa'},{'name': 'ProntuarioComponent', 'selector': 'app-prontuario'},{'name': 'RadioComponent', 'selector': 'app-radio'},{'name': 'ToastLinkComponent', 'selector': 'app-toast-link'},{'name': 'UsuarioCadastroComponent', 'selector': 'app-usuario-cadastro'},{'name': 'UsuariosPesquisaComponent', 'selector': 'app-usuarios-pesquisa'},{'name': 'UsuariosSenhaComponent', 'selector': 'app-usuarios-senha'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DespesaCadastroComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DespesaCadastroComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

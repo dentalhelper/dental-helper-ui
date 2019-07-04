@@ -1,0 +1,1143 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>dental-helper-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">dental-helper-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ConsultasComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/paciente/consultas/consultas.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-consultas</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./consultas.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./consultas.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activeTab">activeTab</a>
+                            </li>
+                            <li>
+                                <a href="#codigPaciente">codigPaciente</a>
+                            </li>
+                            <li>
+                                <a href="#consultas">consultas</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agendarConsulta">agendarConsulta</a>
+                            </li>
+                            <li>
+                                <a href="#atualizarTituloDaPagina">atualizarTituloDaPagina</a>
+                            </li>
+                            <li>
+                                <a href="#carregarConsultas">carregarConsultas</a>
+                            </li>
+                            <li>
+                                <a href="#confirmarExclusao">confirmarExclusao</a>
+                            </li>
+                            <li>
+                                <a href="#definirCorBadge">definirCorBadge</a>
+                            </li>
+                            <li>
+                                <a href="#deletar">deletar</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, toastService: <a href="../injectables/ToastService.html">ToastService</a>, pacienteService: <a href="../injectables/PacienteService.html">PacienteService</a>, agendamentoService: <a href="../injectables/AgendamentoService.html">AgendamentoService</a>, confirmationService: ConfirmationService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/paciente/consultas/consultas.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToastService.html" target="_self" >ToastService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pacienteService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PacienteService.html" target="_self" >PacienteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>agendamentoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AgendamentoService.html" target="_self" >AgendamentoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>confirmationService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfirmationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agendarConsulta"></a>
+                    <span class="name">
+                        <b>
+                            agendarConsulta
+                        </b>
+                        <a href="#agendarConsulta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agendarConsulta()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/paciente/consultas/consultas.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="atualizarTituloDaPagina"></a>
+                    <span class="name">
+                        <b>
+                            atualizarTituloDaPagina
+                        </b>
+                        <a href="#atualizarTituloDaPagina"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>atualizarTituloDaPagina()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="127"
+                            class="link-to-prism">src/app/paciente/consultas/consultas.component.ts:127</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarConsultas"></a>
+                    <span class="name">
+                        <b>
+                            carregarConsultas
+                        </b>
+                        <a href="#carregarConsultas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarConsultas()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/paciente/consultas/consultas.component.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmarExclusao"></a>
+                    <span class="name">
+                        <b>
+                            confirmarExclusao
+                        </b>
+                        <a href="#confirmarExclusao"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirmarExclusao(consulta: <a href="../interfaces/AgendamentoResumoPacienteDTO.html">AgendamentoResumoPacienteDTO</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/paciente/consultas/consultas.component.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>consulta</td>
+                                    <td>
+                                                <code><a href="../interfaces/AgendamentoResumoPacienteDTO.html" target="_self" >AgendamentoResumoPacienteDTO</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="definirCorBadge"></a>
+                    <span class="name">
+                        <b>
+                            definirCorBadge
+                        </b>
+                        <a href="#definirCorBadge"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>definirCorBadge(statusAgendamento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/app/paciente/consultas/consultas.component.ts:131</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>statusAgendamento</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletar"></a>
+                    <span class="name">
+                        <b>
+                            deletar
+                        </b>
+                        <a href="#deletar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deletar(codigoConsulta: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/paciente/consultas/consultas.component.ts:100</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigoConsulta</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/paciente/consultas/consultas.component.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="activeTab"></a>
+                        <span class="name">
+                            <b>
+                            activeTab</b>
+                            <a href="#activeTab"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;pronto&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/paciente/consultas/consultas.component.ts:73</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="codigPaciente"></a>
+                        <span class="name">
+                            <b>
+                            codigPaciente</b>
+                            <a href="#codigPaciente"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/paciente/consultas/consultas.component.ts:74</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="consultas"></a>
+                        <span class="name">
+                            <b>
+                            consultas</b>
+                            <a href="#consultas"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/PacienteAgendamentoDTO.html" target="_self" >PacienteAgendamentoDTO</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/paciente/consultas/consultas.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { trigger, state, style, transition, animate, keyframes } from &#x27;@angular/animations&#x27;;
+
+import { ToastService } from &#x27;src/app/core/services/toast.service&#x27;;
+import { PacienteService } from &#x27;src/app/core/services/paciente.service&#x27;;
+import { AgendamentoService } from &#x27;src/app/core/services/agendamento.service&#x27;;
+import { PacienteAgendamentoDTO } from &#x27;src/app/domains/dtos/paciente-agendamento.dto&#x27;;
+import { AgendamentoResumoPacienteDTO } from &#x27;src/app/domains/dtos/agendamento-resumo-paciente.dto&#x27;;
+
+import { ConfirmationService } from &#x27;primeng/api&#x27;;
+
+@Component({
+  selector: &#x27;app-consultas&#x27;,
+  templateUrl: &#x27;./consultas.component.html&#x27;,
+  styleUrls: [&#x27;./consultas.component.scss&#x27;],
+  animations: [
+    trigger(&#x27;linha&#x27;, [
+      state(&#x27;pronto&#x27;, style({
+        opacity: 1
+      })),
+      transition(&#x27;void &#x3D;&gt; pronto&#x27;,
+        animate(&#x27;300ms 0s ease-in&#x27;,
+          keyframes([
+            style({
+              opacity: 0,
+              transform: &#x27;translateX(-30px)&#x27;,
+              offset: 0
+            }),
+            style({
+              opacity: 0.5,
+              transform: &#x27;translateX(-20px)&#x27;,
+              offset: 0.5
+            }),
+            style({
+              opacity: 0.8,
+              transform: &#x27;translateX(-10px)&#x27;,
+              offset: 0.8
+            }),
+            style({
+              opacity: 1,
+              transform: &#x27;translateX(0px)&#x27;,
+              offset: 1
+            })
+          ]))
+      ),
+      transition(&#x27;pronto &#x3D;&gt; void&#x27;,
+        animate(&#x27;300ms 0s ease-out&#x27;,
+          keyframes([
+            style({
+              opacity: 1,
+              transform: &#x27;translateX(0px)&#x27;,
+              offset: 0
+            }),
+            style({
+              opacity: 0.8,
+              transform: &#x27;translateX(-10px)&#x27;,
+              offset: 0.2
+            }),
+            style({
+              opacity: 0,
+              transform: &#x27;translateX(30px)&#x27;,
+              offset: 1
+            })
+          ]))
+      )
+    ])
+  ]
+})
+export class ConsultasComponent implements OnInit {
+
+  activeTab &#x3D; &#x27;pronto&#x27;;
+  codigPaciente: number;
+
+  consultas: PacienteAgendamentoDTO;
+
+  constructor(
+    private title: Title,
+    private router: Router,
+    private route: ActivatedRoute,
+    private toastService: ToastService,
+    private pacienteService: PacienteService,
+    private agendamentoService: AgendamentoService,
+    private confirmationService: ConfirmationService,
+  ) { }
+
+  ngOnInit() {
+    this.codigPaciente &#x3D; this.route.snapshot.parent.params[&#x27;codigo&#x27;];
+    this.carregarConsultas();
+  }
+
+  agendarConsulta() {
+    this.router.navigate([&#x27;agendamentos/novo&#x27;, {
+      data: this.codigPaciente
+
+    }]);
+  }
+
+  deletar(codigoConsulta: any) {
+    this.agendamentoService.deletar(codigoConsulta)
+      .subscribe(() &#x3D;&gt; {
+        this.carregarConsultas();
+        const mensagemToast &#x3D; &#x60;&quot;O Agendamento foi excluído.&quot;&#x60;;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  confirmarExclusao(consulta: AgendamentoResumoPacienteDTO) {
+    this.confirmationService.confirm({
+      message: &#x60;Você tem certeza que quer excluir este agendamento?&#x60;,
+      accept: () &#x3D;&gt; {
+        this.deletar(consulta.codigoAgendamento);
+      }
+    });
+  }
+
+  carregarConsultas() {
+    this.pacienteService.buscarConsultas(this.codigPaciente)
+      .subscribe((response) &#x3D;&gt; {
+        this.consultas &#x3D; response;
+        this.atualizarTituloDaPagina();
+
+      });
+  }
+
+  atualizarTituloDaPagina() {
+    this.title.setTitle(&#x60;Consultas&#x60;);
+  }
+
+  definirCorBadge(statusAgendamento: string): string {
+    switch (statusAgendamento) {
+      case &#x27;Agendado&#x27;: {
+        return &#x27;#116FBF&#x27;;
+      }
+      case &#x27;Confirmado&#x27;: {
+        return &#x27;#cda86f&#x27;;
+      }
+      case &#x27;Finalizado&#x27;: {
+        return &#x27;#56a83b&#x27;;
+      }
+      case &#x27;Faltou&#x27;: {
+        return &#x27;#505050&#x27;;
+      }
+      case &#x27;Cancelado&#x27;: {
+        return &#x27;#df1616&#x27;;
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content&quot; [@linha]&#x3D;&quot;activeTab&quot;&gt;
+  &lt;app-default-header titulo&#x3D;&quot;Consultas Agendadas&quot; buttonId&#x3D;&quot;add-consulta&quot; buttonText&#x3D;&quot;Agendar&quot;
+    (botaoClicado)&#x3D;&quot;agendarConsulta()&quot;&gt;
+  &lt;/app-default-header&gt;
+
+  &lt;div class&#x3D;&quot;ui-g&quot;&gt;
+    &lt;div class&#x3D;&quot;ui-g-12&quot;&gt;
+      &lt;p-table [value]&#x3D;&quot;consultas?.agendamentos&quot; #tabela responsive&#x3D;&quot;true&quot; [paginator]&#x3D;&quot;true&quot; [rows]&#x3D;&quot;20&quot;&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+          &lt;tr&gt;
+            &lt;th class&#x3D;&quot;cell--small&quot;&gt;Data&lt;/th&gt;
+            &lt;th class&#x3D;&quot;cell--small&quot;&gt;Hora&lt;/th&gt;
+            &lt;th&gt;Procedimento&lt;/th&gt;
+            &lt;!-- TODO: DENTISTA E FUNCIONÁRIO
+            &lt;th&gt;Dentista&lt;/th&gt;
+            &lt;th&gt;Agendado por&lt;/th&gt;
+            --&gt;
+            &lt;th&gt;Status&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-consulta&gt;
+          &lt;tr&gt;
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Data&lt;/span&gt;
+              {{ consulta.dataAgendamento | date: &#x27;dd/MM/yyyy&#x27;}}
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Hora&lt;/span&gt;
+              {{ consulta.horaInicio }}
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Procedimento&lt;/span&gt;
+              {{ consulta.nomeProcedimento }}
+            &lt;/td&gt;
+            &lt;!-- TODO: DENTISTA E FUNCIONÁRIO
+            &lt;td&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Dentista&lt;/span&gt;
+              {{ &quot;Nome Dentista&quot; }}
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Agendado por&lt;/span&gt;
+              {{ &quot;Funcionário&quot; }}
+            &lt;/td&gt;
+            --&gt;
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Status&lt;/span&gt;
+              &lt;span class&#x3D;&quot;cell__badge&quot;
+                [ngStyle]&#x3D;&quot;{&#x27;backgroundColor&#x27;: definirCorBadge(consulta.statusAgendamento)}&quot;&gt;{{ consulta.statusAgendamento }}&lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;div class&#x3D;&quot;operacoes&quot;&gt;
+
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--edit&quot;
+                  [routerLink]&#x3D;&quot;[&#x27;/agendamentos&#x27;, consulta.codigoAgendamento, &#x27;edit&#x27;]&quot; pTooltip&#x3D;&quot;Editar&quot;
+                  tooltipPosition&#x3D;&quot;top&quot;&gt;
+                  &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;edit&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                &lt;/button&gt;
+
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--delete&quot;
+                  (click)&#x3D;&quot;confirmarExclusao(consulta)&quot; pTooltip&#x3D;&quot;Excluir&quot; tooltipPosition&#x3D;&quot;top&quot;&gt;
+                  &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;trash&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                &lt;/button&gt;
+
+              &lt;/div&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;emptymessage&quot;&gt;
+          &lt;tr&gt;
+            &lt;td colspan&#x3D;&quot;5&quot;&gt;
+              Nenhuma Consulta marcada!&lt;br /&gt;
+              Clique &lt;a [routerLink]&#x3D;&quot;[&#x27;/agendamentos/novo&#x27;]&quot;&gt;AQUI&lt;/a&gt; para Agendar.
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+      &lt;/p-table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p-confirmDialog #confirmDialog header&#x3D;&quot;Confirmar exclusão&quot; icon&#x3D;&quot;pi pi-exclamation-triangle&quot;&gt;
+  &lt;p-footer&gt;
+    &lt;app-button label&#x3D;&quot;Excluir&quot; icon&#x3D;&quot;fas fa-trash&quot; iconPosition&#x3D;&quot;right&quot; (botaoClicado)&#x3D;&quot;[confirmDialog.accept()]&quot;
+      [classes]&#x3D;&quot;[&#x27;botao--success&#x27;]&quot;&gt;
+    &lt;/app-button&gt;
+
+    &lt;app-button label&#x3D;&quot;Cancelar&quot; icon&#x3D;&quot;fas fa-times&quot; iconPosition&#x3D;&quot;right&quot; (botaoClicado)&#x3D;&quot;[confirmDialog.reject()]&quot;
+      [classes]&#x3D;&quot;[&#x27;ui-button-secondary&#x27;]&quot;&gt;
+    &lt;/app-button&gt;
+  &lt;/p-footer&gt;
+&lt;/p-confirmDialog&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./consultas.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.cell{
+  &amp;--center{
+    text-align: center;
+  }
+  &amp;--small{
+    width: 120px;
+  }
+  &amp;__badge{
+    background-color: red;
+    padding: 3px 12px;
+    border-radius: 5px;
+    color: #ffffff;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="content" [@linha]="activeTab">  <app-default-header titulo="Consultas Agendadas" buttonId="add-consulta" buttonText="Agendar"    (botaoClicado)="agendarConsulta()">  </app-default-header>  <div class="ui-g">    <div class="ui-g-12">      <p-table [value]="consultas?.agendamentos" #tabela responsive="true" [paginator]="true" [rows]="20">        <ng-template pTemplate="header">          <tr>            <th class="cell--small">Data</th>            <th class="cell--small">Hora</th>            <th>Procedimento</th>            <!-- TODO: DENTISTA E FUNCIONÁRIO            <th>Dentista</th>            <th>Agendado por</th>            -->            <th>Status</th>            <th></th>          </tr>        </ng-template>        <ng-template pTemplate="body" let-consulta>          <tr>            <td class="cell--center">              <span class="ui-column-title">Data</span>              {{ consulta.dataAgendamento | date: \'dd/MM/yyyy\'}}            </td>            <td class="cell--center">              <span class="ui-column-title">Hora</span>              {{ consulta.horaInicio }}            </td>            <td>              <span class="ui-column-title">Procedimento</span>              {{ consulta.nomeProcedimento }}            </td>            <!-- TODO: DENTISTA E FUNCIONÁRIO            <td>              <span class="ui-column-title">Dentista</span>              {{ "Nome Dentista" }}            </td>            <td>              <span class="ui-column-title">Agendado por</span>              {{ "Funcionário" }}            </td>            -->            <td class="cell--center">              <span class="ui-column-title">Status</span>              <span class="cell__badge"                [ngStyle]="{\'backgroundColor\': definirCorBadge(consulta.statusAgendamento)}">{{ consulta.statusAgendamento }}</span>            </td>            <td>              <div class="operacoes">                <button type="button" class="operacoes__button operacoes__button--edit"                  [routerLink]="[\'/agendamentos\', consulta.codigoAgendamento, \'edit\']" pTooltip="Editar"                  tooltipPosition="top">                  <fa-icon [icon]="[\'fas\', \'edit\']" size="lg" [fixedWidth]="true"></fa-icon>                </button>                <button type="button" class="operacoes__button operacoes__button--delete"                  (click)="confirmarExclusao(consulta)" pTooltip="Excluir" tooltipPosition="top">                  <fa-icon [icon]="[\'fas\', \'trash\']" size="lg" [fixedWidth]="true"></fa-icon>                </button>              </div>            </td>          </tr>        </ng-template>        <ng-template pTemplate="emptymessage">          <tr>            <td colspan="5">              Nenhuma Consulta marcada!<br />              Clique <a [routerLink]="[\'/agendamentos/novo\']">AQUI</a> para Agendar.            </td>          </tr>        </ng-template>      </p-table>    </div>  </div></div><p-confirmDialog #confirmDialog header="Confirmar exclusão" icon="pi pi-exclamation-triangle">  <p-footer>    <app-button label="Excluir" icon="fas fa-trash" iconPosition="right" (botaoClicado)="[confirmDialog.accept()]"      [classes]="[\'botao--success\']">    </app-button>    <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[confirmDialog.reject()]"      [classes]="[\'ui-button-secondary\']">    </app-button>  </p-footer></p-confirmDialog></div>'
+    var COMPONENTS = [{'name': 'AgendamentoCadastroComponent', 'selector': 'app-agendamento-cadastro'},{'name': 'AgendamentoPesquisaComponent', 'selector': 'app-agendamento-pesquisa'},{'name': 'AnamneseComponent', 'selector': 'app-anamnese'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalendarOptionsComponent', 'selector': 'app-calendar-options'},{'name': 'CategoriaDespesaPesquisaComponent', 'selector': 'app-categoria-despesa-pesquisa'},{'name': 'ConsultasComponent', 'selector': 'app-consultas'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DespesaCadastroComponent', 'selector': 'app-despesa-cadastro'},{'name': 'DespesasPesquisaComponent', 'selector': 'app-despesas-pesquisa'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputContainerComponent', 'selector': 'app-input-container'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MateriaisListaComponent', 'selector': 'app-materiais-lista'},{'name': 'MateriaisPesquisaComponent', 'selector': 'app-materiais-pesquisa'},{'name': 'MaterialCadastroComponent', 'selector': 'app-material-cadastro'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'OdontogramaComponent', 'selector': 'app-odontograma'},{'name': 'OdontogramaEditComponent', 'selector': 'app-odontograma-edit'},{'name': 'OdontogramaSelectComponent', 'selector': 'app-odontograma-select'},{'name': 'OrcamentoCadastroComponent', 'selector': 'app-orcamento-cadastro'},{'name': 'OrcamentosComponent', 'selector': 'app-orcamentos'},{'name': 'PacienteCadastroComponent', 'selector': 'app-paciente-cadastro'},{'name': 'PacienteDadosComponent', 'selector': 'app-paciente-dados'},{'name': 'PacientesPesquisaComponent', 'selector': 'app-pacientes-pesquisa'},{'name': 'PagamentosComponent', 'selector': 'app-pagamentos'},{'name': 'PageForbiddenComponent', 'selector': 'app-page-forbidden'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProcedimentoCadastroComponent', 'selector': 'app-procedimento-cadastro'},{'name': 'ProcedimentosComponent', 'selector': 'app-procedimentos'},{'name': 'ProcedimentosPesquisaComponent', 'selector': 'app-procedimentos-pesquisa'},{'name': 'ProntuarioComponent', 'selector': 'app-prontuario'},{'name': 'RadioComponent', 'selector': 'app-radio'},{'name': 'ToastLinkComponent', 'selector': 'app-toast-link'},{'name': 'UsuarioCadastroComponent', 'selector': 'app-usuario-cadastro'},{'name': 'UsuariosPesquisaComponent', 'selector': 'app-usuarios-pesquisa'},{'name': 'UsuariosSenhaComponent', 'selector': 'app-usuarios-senha'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ConsultasComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ConsultasComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

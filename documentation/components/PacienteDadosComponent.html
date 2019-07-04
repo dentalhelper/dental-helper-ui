@@ -1,0 +1,1932 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>dental-helper-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">dental-helper-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>PacienteDadosComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/paciente/paciente-dados/paciente-dados.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-paciente-dados</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./paciente-dados.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./paciente-dados.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activeTab">activeTab</a>
+                            </li>
+                            <li>
+                                <a href="#cidadesOptions">cidadesOptions</a>
+                            </li>
+                            <li>
+                                <a href="#codigPaciente">codigPaciente</a>
+                            </li>
+                            <li>
+                                <a href="#estadoCivilOptions">estadoCivilOptions</a>
+                            </li>
+                            <li>
+                                <a href="#estadosOptions">estadosOptions</a>
+                            </li>
+                            <li>
+                                <a href="#formularioDePaciente">formularioDePaciente</a>
+                            </li>
+                            <li>
+                                <a href="#nome">nome</a>
+                            </li>
+                            <li>
+                                <a href="#pt_BR">pt_BR</a>
+                            </li>
+                            <li>
+                                <a href="#sexoOptions">sexoOptions</a>
+                            </li>
+                            <li>
+                                <a href="#uploadEmAndamento">uploadEmAndamento</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#aoEnviarImagem">aoEnviarImagem</a>
+                            </li>
+                            <li>
+                                <a href="#aoFalharEnvioDeImagem">aoFalharEnvioDeImagem</a>
+                            </li>
+                            <li>
+                                <a href="#atualizar">atualizar</a>
+                            </li>
+                            <li>
+                                <a href="#atualizarTituloDaPagina">atualizarTituloDaPagina</a>
+                            </li>
+                            <li>
+                                <a href="#carregarCidades">carregarCidades</a>
+                            </li>
+                            <li>
+                                <a href="#carregarEstadoDoPaciente">carregarEstadoDoPaciente</a>
+                            </li>
+                            <li>
+                                <a href="#carregarEstados">carregarEstados</a>
+                            </li>
+                            <li>
+                                <a href="#carregarPacientePeloCodigo">carregarPacientePeloCodigo</a>
+                            </li>
+                            <li>
+                                <a href="#isMobile">isMobile</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onBeforeSendImage">onBeforeSendImage</a>
+                            </li>
+                            <li>
+                                <a href="#prepararFormulario">prepararFormulario</a>
+                            </li>
+                            <li>
+                                <a href="#removerImagem">removerImagem</a>
+                            </li>
+                            <li>
+                                <a href="#submeterFormulario">submeterFormulario</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#urlUploadImagem">urlUploadImagem</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, toastService: <a href="../injectables/ToastService.html">ToastService</a>, estadoService: <a href="../injectables/EstadoService.html">EstadoService</a>, pacienteService: <a href="../injectables/PacienteService.html">PacienteService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:96</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToastService.html" target="_self" >ToastService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>estadoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EstadoService.html" target="_self" >EstadoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pacienteService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PacienteService.html" target="_self" >PacienteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aoEnviarImagem"></a>
+                    <span class="name">
+                        <b>
+                            aoEnviarImagem
+                        </b>
+                        <a href="#aoEnviarImagem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>aoEnviarImagem(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="211"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:211</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aoFalharEnvioDeImagem"></a>
+                    <span class="name">
+                        <b>
+                            aoFalharEnvioDeImagem
+                        </b>
+                        <a href="#aoFalharEnvioDeImagem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>aoFalharEnvioDeImagem(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="220"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:220</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="atualizar"></a>
+                    <span class="name">
+                        <b>
+                            atualizar
+                        </b>
+                        <a href="#atualizar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>atualizar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="153"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:153</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="atualizarTituloDaPagina"></a>
+                    <span class="name">
+                        <b>
+                            atualizarTituloDaPagina
+                        </b>
+                        <a href="#atualizarTituloDaPagina"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>atualizarTituloDaPagina()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="236"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:236</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarCidades"></a>
+                    <span class="name">
+                        <b>
+                            carregarCidades
+                        </b>
+                        <a href="#carregarCidades"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarCidades(codigoEstado: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="199"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:199</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigoEstado</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarEstadoDoPaciente"></a>
+                    <span class="name">
+                        <b>
+                            carregarEstadoDoPaciente
+                        </b>
+                        <a href="#carregarEstadoDoPaciente"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarEstadoDoPaciente()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="176"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:176</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarEstados"></a>
+                    <span class="name">
+                        <b>
+                            carregarEstados
+                        </b>
+                        <a href="#carregarEstados"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarEstados()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="191"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:191</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarPacientePeloCodigo"></a>
+                    <span class="name">
+                        <b>
+                            carregarPacientePeloCodigo
+                        </b>
+                        <a href="#carregarPacientePeloCodigo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarPacientePeloCodigo(codigo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:163</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMobile"></a>
+                    <span class="name">
+                        <b>
+                            isMobile
+                        </b>
+                        <a href="#isMobile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isMobile()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="240"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:240</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:106</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBeforeSendImage"></a>
+                    <span class="name">
+                        <b>
+                            onBeforeSendImage
+                        </b>
+                        <a href="#onBeforeSendImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBeforeSendImage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="207"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:207</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prepararFormulario"></a>
+                    <span class="name">
+                        <b>
+                            prepararFormulario
+                        </b>
+                        <a href="#prepararFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>prepararFormulario()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:114</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removerImagem"></a>
+                    <span class="name">
+                        <b>
+                            removerImagem
+                        </b>
+                        <a href="#removerImagem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removerImagem()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="225"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:225</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submeterFormulario"></a>
+                    <span class="name">
+                        <b>
+                            submeterFormulario
+                        </b>
+                        <a href="#submeterFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submeterFormulario()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:149</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="activeTab"></a>
+                        <span class="name">
+                            <b>
+                            activeTab</b>
+                            <a href="#activeTab"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;pronto&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:75</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cidadesOptions"></a>
+                        <span class="name">
+                            <b>
+                            cidadesOptions</b>
+                            <a href="#cidadesOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:83</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="codigPaciente"></a>
+                        <span class="name">
+                            <b>
+                            codigPaciente</b>
+                            <a href="#codigPaciente"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:78</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="estadoCivilOptions"></a>
+                        <span class="name">
+                            <b>
+                            estadoCivilOptions</b>
+                            <a href="#estadoCivilOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    { label: &#x27;Solteiro&#x27;, value: 1 },
+    { label: &#x27;Casado&#x27;, value: 2 },
+    { label: &#x27;Viúvo&#x27;, value: 3 },
+    { label: &#x27;Separado&#x27;, value: 4 },
+    { label: &#x27;Divorciado&#x27;, value: 5 }
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:90</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="estadosOptions"></a>
+                        <span class="name">
+                            <b>
+                            estadosOptions</b>
+                            <a href="#estadosOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:82</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formularioDePaciente"></a>
+                        <span class="name">
+                            <b>
+                            formularioDePaciente</b>
+                            <a href="#formularioDePaciente"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:80</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nome"></a>
+                        <span class="name">
+                            <b>
+                            nome</b>
+                            <a href="#nome"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pt_BR"></a>
+                        <span class="name">
+                            <b>
+                            pt_BR</b>
+                            <a href="#pt_BR"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>pt_BR</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:77</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sexoOptions"></a>
+                        <span class="name">
+                            <b>
+                            sexoOptions</b>
+                            <a href="#sexoOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/RadioOption.html" target="_self" >RadioOption[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    { label: &#x27;Feminino&#x27;, value: 1 },
+    { label: &#x27;Masculino&#x27;, value: 2 }
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uploadEmAndamento"></a>
+                        <span class="name">
+                            <b>
+                            uploadEmAndamento</b>
+                            <a href="#uploadEmAndamento"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:79</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="urlUploadImagem"></a>
+                        <span class="name"><b>urlUploadImagem</b><a href="#urlUploadImagem"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>urlUploadImagem()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="232" class="link-to-prism">src/app/paciente/paciente-dados/paciente-dados.component.ts:232</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { FormGroup, FormControl, Validators } from &#x27;@angular/forms&#x27;;
+
+import { pt_BR } from &#x27;src/app/shared/constants/calendario.br&#x27;;
+import { ToastService } from &#x27;src/app/core/services/toast.service&#x27;;
+import { NO_IMAGE_URL } from &#x27;src/app/shared/constants/image.defeut&#x27;;
+import { EstadoService } from &#x27;src/app/core/services/estado.service&#x27;;
+import { RadioOption } from &#x27;src/app/shared/radio/radio-option.model&#x27;;
+import { PacienteService } from &#x27;src/app/core/services/paciente.service&#x27;;
+import { EMAIL_PATTERN } from &#x27;src/app/shared/constants/validators.regex&#x27;;
+import { trigger, state, style, transition, animate, keyframes } from &#x27;@angular/animations&#x27;;
+
+declare var $: any;
+@Component({
+  selector: &#x27;app-paciente-dados&#x27;,
+  templateUrl: &#x27;./paciente-dados.component.html&#x27;,
+  styleUrls: [&#x27;./paciente-dados.component.scss&#x27;],
+  animations: [
+    trigger(&#x27;linha&#x27;, [
+      state(&#x27;pronto&#x27;, style({
+        opacity: 1
+      })),
+      transition(&#x27;void &#x3D;&gt; pronto&#x27;,
+        animate(&#x27;300ms 0s ease-in&#x27;,
+          keyframes([
+            style({
+              opacity: 0,
+              transform: &#x27;translateX(-30px)&#x27;,
+              offset: 0
+            }),
+            style({
+              opacity: 0.5,
+              transform: &#x27;translateX(-20px)&#x27;,
+              offset: 0.5
+            }),
+            style({
+              opacity: 0.8,
+              transform: &#x27;translateX(-10px)&#x27;,
+              offset: 0.8
+            }),
+            style({
+              opacity: 1,
+              transform: &#x27;translateX(0px)&#x27;,
+              offset: 1
+            })
+          ]))
+      ),
+      transition(&#x27;pronto &#x3D;&gt; void&#x27;,
+        animate(&#x27;300ms 0s ease-out&#x27;,
+          keyframes([
+            style({
+              opacity: 1,
+              transform: &#x27;translateX(0px)&#x27;,
+              offset: 0
+            }),
+            style({
+              opacity: 0.8,
+              transform: &#x27;translateX(-10px)&#x27;,
+              offset: 0.2
+            }),
+            style({
+              opacity: 0,
+              transform: &#x27;translateX(30px)&#x27;,
+              offset: 1
+            })
+          ]))
+      )
+    ])
+  ]
+})
+export class PacienteDadosComponent implements OnInit {
+
+  activeTab &#x3D; &#x27;pronto&#x27;;
+  nome: string;
+  pt_BR &#x3D; pt_BR;
+  codigPaciente: number;
+  uploadEmAndamento &#x3D; false;
+  formularioDePaciente: FormGroup;
+
+  estadosOptions &#x3D; [];
+  cidadesOptions &#x3D; [];
+
+  sexoOptions: RadioOption[] &#x3D; [
+    { label: &#x27;Feminino&#x27;, value: 1 },
+    { label: &#x27;Masculino&#x27;, value: 2 }
+  ];
+
+  estadoCivilOptions &#x3D; [
+    { label: &#x27;Solteiro&#x27;, value: 1 },
+    { label: &#x27;Casado&#x27;, value: 2 },
+    { label: &#x27;Viúvo&#x27;, value: 3 },
+    { label: &#x27;Separado&#x27;, value: 4 },
+    { label: &#x27;Divorciado&#x27;, value: 5 }
+  ];
+
+  constructor(
+    private title: Title,
+    private route: ActivatedRoute,
+    private toastService: ToastService,
+    private estadoService: EstadoService,
+    private pacienteService: PacienteService,
+  ) { }
+
+  ngOnInit() {
+    this.prepararFormulario();
+    this.title.setTitle(&#x27;Dados do Paciente&#x27;);
+    this.codigPaciente &#x3D; this.route.snapshot.parent.params[&#x27;codigo&#x27;];
+    this.carregarPacientePeloCodigo(this.codigPaciente);
+    this.carregarEstados();
+  }
+
+  prepararFormulario() {
+    this.formularioDePaciente &#x3D; new FormGroup(
+      {
+        nome: new FormControl(&#x27;&#x27;, [Validators.required, Validators.maxLength(50)]),
+        dataNascimento: new FormControl(&#x27;&#x27;, {
+          updateOn: &#x27;change&#x27;,
+          validators: [Validators.required]
+        }),
+        cPF: new FormControl(&#x27;&#x27;, [Validators.required, Validators.maxLength(11), Validators.minLength(11)]),
+        rG: new FormControl(&#x27;&#x27;, [Validators.required, Validators.maxLength(20)]),
+        estadoCivil: new FormControl(&#x27;&#x27;, Validators.required),
+        sexo: new FormControl(&#x27;&#x27;, Validators.required),
+        email: new FormControl(&#x27;&#x27;, [Validators.pattern(EMAIL_PATTERN)]),
+        profissao: new FormControl(&#x27;&#x27;, Validators.required),
+        fotoPerfil: new FormControl(&#x27;&#x27;),
+        urlDaFoto: new FormControl(&#x27;&#x27;),
+        telefonePrincipal: new FormControl(&#x27;&#x27;),
+        telefone2: new FormControl(&#x27;&#x27;),
+        logradouro: new FormControl(&#x27;&#x27;, [Validators.required, Validators.minLength(3)]),
+        numero: new FormControl(&#x27;&#x27;, Validators.required),
+        bairro: new FormControl(&#x27;&#x27;, [Validators.required, Validators.maxLength(30)]),
+        cep: new FormControl(&#x27;&#x27;, Validators.required),
+        complemento: new FormControl(&#x27;&#x27;),
+        codigoEstado: new FormControl(&#x27;&#x27;),
+        codigoCidade: new FormControl(&#x27;&#x27;, {
+          updateOn: &#x27;change&#x27;,
+          validators: [Validators.required]
+        }),
+      },
+      {
+        updateOn: &#x27;blur&#x27;
+      }
+    );
+  }
+
+  submeterFormulario() {
+    this.atualizar();
+  }
+
+  atualizar() {
+    delete this.formularioDePaciente.value.codigoEstado;
+    this.pacienteService.atualizar(this.formularioDePaciente.value, this.codigPaciente)
+      .subscribe(() &#x3D;&gt; {
+        this.pacienteService.updateHeader.next();
+        const mensagemToast &#x3D; &#x60;&quot;O Paciente foi atualizado.&quot;&#x60;;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  carregarPacientePeloCodigo(codigo: number) {
+    this.pacienteService.buscarPorCodigo(codigo)
+      .subscribe((response) &#x3D;&gt; {
+        this.formularioDePaciente.patchValue(response);
+        this.atualizarTituloDaPagina();
+        this.carregarEstadoDoPaciente();
+        if (!response.urlDaFoto) {
+          this.formularioDePaciente.get(&#x27;urlDaFoto&#x27;).setValue(NO_IMAGE_URL);
+          this.formularioDePaciente.get(&#x27;fotoPerfil&#x27;).setValue(null);
+        }
+      });
+  }
+
+  carregarEstadoDoPaciente() {
+    this.estadoService.pesquisar().subscribe((response) &#x3D;&gt; {
+      response.forEach((estado) &#x3D;&gt; {
+        this.estadoService.pesquisarCidades(estado.codigo).subscribe((cidadeResponse) &#x3D;&gt; {
+          cidadeResponse.forEach((cidade) &#x3D;&gt; {
+            if (cidade.codigo &#x3D;&#x3D;&#x3D; this.formularioDePaciente.get(&#x27;codigoCidade&#x27;).value) {
+              this.carregarCidades(estado.codigo);
+              this.formularioDePaciente.get(&#x27;codigoEstado&#x27;).setValue(estado.codigo);
+            }
+          });
+        });
+      });
+    });
+  }
+
+  carregarEstados() {
+    this.estadoService.pesquisar().subscribe((response) &#x3D;&gt; {
+      this.estadosOptions &#x3D; response.map(estado &#x3D;&gt; ({
+        value: estado.codigo, label: estado.nome
+      }));
+    });
+  }
+
+  carregarCidades(codigoEstado: number) {
+    this.estadoService.pesquisarCidades(codigoEstado).subscribe((response) &#x3D;&gt; {
+      this.cidadesOptions &#x3D; response.map(cidade &#x3D;&gt; ({
+        value: cidade.codigo, label: cidade.nome
+      }));
+    });
+  }
+
+  onBeforeSendImage() {
+    this.uploadEmAndamento &#x3D; true;
+  }
+
+  aoEnviarImagem(event: any) {
+    const foto &#x3D; event.body;
+    this.formularioDePaciente.patchValue({
+      fotoPerfil: foto.nome,
+      urlDaFoto: foto.uri
+    });
+    this.uploadEmAndamento &#x3D; false;
+  }
+
+  aoFalharEnvioDeImagem(event: any) {
+    event.clear();
+    this.uploadEmAndamento &#x3D; false;
+  }
+
+  removerImagem() {
+    this.formularioDePaciente.patchValue({
+      fotoPerfil: null,
+      urlDaFoto: NO_IMAGE_URL
+    });
+  }
+
+  get urlUploadImagem() {
+    return this.pacienteService.urlUploadImagem();
+  }
+
+  atualizarTituloDaPagina() {
+    this.title.setTitle(&#x60;${this.formularioDePaciente.get(&#x27;nome&#x27;).value}&#x60;);
+  }
+
+  isMobile(): boolean {
+    return $.browser.mobile;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content&quot; [@linha]&#x3D;&quot;activeTab&quot;&gt;
+  &lt;div class&#x3D;&quot;header&quot;&gt;
+    &lt;h1 class&#x3D;&quot;header__titulo&quot;&gt;Dados do Paciente&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;form&quot;&gt;
+    &lt;form novalidate [formGroup]&#x3D;&quot;formularioDePaciente&quot; class&#x3D;&quot;i-container&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div class&#x3D;&quot;i-container__pessoais&quot;&gt;
+        &lt;app-input-container label&#x3D;&quot;Nome&quot; for&#x3D;&quot;nome&quot; errorMessage&#x3D;&quot;Nome é obrigatório (Até 50 caracteres).&quot;&gt;
+          &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;nome&quot; formControlName&#x3D;&quot;nome&quot;&gt;
+        &lt;/app-input-container&gt;
+
+        &lt;app-input-container label&#x3D;&quot;Data de Nascimento&quot; for&#x3D;&quot;data-nascimento&quot; errorMessage&#x3D;&quot;Informe uma data.&quot;&gt;
+          &lt;p-calendar [showIcon]&#x3D;&quot;isMobile()&quot; [touchUI]&#x3D;&quot;isMobile()&quot; [baseZIndex]&#x3D;&quot;100&quot; [readonlyInput]&#x3D;&quot;isMobile()&quot;
+            inputId&#x3D;&quot;data-nascimento&quot; dateFormat&#x3D;&quot;dd/mm/yy&quot; [locale]&#x3D;&quot;pt_BR&quot; [monthNavigator]&#x3D;&quot;true&quot;
+            [yearNavigator]&#x3D;&quot;true&quot; yearRange&#x3D;&quot;1940:2020&quot; formControlName&#x3D;&quot;dataNascimento&quot;
+            [style]&#x3D;&quot;{&#x27;width&#x27;: isMobile() ?&#x27;70%&#x27;:&#x27;100%&#x27;, &#x27;margin-bottom&#x27;:&#x27;20px&#x27;}&quot;&gt;
+          &lt;/p-calendar&gt;
+        &lt;/app-input-container&gt;
+
+        &lt;app-input-container label&#x3D;&quot;CPF&quot; for&#x3D;&quot;cpf&quot; errorMessage&#x3D;&quot;CPF é obrigatório.&quot;&gt;
+          &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;cpf&quot; formControlName&#x3D;&quot;cPF&quot; mask&#x3D;&quot;000.000.000-00&quot;&gt;
+        &lt;/app-input-container&gt;
+
+        &lt;app-input-container label&#x3D;&quot;RG&quot; for&#x3D;&quot;rg&quot; errorMessage&#x3D;&quot;RG é obrigatório.&quot;&gt;
+          &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;rg&quot; formControlName&#x3D;&quot;rG&quot; mask&#x3D;&quot;0.000.000&quot;&gt;
+        &lt;/app-input-container&gt;
+
+        &lt;app-input-container label&#x3D;&quot;Profissão&quot; for&#x3D;&quot;profissao&quot; errorMessage&#x3D;&quot;Profissão é obrigatório.&quot;&gt;
+          &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;profissao&quot; formControlName&#x3D;&quot;profissao&quot;&gt;
+        &lt;/app-input-container&gt;
+
+        &lt;app-input-container label&#x3D;&quot;Estado Civil&quot; errorMessage&#x3D;&quot;Selecione uma opção.&quot; [dropdown]&#x3D;&quot;true&quot;&gt;
+          &lt;p-selectButton [options]&#x3D;&quot;estadoCivilOptions&quot; formControlName&#x3D;&quot;estadoCivil&quot;
+            [style]&#x3D;&quot;{&#x27;margin-bottom&#x27;:&#x27;20px&#x27;}&quot; inputId&#x3D;&quot;estado-civil&quot; [required]&#x3D;&quot;true&quot;&gt;
+          &lt;/p-selectButton&gt;
+        &lt;/app-input-container&gt;
+
+        &lt;app-input-container label&#x3D;&quot;Sexo&quot; errorMessage&#x3D;&quot;Selecione uma opção.&quot; [dropdown]&#x3D;&quot;true&quot;&gt;
+          &lt;p-selectButton [options]&#x3D;&quot;sexoOptions&quot; formControlName&#x3D;&quot;sexo&quot; [style]&#x3D;&quot;{&#x27;margin-bottom&#x27;:&#x27;20px&#x27;}&quot;
+            inputId&#x3D;&quot;sexo&quot; [required]&#x3D;&quot;true&quot;&gt;
+          &lt;/p-selectButton&gt;
+        &lt;/app-input-container&gt;
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;div class&#x3D;&quot;i-container__upload&quot;&gt;
+          &lt;div class&#x3D;&quot;i-container__upload__box&quot;&gt;
+            &lt;img class&#x3D;&quot;i-container__upload__box__image&quot; [src]&#x3D;&quot;formularioDePaciente.get(&#x27;urlDaFoto&#x27;).value&quot;
+              alt&#x3D;&quot;Foto do paciente&quot;&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;i-container__upload__button&quot;&gt;
+            &lt;p-fileUpload chooseLabel&#x3D;&quot;Enviar foto&quot; mode&#x3D;&quot;basic&quot; auto&#x3D;&quot;true&quot; name&#x3D;&quot;file&quot; [url]&#x3D;&quot;urlUploadImagem&quot;
+              [style]&#x3D;&quot;{&#x27;width&#x27;: &#x27;100%&#x27;, &#x27;border-top-left-radius&#x27;:&#x27;0&#x27;, &#x27;border-top-right-radius&#x27;:&#x27;0&#x27;}&quot;
+              accept&#x3D;&quot;image/*, application/*&quot; maxFileSize&#x3D;&quot;1000000&quot; (onUpload)&#x3D;&quot;aoEnviarImagem($event.originalEvent)&quot;
+              (onBeforeSend)&#x3D;&quot;onBeforeSendImage()&quot; (onError)&#x3D;&quot;[file.clear(), uploadEmAndamento &#x3D; false]&quot;
+              *ngIf&#x3D;&quot;!formularioDePaciente.get(&#x27;fotoPerfil&#x27;).value&quot; #file [hidden]&#x3D;&quot;uploadEmAndamento&quot;&gt;
+            &lt;/p-fileUpload&gt;
+
+            &lt;app-button *ngIf&#x3D;&quot;formularioDePaciente.get(&#x27;fotoPerfil&#x27;).value&quot; label&#x3D;&quot;Remover&quot;
+              [classes]&#x3D;&quot;[&#x27;botao--danger&#x27;, &#x27;botao--full&#x27;, &#x27;botao--no-top-border&#x27;]&quot; (botaoClicado)&#x3D;&quot;[removerImagem()]&quot;&gt;
+            &lt;/app-button&gt;
+          &lt;/div&gt;
+
+          &lt;p-progressSpinner [style]&#x3D;&quot;{width: &#x27;30px&#x27;, height: &#x27;30px&#x27;}&quot; strokeWidth&#x3D;&quot;8&quot; fill&#x3D;&quot;#EEEEEE&quot;
+            animationDuration&#x3D;&quot;.5s&quot; [hidden]&#x3D;&quot;!uploadEmAndamento&quot;&gt;
+          &lt;/p-progressSpinner&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;i-container__legend&quot;&gt;
+        &lt;h2 class&#x3D;&quot;i-container__legend__title&quot;&gt;Endereço&lt;/h2&gt;
+      &lt;/div&gt;
+
+      &lt;app-input-container label&#x3D;&quot;Logradouro&quot; for&#x3D;&quot;logradouro&quot; errorMessage&#x3D;&quot;Logradouro é obrigatório.&quot;&gt;
+        &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;logradouro&quot; formControlName&#x3D;&quot;logradouro&quot;&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;app-input-container label&#x3D;&quot;Número&quot; for&#x3D;&quot;numero&quot; errorMessage&#x3D;&quot;Número é obrigatório.&quot;&gt;
+        &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;numero&quot; formControlName&#x3D;&quot;numero&quot;&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;app-input-container label&#x3D;&quot;Bairro&quot; for&#x3D;&quot;bairro&quot; errorMessage&#x3D;&quot;Bairro é obrigatório&quot;&gt;
+        &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;bairro&quot; formControlName&#x3D;&quot;bairro&quot;&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;app-input-container label&#x3D;&quot;Complemento&quot; for&#x3D;&quot;complemento&quot; hint&#x3D;&quot;opcional&quot;&gt;
+        &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;complemento&quot; formControlName&#x3D;&quot;complemento&quot;&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;app-input-container label&#x3D;&quot;CEP&quot; for&#x3D;&quot;cep&quot; errorMessage&#x3D;&quot;CEP é obrigatório.&quot;&gt;
+        &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;cep&quot; formControlName&#x3D;&quot;cep&quot; mask&#x3D;&quot;00000-000&quot;&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;div style&#x3D;&quot;margin-bottom:15px; padding-top: 3px;&quot;&gt;
+        &lt;label class&#x3D;&quot;i-container__label&quot; for&#x3D;&quot;categoria-filtro&quot; id&#x3D;&quot;categoria-filtro-label&quot;&gt;Estado&lt;/label&gt;
+        &lt;p-dropdown [options]&#x3D;&quot;estadosOptions&quot; placeholder&#x3D;&quot;Selecione&quot; [filter]&#x3D;&quot;!isMobile()&quot;
+          emptyFilterMessage&#x3D;&quot;Estado não encontrado!&quot; [style]&#x3D;&quot;{&#x27;width&#x27;: &#x27;100%&#x27;}&quot; inputId&#x3D;&quot;estado&quot;
+          (onChange)&#x3D;&quot;carregarCidades($event.value)&quot; formControlName&#x3D;&quot;codigoEstado&quot;&gt;
+        &lt;/p-dropdown&gt;
+      &lt;/div&gt;
+
+      &lt;app-input-container label&#x3D;&quot;Cidade&quot; for&#x3D;&quot;cidade&quot; errorMessage&#x3D;&quot;Selecione uma cidade.&quot; [dropdown]&#x3D;&quot;true&quot;&gt;
+        &lt;div style&#x3D;&quot;padding-bottom:20px;&quot;&gt;
+          &lt;p-dropdown [options]&#x3D;&quot;cidadesOptions&quot; placeholder&#x3D;&quot;Selecione&quot; [filter]&#x3D;&quot;!isMobile()&quot;
+            emptyFilterMessage&#x3D;&quot;Cidade não encontrada!&quot; [style]&#x3D;&quot;{&#x27;width&#x27;: &#x27;100%&#x27;}&quot; inputId&#x3D;&quot;cidade&quot;
+            formControlName&#x3D;&quot;codigoCidade&quot; [style]&#x3D;&quot;{&#x27;width&#x27;: &#x27;100%&#x27;, &#x27;margin-bottom&#x27;:&#x27;20px&#x27;}&quot;&gt;
+          &lt;/p-dropdown&gt;
+        &lt;/div&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;div class&#x3D;&quot;i-container__legend&quot;&gt;
+        &lt;h2 class&#x3D;&quot;i-container__legend__title&quot;&gt;Contato&lt;/h2&gt;
+      &lt;/div&gt;
+
+      &lt;app-input-container label&#x3D;&quot;Telefone principal&quot; for&#x3D;&quot;telefone-principal&quot; hint&#x3D;&quot;opcional&quot;&gt;
+        &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;telefone-principal&quot; formControlName&#x3D;&quot;telefonePrincipal&quot;
+          mask&#x3D;&quot;(00) 00000-0000&quot;&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;app-input-container label&#x3D;&quot;Telefone 2&quot; for&#x3D;&quot;telefone&quot; hint&#x3D;&quot;opcional&quot;&gt;
+        &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;telefone&quot; formControlName&#x3D;&quot;telefone2&quot; mask&#x3D;&quot;(00) 00000-0000&quot;&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;app-input-container label&#x3D;&quot;E-mail&quot; for&#x3D;&quot;email&quot; errorMessage&#x3D;&quot;E-mail inválido.&quot; hint&#x3D;&quot;opcional&quot;&gt;
+        &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;email&quot; formControlName&#x3D;&quot;email&quot;&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;app-button label&#x3D;&quot;Salvar&quot; icon&#x3D;&quot;fas fa-hdd&quot; iconPosition&#x3D;&quot;right&quot;
+        [classes]&#x3D;&quot;[&#x27;botao--success&#x27;, isMobile() ? &#x27;botao--full&#x27;:&#x27;botao--grande&#x27;]&quot;
+        [desativar]&#x3D;&quot;formularioDePaciente.invalid || uploadEmAndamento&quot; (botaoClicado)&#x3D;&quot;[submeterFormulario()]&quot;&gt;
+      &lt;/app-button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./paciente-dados.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../../assets/scss/mixins&quot;;
+
+.form {
+  padding: 10px;
+}
+@media screen and (min-width: 56.25em) {
+  .form {
+    .i-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      &amp; &gt; :nth-child(1) {
+        width: 100%;
+      }
+      &amp; &gt; :nth-child(2) {
+        width: 72%;
+        @include input-padding-right();
+      }
+
+      &amp; &gt; :nth-child(3) {
+        width: 28%;
+      }
+
+      &amp; &gt; :nth-child(4) {
+        width: 100%;
+      }
+
+      &amp; &gt; :nth-child(5) {
+        width: 75%;
+        @include input-padding-right();
+      }
+
+      &amp; &gt; :nth-child(6) {
+        width: 25%;
+        @include input-padding-left();
+      }
+
+      &amp; &gt; :nth-child(7) {
+        width: 40%;
+        @include input-padding-right();
+      }
+
+      &amp; &gt; :nth-child(8) {
+        width: 35%;
+        @include input-padding-both();
+      }
+
+      &amp; &gt; :nth-child(9) {
+        width: 25%;
+        @include input-padding-left();
+      }
+
+      &amp; &gt; :nth-child(10) {
+        width: 50%;
+        @include input-padding-right();
+      }
+
+      &amp; &gt; :nth-child(11) {
+        width: 50%;
+        @include input-padding-left();
+      }
+
+      &amp; &gt; :nth-child(12) {
+        width: 100%;
+      }
+
+      &amp; &gt; :nth-child(13) {
+        width: 35%;
+        @include input-padding-right();
+      }
+
+      &amp; &gt; :nth-child(14) {
+        width: 35%;
+        @include input-padding-both();
+      }
+
+      &amp; &gt; :nth-child(15) {
+        width: 30%;
+        @include input-padding-left();
+      }
+
+      &amp; &gt; :nth-child(16) {
+        width: 100%;
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="content" [@linha]="activeTab">  <div class="header">    <h1 class="header__titulo">Dados do Paciente</h1>  </div>  <div class="form">    <form novalidate [formGroup]="formularioDePaciente" class="i-container">      <div></div>      <div class="i-container__pessoais">        <app-input-container label="Nome" for="nome" errorMessage="Nome é obrigatório (Até 50 caracteres).">          <input class="i-container__input" type="text" id="nome" formControlName="nome">        </app-input-container>        <app-input-container label="Data de Nascimento" for="data-nascimento" errorMessage="Informe uma data.">          <p-calendar [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100" [readonlyInput]="isMobile()"            inputId="data-nascimento" dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true"            [yearNavigator]="true" yearRange="1940:2020" formControlName="dataNascimento"            [style]="{\'width\': isMobile() ?\'70%\':\'100%\', \'margin-bottom\':\'20px\'}">          </p-calendar>        </app-input-container>        <app-input-container label="CPF" for="cpf" errorMessage="CPF é obrigatório.">          <input class="i-container__input" type="text" id="cpf" formControlName="cPF" mask="000.000.000-00">        </app-input-container>        <app-input-container label="RG" for="rg" errorMessage="RG é obrigatório.">          <input class="i-container__input" type="text" id="rg" formControlName="rG" mask="0.000.000">        </app-input-container>        <app-input-container label="Profissão" for="profissao" errorMessage="Profissão é obrigatório.">          <input class="i-container__input" type="text" id="profissao" formControlName="profissao">        </app-input-container>        <app-input-container label="Estado Civil" errorMessage="Selecione uma opção." [dropdown]="true">          <p-selectButton [options]="estadoCivilOptions" formControlName="estadoCivil"            [style]="{\'margin-bottom\':\'20px\'}" inputId="estado-civil" [required]="true">          </p-selectButton>        </app-input-container>        <app-input-container label="Sexo" errorMessage="Selecione uma opção." [dropdown]="true">          <p-selectButton [options]="sexoOptions" formControlName="sexo" [style]="{\'margin-bottom\':\'20px\'}"            inputId="sexo" [required]="true">          </p-selectButton>        </app-input-container>      </div>      <div>        <div class="i-container__upload">          <div class="i-container__upload__box">            <img class="i-container__upload__box__image" [src]="formularioDePaciente.get(\'urlDaFoto\').value"              alt="Foto do paciente">          </div>          <div class="i-container__upload__button">            <p-fileUpload chooseLabel="Enviar foto" mode="basic" auto="true" name="file" [url]="urlUploadImagem"              [style]="{\'width\': \'100%\', \'border-top-left-radius\':\'0\', \'border-top-right-radius\':\'0\'}"              accept="image/*, application/*" maxFileSize="1000000" (onUpload)="aoEnviarImagem($event.originalEvent)"              (onBeforeSend)="onBeforeSendImage()" (onError)="[file.clear(), uploadEmAndamento = false]"              *ngIf="!formularioDePaciente.get(\'fotoPerfil\').value" #file [hidden]="uploadEmAndamento">            </p-fileUpload>            <app-button *ngIf="formularioDePaciente.get(\'fotoPerfil\').value" label="Remover"              [classes]="[\'botao--danger\', \'botao--full\', \'botao--no-top-border\']" (botaoClicado)="[removerImagem()]">            </app-button>          </div>          <p-progressSpinner [style]="{width: \'30px\', height: \'30px\'}" strokeWidth="8" fill="#EEEEEE"            animationDuration=".5s" [hidden]="!uploadEmAndamento">          </p-progressSpinner>        </div>      </div>      <div class="i-container__legend">        <h2 class="i-container__legend__title">Endereço</h2>      </div>      <app-input-container label="Logradouro" for="logradouro" errorMessage="Logradouro é obrigatório.">        <input class="i-container__input" type="text" id="logradouro" formControlName="logradouro">      </app-input-container>      <app-input-container label="Número" for="numero" errorMessage="Número é obrigatório.">        <input class="i-container__input" type="text" id="numero" formControlName="numero">      </app-input-container>      <app-input-container label="Bairro" for="bairro" errorMessage="Bairro é obrigatório">        <input class="i-container__input" type="text" id="bairro" formControlName="bairro">      </app-input-container>      <app-input-container label="Complemento" for="complemento" hint="opcional">        <input class="i-container__input" type="text" id="complemento" formControlName="complemento">      </app-input-container>      <app-input-container label="CEP" for="cep" errorMessage="CEP é obrigatório.">        <input class="i-container__input" type="text" id="cep" formControlName="cep" mask="00000-000">      </app-input-container>      <div style="margin-bottom:15px; padding-top: 3px;">        <label class="i-container__label" for="categoria-filtro" id="categoria-filtro-label">Estado</label>        <p-dropdown [options]="estadosOptions" placeholder="Selecione" [filter]="!isMobile()"          emptyFilterMessage="Estado não encontrado!" [style]="{\'width\': \'100%\'}" inputId="estado"          (onChange)="carregarCidades($event.value)" formControlName="codigoEstado">        </p-dropdown>      </div>      <app-input-container label="Cidade" for="cidade" errorMessage="Selecione uma cidade." [dropdown]="true">        <div style="padding-bottom:20px;">          <p-dropdown [options]="cidadesOptions" placeholder="Selecione" [filter]="!isMobile()"            emptyFilterMessage="Cidade não encontrada!" [style]="{\'width\': \'100%\'}" inputId="cidade"            formControlName="codigoCidade" [style]="{\'width\': \'100%\', \'margin-bottom\':\'20px\'}">          </p-dropdown>        </div>      </app-input-container>      <div class="i-container__legend">        <h2 class="i-container__legend__title">Contato</h2>      </div>      <app-input-container label="Telefone principal" for="telefone-principal" hint="opcional">        <input class="i-container__input" type="text" id="telefone-principal" formControlName="telefonePrincipal"          mask="(00) 00000-0000">      </app-input-container>      <app-input-container label="Telefone 2" for="telefone" hint="opcional">        <input class="i-container__input" type="text" id="telefone" formControlName="telefone2" mask="(00) 00000-0000">      </app-input-container>      <app-input-container label="E-mail" for="email" errorMessage="E-mail inválido." hint="opcional">        <input class="i-container__input" type="text" id="email" formControlName="email">      </app-input-container>      <app-button label="Salvar" icon="fas fa-hdd" iconPosition="right"        [classes]="[\'botao--success\', isMobile() ? \'botao--full\':\'botao--grande\']"        [desativar]="formularioDePaciente.invalid || uploadEmAndamento" (botaoClicado)="[submeterFormulario()]">      </app-button>    </form>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AgendamentoCadastroComponent', 'selector': 'app-agendamento-cadastro'},{'name': 'AgendamentoPesquisaComponent', 'selector': 'app-agendamento-pesquisa'},{'name': 'AnamneseComponent', 'selector': 'app-anamnese'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalendarOptionsComponent', 'selector': 'app-calendar-options'},{'name': 'CategoriaDespesaPesquisaComponent', 'selector': 'app-categoria-despesa-pesquisa'},{'name': 'ConsultasComponent', 'selector': 'app-consultas'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DespesaCadastroComponent', 'selector': 'app-despesa-cadastro'},{'name': 'DespesasPesquisaComponent', 'selector': 'app-despesas-pesquisa'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputContainerComponent', 'selector': 'app-input-container'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MateriaisListaComponent', 'selector': 'app-materiais-lista'},{'name': 'MateriaisPesquisaComponent', 'selector': 'app-materiais-pesquisa'},{'name': 'MaterialCadastroComponent', 'selector': 'app-material-cadastro'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'OdontogramaComponent', 'selector': 'app-odontograma'},{'name': 'OdontogramaEditComponent', 'selector': 'app-odontograma-edit'},{'name': 'OdontogramaSelectComponent', 'selector': 'app-odontograma-select'},{'name': 'OrcamentoCadastroComponent', 'selector': 'app-orcamento-cadastro'},{'name': 'OrcamentosComponent', 'selector': 'app-orcamentos'},{'name': 'PacienteCadastroComponent', 'selector': 'app-paciente-cadastro'},{'name': 'PacienteDadosComponent', 'selector': 'app-paciente-dados'},{'name': 'PacientesPesquisaComponent', 'selector': 'app-pacientes-pesquisa'},{'name': 'PagamentosComponent', 'selector': 'app-pagamentos'},{'name': 'PageForbiddenComponent', 'selector': 'app-page-forbidden'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProcedimentoCadastroComponent', 'selector': 'app-procedimento-cadastro'},{'name': 'ProcedimentosComponent', 'selector': 'app-procedimentos'},{'name': 'ProcedimentosPesquisaComponent', 'selector': 'app-procedimentos-pesquisa'},{'name': 'ProntuarioComponent', 'selector': 'app-prontuario'},{'name': 'RadioComponent', 'selector': 'app-radio'},{'name': 'ToastLinkComponent', 'selector': 'app-toast-link'},{'name': 'UsuarioCadastroComponent', 'selector': 'app-usuario-cadastro'},{'name': 'UsuariosPesquisaComponent', 'selector': 'app-usuarios-pesquisa'},{'name': 'UsuariosSenhaComponent', 'selector': 'app-usuarios-senha'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PacienteDadosComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PacienteDadosComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

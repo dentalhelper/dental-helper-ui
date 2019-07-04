@@ -200,7 +200,7 @@ export class LoginComponent implements OnInit {
     this.toastService.clearToasts();
     this.authService.login(this.formulario.value)
       .then(() => {
-        this.router.navigate(['/pacientes']);
+        this.router.navigate(['/dashboard']);
         const mensagemToast = `Bem vindo ${this.authService.jwtPayload.user_name}.`;
         this.toastService.exibirInfo('Conectado', mensagemToast);
       })

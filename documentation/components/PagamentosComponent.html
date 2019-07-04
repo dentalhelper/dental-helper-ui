@@ -1,0 +1,2063 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>dental-helper-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">dental-helper-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>PagamentosComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/paciente/pagamentos/pagamentos.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/AfterContentInit" target="_blank" >AfterContentInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-pagamentos</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./pagamentos.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./pagamentos.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activeTab">activeTab</a>
+                            </li>
+                            <li>
+                                <a href="#codigPaciente">codigPaciente</a>
+                            </li>
+                            <li>
+                                <a href="#exibirModal">exibirModal</a>
+                            </li>
+                            <li>
+                                <a href="#formasDePagamento">formasDePagamento</a>
+                            </li>
+                            <li>
+                                <a href="#formulario">formulario</a>
+                            </li>
+                            <li>
+                                <a href="#opcaoDePagamento">opcaoDePagamento</a>
+                            </li>
+                            <li>
+                                <a href="#pagamentoModal">pagamentoModal</a>
+                            </li>
+                            <li>
+                                <a href="#pagamentoOptions">pagamentoOptions</a>
+                            </li>
+                            <li>
+                                <a href="#pagamentos">pagamentos</a>
+                            </li>
+                            <li>
+                                <a href="#pt_BR">pt_BR</a>
+                            </li>
+                            <li>
+                                <a href="#valorEmAberto">valorEmAberto</a>
+                            </li>
+                            <li>
+                                <a href="#valorPago">valorPago</a>
+                            </li>
+                            <li>
+                                <a href="#valorTotal">valorTotal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#abrirModalPagamento">abrirModalPagamento</a>
+                            </li>
+                            <li>
+                                <a href="#alterarModoPagamento">alterarModoPagamento</a>
+                            </li>
+                            <li>
+                                <a href="#cancelarPagamento">cancelarPagamento</a>
+                            </li>
+                            <li>
+                                <a href="#carregarPagamentos">carregarPagamentos</a>
+                            </li>
+                            <li>
+                                <a href="#confirmarCancelamento">confirmarCancelamento</a>
+                            </li>
+                            <li>
+                                <a href="#fecharModal">fecharModal</a>
+                            </li>
+                            <li>
+                                <a href="#isMobile">isMobile</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterContentInit">ngAfterContentInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#prepararFormulario">prepararFormulario</a>
+                            </li>
+                            <li>
+                                <a href="#resetarBadges">resetarBadges</a>
+                            </li>
+                            <li>
+                                <a href="#resetarFormulario">resetarFormulario</a>
+                            </li>
+                            <li>
+                                <a href="#salvarPagamento">salvarPagamento</a>
+                            </li>
+                            <li>
+                                <a href="#visualizar">visualizar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, toastService: <a href="../injectables/ToastService.html">ToastService</a>, pacienteService: <a href="../injectables/PacienteService.html">PacienteService</a>, orcamentoService: <a href="../injectables/OrcamentoService.html">OrcamentoService</a>, recebimentoService: <a href="../injectables/RecebimentosService.html">RecebimentosService</a>, confirmationService: ConfirmationService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:98</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToastService.html" target="_self" >ToastService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pacienteService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PacienteService.html" target="_self" >PacienteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>orcamentoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OrcamentoService.html" target="_self" >OrcamentoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>recebimentoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RecebimentosService.html" target="_self" >RecebimentosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>confirmationService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfirmationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="abrirModalPagamento"></a>
+                    <span class="name">
+                        <b>
+                            abrirModalPagamento
+                        </b>
+                        <a href="#abrirModalPagamento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>abrirModalPagamento(pagamentoSelecionado: <a href="../interfaces/OrcamentoPagamentoDTO.html">OrcamentoPagamentoDTO</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:141</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pagamentoSelecionado</td>
+                                    <td>
+                                                <code><a href="../interfaces/OrcamentoPagamentoDTO.html" target="_self" >OrcamentoPagamentoDTO</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alterarModoPagamento"></a>
+                    <span class="name">
+                        <b>
+                            alterarModoPagamento
+                        </b>
+                        <a href="#alterarModoPagamento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>alterarModoPagamento()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelarPagamento"></a>
+                    <span class="name">
+                        <b>
+                            cancelarPagamento
+                        </b>
+                        <a href="#cancelarPagamento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelarPagamento(codigoOrcamento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="176"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:176</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigoOrcamento</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarPagamentos"></a>
+                    <span class="name">
+                        <b>
+                            carregarPagamentos
+                        </b>
+                        <a href="#carregarPagamentos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarPagamentos()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="203"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:203</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmarCancelamento"></a>
+                    <span class="name">
+                        <b>
+                            confirmarCancelamento
+                        </b>
+                        <a href="#confirmarCancelamento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirmarCancelamento(codigoOrcamento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:162</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigoOrcamento</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fecharModal"></a>
+                    <span class="name">
+                        <b>
+                            fecharModal
+                        </b>
+                        <a href="#fecharModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fecharModal()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="187"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:187</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMobile"></a>
+                    <span class="name">
+                        <b>
+                            isMobile
+                        </b>
+                        <a href="#isMobile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isMobile()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="227"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:227</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterContentInit"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterContentInit
+                        </b>
+                        <a href="#ngAfterContentInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterContentInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prepararFormulario"></a>
+                    <span class="name">
+                        <b>
+                            prepararFormulario
+                        </b>
+                        <a href="#prepararFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>prepararFormulario()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetarBadges"></a>
+                    <span class="name">
+                        <b>
+                            resetarBadges
+                        </b>
+                        <a href="#resetarBadges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetarBadges()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="221"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:221</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetarFormulario"></a>
+                    <span class="name">
+                        <b>
+                            resetarFormulario
+                        </b>
+                        <a href="#resetarFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetarFormulario()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="192"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:192</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="salvarPagamento"></a>
+                    <span class="name">
+                        <b>
+                            salvarPagamento
+                        </b>
+                        <a href="#salvarPagamento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>salvarPagamento()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="146"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:146</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="visualizar"></a>
+                    <span class="name">
+                        <b>
+                            visualizar
+                        </b>
+                        <a href="#visualizar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>visualizar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="197"
+                            class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:197</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="activeTab"></a>
+                        <span class="name">
+                            <b>
+                            activeTab</b>
+                            <a href="#activeTab"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;pronto&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:74</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="codigPaciente"></a>
+                        <span class="name">
+                            <b>
+                            codigPaciente</b>
+                            <a href="#codigPaciente"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:86</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="exibirModal"></a>
+                        <span class="name">
+                            <b>
+                            exibirModal</b>
+                            <a href="#exibirModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:78</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formasDePagamento"></a>
+                        <span class="name">
+                            <b>
+                            formasDePagamento</b>
+                            <a href="#formasDePagamento"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    { label: &#x27;Dinheiro&#x27;, value: 1, icon: &#x27;fa fa-fw fa-money-bill&#x27; },
+    { label: &#x27;Cartão&#x27;, value: 2, icon: &#x27;fa fa-fw fa-credit-card&#x27; }
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:93</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formulario"></a>
+                        <span class="name">
+                            <b>
+                            formulario</b>
+                            <a href="#formulario"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:75</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="opcaoDePagamento"></a>
+                        <span class="name">
+                            <b>
+                            opcaoDePagamento</b>
+                            <a href="#opcaoDePagamento"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>1</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:98</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pagamentoModal"></a>
+                        <span class="name">
+                            <b>
+                            pagamentoModal</b>
+                            <a href="#pagamentoModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/OrcamentoPagamentoDTO.html" target="_self" >OrcamentoPagamentoDTO</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:79</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pagamentoOptions"></a>
+                        <span class="name">
+                            <b>
+                            pagamentoOptions</b>
+                            <a href="#pagamentoOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    { label: &#x27;Pagamento Total&#x27;, value: 1 },
+    { label: &#x27;Pagamento Parcial&#x27;, value: 2 }
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:88</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pagamentos"></a>
+                        <span class="name">
+                            <b>
+                            pagamentos</b>
+                            <a href="#pagamentos"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pt_BR"></a>
+                        <span class="name">
+                            <b>
+                            pt_BR</b>
+                            <a href="#pt_BR"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>pt_BR</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valorEmAberto"></a>
+                        <span class="name">
+                            <b>
+                            valorEmAberto</b>
+                            <a href="#valorEmAberto"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:82</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valorPago"></a>
+                        <span class="name">
+                            <b>
+                            valorPago</b>
+                            <a href="#valorPago"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:81</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valorTotal"></a>
+                        <span class="name">
+                            <b>
+                            valorTotal</b>
+                            <a href="#valorTotal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/paciente/pagamentos/pagamentos.component.ts:83</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, AfterContentInit } from &#x27;@angular/core&#x27;;
+import { trigger, state, style, transition, animate, keyframes } from &#x27;@angular/animations&#x27;;
+import { PacienteService } from &#x27;src/app/core/services/paciente.service&#x27;;
+import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { ToastService } from &#x27;src/app/core/services/toast.service&#x27;;
+import { OrcamentoPagamentoDTO } from &#x27;src/app/domains/dtos/orcamento-pagamento.dto&#x27;;
+import { FormGroup, FormControl, Validators } from &#x27;@angular/forms&#x27;;
+import { pt_BR } from &#x27;src/app/shared/constants/calendario.br&#x27;;
+import { RecebimentosService } from &#x27;src/app/core/services/recebimentos.service&#x27;;
+import { ConfirmationService } from &#x27;primeng/api&#x27;;
+import { OrcamentoService } from &#x27;src/app/core/services/orcamento.service&#x27;;
+
+declare var $: any;
+@Component({
+  selector: &#x27;app-pagamentos&#x27;,
+  templateUrl: &#x27;./pagamentos.component.html&#x27;,
+  styleUrls: [&#x27;./pagamentos.component.scss&#x27;],
+  animations: [
+    trigger(&#x27;linha&#x27;, [
+      state(&#x27;pronto&#x27;, style({
+        opacity: 1
+      })),
+      transition(&#x27;void &#x3D;&gt; pronto&#x27;,
+        animate(&#x27;300ms 0s ease-in&#x27;,
+          keyframes([
+            style({
+              opacity: 0,
+              transform: &#x27;translateX(-30px)&#x27;,
+              offset: 0
+            }),
+            style({
+              opacity: 0.5,
+              transform: &#x27;translateX(-20px)&#x27;,
+              offset: 0.5
+            }),
+            style({
+              opacity: 0.8,
+              transform: &#x27;translateX(-10px)&#x27;,
+              offset: 0.8
+            }),
+            style({
+              opacity: 1,
+              transform: &#x27;translateX(0px)&#x27;,
+              offset: 1
+            })
+          ]))
+      ),
+      transition(&#x27;pronto &#x3D;&gt; void&#x27;,
+        animate(&#x27;300ms 0s ease-out&#x27;,
+          keyframes([
+            style({
+              opacity: 1,
+              transform: &#x27;translateX(0px)&#x27;,
+              offset: 0
+            }),
+            style({
+              opacity: 0.8,
+              transform: &#x27;translateX(-10px)&#x27;,
+              offset: 0.2
+            }),
+            style({
+              opacity: 0,
+              transform: &#x27;translateX(30px)&#x27;,
+              offset: 1
+            })
+          ]))
+      )
+    ])
+  ]
+})
+export class PagamentosComponent implements OnInit, AfterContentInit {
+
+  activeTab &#x3D; &#x27;pronto&#x27;;
+  formulario: FormGroup;
+  pt_BR &#x3D; pt_BR;
+
+  exibirModal: boolean;
+  pagamentoModal: OrcamentoPagamentoDTO;
+
+  valorPago &#x3D; 0;
+  valorEmAberto &#x3D; 0;
+  valorTotal &#x3D; 0;
+
+  pagamentos: any[];
+  codigPaciente: any;
+
+  pagamentoOptions: any[] &#x3D; [
+    { label: &#x27;Pagamento Total&#x27;, value: 1 },
+    { label: &#x27;Pagamento Parcial&#x27;, value: 2 }
+  ];
+
+  formasDePagamento &#x3D; [
+    { label: &#x27;Dinheiro&#x27;, value: 1, icon: &#x27;fa fa-fw fa-money-bill&#x27; },
+    { label: &#x27;Cartão&#x27;, value: 2, icon: &#x27;fa fa-fw fa-credit-card&#x27; }
+  ];
+
+  opcaoDePagamento &#x3D; 1;
+
+  constructor(
+    private title: Title,
+    private router: Router,
+    private route: ActivatedRoute,
+    private toastService: ToastService,
+    private pacienteService: PacienteService,
+    private orcamentoService: OrcamentoService,
+    private recebimentoService: RecebimentosService,
+    private confirmationService: ConfirmationService,
+  ) { }
+
+  ngOnInit() {
+    this.title.setTitle(&#x27;Pagamentos&#x27;);
+    this.codigPaciente &#x3D; this.route.snapshot.parent.params[&#x27;codigo&#x27;];
+    this.prepararFormulario();
+
+  }
+
+  ngAfterContentInit(): void {
+    this.carregarPagamentos();
+  }
+
+  prepararFormulario() {
+    this.formulario &#x3D; new FormGroup({
+      valor: new FormControl(&#x27;&#x27;, {
+        updateOn: &#x27;blur&#x27;,
+        validators: [Validators.required]
+      }),
+      dataPagamento: new FormControl(new Date(), {
+        updateOn: &#x27;change&#x27;,
+        validators: [Validators.required]
+      }),
+      forma: new FormControl(1),
+      codOrcamento: new FormControl(&#x27;&#x27;)
+    });
+  }
+
+  alterarModoPagamento() {
+    this.formulario.get(&#x27;valor&#x27;).setValue(&#x27;&#x27;);
+  }
+
+  abrirModalPagamento(pagamentoSelecionado: OrcamentoPagamentoDTO) {
+    this.pagamentoModal &#x3D; pagamentoSelecionado;
+    this.exibirModal &#x3D; true;
+  }
+
+  salvarPagamento() {
+    this.formulario.get(&#x27;codOrcamento&#x27;).setValue(this.pagamentoModal.codigoOrcamento);
+    if (this.opcaoDePagamento &#x3D;&#x3D;&#x3D; 1) {
+      this.formulario.get(&#x27;valor&#x27;).setValue(this.pagamentoModal.valorEmAberto);
+    }
+
+    this.recebimentoService.salvar(this.formulario.value)
+      .subscribe(() &#x3D;&gt; {
+        const mensagemToast &#x3D; &#x60;&quot;O pagamento foi registrado.&quot;&#x60;;
+        this.toastService.exibirSucesso(mensagemToast);
+        this.carregarPagamentos();
+        this.fecharModal();
+        this.prepararFormulario();
+      });
+  }
+
+  confirmarCancelamento(codigoOrcamento: number) {
+    this.confirmationService.confirm({
+      header: &#x60;Cancelar Pagamento.&#x60;,
+      message: &#x60;Você tem certeza que quer cancelar este pagamento?
+      &lt;br/&gt;
+      &lt;br/&gt;
+      Essa operação é irreversível&#x60;,
+      accept: () &#x3D;&gt; {
+        this.cancelarPagamento(codigoOrcamento);
+      }
+    });
+
+  }
+
+  cancelarPagamento(codigoOrcamento: number) {
+    this.orcamentoService.cancelar(codigoOrcamento)
+      .subscribe(() &#x3D;&gt; {
+        const mensagemToast &#x3D; &#x60;&quot;O pagamento foi cancelado.&quot;&#x60;;
+        this.toastService.exibirSucesso(mensagemToast);
+        this.carregarPagamentos();
+        this.fecharModal();
+        this.prepararFormulario();
+      });
+  }
+
+  fecharModal() {
+    this.opcaoDePagamento &#x3D; 1;
+    this.exibirModal &#x3D; false;
+  }
+
+  resetarFormulario() {
+    this.opcaoDePagamento &#x3D; 1;
+    this.prepararFormulario();
+  }
+
+  visualizar() {
+
+    const mensagemToast &#x3D; &#x60;&quot;Operação não implementada&quot;&#x60;;
+    this.toastService.exibirAviso(mensagemToast);
+  }
+
+  carregarPagamentos() {
+    this.resetarBadges();
+    this.pacienteService.buscarPagamentos(this.codigPaciente)
+      .subscribe((response) &#x3D;&gt; {
+        response.forEach(pagamento &#x3D;&gt; {
+          if (pagamento.statusPagamento &#x3D;&#x3D;&#x3D; 2) {
+            this.valorPago +&#x3D; pagamento.valorPago;
+          }
+          if (pagamento.statusPagamento &#x3D;&#x3D;&#x3D; 1) {
+            this.valorPago +&#x3D; pagamento.valorPago;
+            this.valorEmAberto +&#x3D; pagamento.valorEmAberto;
+          }
+        });
+        this.valorTotal &#x3D; this.valorPago + this.valorEmAberto;
+        this.pagamentos &#x3D; response;
+      });
+  }
+
+  resetarBadges() {
+    this.valorTotal &#x3D; 0;
+    this.valorPago &#x3D; 0;
+    this.valorEmAberto &#x3D; 0;
+  }
+
+  isMobile(): boolean {
+    return $.browser.mobile;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content&quot; [@linha]&#x3D;&quot;activeTab&quot;&gt;
+  &lt;div class&#x3D;&quot;header&quot;&gt;
+    &lt;h1 class&#x3D;&quot;header__titulo&quot;&gt;Pagamentos&lt;/h1&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;summary&quot;&gt;
+    &lt;div class&#x3D;&quot;summary__badge&quot;&gt;
+      &lt;div class&#x3D;&quot;summary__badge__left summary__badge__left--success&quot;&gt;
+        &lt;div class&#x3D;&quot;summary__badge__left__name&quot;&gt;Valor pago&lt;/div&gt;
+        &lt;div class&#x3D;&quot;summary__badge__left__value&quot;&gt;{{ valorPago | currency: &#x27;BRL&#x27; : &#x27;symbol&#x27; }}&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;summary__badge__right summary__badge__right--success&quot;&gt;
+        &lt;div class&#x3D;&quot;summary__badge__right__icon&quot;&gt;
+          &lt;i class&#x3D;&quot;fas fa-check&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;summary__badge&quot;&gt;
+      &lt;div class&#x3D;&quot;summary__badge__left summary__badge__left--warn&quot;&gt;
+        &lt;div class&#x3D;&quot;summary__badge__left__name&quot;&gt;Valor em aberto&lt;/div&gt;
+        &lt;div class&#x3D;&quot;summary__badge__left__value&quot;&gt;{{ valorEmAberto | currency: &#x27;BRL&#x27; : &#x27;symbol&#x27; }}&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;summary__badge__right summary__badge__right--warn&quot;&gt;
+        &lt;div class&#x3D;&quot;summary__badge__right__icon&quot;&gt;
+          &lt;i class&#x3D;&quot;fas fa-exclamation&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;summary__badge&quot;&gt;
+      &lt;div class&#x3D;&quot;summary__badge__left summary__badge__left--primary&quot;&gt;
+        &lt;div class&#x3D;&quot;summary__badge__left__name&quot;&gt;Total&lt;/div&gt;
+        &lt;div class&#x3D;&quot;summary__badge__left__value&quot;&gt;{{ valorTotal | currency: &#x27;BRL&#x27; : &#x27;symbol&#x27; }}&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;summary__badge__right summary__badge__right--primary&quot;&gt;
+        &lt;div class&#x3D;&quot;summary__badge__right__icon&quot;&gt;
+          &lt;i class&#x3D;&quot;fas fa-money-bill-wave&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;ui-g&quot;&gt;
+    &lt;div class&#x3D;&quot;ui-g-12&quot;&gt;
+      &lt;p-table [value]&#x3D;&quot;pagamentos&quot; #tabela responsive&#x3D;&quot;true&quot; [paginator]&#x3D;&quot;true&quot; [rows]&#x3D;&quot;20&quot;&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+          &lt;tr&gt;
+            &lt;th class&#x3D;&quot;cell--small&quot;&gt;Pago em&lt;/th&gt;
+            &lt;th class&#x3D;&quot;cell--adapt&quot;&gt;Tratamento&lt;/th&gt;
+            &lt;th class&#x3D;&quot;cell--large&quot;&gt;Valor em aberto&lt;/th&gt;
+            &lt;th class&#x3D;&quot;cell--large&quot;&gt;Valor pago&lt;/th&gt;
+            &lt;th class&#x3D;&quot;cell--medium&quot;&gt;Status&lt;/th&gt;
+            &lt;th class&#x3D;&quot;cell--medium&quot;&gt;&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+
+        &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-pagamento&gt;
+          &lt;tr&gt;
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Data&lt;/span&gt;
+              {{ pagamento.dataPagamento | date: &#x27;dd/MM/yyyy&#x27; }}
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Tratamentos&lt;/span&gt;
+              &lt;span [title]&#x3D;&quot;pagamento.tratamentos&quot;&gt;{{ pagamento.tratamentos | shorten:40 }}&lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;cell--right&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Valor em aberto&lt;/span&gt;
+              {{ pagamento.valorEmAberto | currency: &#x27;BRL&#x27; : &#x27;symbol&#x27; }}
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;cell--right&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Valor pago&lt;/span&gt;
+              {{ pagamento.valorPago | currency: &#x27;BRL&#x27; : &#x27;symbol&#x27; }}
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Status&lt;/span&gt;
+              &lt;span class&#x3D;&quot;cell__badge cell__badge--success&quot; [ngClass]&#x3D;&quot;{&#x27;cell__badge--success&#x27;: pagamento.statusPagamento &#x3D;&#x3D;&#x3D; 2,
+                &#x27;cell__badge--warn&#x27;: pagamento.statusPagamento &#x3D;&#x3D;&#x3D; 1,
+                &#x27;cell__badge--danger&#x27;: pagamento.statusPagamento &#x3D;&#x3D;&#x3D; 3}&quot;&gt;
+                {{ pagamento.statusPagamento | statusPagamento }}
+              &lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;div class&#x3D;&quot;operacoes&quot;&gt;
+                &lt;div *ngIf&#x3D;&quot;pagamento.statusPagamento !&#x3D;&#x3D; 3&quot; &gt;
+
+                  &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--pay&quot; pTooltip&#x3D;&quot;Pagar&quot;
+                    tooltipPosition&#x3D;&quot;top&quot; *ngIf&#x3D;&quot;pagamento.statusPagamento &#x3D;&#x3D;&#x3D; 1; else botaoCancelar&quot;
+                    (click)&#x3D;&quot;abrirModalPagamento(pagamento)&quot;&gt;
+                    &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;money-bill&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                  &lt;/button&gt;
+
+                  &lt;ng-template #botaoCancelar&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--cancel&quot; pTooltip&#x3D;&quot;Cancelar&quot;
+                      tooltipPosition&#x3D;&quot;top&quot; (click)&#x3D;&quot;confirmarCancelamento(pagamento.codigoOrcamento)&quot;&gt;
+                      &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;window-close&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                    &lt;/button&gt;
+                  &lt;/ng-template&gt;
+                &lt;/div&gt;
+
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--check&quot; pTooltip&#x3D;&quot;Visualizar&quot;
+                  tooltipPosition&#x3D;&quot;top&quot; (click)&#x3D;&quot;visualizar()&quot;&gt;
+                  &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;clipboard-list&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;emptymessage&quot;&gt;
+          &lt;tr&gt;
+            &lt;td colspan&#x3D;&quot;6&quot;&gt;
+              Nenhum Pagamento registrado!
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+      &lt;/p-table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p-dialog [(visible)]&#x3D;&quot;exibirModal&quot; modal&#x3D;&quot;true&quot; #modal (onHide)&#x3D;&quot;resetarFormulario()&quot;&gt;
+  &lt;p-header&gt;
+    &lt;span [title]&#x3D;&quot;pagamentoModal?.tratamentos&quot; *ngIf&#x3D;&quot;pagamentoModal&quot;&gt;
+      Pagar: {{ pagamentoModal?.tratamentos | shorten:25 }}
+    &lt;/span&gt;
+  &lt;/p-header&gt;
+  &lt;div&gt;
+    &lt;p-selectButton [options]&#x3D;&quot;pagamentoOptions&quot; [style]&#x3D;&quot;{&#x27;margin&#x27;:&#x27;10px 0&#x27;}&quot; inputId&#x3D;&quot;opcao-pagamento&quot;
+      [(ngModel)]&#x3D;&quot;opcaoDePagamento&quot; (onChange)&#x3D;&quot;alterarModoPagamento()&quot;&gt;
+    &lt;/p-selectButton&gt;
+    &lt;hr /&gt;
+
+    &lt;h2 style&#x3D;&quot;color: #686b6d; margin: 10px 0 13px 0;&quot;&gt;
+      Valor Total
+      &lt;br /&gt;
+      &lt;span style&#x3D;&quot;color: #b63616; font-size: 1.2em&quot;&gt;
+        {{ pagamentoModal?.valorEmAberto | currency: &#x27;BRL&#x27; : &#x27;symbol&#x27; }}
+      &lt;/span&gt;
+    &lt;/h2&gt;
+
+    &lt;form novalidate [formGroup]&#x3D;&quot;formulario&quot; class&#x3D;&quot;i-container&quot;&gt;
+
+      &lt;app-input-container label&#x3D;&quot;Valor do pagamento&quot; for&#x3D;&quot;valor&quot; errorMessage&#x3D;&quot;Valor é obrigatório.&quot;
+        *ngIf&#x3D;&quot;opcaoDePagamento &#x3D;&#x3D;&#x3D; 2&quot;&gt;
+        &lt;input class&#x3D;&quot;i-container__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;valor&quot; currencyMask formControlName&#x3D;&quot;valor&quot;&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;app-input-container label&#x3D;&quot;Data do pagamento&quot; for&#x3D;&quot;data-pagamento&quot; errorMessage&#x3D;&quot;Informe uma data.&quot;&gt;
+        &lt;p-calendar [showIcon]&#x3D;&quot;isMobile()&quot; [touchUI]&#x3D;&quot;isMobile()&quot; [baseZIndex]&#x3D;&quot;100&quot; [readonlyInput]&#x3D;&quot;isMobile()&quot;
+          [appendTo]&#x3D;&quot;modal&quot; inputId&#x3D;&quot;data-pagamento&quot; dateFormat&#x3D;&quot;dd/mm/yy&quot; [locale]&#x3D;&quot;pt_BR&quot; [monthNavigator]&#x3D;&quot;true&quot;
+          [yearNavigator]&#x3D;&quot;true&quot; yearRange&#x3D;&quot;2019:2025&quot; formControlName&#x3D;&quot;dataPagamento&quot;
+          [style]&#x3D;&quot;{&#x27;width&#x27;: isMobile() ?&#x27;70%&#x27;:&#x27;100%&#x27;, &#x27;margin-bottom&#x27;:&#x27;20px&#x27;}&quot;&gt;
+        &lt;/p-calendar&gt;
+      &lt;/app-input-container&gt;
+
+      &lt;p-selectButton [options]&#x3D;&quot;formasDePagamento&quot; [style]&#x3D;&quot;{&#x27;margin-bottom&#x27;:&#x27;20px&#x27;}&quot; inputId&#x3D;&quot;formas-pagamento&quot;
+        formControlName&#x3D;&quot;forma&quot;&gt;
+      &lt;/p-selectButton&gt;
+    &lt;/form&gt;
+
+
+  &lt;/div&gt;
+  &lt;p-footer&gt;
+    &lt;app-button label&#x3D;&quot;Pagar&quot; icon&#x3D;&quot;fas fa-hand-holding-usd&quot; iconPosition&#x3D;&quot;right&quot; (botaoClicado)&#x3D;&quot;[salvarPagamento()]&quot;
+      [classes]&#x3D;&quot;[&#x27;botao--success&#x27;]&quot;&gt;
+    &lt;/app-button&gt;
+
+    &lt;app-button label&#x3D;&quot;Cancelar&quot; icon&#x3D;&quot;fas fa-times&quot; iconPosition&#x3D;&quot;right&quot; (botaoClicado)&#x3D;&quot;[fecharModal()]&quot;
+      [classes]&#x3D;&quot;[&#x27;ui-button-secondary&#x27;]&quot;&gt;
+    &lt;/app-button&gt;
+  &lt;/p-footer&gt;
+&lt;/p-dialog&gt;
+
+
+&lt;p-confirmDialog #confirmDialog icon&#x3D;&quot;pi pi-exclamation-triangle&quot;&gt;
+  &lt;p-footer&gt;
+    &lt;app-button label&#x3D;&quot;Confirmar&quot; icon&#x3D;&quot;fas fa-trash&quot; iconPosition&#x3D;&quot;right&quot; (botaoClicado)&#x3D;&quot;[confirmDialog.accept()]&quot;
+      [classes]&#x3D;&quot;[&#x27;botao--success&#x27;]&quot;&gt;
+    &lt;/app-button&gt;
+
+    &lt;app-button label&#x3D;&quot;Cancelar&quot; icon&#x3D;&quot;fas fa-times&quot; iconPosition&#x3D;&quot;right&quot; (botaoClicado)&#x3D;&quot;[confirmDialog.reject()]&quot;
+      [classes]&#x3D;&quot;[&#x27;ui-button-secondary&#x27;]&quot;&gt;
+    &lt;/app-button&gt;
+  &lt;/p-footer&gt;
+&lt;/p-confirmDialog&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./pagamentos.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../../assets/scss/cores&quot;;
+
+.cell {
+  &amp;--center {
+    text-align: center;
+  }
+  &amp;--right {
+    text-align: right;
+  }
+  &amp;--small {
+    width: 120px;
+  }
+  &amp;--medium {
+    width: 150px;
+  }
+  &amp;--large {
+    width: 200px;
+  }
+  &amp;--adapt {
+    width: 329px;
+  }
+  &amp;__badge {
+    padding: 2px 12px;
+    border-radius: 5px;
+    color: $branco;
+
+    &amp;--success {
+      background-color: $sucesso;
+    }
+
+    &amp;--warn {
+      background-color: $warn;
+    }
+
+    &amp;--danger {
+      background-color: $danger;
+    }
+  }
+}
+
+.summary {
+  width: 80%;
+  margin: 20px auto;
+  position: relative;
+
+  &amp;__badge {
+    width: 31%;
+    display: inline-block;
+    margin: 0 20px 0 0;
+    border-radius: 5px;
+
+    &amp;__left {
+      display: inline-block;
+      border-radius: 5px 0 0 5px;
+      width: 70%;
+
+      &amp;__name {
+        font-size: 1em;
+        padding: 10px;
+        color: $branco;
+        font-weight: bold;
+      }
+
+      &amp;__value {
+        text-align: right;
+        font-size: 1.6em;
+        font-weight: bold;
+        color: $branco;
+        padding: 10px 10px 10px 10px;
+      }
+
+      &amp;--success {
+        background-color: $badge-success;
+      }
+
+      &amp;--warn {
+        background-color: $badge-warn;
+      }
+
+      &amp;--primary {
+        background-color: $badge-primary;
+      }
+    }
+
+    &amp;__right {
+      width: 30%;
+      height: 97px;
+      line-height: 97px;
+      float: right;
+      border-radius: 0 5px 5px 0;
+
+      &amp;__icon {
+        color: $branco;
+        font-size: 2em;
+        height: 100%;
+        padding: 0 10px 10px 10px;
+        text-align: center;
+      }
+
+      &amp;--success {
+        background-color: $badge-success-light;
+      }
+
+      &amp;--warn {
+        background-color: $badge-warn-light;
+      }
+
+      &amp;--primary {
+        background-color: $badge-primary-light;
+      }
+    }
+  }
+
+  &amp;__badge:last-child {
+    margin-right: 0;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="content" [@linha]="activeTab">  <div class="header">    <h1 class="header__titulo">Pagamentos</h1>  </div>  <div class="summary">    <div class="summary__badge">      <div class="summary__badge__left summary__badge__left--success">        <div class="summary__badge__left__name">Valor pago</div>        <div class="summary__badge__left__value">{{ valorPago | currency: \'BRL\' : \'symbol\' }}</div>      </div>      <div class="summary__badge__right summary__badge__right--success">        <div class="summary__badge__right__icon">          <i class="fas fa-check"></i>        </div>      </div>    </div>    <div class="summary__badge">      <div class="summary__badge__left summary__badge__left--warn">        <div class="summary__badge__left__name">Valor em aberto</div>        <div class="summary__badge__left__value">{{ valorEmAberto | currency: \'BRL\' : \'symbol\' }}</div>      </div>      <div class="summary__badge__right summary__badge__right--warn">        <div class="summary__badge__right__icon">          <i class="fas fa-exclamation"></i>        </div>      </div>    </div>    <div class="summary__badge">      <div class="summary__badge__left summary__badge__left--primary">        <div class="summary__badge__left__name">Total</div>        <div class="summary__badge__left__value">{{ valorTotal | currency: \'BRL\' : \'symbol\' }}</div>      </div>      <div class="summary__badge__right summary__badge__right--primary">        <div class="summary__badge__right__icon">          <i class="fas fa-money-bill-wave"></i>        </div>      </div>    </div>  </div>  <div class="ui-g">    <div class="ui-g-12">      <p-table [value]="pagamentos" #tabela responsive="true" [paginator]="true" [rows]="20">        <ng-template pTemplate="header">          <tr>            <th class="cell--small">Pago em</th>            <th class="cell--adapt">Tratamento</th>            <th class="cell--large">Valor em aberto</th>            <th class="cell--large">Valor pago</th>            <th class="cell--medium">Status</th>            <th class="cell--medium"></th>          </tr>        </ng-template>        <ng-template pTemplate="body" let-pagamento>          <tr>            <td class="cell--center">              <span class="ui-column-title">Data</span>              {{ pagamento.dataPagamento | date: \'dd/MM/yyyy\' }}            </td>            <td>              <span class="ui-column-title">Tratamentos</span>              <span [title]="pagamento.tratamentos">{{ pagamento.tratamentos | shorten:40 }}</span>            </td>            <td class="cell--right">              <span class="ui-column-title">Valor em aberto</span>              {{ pagamento.valorEmAberto | currency: \'BRL\' : \'symbol\' }}            </td>            <td class="cell--right">              <span class="ui-column-title">Valor pago</span>              {{ pagamento.valorPago | currency: \'BRL\' : \'symbol\' }}            </td>            <td class="cell--center">              <span class="ui-column-title">Status</span>              <span class="cell__badge cell__badge--success" [ngClass]="{\'cell__badge--success\': pagamento.statusPagamento === 2,                \'cell__badge--warn\': pagamento.statusPagamento === 1,                \'cell__badge--danger\': pagamento.statusPagamento === 3}">                {{ pagamento.statusPagamento | statusPagamento }}              </span>            </td>            <td>              <div class="operacoes">                <div *ngIf="pagamento.statusPagamento !== 3" >                  <button type="button" class="operacoes__button operacoes__button--pay" pTooltip="Pagar"                    tooltipPosition="top" *ngIf="pagamento.statusPagamento === 1; else botaoCancelar"                    (click)="abrirModalPagamento(pagamento)">                    <fa-icon [icon]="[\'fas\', \'money-bill\']" size="lg" [fixedWidth]="true"></fa-icon>                  </button>                  <ng-template #botaoCancelar>                    <button type="button" class="operacoes__button operacoes__button--cancel" pTooltip="Cancelar"                      tooltipPosition="top" (click)="confirmarCancelamento(pagamento.codigoOrcamento)">                      <fa-icon [icon]="[\'fas\', \'window-close\']" size="lg" [fixedWidth]="true"></fa-icon>                    </button>                  </ng-template>                </div>                <button type="button" class="operacoes__button operacoes__button--check" pTooltip="Visualizar"                  tooltipPosition="top" (click)="visualizar()">                  <fa-icon [icon]="[\'fas\', \'clipboard-list\']" size="lg" [fixedWidth]="true"></fa-icon>                </button>              </div>            </td>          </tr>        </ng-template>        <ng-template pTemplate="emptymessage">          <tr>            <td colspan="6">              Nenhum Pagamento registrado!            </td>          </tr>        </ng-template>      </p-table>    </div>  </div></div><p-dialog [(visible)]="exibirModal" modal="true" #modal (onHide)="resetarFormulario()">  <p-header>    <span [title]="pagamentoModal?.tratamentos" *ngIf="pagamentoModal">      Pagar: {{ pagamentoModal?.tratamentos | shorten:25 }}    </span>  </p-header>  <div>    <p-selectButton [options]="pagamentoOptions" [style]="{\'margin\':\'10px 0\'}" inputId="opcao-pagamento"      [(ngModel)]="opcaoDePagamento" (onChange)="alterarModoPagamento()">    </p-selectButton>    <hr />    <h2 style="color: #686b6d; margin: 10px 0 13px 0;">      Valor Total      <br />      <span style="color: #b63616; font-size: 1.2em">        {{ pagamentoModal?.valorEmAberto | currency: \'BRL\' : \'symbol\' }}      </span>    </h2>    <form novalidate [formGroup]="formulario" class="i-container">      <app-input-container label="Valor do pagamento" for="valor" errorMessage="Valor é obrigatório."        *ngIf="opcaoDePagamento === 2">        <input class="i-container__input" type="text" id="valor" currencyMask formControlName="valor">      </app-input-container>      <app-input-container label="Data do pagamento" for="data-pagamento" errorMessage="Informe uma data.">        <p-calendar [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100" [readonlyInput]="isMobile()"          [appendTo]="modal" inputId="data-pagamento" dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true"          [yearNavigator]="true" yearRange="2019:2025" formControlName="dataPagamento"          [style]="{\'width\': isMobile() ?\'70%\':\'100%\', \'margin-bottom\':\'20px\'}">        </p-calendar>      </app-input-container>      <p-selectButton [options]="formasDePagamento" [style]="{\'margin-bottom\':\'20px\'}" inputId="formas-pagamento"        formControlName="forma">      </p-selectButton>    </form>  </div>  <p-footer>    <app-button label="Pagar" icon="fas fa-hand-holding-usd" iconPosition="right" (botaoClicado)="[salvarPagamento()]"      [classes]="[\'botao--success\']">    </app-button>    <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[fecharModal()]"      [classes]="[\'ui-button-secondary\']">    </app-button>  </p-footer></p-dialog><p-confirmDialog #confirmDialog icon="pi pi-exclamation-triangle">  <p-footer>    <app-button label="Confirmar" icon="fas fa-trash" iconPosition="right" (botaoClicado)="[confirmDialog.accept()]"      [classes]="[\'botao--success\']">    </app-button>    <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[confirmDialog.reject()]"      [classes]="[\'ui-button-secondary\']">    </app-button>  </p-footer></p-confirmDialog></div>'
+    var COMPONENTS = [{'name': 'AgendamentoCadastroComponent', 'selector': 'app-agendamento-cadastro'},{'name': 'AgendamentoPesquisaComponent', 'selector': 'app-agendamento-pesquisa'},{'name': 'AnamneseComponent', 'selector': 'app-anamnese'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalendarOptionsComponent', 'selector': 'app-calendar-options'},{'name': 'CategoriaDespesaPesquisaComponent', 'selector': 'app-categoria-despesa-pesquisa'},{'name': 'ConsultasComponent', 'selector': 'app-consultas'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DespesaCadastroComponent', 'selector': 'app-despesa-cadastro'},{'name': 'DespesasPesquisaComponent', 'selector': 'app-despesas-pesquisa'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputContainerComponent', 'selector': 'app-input-container'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MateriaisListaComponent', 'selector': 'app-materiais-lista'},{'name': 'MateriaisPesquisaComponent', 'selector': 'app-materiais-pesquisa'},{'name': 'MaterialCadastroComponent', 'selector': 'app-material-cadastro'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'OdontogramaComponent', 'selector': 'app-odontograma'},{'name': 'OdontogramaEditComponent', 'selector': 'app-odontograma-edit'},{'name': 'OdontogramaSelectComponent', 'selector': 'app-odontograma-select'},{'name': 'OrcamentoCadastroComponent', 'selector': 'app-orcamento-cadastro'},{'name': 'OrcamentosComponent', 'selector': 'app-orcamentos'},{'name': 'PacienteCadastroComponent', 'selector': 'app-paciente-cadastro'},{'name': 'PacienteDadosComponent', 'selector': 'app-paciente-dados'},{'name': 'PacientesPesquisaComponent', 'selector': 'app-pacientes-pesquisa'},{'name': 'PagamentosComponent', 'selector': 'app-pagamentos'},{'name': 'PageForbiddenComponent', 'selector': 'app-page-forbidden'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProcedimentoCadastroComponent', 'selector': 'app-procedimento-cadastro'},{'name': 'ProcedimentosComponent', 'selector': 'app-procedimentos'},{'name': 'ProcedimentosPesquisaComponent', 'selector': 'app-procedimentos-pesquisa'},{'name': 'ProntuarioComponent', 'selector': 'app-prontuario'},{'name': 'RadioComponent', 'selector': 'app-radio'},{'name': 'ToastLinkComponent', 'selector': 'app-toast-link'},{'name': 'UsuarioCadastroComponent', 'selector': 'app-usuario-cadastro'},{'name': 'UsuariosPesquisaComponent', 'selector': 'app-usuarios-pesquisa'},{'name': 'UsuariosSenhaComponent', 'selector': 'app-usuarios-senha'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PagamentosComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PagamentosComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1562 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>dental-helper-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">dental-helper-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>DespesasPesquisaComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-despesas-pesquisa</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./despesas-pesquisa.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./despesas-pesquisa.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#categorias">categorias</a>
+                            </li>
+                            <li>
+                                <a href="#dataFinal">dataFinal</a>
+                            </li>
+                            <li>
+                                <a href="#dataInicial">dataInicial</a>
+                            </li>
+                            <li>
+                                <a href="#despesas">despesas</a>
+                            </li>
+                            <li>
+                                <a href="#filtro">filtro</a>
+                            </li>
+                            <li>
+                                <a href="#formularioDeFiltro">formularioDeFiltro</a>
+                            </li>
+                            <li>
+                                <a href="#pt_BR">pt_BR</a>
+                            </li>
+                            <li>
+                                <a href="#total">total</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#carregarCategorias">carregarCategorias</a>
+                            </li>
+                            <li>
+                                <a href="#carregarDespesas">carregarDespesas</a>
+                            </li>
+                            <li>
+                                <a href="#confirmarExclusao">confirmarExclusao</a>
+                            </li>
+                            <li>
+                                <a href="#criarDespesa">criarDespesa</a>
+                            </li>
+                            <li>
+                                <a href="#deletar">deletar</a>
+                            </li>
+                            <li>
+                                <a href="#filtrar">filtrar</a>
+                            </li>
+                            <li>
+                                <a href="#getTotal">getTotal</a>
+                            </li>
+                            <li>
+                                <a href="#hideForRole">hideForRole</a>
+                            </li>
+                            <li>
+                                <a href="#inicializarFiltro">inicializarFiltro</a>
+                            </li>
+                            <li>
+                                <a href="#isMobile">isMobile</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>, toastService: <a href="../injectables/ToastService.html">ToastService</a>, despesaService: <a href="../injectables/DespesaService.html">DespesaService</a>, confirmationService: ConfirmationService, categoriaDespesaService: <a href="../injectables/CategoriaDespesaService.html">CategoriaDespesaService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToastService.html" target="_self" >ToastService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>despesaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DespesaService.html" target="_self" >DespesaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>confirmationService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfirmationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>categoriaDespesaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CategoriaDespesaService.html" target="_self" >CategoriaDespesaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarCategorias"></a>
+                    <span class="name">
+                        <b>
+                            carregarCategorias
+                        </b>
+                        <a href="#carregarCategorias"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarCategorias()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarDespesas"></a>
+                    <span class="name">
+                        <b>
+                            carregarDespesas
+                        </b>
+                        <a href="#carregarDespesas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarDespesas()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmarExclusao"></a>
+                    <span class="name">
+                        <b>
+                            confirmarExclusao
+                        </b>
+                        <a href="#confirmarExclusao"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirmarExclusao(despesa: <a href="../classes/Despesa.html">Despesa</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>despesa</td>
+                                    <td>
+                                                <code><a href="../classes/Despesa.html" target="_self" >Despesa</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="criarDespesa"></a>
+                    <span class="name">
+                        <b>
+                            criarDespesa
+                        </b>
+                        <a href="#criarDespesa"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>criarDespesa()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletar"></a>
+                    <span class="name">
+                        <b>
+                            deletar
+                        </b>
+                        <a href="#deletar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deletar(despesa: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:91</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>despesa</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filtrar"></a>
+                    <span class="name">
+                        <b>
+                            filtrar
+                        </b>
+                        <a href="#filtrar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filtrar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTotal"></a>
+                    <span class="name">
+                        <b>
+                            getTotal
+                        </b>
+                        <a href="#getTotal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTotal()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:126</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hideForRole"></a>
+                    <span class="name">
+                        <b>
+                            hideForRole
+                        </b>
+                        <a href="#hideForRole"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hideForRole(role: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>role</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inicializarFiltro"></a>
+                    <span class="name">
+                        <b>
+                            inicializarFiltro
+                        </b>
+                        <a href="#inicializarFiltro"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>inicializarFiltro()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMobile"></a>
+                    <span class="name">
+                        <b>
+                            isMobile
+                        </b>
+                        <a href="#isMobile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isMobile()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="categorias"></a>
+                        <span class="name">
+                            <b>
+                            categorias</b>
+                            <a href="#categorias"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataFinal"></a>
+                        <span class="name">
+                            <b>
+                            dataFinal</b>
+                            <a href="#dataFinal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Date(moment().endOf(&#x27;month&#x27;).add(1, &#x27;day&#x27;).format(&#x27;YYYY-MM-DD&#x27;))</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataInicial"></a>
+                        <span class="name">
+                            <b>
+                            dataInicial</b>
+                            <a href="#dataInicial"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Date(moment().startOf(&#x27;month&#x27;).add(1, &#x27;day&#x27;).format(&#x27;YYYY-MM-DD&#x27;))</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="despesas"></a>
+                        <span class="name">
+                            <b>
+                            despesas</b>
+                            <a href="#despesas"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Despesa.html" target="_self" >Despesa[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filtro"></a>
+                        <span class="name">
+                            <b>
+                            filtro</b>
+                            <a href="#filtro"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/DespesaFilter.html" target="_self" >DespesaFilter</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new DespesaFilter()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formularioDeFiltro"></a>
+                        <span class="name">
+                            <b>
+                            formularioDeFiltro</b>
+                            <a href="#formularioDeFiltro"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pt_BR"></a>
+                        <span class="name">
+                            <b>
+                            pt_BR</b>
+                            <a href="#pt_BR"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>pt_BR</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="total"></a>
+                        <span class="name">
+                            <b>
+                            total</b>
+                            <a href="#total"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/despesas/despesas-pesquisa/despesas-pesquisa.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { FormGroup, FormControl } from &#x27;@angular/forms&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { Component, OnInit, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+
+
+import { Despesa } from &#x27;src/app/domains/despesa.model&#x27;;
+import { pt_BR } from &#x27;../../shared/constants/calendario.br&#x27;;
+import { AuthService } from &#x27;src/app/core/services/auth.service&#x27;;
+import { ToastService } from &#x27;src/app/core/services/toast.service&#x27;;
+import { DespesaFilter } from &#x27;src/app/core/classes/despesa-filter&#x27;;
+import { DespesaService } from &#x27;src/app/core/services/despesa.service&#x27;;
+import { CategoriaDespesaService } from &#x27;src/app/core/services/categoria-despesa.service&#x27;;
+
+import { ConfirmationService } from &#x27;primeng/api&#x27;;
+
+import * as moment from &#x27;moment&#x27;;
+
+declare var $: any;
+@Component({
+  selector: &#x27;app-despesas-pesquisa&#x27;,
+  templateUrl: &#x27;./despesas-pesquisa.component.html&#x27;,
+  styleUrls: [&#x27;./despesas-pesquisa.component.scss&#x27;],
+  encapsulation: ViewEncapsulation.None
+})
+export class DespesasPesquisaComponent implements OnInit {
+
+  pt_BR &#x3D; pt_BR;
+  formularioDeFiltro: FormGroup;
+
+  dataInicial &#x3D; new Date(moment().startOf(&#x27;month&#x27;).add(1, &#x27;day&#x27;).format(&#x27;YYYY-MM-DD&#x27;));
+  dataFinal &#x3D; new Date(moment().endOf(&#x27;month&#x27;).add(1, &#x27;day&#x27;).format(&#x27;YYYY-MM-DD&#x27;));
+
+  categorias &#x3D; [];
+  despesas: Despesa[] &#x3D; [];
+  total &#x3D; 0;
+
+  filtro: DespesaFilter &#x3D; new DespesaFilter();
+
+  constructor(
+    private title: Title,
+    private router: Router,
+    private route: ActivatedRoute,
+    private authService: AuthService,
+    private toastService: ToastService,
+    private despesaService: DespesaService,
+    private confirmationService: ConfirmationService,
+    private categoriaDespesaService: CategoriaDespesaService,
+  ) { }
+
+  ngOnInit() {
+    this.title.setTitle(&#x27;Despesas&#x27;);
+    this.inicializarFiltro();
+    this.carregarCategorias();
+    this.filtrar();
+  }
+
+  criarDespesa() {
+    this.router.navigate([&#x27;novo&#x27;], {
+      relativeTo: this.route
+    });
+  }
+
+  inicializarFiltro() {
+    this.formularioDeFiltro &#x3D; new FormGroup({
+      dataPagamentoDe: new FormControl(this.dataInicial),
+      dataPagamentoAte: new FormControl(this.dataFinal),
+      descricao: new FormControl(null),
+      categoria: new FormControl(null)
+    });
+  }
+
+  filtrar() {
+    this.filtro.dataPagamentoDe &#x3D; this.formularioDeFiltro.get(&#x27;dataPagamentoDe&#x27;).value;
+    this.filtro.dataPagamentoAte &#x3D; this.formularioDeFiltro.get(&#x27;dataPagamentoAte&#x27;).value;
+    this.filtro.descricao &#x3D; this.formularioDeFiltro.get(&#x27;descricao&#x27;).value;
+    this.filtro.categoria &#x3D; this.formularioDeFiltro.get(&#x27;categoria&#x27;).value;
+    this.carregarDespesas();
+  }
+
+  carregarDespesas() {
+    this.total &#x3D; 0;
+    this.despesaService.pesquisar(this.filtro).subscribe(resultado &#x3D;&gt; {
+      this.despesas &#x3D; resultado;
+      resultado.forEach((d) &#x3D;&gt; {
+        this.total +&#x3D; d.valor;
+      });
+    });
+  }
+
+  deletar(despesa: any) {
+    const url &#x3D; despesa.links[0].href;
+    this.despesaService.deletar(url)
+      .subscribe(() &#x3D;&gt; {
+        this.filtrar();
+        const mensagemToast &#x3D; &#x60;&quot;A Despesa foi excluída.&quot;&#x60;;
+        this.toastService.exibirSucesso(mensagemToast);
+      }, (error) &#x3D;&gt; { console.log(error); });
+  }
+
+  confirmarExclusao(despesa: Despesa) {
+
+    this.confirmationService.confirm({
+      message: &#x60;Você tem certeza que quer excluir &quot;${despesa.descricao}&quot;?&#x60;,
+      accept: () &#x3D;&gt; {
+        this.deletar(despesa);
+      }
+    });
+  }
+
+  carregarCategorias() {
+    this.categoriaDespesaService.pesquisar()
+      .subscribe(response &#x3D;&gt; {
+
+        this.categorias &#x3D; response.map(elemento &#x3D;&gt; {
+          return { label: elemento.nome, value: elemento.nome };
+        });
+        this.categorias.push({ label: &#x27;Todos&#x27;, value: &#x27;&#x27; });
+      });
+  }
+
+  hideForRole(role: string) {
+    return !this.authService.hasAuthority(role);
+  }
+
+  getTotal() {
+    this.despesas.forEach((d) &#x3D;&gt; {
+
+      this.total &#x3D; d.valor;
+    });
+  }
+
+  isMobile(): boolean {
+    return $.browser.mobile;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content&quot;&gt;
+  &lt;app-default-header titulo&#x3D;&quot;Despesas&quot; buttonId&#x3D;&quot;add-despesa&quot; buttonText&#x3D;&quot;Adicionar Despesa&quot;
+    (botaoClicado)&#x3D;&quot;criarDespesa()&quot;&gt;
+  &lt;/app-default-header&gt;
+
+  &lt;div class&#x3D;&quot;fieldset&quot;&gt;
+    &lt;p-fieldset legend&#x3D;&quot;Filtro&quot; [toggleable]&#x3D;&quot;isMobile()&quot; [collapsed]&#x3D;&quot;isMobile()&quot;&gt;
+      &lt;form class&#x3D;&quot;filtro&quot; novalidate [formGroup]&#x3D;&quot;formularioDeFiltro&quot;&gt;
+        &lt;div class&#x3D;&quot;filtro__group&quot;&gt;
+          &lt;label class&#x3D;&quot;filtro__group__label&quot; for&#x3D;&quot;categoria-filtro&quot; id&#x3D;&quot;categoria-filtro-label&quot;&gt;Categoria&lt;/label&gt;
+          &lt;p-dropdown class&#x3D;&quot;filtro__group__dropdown&quot; [options]&#x3D;&quot;categorias&quot; placeholder&#x3D;&quot;Selecione&quot;
+            [filter]&#x3D;&quot;!isMobile()&quot; formControlName&#x3D;&quot;categoria&quot; emptyFilterMessage&#x3D;&quot;Categoria não encontrada!&quot;
+            [style]&#x3D;&quot;{&#x27;width&#x27;: &#x27;100%&#x27;}&quot; inputId&#x3D;&quot;categoria-filtro&quot;&gt;&lt;/p-dropdown&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;filtro__group&quot;&gt;
+          &lt;label class&#x3D;&quot;filtro__group__label&quot; for&#x3D;&quot;descricao&quot;&gt;Descrição&lt;/label&gt;
+          &lt;input class&#x3D;&quot;filtro__group__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;descricao&quot; formControlName&#x3D;&quot;descricao&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;filtro__group&quot;&gt;
+          &lt;label class&#x3D;&quot;filtro__group__label&quot; for&#x3D;&quot;inicio&quot;&gt;Data inicial (De)&lt;/label&gt;
+          &lt;p-calendar class&#x3D;&quot;filtro__group__calendar&quot; [showIcon]&#x3D;&quot;isMobile()&quot; [touchUI]&#x3D;&quot;isMobile()&quot; [baseZIndex]&#x3D;&quot;100&quot;
+            [readonlyInput]&#x3D;&quot;isMobile()&quot; [style]&#x3D;&quot;{&#x27;width&#x27;: &#x27;70%&#x27;}&quot; inputId&#x3D;&quot;inicio&quot; dateFormat&#x3D;&quot;dd/mm/yy&quot;
+            [locale]&#x3D;&quot;pt_BR&quot; [monthNavigator]&#x3D;&quot;true&quot; [yearNavigator]&#x3D;&quot;true&quot; yearRange&#x3D;&quot;2017:2027&quot;
+            formControlName&#x3D;&quot;dataPagamentoDe&quot; [utc]&#x3D;&quot;false&quot;&gt;
+          &lt;/p-calendar&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;filtro__group&quot;&gt;
+          &lt;label class&#x3D;&quot;filtro__group__label&quot; for&#x3D;&quot;fim&quot;&gt;Data final (Até)&lt;/label&gt;
+          &lt;p-calendar class&#x3D;&quot;filtro__group__calendar&quot; [showIcon]&#x3D;&quot;isMobile()&quot; [touchUI]&#x3D;&quot;isMobile()&quot; [baseZIndex]&#x3D;&quot;100&quot;
+            [readonlyInput]&#x3D;&quot;isMobile()&quot; [style]&#x3D;&quot;{&#x27;width&#x27;: &#x27;70%&#x27;}&quot; inputId&#x3D;&quot;fim&quot; dateFormat&#x3D;&quot;dd/mm/yy&quot; [locale]&#x3D;&quot;pt_BR&quot;
+            [monthNavigator]&#x3D;&quot;true&quot; [yearNavigator]&#x3D;&quot;true&quot; yearRange&#x3D;&quot;2017:2027&quot; formControlName&#x3D;&quot;dataPagamentoAte&quot;&gt;
+          &lt;/p-calendar&gt;
+        &lt;/div&gt;
+        &lt;app-button label&#x3D;&quot;Pesquisar&quot; icon&#x3D;&quot;fas fa-search&quot; iconPosition&#x3D;&quot;right&quot;
+          [classes]&#x3D;&quot;[&#x27;filtro__group__button&#x27;,&#x27;botao--padrao&#x27;, &#x27;botao--grande&#x27;]&quot; (botaoClicado)&#x3D;&quot;[filtrar()]&quot;&gt;
+        &lt;/app-button&gt;
+      &lt;/form&gt;
+    &lt;/p-fieldset&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;ui-g&quot;&gt;
+    &lt;div class&#x3D;&quot;ui-g-12&quot;&gt;
+      &lt;p-table [value]&#x3D;&quot;despesas&quot; #tabela responsive&#x3D;&quot;true&quot; [paginator]&#x3D;&quot;true&quot; [rows]&#x3D;&quot;20&quot;&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;caption&quot;&gt;
+          &lt;div style&#x3D;&quot;display: flex; flex-direction: row-reverse;&quot;&gt;
+            Total: {{total | currency: &#x27;BRL&#x27; : &#x27;symbol&#x27;}}
+          &lt;/div&gt;
+        &lt;/ng-template&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Data de Pagamento&lt;/th&gt;
+            &lt;th&gt;Descrição&lt;/th&gt;
+            &lt;th&gt;Categoria&lt;/th&gt;
+            &lt;th&gt;Valor&lt;/th&gt;
+            &lt;th&gt;Forma de Pagamento&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+
+        &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-despesa&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Data&lt;/span&gt;
+              {{despesa.pagamento.dataPagamento | date: &#x27;dd/MM/yyyy&#x27;}}
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Descrição&lt;/span&gt;
+              {{despesa.descricao}}
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Categoria&lt;/span&gt;
+              {{despesa.categoria.nome}}
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Valor&lt;/span&gt;
+              {{despesa.valor | currency: &#x27;BRL&#x27; : &#x27;symbol&#x27;}}
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Forma de Pagamento&lt;/span&gt;
+              {{despesa.pagamento.forma}}
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;div class&#x3D;&quot;operacoes&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--edit&quot;
+                  [routerLink]&#x3D;&quot;[&#x27;/despesas&#x27;, despesa.codigo, &#x27;edit&#x27;]&quot; pTooltip&#x3D;&quot;Editar&quot; tooltipPosition&#x3D;&quot;top&quot;&gt;
+                  &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;edit&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                &lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--delete&quot;
+                  (click)&#x3D;&quot;confirmarExclusao(despesa)&quot; pTooltip&#x3D;&quot;Excluir&quot; tooltipPosition&#x3D;&quot;top&quot;
+                  *ngIf&#x3D;&quot;hideForRole(&#x27;RECEPCIONISTA&#x27;)&quot;&gt;
+                  &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;trash&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+
+        &lt;ng-template pTemplate&#x3D;&quot;emptymessage&quot;&gt;
+          &lt;tr&gt;
+            &lt;td colspan&#x3D;&quot;6&quot;&gt;
+              Nenhuma Despesa encontrada!&lt;br /&gt;
+              Clique &lt;a [routerLink]&#x3D;&quot;[&#x27;/despesas/novo&#x27;]&quot;&gt;AQUI&lt;/a&gt; para cadastrar.
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+      &lt;/p-table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p-confirmDialog #confirmDialog header&#x3D;&quot;Confirmar exclusão&quot; icon&#x3D;&quot;pi pi-exclamation-triangle&quot;&gt;
+  &lt;p-footer&gt;
+    &lt;app-button label&#x3D;&quot;Excluir&quot; icon&#x3D;&quot;fas fa-trash&quot; iconPosition&#x3D;&quot;right&quot; (botaoClicado)&#x3D;&quot;[confirmDialog.accept()]&quot;
+      [classes]&#x3D;&quot;[&#x27;botao--success&#x27;]&quot;&gt;
+    &lt;/app-button&gt;
+
+    &lt;app-button label&#x3D;&quot;Cancelar&quot; icon&#x3D;&quot;fas fa-times&quot; iconPosition&#x3D;&quot;right&quot; (botaoClicado)&#x3D;&quot;[confirmDialog.reject()]&quot;
+      [classes]&#x3D;&quot;[&#x27;ui-button-secondary&#x27;]&quot;&gt;
+    &lt;/app-button&gt;
+  &lt;/p-footer&gt;
+&lt;/p-confirmDialog&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./despesas-pesquisa.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../../assets/scss/tools/placeholders&quot;;
+
+.fieldset {
+  padding: 10px;
+  border-bottom: solid 5px #f3f3f4;
+}
+
+.ui-inputtext {
+  width: 70%;
+}
+
+.filtro {
+  display: flex;
+  flex-direction: column;
+
+  &amp;__group {
+    display: flex;
+    flex-direction: column;
+
+    &amp;__label {
+      @extend %label;
+      padding: 10px 0 5px 10px;
+      align-self: baseline;
+    }
+    &amp;__input {
+      @extend %input;
+      margin: 0 10px 5px 10px;
+    }
+    &amp;__dropdown {
+      margin: 0 10px 5px 10px;
+    }
+    &amp;__calendar {
+      margin: 0 10px 5px 10px;
+    }
+    &amp;__button {
+      margin: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .ui-inputtext {
+    width: 100%;
+  }
+
+  .filtro {
+    flex-direction: row;
+    flex-wrap: wrap;
+    &amp; &gt; :nth-child(1) {
+      width: 50%;
+    }
+    &amp; &gt; :nth-child(2) {
+      width: 50%;
+    }
+    &amp; &gt; :nth-child(3) {
+      width: 25%;
+    }
+    &amp; &gt; :nth-child(4) {
+      width: 25%;
+    }
+    &amp; &gt; :nth-child(5) {
+      align-self: flex-end;
+      width: 40%;
+    }
+    &amp;__group {
+      &amp;__button {
+        margin: 5px 10px;
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="content">  <app-default-header titulo="Despesas" buttonId="add-despesa" buttonText="Adicionar Despesa"    (botaoClicado)="criarDespesa()">  </app-default-header>  <div class="fieldset">    <p-fieldset legend="Filtro" [toggleable]="isMobile()" [collapsed]="isMobile()">      <form class="filtro" novalidate [formGroup]="formularioDeFiltro">        <div class="filtro__group">          <label class="filtro__group__label" for="categoria-filtro" id="categoria-filtro-label">Categoria</label>          <p-dropdown class="filtro__group__dropdown" [options]="categorias" placeholder="Selecione"            [filter]="!isMobile()" formControlName="categoria" emptyFilterMessage="Categoria não encontrada!"            [style]="{\'width\': \'100%\'}" inputId="categoria-filtro"></p-dropdown>        </div>        <div class="filtro__group">          <label class="filtro__group__label" for="descricao">Descrição</label>          <input class="filtro__group__input" type="text" id="descricao" formControlName="descricao">        </div>        <div class="filtro__group">          <label class="filtro__group__label" for="inicio">Data inicial (De)</label>          <p-calendar class="filtro__group__calendar" [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100"            [readonlyInput]="isMobile()" [style]="{\'width\': \'70%\'}" inputId="inicio" dateFormat="dd/mm/yy"            [locale]="pt_BR" [monthNavigator]="true" [yearNavigator]="true" yearRange="2017:2027"            formControlName="dataPagamentoDe" [utc]="false">          </p-calendar>        </div>        <div class="filtro__group">          <label class="filtro__group__label" for="fim">Data final (Até)</label>          <p-calendar class="filtro__group__calendar" [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100"            [readonlyInput]="isMobile()" [style]="{\'width\': \'70%\'}" inputId="fim" dateFormat="dd/mm/yy" [locale]="pt_BR"            [monthNavigator]="true" [yearNavigator]="true" yearRange="2017:2027" formControlName="dataPagamentoAte">          </p-calendar>        </div>        <app-button label="Pesquisar" icon="fas fa-search" iconPosition="right"          [classes]="[\'filtro__group__button\',\'botao--padrao\', \'botao--grande\']" (botaoClicado)="[filtrar()]">        </app-button>      </form>    </p-fieldset>  </div>  <div class="ui-g">    <div class="ui-g-12">      <p-table [value]="despesas" #tabela responsive="true" [paginator]="true" [rows]="20">        <ng-template pTemplate="caption">          <div style="display: flex; flex-direction: row-reverse;">            Total: {{total | currency: \'BRL\' : \'symbol\'}}          </div>        </ng-template>        <ng-template pTemplate="header">          <tr>            <th>Data de Pagamento</th>            <th>Descrição</th>            <th>Categoria</th>            <th>Valor</th>            <th>Forma de Pagamento</th>            <th></th>          </tr>        </ng-template>        <ng-template pTemplate="body" let-despesa>          <tr>            <td>              <span class="ui-column-title">Data</span>              {{despesa.pagamento.dataPagamento | date: \'dd/MM/yyyy\'}}            </td>            <td>              <span class="ui-column-title">Descrição</span>              {{despesa.descricao}}            </td>            <td>              <span class="ui-column-title">Categoria</span>              {{despesa.categoria.nome}}            </td>            <td>              <span class="ui-column-title">Valor</span>              {{despesa.valor | currency: \'BRL\' : \'symbol\'}}            </td>            <td>              <span class="ui-column-title">Forma de Pagamento</span>              {{despesa.pagamento.forma}}            </td>            <td>              <div class="operacoes">                <button type="button" class="operacoes__button operacoes__button--edit"                  [routerLink]="[\'/despesas\', despesa.codigo, \'edit\']" pTooltip="Editar" tooltipPosition="top">                  <fa-icon [icon]="[\'fas\', \'edit\']" size="lg" [fixedWidth]="true"></fa-icon>                </button>                <button type="button" class="operacoes__button operacoes__button--delete"                  (click)="confirmarExclusao(despesa)" pTooltip="Excluir" tooltipPosition="top"                  *ngIf="hideForRole(\'RECEPCIONISTA\')">                  <fa-icon [icon]="[\'fas\', \'trash\']" size="lg" [fixedWidth]="true"></fa-icon>                </button>              </div>            </td>          </tr>        </ng-template>        <ng-template pTemplate="emptymessage">          <tr>            <td colspan="6">              Nenhuma Despesa encontrada!<br />              Clique <a [routerLink]="[\'/despesas/novo\']">AQUI</a> para cadastrar.            </td>          </tr>        </ng-template>      </p-table>    </div>  </div></div><p-confirmDialog #confirmDialog header="Confirmar exclusão" icon="pi pi-exclamation-triangle">  <p-footer>    <app-button label="Excluir" icon="fas fa-trash" iconPosition="right" (botaoClicado)="[confirmDialog.accept()]"      [classes]="[\'botao--success\']">    </app-button>    <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[confirmDialog.reject()]"      [classes]="[\'ui-button-secondary\']">    </app-button>  </p-footer></p-confirmDialog></div>'
+    var COMPONENTS = [{'name': 'AgendamentoCadastroComponent', 'selector': 'app-agendamento-cadastro'},{'name': 'AgendamentoPesquisaComponent', 'selector': 'app-agendamento-pesquisa'},{'name': 'AnamneseComponent', 'selector': 'app-anamnese'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalendarOptionsComponent', 'selector': 'app-calendar-options'},{'name': 'CategoriaDespesaPesquisaComponent', 'selector': 'app-categoria-despesa-pesquisa'},{'name': 'ConsultasComponent', 'selector': 'app-consultas'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DespesaCadastroComponent', 'selector': 'app-despesa-cadastro'},{'name': 'DespesasPesquisaComponent', 'selector': 'app-despesas-pesquisa'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputContainerComponent', 'selector': 'app-input-container'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MateriaisListaComponent', 'selector': 'app-materiais-lista'},{'name': 'MateriaisPesquisaComponent', 'selector': 'app-materiais-pesquisa'},{'name': 'MaterialCadastroComponent', 'selector': 'app-material-cadastro'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'OdontogramaComponent', 'selector': 'app-odontograma'},{'name': 'OdontogramaEditComponent', 'selector': 'app-odontograma-edit'},{'name': 'OdontogramaSelectComponent', 'selector': 'app-odontograma-select'},{'name': 'OrcamentoCadastroComponent', 'selector': 'app-orcamento-cadastro'},{'name': 'OrcamentosComponent', 'selector': 'app-orcamentos'},{'name': 'PacienteCadastroComponent', 'selector': 'app-paciente-cadastro'},{'name': 'PacienteDadosComponent', 'selector': 'app-paciente-dados'},{'name': 'PacientesPesquisaComponent', 'selector': 'app-pacientes-pesquisa'},{'name': 'PagamentosComponent', 'selector': 'app-pagamentos'},{'name': 'PageForbiddenComponent', 'selector': 'app-page-forbidden'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProcedimentoCadastroComponent', 'selector': 'app-procedimento-cadastro'},{'name': 'ProcedimentosComponent', 'selector': 'app-procedimentos'},{'name': 'ProcedimentosPesquisaComponent', 'selector': 'app-procedimentos-pesquisa'},{'name': 'ProntuarioComponent', 'selector': 'app-prontuario'},{'name': 'RadioComponent', 'selector': 'app-radio'},{'name': 'ToastLinkComponent', 'selector': 'app-toast-link'},{'name': 'UsuarioCadastroComponent', 'selector': 'app-usuario-cadastro'},{'name': 'UsuariosPesquisaComponent', 'selector': 'app-usuarios-pesquisa'},{'name': 'UsuariosSenhaComponent', 'selector': 'app-usuarios-senha'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DespesasPesquisaComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DespesasPesquisaComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

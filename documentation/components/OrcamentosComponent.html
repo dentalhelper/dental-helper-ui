@@ -1,0 +1,1530 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>dental-helper-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">dental-helper-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>OrcamentosComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/paciente/orcamentos/orcamentos.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-orcamentos</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./orcamentos.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./orcamentos.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activeTab">activeTab</a>
+                            </li>
+                            <li>
+                                <a href="#codigPaciente">codigPaciente</a>
+                            </li>
+                            <li>
+                                <a href="#dataModal">dataModal</a>
+                            </li>
+                            <li>
+                                <a href="#exibirModal">exibirModal</a>
+                            </li>
+                            <li>
+                                <a href="#orcamentoModal">orcamentoModal</a>
+                            </li>
+                            <li>
+                                <a href="#orcamentos">orcamentos</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#aprovar">aprovar</a>
+                            </li>
+                            <li>
+                                <a href="#atualizarTituloDaPagina">atualizarTituloDaPagina</a>
+                            </li>
+                            <li>
+                                <a href="#carregarOrcamentos">carregarOrcamentos</a>
+                            </li>
+                            <li>
+                                <a href="#confirmarAprovacao">confirmarAprovacao</a>
+                            </li>
+                            <li>
+                                <a href="#confirmarExclusao">confirmarExclusao</a>
+                            </li>
+                            <li>
+                                <a href="#criarOrcamento">criarOrcamento</a>
+                            </li>
+                            <li>
+                                <a href="#deletar">deletar</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#visualizar">visualizar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, toastService: <a href="../injectables/ToastService.html">ToastService</a>, pacienteService: <a href="../injectables/PacienteService.html">PacienteService</a>, orcamentoService: <a href="../injectables/OrcamentoService.html">OrcamentoService</a>, confirmationService: ConfirmationService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:79</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToastService.html" target="_self" >ToastService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pacienteService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PacienteService.html" target="_self" >PacienteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>orcamentoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OrcamentoService.html" target="_self" >OrcamentoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>confirmationService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfirmationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aprovar"></a>
+                    <span class="name">
+                        <b>
+                            aprovar
+                        </b>
+                        <a href="#aprovar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>aprovar(codigoOrcamento: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:108</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigoOrcamento</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="atualizarTituloDaPagina"></a>
+                    <span class="name">
+                        <b>
+                            atualizarTituloDaPagina
+                        </b>
+                        <a href="#atualizarTituloDaPagina"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>atualizarTituloDaPagina()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="157"
+                            class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:157</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarOrcamentos"></a>
+                    <span class="name">
+                        <b>
+                            carregarOrcamentos
+                        </b>
+                        <a href="#carregarOrcamentos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarOrcamentos()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:100</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmarAprovacao"></a>
+                    <span class="name">
+                        <b>
+                            confirmarAprovacao
+                        </b>
+                        <a href="#confirmarAprovacao"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirmarAprovacao(codigoOrcamento: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigoOrcamento</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmarExclusao"></a>
+                    <span class="name">
+                        <b>
+                            confirmarExclusao
+                        </b>
+                        <a href="#confirmarExclusao"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirmarExclusao(codigoOrcamento: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="139"
+                            class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:139</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigoOrcamento</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="criarOrcamento"></a>
+                    <span class="name">
+                        <b>
+                            criarOrcamento
+                        </b>
+                        <a href="#criarOrcamento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>criarOrcamento()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:96</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletar"></a>
+                    <span class="name">
+                        <b>
+                            deletar
+                        </b>
+                        <a href="#deletar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deletar(codigoOrcamento: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:130</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigoOrcamento</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:91</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="visualizar"></a>
+                    <span class="name">
+                        <b>
+                            visualizar
+                        </b>
+                        <a href="#visualizar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>visualizar(codigo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, data: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:149</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="activeTab"></a>
+                        <span class="name">
+                            <b>
+                            activeTab</b>
+                            <a href="#activeTab"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;pronto&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="codigPaciente"></a>
+                        <span class="name">
+                            <b>
+                            codigPaciente</b>
+                            <a href="#codigPaciente"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:77</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataModal"></a>
+                        <span class="name">
+                            <b>
+                            dataModal</b>
+                            <a href="#dataModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:75</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="exibirModal"></a>
+                        <span class="name">
+                            <b>
+                            exibirModal</b>
+                            <a href="#exibirModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:73</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="orcamentoModal"></a>
+                        <span class="name">
+                            <b>
+                            orcamentoModal</b>
+                            <a href="#orcamentoModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/OrcamentoNovoDTO.html" target="_self" >OrcamentoNovoDTO</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:74</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="orcamentos"></a>
+                        <span class="name">
+                            <b>
+                            orcamentos</b>
+                            <a href="#orcamentos"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/OrcamentoResumoDTO.html" target="_self" >OrcamentoResumoDTO[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/paciente/orcamentos/orcamentos.component.ts:79</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { trigger, state, style, transition, animate, keyframes } from &#x27;@angular/animations&#x27;;
+
+import { ToastService } from &#x27;src/app/core/services/toast.service&#x27;;
+import { PacienteService } from &#x27;src/app/core/services/paciente.service&#x27;;
+import { OrcamentoNovoDTO } from &#x27;src/app/domains/dtos/orcamento-novo.dto&#x27;;
+import { OrcamentoService } from &#x27;src/app/core/services/orcamento.service&#x27;;
+import { OrcamentoResumoDTO } from &#x27;src/app/domains/dtos/orcamento-resumo.dto&#x27;;
+
+import { ConfirmationService } from &#x27;primeng/api&#x27;;
+
+@Component({
+  selector: &#x27;app-orcamentos&#x27;,
+  templateUrl: &#x27;./orcamentos.component.html&#x27;,
+  styleUrls: [&#x27;./orcamentos.component.scss&#x27;],
+  animations: [
+    trigger(&#x27;linha&#x27;, [
+      state(&#x27;pronto&#x27;, style({
+        opacity: 1
+      })),
+      transition(&#x27;void &#x3D;&gt; pronto&#x27;,
+        animate(&#x27;300ms 0s ease-in&#x27;,
+          keyframes([
+            style({
+              opacity: 0,
+              transform: &#x27;translateX(-30px)&#x27;,
+              offset: 0
+            }),
+            style({
+              opacity: 0.5,
+              transform: &#x27;translateX(-20px)&#x27;,
+              offset: 0.5
+            }),
+            style({
+              opacity: 0.8,
+              transform: &#x27;translateX(-10px)&#x27;,
+              offset: 0.8
+            }),
+            style({
+              opacity: 1,
+              transform: &#x27;translateX(0px)&#x27;,
+              offset: 1
+            })
+          ]))
+      ),
+      transition(&#x27;pronto &#x3D;&gt; void&#x27;,
+        animate(&#x27;300ms 0s ease-out&#x27;,
+          keyframes([
+            style({
+              opacity: 1,
+              transform: &#x27;translateX(0px)&#x27;,
+              offset: 0
+            }),
+            style({
+              opacity: 0.8,
+              transform: &#x27;translateX(-10px)&#x27;,
+              offset: 0.2
+            }),
+            style({
+              opacity: 0,
+              transform: &#x27;translateX(30px)&#x27;,
+              offset: 1
+            })
+          ]))
+      )
+    ])
+  ]
+})
+export class OrcamentosComponent implements OnInit {
+
+  exibirModal: boolean;
+  orcamentoModal: OrcamentoNovoDTO;
+  dataModal: Date;
+  activeTab &#x3D; &#x27;pronto&#x27;;
+  codigPaciente: any;
+
+  orcamentos: OrcamentoResumoDTO[];
+
+  constructor(
+    private title: Title,
+    private router: Router,
+    private route: ActivatedRoute,
+    private toastService: ToastService,
+    private pacienteService: PacienteService,
+    private orcamentoService: OrcamentoService,
+    private confirmationService: ConfirmationService,
+  ) { }
+
+  ngOnInit() {
+    this.codigPaciente &#x3D; this.route.snapshot.parent.params[&#x27;codigo&#x27;];
+    this.carregarOrcamentos();
+  }
+
+  criarOrcamento() {
+    this.router.navigate([&#x27;orcamentos/novo&#x27;], { fragment: this.codigPaciente });
+  }
+
+  carregarOrcamentos() {
+    this.pacienteService.buscarOrcamentos(this.codigPaciente)
+      .subscribe((response) &#x3D;&gt; {
+        this.orcamentos &#x3D; response.orcamentos;
+        this.atualizarTituloDaPagina();
+      });
+  }
+
+  aprovar(codigoOrcamento: any) {
+    this.orcamentoService.atualizarStatus(codigoOrcamento).subscribe(() &#x3D;&gt; {
+      this.carregarOrcamentos();
+      const mensagemToast &#x3D; &#x60;&quot;O Orçamento foi Aprovado.&quot;&#x60;;
+      this.toastService.exibirSucesso(mensagemToast);
+    });
+  }
+
+  confirmarAprovacao(codigoOrcamento: any) {
+    this.confirmationService.confirm({
+      header: &#x60;Aprovar Orçamento.&#x60;,
+      message: &#x60;Você tem certeza que quer aprovar este orçamento?
+      &lt;br/&gt;
+      &lt;br/&gt;
+      Após aprovar, os procedimentos ficarão disponíveis na área de &quot;Procedimentos&quot;&#x60;,
+      accept: () &#x3D;&gt; {
+        this.aprovar(codigoOrcamento);
+      }
+    });
+
+  }
+
+  deletar(codigoOrcamento: any) {
+    this.orcamentoService.deletar(codigoOrcamento)
+      .subscribe(() &#x3D;&gt; {
+        this.carregarOrcamentos();
+        const mensagemToast &#x3D; &#x60;&quot;O Orçamento foi excluído.&quot;&#x60;;
+        this.toastService.exibirSucesso(mensagemToast);
+      });
+  }
+
+  confirmarExclusao(codigoOrcamento: any) {
+    this.confirmationService.confirm({
+      header: &#x60;Confirmar exclusão.&#x60;,
+      message: &#x60;Você tem certeza que quer excluir este orçamento?&#x60;,
+      accept: () &#x3D;&gt; {
+        this.deletar(codigoOrcamento);
+      }
+    });
+  }
+
+  visualizar(codigo: number, data: Date) {
+    this.exibirModal &#x3D; true;
+    this.dataModal &#x3D; data;
+    this.orcamentoService.buscarPorCodigo(codigo).subscribe((response) &#x3D;&gt; {
+      this.orcamentoModal &#x3D; response;
+    });
+  }
+
+  atualizarTituloDaPagina() {
+    this.title.setTitle(&#x60;Orçamentos&#x60;);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content&quot; [@linha]&#x3D;&quot;activeTab&quot;&gt;
+  &lt;app-default-header titulo&#x3D;&quot;Orçamentos&quot; buttonId&#x3D;&quot;add-orcamento&quot; buttonText&#x3D;&quot;Criar Orçamento&quot;
+    (botaoClicado)&#x3D;&quot;criarOrcamento()&quot;&gt;
+  &lt;/app-default-header&gt;
+
+  &lt;div class&#x3D;&quot;ui-g&quot;&gt;
+    &lt;div class&#x3D;&quot;ui-g-12&quot;&gt;
+      &lt;p-table [value]&#x3D;&quot;orcamentos&quot; #tabela responsive&#x3D;&quot;true&quot; [paginator]&#x3D;&quot;true&quot; [rows]&#x3D;&quot;20&quot;&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Data&lt;/th&gt;
+            &lt;th&gt;Valor&lt;/th&gt;
+            &lt;th&gt;Status&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+
+        &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-orcamento&gt;
+          &lt;tr&gt;
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Data&lt;/span&gt;
+              {{ orcamento.dataOrcamento | date: &#x27;dd/MM/yyyy&#x27; }}
+            &lt;/td&gt;
+
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Valor&lt;/span&gt;
+              {{ orcamento.valorTotal | currency: &#x27;BRL&#x27; : &#x27;symbol&#x27; }}
+            &lt;/td&gt;
+
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Status&lt;/span&gt;
+              &lt;span class&#x3D;&quot;cell__badge cell__badge--success&quot; *ngIf&#x3D;&quot;orcamento.aprovado; else botaoAprovar&quot;&gt;
+                APROVADO
+              &lt;/span&gt;
+
+              &lt;ng-template #botaoAprovar&gt;
+                &lt;app-button label&#x3D;&quot;Aprovar&quot; (botaoClicado)&#x3D;&quot;confirmarAprovacao(orcamento.codigoOrcamento)&quot;
+                  [classes]&#x3D;&quot;[&#x27;ui-button-secondary&#x27;, &#x27;botao--badge&#x27;]&quot;&gt;
+                &lt;/app-button&gt;
+              &lt;/ng-template&gt;
+            &lt;/td&gt;
+
+            &lt;td&gt;
+              &lt;div class&#x3D;&quot;operacoes&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--edit&quot; pTooltip&#x3D;&quot;Visualizar&quot;
+                  tooltipPosition&#x3D;&quot;top&quot; *ngIf&#x3D;&quot;orcamento.aprovado; else botaoVer&quot;
+                  (click)&#x3D;&quot;visualizar(orcamento.codigoOrcamento, orcamento.dataOrcamento)&quot;&gt;
+                  &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;search&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                &lt;/button&gt;
+
+                &lt;ng-template #botaoVer&gt;
+                  &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--edit&quot;
+                    [routerLink]&#x3D;&quot;[&#x27;/orcamentos&#x27;, orcamento.codigoOrcamento, &#x27;edit&#x27;]&quot; pTooltip&#x3D;&quot;Editar&quot;
+                    tooltipPosition&#x3D;&quot;top&quot;&gt;
+                    &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;edit&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                  &lt;/button&gt;
+                &lt;/ng-template&gt;
+
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--delete&quot;
+                  (click)&#x3D;&quot;confirmarExclusao(orcamento.codigoOrcamento)&quot; pTooltip&#x3D;&quot;Excluir&quot; tooltipPosition&#x3D;&quot;top&quot;
+                  [disabled]&#x3D;&quot;orcamento.aprovado&quot;&gt;
+                  &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;trash&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+      &lt;/p-table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p-confirmDialog #confirmDialog icon&#x3D;&quot;pi pi-exclamation-triangle&quot;&gt;
+  &lt;p-footer&gt;
+    &lt;app-button label&#x3D;&quot;Confirmar&quot; icon&#x3D;&quot;fas fa-trash&quot; iconPosition&#x3D;&quot;right&quot; (botaoClicado)&#x3D;&quot;[confirmDialog.accept()]&quot;
+      [classes]&#x3D;&quot;[&#x27;botao--success&#x27;]&quot;&gt;
+    &lt;/app-button&gt;
+
+    &lt;app-button label&#x3D;&quot;Cancelar&quot; icon&#x3D;&quot;fas fa-times&quot; iconPosition&#x3D;&quot;right&quot; (botaoClicado)&#x3D;&quot;[confirmDialog.reject()]&quot;
+      [classes]&#x3D;&quot;[&#x27;ui-button-secondary&#x27;]&quot;&gt;
+    &lt;/app-button&gt;
+  &lt;/p-footer&gt;
+&lt;/p-confirmDialog&gt;
+
+&lt;p-sidebar [(visible)]&#x3D;&quot;exibirModal&quot; position&#x3D;&quot;right&quot; [baseZIndex]&#x3D;&quot;0&quot; [style]&#x3D;&quot;{width:&#x27;40em&#x27;, &#x27;overflow&#x27;: &#x27;auto&#x27;}&quot;&gt;
+  &lt;div class&#x3D;&quot;i-container__legend&quot;&gt;
+    &lt;h2 class&#x3D;&quot;i-container__legend__title&quot;&gt;Dados do Orçamento - {{ dataModal | date: &#x27;dd/MM/yyyy&#x27; }}&lt;/h2&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;table class&#x3D;&quot;o-table&quot;&gt;
+    &lt;thead class&#x3D;&quot;o-table__head&quot;&gt;
+      &lt;tr class&#x3D;&quot;o-table__head__row&quot;&gt;
+        &lt;th&gt;Procedimento&lt;/th&gt;
+        &lt;th&gt;Valor&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+
+    &lt;tbody class&#x3D;&quot;o-table__body&quot;&gt;
+
+      &lt;tr class&#x3D;&quot;o-table__body__row&quot; *ngFor&#x3D;&quot;let procedimento of orcamentoModal?.procedimentos&quot;&gt;
+        &lt;td class&#x3D;&quot;o-table__body__row__data o-table__body__row__data--left&quot;&gt;{{procedimento.nome}}&lt;/td&gt;
+        &lt;td class&#x3D;&quot;o-table__body__row__data o-table__body__row__data--right&quot;&gt;
+          {{procedimento.valor| currency: &#x27;BRL&#x27; : &#x27;symbol&#x27;}}&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+    &lt;tfoot class&#x3D;&quot;o-table__foot&quot;&gt;
+      &lt;tr class&#x3D;&quot;o-table__foot__row o-table__foot__row--desconto&quot;&gt;
+        &lt;th&gt;Desconto&lt;/th&gt;
+        &lt;td&gt;{{ orcamentoModal?.desconto | currency: &#x27;BRL&#x27; : &#x27;symbol&#x27; }}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class&#x3D;&quot;o-table__foot__row o-table__foot__row--total&quot;&gt;
+        &lt;th&gt;Total&lt;/th&gt;
+        &lt;td&gt;{{orcamentoModal?.valorTotal | currency: &#x27;BRL&#x27; : &#x27;symbol&#x27;}}&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tfoot&gt;
+  &lt;/table&gt;
+&lt;/p-sidebar&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./orcamentos.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../../assets/scss/cores&quot;;
+
+.cell {
+  &amp;--center {
+    text-align: center;
+  }
+  &amp;--small {
+    width: 120px;
+  }
+  &amp;__badge {
+    padding: 2px 12px;
+    border-radius: 5px;
+    color: $branco;
+
+    &amp;--success {
+      background-color: $sucesso;
+    }
+  }
+}
+
+.o-table {
+  color: #333333;
+  width: 100%;
+  border-spacing: 0;
+
+  th,
+  td {
+    padding: 10px 15px 10px 15px;
+    border-spacing: 0px;
+    font: 100%/1.4 &quot;Roboto&quot;, sans-serif;
+  }
+
+  &amp;__head {
+    &amp;__row {
+      &amp; th:first-child {
+        border-top-left-radius: 5px;
+      }
+      &amp; th:last-child {
+        border-top-right-radius: 5px;
+      }
+      &amp; th {
+        margin: 0px;
+        border-spacing: 0;
+        color: #ffffff;
+        text-shadow: -1px -1px 1px #666666;
+        letter-spacing: 0.15em;
+        background-color: #90b4d6;
+        border-bottom: 2px solid #547ca0;
+        border-right: 1px solid #749abe;
+        border-top: 1px solid #90b4d6;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &amp;__body {
+    &amp;__row {
+      background-color: #e0e9f0;
+
+      &amp;:hover {
+        background-color: #e0e9f0;
+      }
+      &amp;__data {
+        border-top: 1px solid #f1f8fe;
+        border-bottom: 1px solid #cbd2d8;
+        border-right: 1px solid #cbd2d8;
+        &amp;--left {
+          text-align: left;
+        }
+        &amp;--right {
+          text-align: right;
+        }
+      }
+    }
+    tr:nth-child(even) {
+      background-color: #e0e9f0;
+    }
+    tr:nth-child(odd) {
+      background-color: lighten(#e0e9f0, 5%);
+    }
+  }
+
+  &amp;__foot {
+    &amp; tr:last-child th {
+      border-bottom-left-radius: 5px;
+    }
+
+    &amp; tr:last-child td {
+      border-bottom-right-radius: 5px;
+    }
+
+    &amp;__row {
+      text-align: right;
+
+      th {
+        font-weight: bold;
+        border-top: 1px solid #f1f8fe;
+        border-bottom: 1px solid #cbd2d8;
+        border-right: 1px solid #cbd2d8;
+      }
+      td {
+        border-top: 1px solid #f1f8fe;
+        border-bottom: 1px solid #cbd2d8;
+        border-right: 1px solid #cbd2d8;
+      }
+      &amp;--desconto {
+        background-color: lighten(#90b4d6, 15%);
+      }
+      &amp;--total {
+        background-color: lighten(#90b4d6, 15%);
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="content" [@linha]="activeTab">  <app-default-header titulo="Orçamentos" buttonId="add-orcamento" buttonText="Criar Orçamento"    (botaoClicado)="criarOrcamento()">  </app-default-header>  <div class="ui-g">    <div class="ui-g-12">      <p-table [value]="orcamentos" #tabela responsive="true" [paginator]="true" [rows]="20">        <ng-template pTemplate="header">          <tr>            <th>Data</th>            <th>Valor</th>            <th>Status</th>            <th></th>          </tr>        </ng-template>        <ng-template pTemplate="body" let-orcamento>          <tr>            <td class="cell--center">              <span class="ui-column-title">Data</span>              {{ orcamento.dataOrcamento | date: \'dd/MM/yyyy\' }}            </td>            <td class="cell--center">              <span class="ui-column-title">Valor</span>              {{ orcamento.valorTotal | currency: \'BRL\' : \'symbol\' }}            </td>            <td class="cell--center">              <span class="ui-column-title">Status</span>              <span class="cell__badge cell__badge--success" *ngIf="orcamento.aprovado; else botaoAprovar">                APROVADO              </span>              <ng-template #botaoAprovar>                <app-button label="Aprovar" (botaoClicado)="confirmarAprovacao(orcamento.codigoOrcamento)"                  [classes]="[\'ui-button-secondary\', \'botao--badge\']">                </app-button>              </ng-template>            </td>            <td>              <div class="operacoes">                <button type="button" class="operacoes__button operacoes__button--edit" pTooltip="Visualizar"                  tooltipPosition="top" *ngIf="orcamento.aprovado; else botaoVer"                  (click)="visualizar(orcamento.codigoOrcamento, orcamento.dataOrcamento)">                  <fa-icon [icon]="[\'fas\', \'search\']" size="lg" [fixedWidth]="true"></fa-icon>                </button>                <ng-template #botaoVer>                  <button type="button" class="operacoes__button operacoes__button--edit"                    [routerLink]="[\'/orcamentos\', orcamento.codigoOrcamento, \'edit\']" pTooltip="Editar"                    tooltipPosition="top">                    <fa-icon [icon]="[\'fas\', \'edit\']" size="lg" [fixedWidth]="true"></fa-icon>                  </button>                </ng-template>                <button type="button" class="operacoes__button operacoes__button--delete"                  (click)="confirmarExclusao(orcamento.codigoOrcamento)" pTooltip="Excluir" tooltipPosition="top"                  [disabled]="orcamento.aprovado">                  <fa-icon [icon]="[\'fas\', \'trash\']" size="lg" [fixedWidth]="true"></fa-icon>                </button>              </div>            </td>          </tr>        </ng-template>      </p-table>    </div>  </div></div><p-confirmDialog #confirmDialog icon="pi pi-exclamation-triangle">  <p-footer>    <app-button label="Confirmar" icon="fas fa-trash" iconPosition="right" (botaoClicado)="[confirmDialog.accept()]"      [classes]="[\'botao--success\']">    </app-button>    <app-button label="Cancelar" icon="fas fa-times" iconPosition="right" (botaoClicado)="[confirmDialog.reject()]"      [classes]="[\'ui-button-secondary\']">    </app-button>  </p-footer></p-confirmDialog><p-sidebar [(visible)]="exibirModal" position="right" [baseZIndex]="0" [style]="{width:\'40em\', \'overflow\': \'auto\'}">  <div class="i-container__legend">    <h2 class="i-container__legend__title">Dados do Orçamento - {{ dataModal | date: \'dd/MM/yyyy\' }}</h2>  </div>  <table class="o-table">    <thead class="o-table__head">      <tr class="o-table__head__row">        <th>Procedimento</th>        <th>Valor</th>      </tr>    </thead>    <tbody class="o-table__body">      <tr class="o-table__body__row" *ngFor="let procedimento of orcamentoModal?.procedimentos">        <td class="o-table__body__row__data o-table__body__row__data--left">{{procedimento.nome}}</td>        <td class="o-table__body__row__data o-table__body__row__data--right">          {{procedimento.valor| currency: \'BRL\' : \'symbol\'}}</td>      </tr>    </tbody>    <tfoot class="o-table__foot">      <tr class="o-table__foot__row o-table__foot__row--desconto">        <th>Desconto</th>        <td>{{ orcamentoModal?.desconto | currency: \'BRL\' : \'symbol\' }}</td>      </tr>      <tr class="o-table__foot__row o-table__foot__row--total">        <th>Total</th>        <td>{{orcamentoModal?.valorTotal | currency: \'BRL\' : \'symbol\'}}</td>      </tr>    </tfoot>  </table></p-sidebar></div>'
+    var COMPONENTS = [{'name': 'AgendamentoCadastroComponent', 'selector': 'app-agendamento-cadastro'},{'name': 'AgendamentoPesquisaComponent', 'selector': 'app-agendamento-pesquisa'},{'name': 'AnamneseComponent', 'selector': 'app-anamnese'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalendarOptionsComponent', 'selector': 'app-calendar-options'},{'name': 'CategoriaDespesaPesquisaComponent', 'selector': 'app-categoria-despesa-pesquisa'},{'name': 'ConsultasComponent', 'selector': 'app-consultas'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DespesaCadastroComponent', 'selector': 'app-despesa-cadastro'},{'name': 'DespesasPesquisaComponent', 'selector': 'app-despesas-pesquisa'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputContainerComponent', 'selector': 'app-input-container'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MateriaisListaComponent', 'selector': 'app-materiais-lista'},{'name': 'MateriaisPesquisaComponent', 'selector': 'app-materiais-pesquisa'},{'name': 'MaterialCadastroComponent', 'selector': 'app-material-cadastro'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'OdontogramaComponent', 'selector': 'app-odontograma'},{'name': 'OdontogramaEditComponent', 'selector': 'app-odontograma-edit'},{'name': 'OdontogramaSelectComponent', 'selector': 'app-odontograma-select'},{'name': 'OrcamentoCadastroComponent', 'selector': 'app-orcamento-cadastro'},{'name': 'OrcamentosComponent', 'selector': 'app-orcamentos'},{'name': 'PacienteCadastroComponent', 'selector': 'app-paciente-cadastro'},{'name': 'PacienteDadosComponent', 'selector': 'app-paciente-dados'},{'name': 'PacientesPesquisaComponent', 'selector': 'app-pacientes-pesquisa'},{'name': 'PagamentosComponent', 'selector': 'app-pagamentos'},{'name': 'PageForbiddenComponent', 'selector': 'app-page-forbidden'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProcedimentoCadastroComponent', 'selector': 'app-procedimento-cadastro'},{'name': 'ProcedimentosComponent', 'selector': 'app-procedimentos'},{'name': 'ProcedimentosPesquisaComponent', 'selector': 'app-procedimentos-pesquisa'},{'name': 'ProntuarioComponent', 'selector': 'app-prontuario'},{'name': 'RadioComponent', 'selector': 'app-radio'},{'name': 'ToastLinkComponent', 'selector': 'app-toast-link'},{'name': 'UsuarioCadastroComponent', 'selector': 'app-usuario-cadastro'},{'name': 'UsuariosPesquisaComponent', 'selector': 'app-usuarios-pesquisa'},{'name': 'UsuariosSenhaComponent', 'selector': 'app-usuarios-senha'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'OrcamentosComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'OrcamentosComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

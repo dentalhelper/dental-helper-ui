@@ -1,0 +1,989 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>dental-helper-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">dental-helper-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ProcedimentosComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/paciente/procedimentos/procedimentos.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-procedimentos</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./procedimentos.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./procedimentos.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activeTab">activeTab</a>
+                            </li>
+                            <li>
+                                <a href="#codigPaciente">codigPaciente</a>
+                            </li>
+                            <li>
+                                <a href="#procedimentos">procedimentos</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#atualizarTituloDaPagina">atualizarTituloDaPagina</a>
+                            </li>
+                            <li>
+                                <a href="#carregarProcedimentos">carregarProcedimentos</a>
+                            </li>
+                            <li>
+                                <a href="#criarOrcamento">criarOrcamento</a>
+                            </li>
+                            <li>
+                                <a href="#mudarStatus">mudarStatus</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, toastService: <a href="../injectables/ToastService.html">ToastService</a>, pacienteService: <a href="../injectables/PacienteService.html">PacienteService</a>, orcamentoService: <a href="../injectables/OrcamentoService.html">OrcamentoService</a>, confirmationService: ConfirmationService, procedimentoPrevistoService: <a href="../injectables/ProcedimentoPrevistoService.html">ProcedimentoPrevistoService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/paciente/procedimentos/procedimentos.component.ts:73</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToastService.html" target="_self" >ToastService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pacienteService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PacienteService.html" target="_self" >PacienteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>orcamentoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OrcamentoService.html" target="_self" >OrcamentoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>confirmationService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfirmationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>procedimentoPrevistoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProcedimentoPrevistoService.html" target="_self" >ProcedimentoPrevistoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="atualizarTituloDaPagina"></a>
+                    <span class="name">
+                        <b>
+                            atualizarTituloDaPagina
+                        </b>
+                        <a href="#atualizarTituloDaPagina"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>atualizarTituloDaPagina()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/app/paciente/procedimentos/procedimentos.component.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carregarProcedimentos"></a>
+                    <span class="name">
+                        <b>
+                            carregarProcedimentos
+                        </b>
+                        <a href="#carregarProcedimentos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carregarProcedimentos()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/paciente/procedimentos/procedimentos.component.ts:91</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="criarOrcamento"></a>
+                    <span class="name">
+                        <b>
+                            criarOrcamento
+                        </b>
+                        <a href="#criarOrcamento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>criarOrcamento()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/paciente/procedimentos/procedimentos.component.ts:108</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mudarStatus"></a>
+                    <span class="name">
+                        <b>
+                            mudarStatus
+                        </b>
+                        <a href="#mudarStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mudarStatus(codigo)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/app/paciente/procedimentos/procedimentos.component.ts:99</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigo</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/paciente/procedimentos/procedimentos.component.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="activeTab"></a>
+                        <span class="name">
+                            <b>
+                            activeTab</b>
+                            <a href="#activeTab"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;pronto&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/paciente/procedimentos/procedimentos.component.ts:71</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="codigPaciente"></a>
+                        <span class="name">
+                            <b>
+                            codigPaciente</b>
+                            <a href="#codigPaciente"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/paciente/procedimentos/procedimentos.component.ts:72</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="procedimentos"></a>
+                        <span class="name">
+                            <b>
+                            procedimentos</b>
+                            <a href="#procedimentos"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/ProcedimentoPrevistoResumoDTO.html" target="_self" >ProcedimentoPrevistoResumoDTO[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/paciente/procedimentos/procedimentos.component.ts:73</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { transition, trigger, state, style, animate, keyframes } from &#x27;@angular/animations&#x27;;
+import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { ToastService } from &#x27;src/app/core/services/toast.service&#x27;;
+import { PacienteService } from &#x27;src/app/core/services/paciente.service&#x27;;
+import { OrcamentoService } from &#x27;src/app/core/services/orcamento.service&#x27;;
+import { ConfirmationService } from &#x27;primeng/api&#x27;;
+import { ProcedimentoPrevistoResumoDTO } from &#x27;src/app/domains/dtos/procedimento-previsto-resumo.dto&#x27;;
+import { ProcedimentoPrevistoService } from &#x27;src/app/core/services/procedimento-previsto.service&#x27;;
+
+@Component({
+  selector: &#x27;app-procedimentos&#x27;,
+  templateUrl: &#x27;./procedimentos.component.html&#x27;,
+  styleUrls: [&#x27;./procedimentos.component.scss&#x27;],
+  animations: [
+    trigger(&#x27;linha&#x27;, [
+      state(&#x27;pronto&#x27;, style({
+        opacity: 1
+      })),
+      transition(&#x27;void &#x3D;&gt; pronto&#x27;,
+        animate(&#x27;300ms 0s ease-in&#x27;,
+          keyframes([
+            style({
+              opacity: 0,
+              transform: &#x27;translateX(-30px)&#x27;,
+              offset: 0
+            }),
+            style({
+              opacity: 0.5,
+              transform: &#x27;translateX(-20px)&#x27;,
+              offset: 0.5
+            }),
+            style({
+              opacity: 0.8,
+              transform: &#x27;translateX(-10px)&#x27;,
+              offset: 0.8
+            }),
+            style({
+              opacity: 1,
+              transform: &#x27;translateX(0px)&#x27;,
+              offset: 1
+            })
+          ]))
+      ),
+      transition(&#x27;pronto &#x3D;&gt; void&#x27;,
+        animate(&#x27;300ms 0s ease-out&#x27;,
+          keyframes([
+            style({
+              opacity: 1,
+              transform: &#x27;translateX(0px)&#x27;,
+              offset: 0
+            }),
+            style({
+              opacity: 0.8,
+              transform: &#x27;translateX(-10px)&#x27;,
+              offset: 0.2
+            }),
+            style({
+              opacity: 0,
+              transform: &#x27;translateX(30px)&#x27;,
+              offset: 1
+            })
+          ]))
+      )
+    ])
+  ]
+})
+export class ProcedimentosComponent implements OnInit {
+
+  activeTab &#x3D; &#x27;pronto&#x27;;
+  codigPaciente: any;
+  procedimentos: ProcedimentoPrevistoResumoDTO[];
+
+  constructor(
+    private title: Title,
+    private router: Router,
+    private route: ActivatedRoute,
+    private toastService: ToastService,
+    private pacienteService: PacienteService,
+    private orcamentoService: OrcamentoService,
+    private confirmationService: ConfirmationService,
+    private procedimentoPrevistoService: ProcedimentoPrevistoService
+  ) { }
+
+  ngOnInit() {
+    this.codigPaciente &#x3D; this.route.snapshot.parent.params[&#x27;codigo&#x27;];
+    this.carregarProcedimentos();
+  }
+
+  carregarProcedimentos() {
+    this.pacienteService.buscarProcedimentos(this.codigPaciente)
+      .subscribe((response) &#x3D;&gt; {
+        this.procedimentos &#x3D; response.procedimentos;
+        this.atualizarTituloDaPagina();
+      });
+  }
+
+  mudarStatus(codigo) {
+    this.procedimentoPrevistoService.atualizar(codigo.codigo)
+      .subscribe(() &#x3D;&gt; {
+        const mensagemToast &#x3D; &#x60;&quot;O procedimento foi atualizado.&quot;&#x60;;
+        this.toastService.exibirSucesso(mensagemToast);
+        this.carregarProcedimentos();
+      });
+  }
+
+  criarOrcamento() {
+    this.router.navigate([&#x27;orcamentos/novo&#x27;], { fragment: this.codigPaciente });
+  }
+
+  atualizarTituloDaPagina() {
+    this.title.setTitle(&#x60;Procedimentos&#x60;);
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content&quot; [@linha]&#x3D;&quot;activeTab&quot;&gt;
+  &lt;app-default-header titulo&#x3D;&quot;Procedimentos&quot; buttonId&#x3D;&quot;add-procedimento&quot; buttonText&#x3D;&quot;Criar Orçamento&quot;
+    (botaoClicado)&#x3D;&quot;criarOrcamento()&quot;&gt;
+  &lt;/app-default-header&gt;
+
+  &lt;div class&#x3D;&quot;ui-g&quot;&gt;
+    &lt;div class&#x3D;&quot;ui-g-12&quot;&gt;
+      &lt;p-table [value]&#x3D;&quot;procedimentos&quot; #tabela responsive&#x3D;&quot;true&quot; [paginator]&#x3D;&quot;true&quot; [rows]&#x3D;&quot;20&quot;&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+          &lt;tr&gt;
+            &lt;th class&#x3D;&quot;cell--small&quot;&gt;Data início&lt;/th&gt;
+            &lt;th class&#x3D;&quot;cell--small&quot;&gt;Data fim&lt;/th&gt;
+            &lt;th class&#x3D;&quot;cell--adapt&quot;&gt;Procedimento&lt;/th&gt;
+            &lt;th class&#x3D;&quot;cell--smaller&quot;&gt;Dente&lt;/th&gt;
+            &lt;th class&#x3D;&quot;cell--smaller&quot;&gt;Face&lt;/th&gt;
+            &lt;th&gt;Status&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+
+        &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-procedimento&gt;
+          &lt;tr&gt;
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Data início&lt;/span&gt;
+              {{ procedimento.dataInicio | date: &#x27;dd/MM/yyyy&#x27; }}
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Data Fim&lt;/span&gt;
+              {{ procedimento.dataFinalizacao  | date: &#x27;dd/MM/yyyy&#x27; }}
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;cell--left&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Procedimento&lt;/span&gt;
+              &lt;span [title]&#x3D;&quot;procedimento.nomeProcedimento&quot;&gt;{{ procedimento.nomeProcedimento | shorten:45 }}&lt;/span&gt;
+
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Dente&lt;/span&gt;
+              {{ procedimento.dente }}
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Face&lt;/span&gt;
+              {{ procedimento.faceDente  }}
+            &lt;/td&gt;
+
+            &lt;td class&#x3D;&quot;cell--center&quot;&gt;
+              &lt;span class&#x3D;&quot;ui-column-title&quot;&gt;Status&lt;/span&gt;
+              &lt;span class&#x3D;&quot;cell__badge cell__badge--success&quot; [ngClass]&#x3D;&quot;{&#x27;cell__badge--success&#x27;: procedimento.finalizado,
+                  &#x27;cell__badge--warn&#x27;: !procedimento.finalizado}&quot;&gt;
+                {{ procedimento.finalizado ? &#x27;Finalizado&#x27; : &#x27;Em andamento&#x27; }}
+              &lt;/span&gt;
+            &lt;/td&gt;
+
+            &lt;td&gt;
+              &lt;div class&#x3D;&quot;operacoes&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--evolucao&quot; pTooltip&#x3D;&quot;Evoluções&quot;
+                  tooltipPosition&#x3D;&quot;top&quot; [routerLink]&#x3D;&quot;[&#x27;/evolucoes&#x27;, procedimento]&quot;&gt;
+                  &lt;!-- TODO linkar para evo --&gt;
+                  &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;images&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                &lt;/button&gt;
+
+                &lt;!-- FINALIZAR/REABRIR PROCEDIMENTO --&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--finalizar&quot; pTooltip&#x3D;&quot;Finalizar&quot;
+                  tooltipPosition&#x3D;&quot;top&quot; *ngIf&#x3D;&quot;!procedimento.finalizado; else reabrir&quot;
+                  (click)&#x3D;&quot;mudarStatus(procedimento)&quot;&gt;
+                  &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;check-square&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                &lt;/button&gt;
+
+                &lt;ng-template #reabrir&gt;
+                  &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;operacoes__button operacoes__button--abrir&quot;
+                    (click)&#x3D;&quot;mudarStatus(procedimento)&quot; pTooltip&#x3D;&quot;Reabrir&quot; tooltipPosition&#x3D;&quot;top&quot;&gt;
+                    &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;undo-alt&#x27;]&quot; size&#x3D;&quot;lg&quot; [fixedWidth]&#x3D;&quot;true&quot;&gt;&lt;/fa-icon&gt;
+                  &lt;/button&gt;
+                &lt;/ng-template&gt;
+                &lt;!-- -------*****------- --&gt;
+
+              &lt;/div&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/ng-template&gt;
+      &lt;/p-table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./procedimentos.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../../assets/scss/cores&quot;;
+.cell {
+  &amp;--center {
+    text-align: center;
+  }
+  &amp;--right {
+    text-align: right;
+  }
+  &amp;--small {
+    width: 100px;
+  }
+  &amp;--smaller {
+    width: 70px;
+  }
+  &amp;--medium {
+    width: 150px;
+  }
+  &amp;--large {
+    width: 200px;
+  }
+  &amp;--adapt {
+    width: 400px;
+  }
+  &amp;__badge {
+    padding: 2px 12px;
+    border-radius: 5px;
+    color: $branco;
+
+    &amp;--success {
+      background-color: $sucesso;
+    }
+
+    &amp;--warn {
+      background-color: $warn;
+    }
+
+    &amp;--danger {
+      background-color: $danger;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="content" [@linha]="activeTab">  <app-default-header titulo="Procedimentos" buttonId="add-procedimento" buttonText="Criar Orçamento"    (botaoClicado)="criarOrcamento()">  </app-default-header>  <div class="ui-g">    <div class="ui-g-12">      <p-table [value]="procedimentos" #tabela responsive="true" [paginator]="true" [rows]="20">        <ng-template pTemplate="header">          <tr>            <th class="cell--small">Data início</th>            <th class="cell--small">Data fim</th>            <th class="cell--adapt">Procedimento</th>            <th class="cell--smaller">Dente</th>            <th class="cell--smaller">Face</th>            <th>Status</th>            <th></th>          </tr>        </ng-template>        <ng-template pTemplate="body" let-procedimento>          <tr>            <td class="cell--center">              <span class="ui-column-title">Data início</span>              {{ procedimento.dataInicio | date: \'dd/MM/yyyy\' }}            </td>            <td class="cell--center">              <span class="ui-column-title">Data Fim</span>              {{ procedimento.dataFinalizacao  | date: \'dd/MM/yyyy\' }}            </td>            <td class="cell--left">              <span class="ui-column-title">Procedimento</span>              <span [title]="procedimento.nomeProcedimento">{{ procedimento.nomeProcedimento | shorten:45 }}</span>            </td>            <td class="cell--center">              <span class="ui-column-title">Dente</span>              {{ procedimento.dente }}            </td>            <td class="cell--center">              <span class="ui-column-title">Face</span>              {{ procedimento.faceDente  }}            </td>            <td class="cell--center">              <span class="ui-column-title">Status</span>              <span class="cell__badge cell__badge--success" [ngClass]="{\'cell__badge--success\': procedimento.finalizado,                  \'cell__badge--warn\': !procedimento.finalizado}">                {{ procedimento.finalizado ? \'Finalizado\' : \'Em andamento\' }}              </span>            </td>            <td>              <div class="operacoes">                <button type="button" class="operacoes__button operacoes__button--evolucao" pTooltip="Evoluções"                  tooltipPosition="top" [routerLink]="[\'/evolucoes\', procedimento]">                  <!-- TODO linkar para evo -->                  <fa-icon [icon]="[\'fas\', \'images\']" size="lg" [fixedWidth]="true"></fa-icon>                </button>                <!-- FINALIZAR/REABRIR PROCEDIMENTO -->                <button type="button" class="operacoes__button operacoes__button--finalizar" pTooltip="Finalizar"                  tooltipPosition="top" *ngIf="!procedimento.finalizado; else reabrir"                  (click)="mudarStatus(procedimento)">                  <fa-icon [icon]="[\'fas\', \'check-square\']" size="lg" [fixedWidth]="true"></fa-icon>                </button>                <ng-template #reabrir>                  <button type="button" class="operacoes__button operacoes__button--abrir"                    (click)="mudarStatus(procedimento)" pTooltip="Reabrir" tooltipPosition="top">                    <fa-icon [icon]="[\'fas\', \'undo-alt\']" size="lg" [fixedWidth]="true"></fa-icon>                  </button>                </ng-template>                <!-- -------*****------- -->              </div>            </td>          </tr>        </ng-template>      </p-table>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AgendamentoCadastroComponent', 'selector': 'app-agendamento-cadastro'},{'name': 'AgendamentoPesquisaComponent', 'selector': 'app-agendamento-pesquisa'},{'name': 'AnamneseComponent', 'selector': 'app-anamnese'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalendarOptionsComponent', 'selector': 'app-calendar-options'},{'name': 'CategoriaDespesaPesquisaComponent', 'selector': 'app-categoria-despesa-pesquisa'},{'name': 'ConsultasComponent', 'selector': 'app-consultas'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DespesaCadastroComponent', 'selector': 'app-despesa-cadastro'},{'name': 'DespesasPesquisaComponent', 'selector': 'app-despesas-pesquisa'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputContainerComponent', 'selector': 'app-input-container'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MateriaisListaComponent', 'selector': 'app-materiais-lista'},{'name': 'MateriaisPesquisaComponent', 'selector': 'app-materiais-pesquisa'},{'name': 'MaterialCadastroComponent', 'selector': 'app-material-cadastro'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'OdontogramaComponent', 'selector': 'app-odontograma'},{'name': 'OdontogramaEditComponent', 'selector': 'app-odontograma-edit'},{'name': 'OdontogramaSelectComponent', 'selector': 'app-odontograma-select'},{'name': 'OrcamentoCadastroComponent', 'selector': 'app-orcamento-cadastro'},{'name': 'OrcamentosComponent', 'selector': 'app-orcamentos'},{'name': 'PacienteCadastroComponent', 'selector': 'app-paciente-cadastro'},{'name': 'PacienteDadosComponent', 'selector': 'app-paciente-dados'},{'name': 'PacientesPesquisaComponent', 'selector': 'app-pacientes-pesquisa'},{'name': 'PagamentosComponent', 'selector': 'app-pagamentos'},{'name': 'PageForbiddenComponent', 'selector': 'app-page-forbidden'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProcedimentoCadastroComponent', 'selector': 'app-procedimento-cadastro'},{'name': 'ProcedimentosComponent', 'selector': 'app-procedimentos'},{'name': 'ProcedimentosPesquisaComponent', 'selector': 'app-procedimentos-pesquisa'},{'name': 'ProntuarioComponent', 'selector': 'app-prontuario'},{'name': 'RadioComponent', 'selector': 'app-radio'},{'name': 'ToastLinkComponent', 'selector': 'app-toast-link'},{'name': 'UsuarioCadastroComponent', 'selector': 'app-usuario-cadastro'},{'name': 'UsuariosPesquisaComponent', 'selector': 'app-usuarios-pesquisa'},{'name': 'UsuariosSenhaComponent', 'selector': 'app-usuarios-senha'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProcedimentosComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProcedimentosComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
