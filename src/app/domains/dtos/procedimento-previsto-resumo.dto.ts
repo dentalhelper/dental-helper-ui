@@ -6,6 +6,7 @@ export interface ProcedimentoPrevistoResumoDTO {
   dataFinalizacao: string;
   dataInicio: string;
   finalizado: boolean;
+  faceDente: number
   nomeProcedimento: string;
   valorDoProcedimento: number;
   links: Link[];

@@ -13,6 +13,8 @@ import { ConsultasComponent } from './consultas/consultas.component';
 import { ProntuarioComponent } from './prontuario/prontuario.component';
 import { OrcamentosComponent } from './orcamentos/orcamentos.component';
 import { PagamentosComponent } from './pagamentos/pagamentos.component';
+import { OdontogramaComponent } from './odontograma/odontograma.component';
+import { ProcedimentosComponent } from './procedimentos/procedimentos.component';
 import { PacienteDadosComponent } from './paciente-dados/paciente-dados.component';
 import { PacienteCadastroComponent } from './paciente-cadastro/paciente-cadastro.component';
 import { PacientesPesquisaComponent } from './pacientes-pesquisa/pacientes-pesquisa.component';
@@ -32,7 +34,6 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { NgxMaskModule } from 'ngx-mask';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
-import { OdontogramaComponent } from './odontograma/odontograma.component';
 
 @NgModule({
   declarations: [
@@ -44,10 +45,11 @@ import { OdontogramaComponent } from './odontograma/odontograma.component';
     OrcamentosComponent,
     ProntuarioComponent,
     PagamentosComponent,
+    OdontogramaComponent,
     PacienteDadosComponent,
+    ProcedimentosComponent,
     PacienteCadastroComponent,
     PacientesPesquisaComponent,
-    OdontogramaComponent,
   ],
   imports: [
     TableModule,

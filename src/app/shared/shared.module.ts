@@ -23,7 +23,10 @@ import {
   faBan,
   faUserCheck,
   faUserTimes,
-  faUnlockAlt
+  faUnlockAlt,
+  faImages,
+  faCheckSquare,
+  faUndoAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -69,11 +72,14 @@ export class SharedModule {
     library.add(faEdit);
     library.add(faTrash);
     library.add(faSearch);
+    library.add(faImages);
+    library.add(faUndoAlt);
     library.add(faMoneyBill);
     library.add(faUserCheck);
     library.add(faUserTimes);
     library.add(faUnlockAlt);
     library.add(faExclamation);
+    library.add(faCheckSquare);
     library.add(faCalendarDay);
     library.add(faWindowClose);
     library.add(faClipboardList);
