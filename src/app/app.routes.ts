@@ -1,12 +1,11 @@
 import { Routes } from '@angular/router';
-import { CategoriaDespesaPesquisaComponent } from './categoria-despesa/categoria-despesa-pesquisa/categoria-despesa-pesquisa.component';
+
+import { AuthGuard } from './seguranca/guards/auth.guard';
 import { LoginComponent } from './seguranca/login/login.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
 import { PageForbiddenComponent } from './core/pages/page-forbidden/page-forbidden.component';
-import { AuthGuard } from './seguranca/guards/auth.guard';
-import { OdontoComponent } from './odonto/odonto.component';
-import { OdontogramaComponent } from './odontograma/odontograma.component';
-import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { CategoriaDespesaPesquisaComponent } from './categoria-despesa/categoria-despesa-pesquisa/categoria-despesa-pesquisa.component';
 
 export const ROUTES: Routes = [
 
@@ -21,14 +20,6 @@ export const ROUTES: Routes = [
   {
     path: 'categorias-despesa',
     component: CategoriaDespesaPesquisaComponent
-  },
-  {
-    path: 'dentes',
-    component: OdontoComponent
-  },
-  {
-    path: 'dentes2',
-    component: OdontogramaComponent
   },
   {
     path: 'despesas',
@@ -55,6 +46,12 @@ export const ROUTES: Routes = [
   {
     path: 'orcamentos',
     loadChildren: './orcamentos/orcamentos.module#OrcamentosModule'
+  },
+  {
+    path: 'odontograma',
+    canActivate: [AuthGuard],
+    data: { roles: ['ADMINISTRADOR', 'ASSISTENTE'] },
+    loadChildren: './odontograma/odontograma.module#OdontogramaModule'
   },
   {
     path: 'usuarios',

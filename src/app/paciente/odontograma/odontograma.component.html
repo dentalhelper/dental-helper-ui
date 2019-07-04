@@ -1,7 +1,17 @@
 <div class="content" [@linha]="activeTab">
-  <app-default-header titulo="Odontograma" buttonId="edit-odontograma" buttonText="Editar Odontograma"
-    (botaoClicado)="alterarOdontograma()">
-  </app-default-header>
+
+  <div class="header">
+    <h1 class="header__titulo">Odontograma</h1>
+    <button type="button" class="header__botao-add header__botao-add--float"
+      [routerLink]="['/odontograma', codigPaciente, 'edit']">
+      <i class="fas fa-plus"></i>
+    </button>
+    <button id="edit-odontograma" type="button" class="header__botao-add header__botao-add--header"
+      [routerLink]="['/odontograma', codigPaciente, 'edit']">
+      Editar Odontograma
+    </button>
+  </div>
+
 
   <div class="container">
     <div class="odontograma__container">
@@ -34,7 +44,8 @@
         <p class="grid__container__dentes__number">{{dente.numero}}</p>
       </div>
 
-      <div class="grid__container__dentes grid__container__dentes--bottom" *ngFor="let dente of dentesBot" (click)="exibirInformacoes($event, dente, '320px')">
+      <div class="grid__container__dentes grid__container__dentes--bottom" *ngFor="let dente of dentesBot"
+        (click)="exibirInformacoes($event, dente, '320px')">
         <p class="grid__container__dentes__number">{{dente.numero}}</p>
         <img class="grid__container__dentes__image"
           src="../../assets/images/dentes/{{verificarStatusDoDente(dente)}}.png" alt="Dente {{dente.numero}}">

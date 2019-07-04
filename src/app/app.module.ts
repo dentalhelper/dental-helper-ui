@@ -15,10 +15,8 @@ import { MessageService } from 'primeng/components/common/messageservice';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { OdontoComponent } from './odonto/odonto.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SegurancaModule } from './seguranca/seguranca.module';
-import { OdontogramaComponent } from './odontograma/odontograma.component';
 import { ErrorHandlerService } from './core/services/error-handler.service';
 import { CustomCurrencyMaskConfig } from './shared/constants/currencymaskconfig';
 import { CategoriaDespesaModule } from './categoria-despesa/categoria-despesa.module';
@@ -29,8 +27,6 @@ import { CURRENCY_MASK_CONFIG } from 'ng2-currency-mask/src/currency-mask.config
 @NgModule({
   declarations: [
     AppComponent,
-    OdontoComponent,
-    OdontogramaComponent,
   ],
   imports: [
     CoreModule,

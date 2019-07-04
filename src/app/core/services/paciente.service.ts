@@ -99,6 +99,10 @@ export class PacienteService {
       );
   }
 
+  atualizarOdontograma(odontograma, codigoPaciente) {
+    return this.http.put<PacienteNovoDTO>(`${this.PACIENTE_URL}/${codigoPaciente}/odontograma`, odontograma);
+  }
+
   atualizarAnamnese(anamnese: Anamnese, codigo: number): Observable<Anamnese> {
     return this.http.put<Anamnese>(`${this.PACIENTE_URL}/${codigo}/anamnese`, anamnese);
   }

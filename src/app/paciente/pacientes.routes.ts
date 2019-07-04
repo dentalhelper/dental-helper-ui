@@ -9,6 +9,7 @@ import { OdontogramaComponent } from './odontograma/odontograma.component';
 import { PacienteDadosComponent } from './paciente-dados/paciente-dados.component';
 import { PacienteCadastroComponent } from './paciente-cadastro/paciente-cadastro.component';
 import { PacientesPesquisaComponent } from './pacientes-pesquisa/pacientes-pesquisa.component';
+import { AuthGuard } from '../seguranca/guards/auth.guard';
 
 export const PACIENTE_ROUTES: Routes = [
   {
@@ -45,10 +46,14 @@ export const PACIENTE_ROUTES: Routes = [
       },
       {
         path: 'odontograma',
+        canActivate: [AuthGuard],
+        data: { roles: ['ADMINISTRADOR', 'ASSISTENTE'] },
         component: OdontogramaComponent
       },
       {
         path: 'anamnese',
+        canActivate: [AuthGuard],
+        data: { roles: ['ADMINISTRADOR', 'ASSISTENTE'] },
         component: AnamneseComponent
       }
     ]
