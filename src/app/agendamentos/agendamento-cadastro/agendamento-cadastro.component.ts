@@ -155,8 +155,8 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
   ngAfterContentInit(): void {
     this.subscription = this.route.fragment.subscribe((event) => {
       if (event) {
-        this.predefirnirData(moment(event).format('DD/MM/YYYY'));
-        this.predefinirHora(moment(event).format('hh:mm'));
+        this.predefirnirData(event);
+        this.predefinirHora(event);
       }
     });
   }
