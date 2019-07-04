@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 
 import { URL_API } from 'src/app/app.api';
+import { AppHttp } from 'src/app/seguranca/app-http';
 import { Anamnese } from 'src/app/domains/interfaces/anamnese.model';
 import { PacienteNovoDTO } from 'src/app/domains/dtos/paciente-novo.dto';
 import { PacienteResumoDTO } from 'src/app/domains/dtos/paciente-resumo.dto';
@@ -15,6 +16,8 @@ import { map } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
 
 import * as moment from 'moment';
+import { OdontogramaResumoDTO } from 'src/app/domains/dtos/odontograma-resumo.dto';
+import { PacienteProcedimentoDTO } from 'src/app/domains/dtos/paciente-procedimento.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +28,7 @@ export class PacienteService {
 
   PACIENTE_URL = `${URL_API}/pacientes`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: AppHttp) { }
 
   salvar(paciente: PacienteNovoDTO): Observable<string> {
     return this.http.post<PacienteNovoDTO>(`${this.PACIENTE_URL}/novo`, paciente)
@@ -69,8 +72,16 @@ export class PacienteService {
     return this.http.get<PacienteOrcamentoDTO>(`${this.PACIENTE_URL}/${codigo}/orcamentos`);
   }
 
+  buscarOdontograma(codigo: number): Observable<OdontogramaResumoDTO> {
+    return this.http.get<OdontogramaResumoDTO>(`${this.PACIENTE_URL}/${codigo}/odontograma`);
+  }
+
   buscarPagamentos(codigo: number): Observable<OrcamentoPagamentoDTO[]> {
     return this.http.get<OrcamentoPagamentoDTO[]>(`${this.PACIENTE_URL}/${codigo}/pagamentos`);
+  }
+
+  buscarProcedimentos(codigo: number): Observable<PacienteProcedimentoDTO> {
+    return this.http.get<PacienteProcedimentoDTO>(`${this.PACIENTE_URL}/${codigo}/procedimentos`);
   }
 
   urlUploadImagem(): string {
@@ -86,6 +97,10 @@ export class PacienteService {
           return pacienteAlterado;
         })
       );
+  }
+
+  atualizarOdontograma(odontograma, codigoPaciente) {
+    return this.http.put<PacienteNovoDTO>(`${this.PACIENTE_URL}/${codigoPaciente}/odontograma`, odontograma);
   }
 
   atualizarAnamnese(anamnese: Anamnese, codigo: number): Observable<Anamnese> {

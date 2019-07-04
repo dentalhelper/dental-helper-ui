@@ -1,3 +1,91 @@
+@import "../../../assets/scss/mixins";
+
 .form {
   padding: 10px;
+}
+
+.i-container {
+  padding: 0 20px 20px 20px;
+  &__message {
+    position: static;
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .form {
+    .i-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      & > :nth-child(1) {
+        width: 100%;
+      }
+
+      & > :nth-child(2) {
+        width: 418px;
+      }
+
+      & > :nth-child(3) {
+        width: 100%;
+      }
+
+      & > :nth-child(4) {
+        width: 220px;
+        @include input-padding-right();
+      }
+
+      & > :nth-child(5) {
+        width: 198px;
+        @include input-padding-left();
+      }
+
+      & > :nth-child(6),
+      :nth-child(7),
+      :nth-child(8) {
+        width: 100%;
+      }
+
+      & > :nth-child(9) {
+        width: 290px;
+        @include input-padding-right();
+      }
+
+      & > :nth-child(10) {
+        width: 128px;
+        @include input-padding-left();
+      }
+
+      .group-flex {
+        display: flex;
+        flex-direction: row;
+        & > :nth-child(1) {
+          width: 218px;
+          @include input-padding-right();
+        }
+        & > :nth-child(2) {
+          width: 200px;
+          @include input-padding-left();
+        }
+      }
+      & > :nth-child(11) {
+        width: 100%;
+      }
+
+      & > :nth-child(12) {
+        width: 213px;
+      }
+
+      & > :nth-child(13),
+      :nth-child(14),
+      :nth-child(15),
+      :nth-child(16),
+      :nth-child(17),
+      :nth-child(18),
+      :nth-child(19),
+      :nth-child(20),
+      :nth-child(21) {
+        width: 100%;
+      }
+    }
+  }
 }

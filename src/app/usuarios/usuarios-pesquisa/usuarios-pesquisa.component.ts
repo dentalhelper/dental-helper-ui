@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { ToastService } from 'src/app/core/services/toast.service';
 import { UsuarioService } from 'src/app/core/services/usuario.service';
 
-import { ConfirmationService } from 'primeng/api';
-
 @Component({
   selector: 'app-usuarios-pesquisa',
   templateUrl: './usuarios-pesquisa.component.html',
-  styleUrls: ['./usuarios-pesquisa.component.scss']
+  styleUrls: ['./usuarios-pesquisa.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class UsuariosPesquisaComponent implements OnInit {
 
@@ -22,7 +21,6 @@ export class UsuariosPesquisaComponent implements OnInit {
     private route: ActivatedRoute,
     private toastService: ToastService,
     private usuarioService: UsuarioService,
-    private confirmationService: ConfirmationService,
   ) { }
 
   ngOnInit() {
@@ -32,7 +30,6 @@ export class UsuariosPesquisaComponent implements OnInit {
 
   carregarUsuarios() {
     this.usuarioService.pesquisar('').subscribe(resultado => {
-      console.log(resultado);
       this.usuarios = resultado;
     });
   }
@@ -43,13 +40,16 @@ export class UsuariosPesquisaComponent implements OnInit {
     });
   }
 
-  editar() {
-    const mensagemToast = `"Operação não implementada"`;
-    this.toastService.exibirAviso(mensagemToast);
-  }
+  alterarStatus(codigoUsuario: number) {
+    this.usuarioService.alterarStatus(codigoUsuario)
+      .subscribe((response) => {
+        if (response.status) {
+          this.toastService.exibirSucesso(`O usuário "${response.user}" está ativo.`);
+        } else if (!response.status) {
+          this.toastService.exibirAviso(`O usuário "${response.user}" foi desativado e não possui mais acesso ao sistema.`);
+        }
 
-  desativar(usuario: any) {
-    const mensagemToast = `"Operação não implementada (via PATCH)"`;
-    this.toastService.exibirAviso(mensagemToast);
+        this.carregarUsuarios();
+      });
   }
 }

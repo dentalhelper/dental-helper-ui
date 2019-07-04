@@ -185,8 +185,8 @@ nav {
           transform: rotate(90deg);
         }
         &:checked ~ .item-titulo {
-          background: $cor-fundo;
-          color: $cor-menu;
+          background-color: darken($cor-menu, 10);
+          color: $cor-fundo;
         }
       }
       a {
@@ -208,8 +208,8 @@ nav {
         border-bottom-color: #803f41;
 
         &:hover {
-          background-color: $cor-fundo;
-          color: $cor-menu;
+          background-color: darken($cor-menu, 20);
+          color: $branco;
         }
         .icon-esq {
           margin-right: 10px;
@@ -264,9 +264,16 @@ nav {
       transition: all 0.2s ease-in-out;
 
       &:hover {
-        background-color: #915454ab !important;
+        background-color: darken($cor-menu, 20) !important;
         color: $cor-fundo !important;
       }
     }
+  }
+}
+.active-menu {
+  background-color: $cor-fundo !important;
+  color: $cor-menu !important;
+  &:hover {
+    color: $cor-menu !important;
   }
 }

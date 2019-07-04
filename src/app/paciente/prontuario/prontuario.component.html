@@ -27,11 +27,21 @@
           <a>Orçamentos</a>
         </li>
         <li class="tab-container__right__nav__tab" routerLinkActive="tab-container__right__nav__tab--active"
+          [routerLink]="['/pacientes', codigPaciente, 'procedimentos']">
+          <a>Procedimentos</a>
+        </li>
+        <li class="tab-container__right__nav__tab" routerLinkActive="tab-container__right__nav__tab--active"
           [routerLink]="['/pacientes', codigPaciente, 'pagamentos']">
           <a>Pagamentos</a>
         </li>
         <li class="tab-container__right__nav__tab" routerLinkActive="tab-container__right__nav__tab--active"
-          [routerLink]="['/pacientes', codigPaciente, 'anamnese']">
+          [routerLink]="['/pacientes', codigPaciente, 'odontograma']"
+          [ngStyle]="{'display': hideForRole('RECEPCIONISTA') ? '' :'none'}">
+          <a>Odontograma</a>
+        </li>
+        <li class="tab-container__right__nav__tab" routerLinkActive="tab-container__right__nav__tab--active"
+          [routerLink]="['/pacientes', codigPaciente, 'anamnese']"
+          [ngStyle]="{'display': hideForRole('RECEPCIONISTA') ? '' :'none'}">
           <a>Anamnese</a>
         </li>
       </ul>

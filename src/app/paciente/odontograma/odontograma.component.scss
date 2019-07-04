@@ -1,0 +1,195 @@
+@import "../../../assets/scss/cores";
+@import "../../../assets/scss/mixins";
+
+.container {
+  border-bottom: 2px #f3f3f4 solid;
+  padding: 10px 30px 10px 30px;
+}
+
+.odontograma__container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  &__dados {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__label {
+      padding-right: 5px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: $titles;
+      text-align: center;
+    }
+
+    &__data {
+      text-align: right;
+      padding-left: 10px;
+      color: $titles;
+    }
+
+    &__image {
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 100px;
+      border-left: 1px #cccccc solid;
+      border-right: 1px #cccccc solid;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+
+    &--space {
+      justify-content: space-between;
+    }
+
+    &--col {
+      padding-left: 20px;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-around;
+    }
+  }
+}
+
+.grid {
+  padding-top: 10px;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(16, minmax(min-content, 10px));
+    grid-template-rows: max-content;
+    grid-gap: 15px 5px;
+    color: $titles;
+    font-size: 12px;
+    justify-content: center;
+
+    &__dentes {
+      transition: all 0.5s ease-in-out;
+      &:hover {
+        background-color: rgba(196, 196, 196, 0.253);
+        cursor: pointer;
+      }
+      &--top {
+        @include round-border(10px, 10px);
+      }
+
+      &--bottom {
+        @include round-border(0, 0, 10px, 10px);
+      }
+
+      &__number {
+        text-align: center;
+        margin: 0;
+      }
+
+      &__image {
+        width: 40px;
+      }
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #cacaca;
+    box-shadow: 0 0 20px #cccccc;
+    z-index: 100;
+    background-color: $branco;
+    border-radius: 6px;
+
+    &__title {
+      padding: 5px 10px;
+      border-radius: 6px 6px 0 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background-color: #f3f3f3;
+
+      &__name {
+        font-weight: bold;
+        color: $titles;
+      }
+
+      &__icon {
+        color: $danger;
+        cursor: pointer;
+      }
+    }
+
+    &__tratamentos {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 10px 0 10px;
+
+      &__title {
+        &--andamento {
+          color: #dc8035;
+        }
+        &--finalizado {
+          color: #4bb627;
+        }
+      }
+
+      &__item {
+        color: #757575;
+        margin: 0;
+        padding: 0 0 0 25px;
+        list-style-type: square;
+      }
+    }
+
+    &__link {
+      border-top: 1px solid #cccccc;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 10px;
+      padding: 10px 0;
+      font-size: 0.8em;
+    }
+  }
+}
+
+.status {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 15px 0 20px 0;
+
+  &__label {
+    padding: 0 10px;
+
+    &__square {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+
+      &--empty {
+        background-color: #66cbff;
+      }
+      &--course {
+        background-color: #f5aa1a;
+      }
+      &--end {
+        background-color: #4bb627;
+      }
+    }
+
+    &__name {
+      margin-left: 5px;
+    }
+
+    &--empty {
+      color: #66cbff;
+    }
+    &--course {
+      color: #f5aa1a;
+    }
+    &--end {
+      color: #4bb627;
+    }
+  }
+}

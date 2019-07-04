@@ -4,6 +4,7 @@ import { PacienteNovoDTO } from 'src/app/domains/dtos/paciente-novo.dto';
 import { PacienteService } from 'src/app/core/services/paciente.service';
 import { NO_IMAGE_URL } from 'src/app/shared/constants/image.defeut';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-prontuario',
@@ -19,6 +20,7 @@ export class ProntuarioComponent implements OnInit, OnDestroy {
   imagem: Object = {};
   constructor(
     private route: ActivatedRoute,
+    private authService: AuthService,
     private pacienteService: PacienteService,
   ) { }
 
@@ -49,4 +51,11 @@ export class ProntuarioComponent implements OnInit, OnDestroy {
       });
   }
 
+  hideForRole(role: string) {
+    return !this.hasAuthority(role);
+  }
+
+  private hasAuthority(role: string) {
+    return this.authService.hasAuthority(role);
+  }
 }

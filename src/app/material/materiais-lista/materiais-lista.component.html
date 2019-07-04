@@ -1,0 +1,54 @@
+<div class="content">
+  <div class="header">
+    <h1 class="header__titulo">Lista de compra de materiais</h1>
+    <button type="button" class="header__botao-voltar header__botao-voltar--float" (click)="voltar()">
+      <i class="fas fa-undo-alt"></i>
+    </button>
+    <button id="voltar" type="button" class="header__botao-voltar header__botao-voltar--header" (click)="voltar()">
+      Voltar
+    </button>
+  </div>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [value]="materiais?.materiais" #tabela responsive="true">
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nome</th>
+            <th>Quantidade</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-material>
+          <tr>
+            <td>
+              <span class="ui-column-title">Nome</span>
+              {{material.nome}}
+            </td>
+            <td>
+              <span class="ui-column-title">Quantidade</span>
+              {{material.quantidade}}
+            </td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="2">
+              Lista de materiais vazia!<br />
+              Clique <a [routerLink]="['/materiais']">AQUI</a> para adicionar materiais.
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+
+  <div style="padding: 5px 0 10px 10px">
+    <app-button label="Limpar lista" icon="fas fa-trash" iconPosition="right"
+      [classes]="['botao--danger', isMobile() ? 'botao--full':'botao--grande']" (botaoClicado)="[limpar()]"
+      *ngIf="materiais">
+    </app-button>
+  </div>
+</div>

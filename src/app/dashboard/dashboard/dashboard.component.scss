@@ -1,0 +1,409 @@
+@import "../../../assets/scss/cores";
+@import "../../../assets/scss/mixins";
+
+.badge-grid {
+  grid-area: badges;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 6em;
+  grid-gap: 20px;
+}
+
+.badge-grid-chart {
+  grid-area: badges;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 6em;
+  grid-gap: 5px 70px;
+}
+
+.grid-consultas {
+  margin: 10px;
+  display: grid;
+  grid-template-areas:
+    "titulo titulo"
+    "badges badges"
+    "dados dados"
+    "detalhe detalhe";
+  grid-gap: 0;
+
+  &__title {
+    font-size: 1.8em;
+    grid-area: titulo;
+    color: $titles;
+    @include padding-bottom(5);
+    border-bottom: 1px solid darken($cor-fundo, 15%);
+  }
+
+  &__dados {
+    box-shadow: 1px 1px 2px 1px #bdbdbd;
+    grid-area: dados;
+    @include round-border($top-left: 10px, $bottom-left: 10px);
+    background-color: $branco;
+
+    &--sem-consulta {
+      @include round-border($top-right: 10px, $bottom-right: 10px, $top-left: 10px, $bottom-left: 10px);
+    }
+    &__data {
+      color: $titles;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid darken($cor-fundo, 15%);
+      margin: 0 15px;
+      &__numero {
+        font-size: 2.5em;
+        padding: 5px;
+      }
+
+      &__group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &__dia {
+          font-size: 0.9em;
+        }
+        &__mes {
+          font-size: 0.9em;
+          font-weight: bold;
+          color: $cor-menu;
+        }
+      }
+    }
+
+    &__row {
+      display: grid;
+      margin: 10px 15px;
+      grid-template-columns: 7px auto;
+      grid-template-rows: auto;
+
+      &__left {
+        @include round-border($top-left: 10px, $bottom-left: 10px);
+        &--success {
+          background-color: $badge-success;
+        }
+        &--warn {
+          background-color: $badge-warn;
+        }
+        &--danger {
+          background-color: $badge-error;
+        }
+      }
+
+      &__right {
+        transition: all 0.5s ease-in-out;
+        display: flex;
+        justify-content: space-between;
+        @include round-border($top-right: 10px, $bottom-right: 10px);
+        background-color: lighten($cor-fundo, 1%);
+        color: $titles;
+
+        &__name {
+          width: 360px;
+          font-size: 1.2em;
+          @include padding-all(10);
+        }
+
+        &__procedimento {
+          width: 360px;
+          font-size: 1em;
+          font-weight: bold;
+          @include padding(0, 0, 10px, 10px);
+        }
+
+        &__arrow {
+          font-size: 1.5em;
+          line-height: 78px;
+          @include padding(0, 8px, 0, 8px);
+        }
+
+        &__hora {
+          @include padding-all(12);
+          &__label {
+            text-align: center;
+            font-weight: bold;
+            width: 100%;
+          }
+          &__value {
+            font-size: 1.1em;
+
+            @include padding(10px, 0, 0, 0);
+          }
+        }
+
+        &__option {
+          font-size: 1.2em;
+          line-height: 78px;
+          color: rgb(41, 98, 255);
+          @include padding-right(15);
+
+          i {
+            cursor: pointer;
+          }
+        }
+
+        &--set-success {
+          background-color: lighten($badge-success, $amount: 32%);
+        }
+
+        &--set-warn {
+          background-color: lighten($badge-warn, $amount: 32%);
+        }
+
+        &--set-danger {
+          background-color: lighten($badge-error, $amount: 32%);
+        }
+
+        &--success:hover {
+          background-color: lighten($badge-success, $amount: 25%);
+        }
+        &--warn:hover {
+          background-color: lighten($badge-warn, $amount: 25%);
+        }
+        &--danger:hover {
+          background-color: lighten($badge-error, $amount: 25%);
+        }
+      }
+    }
+  }
+
+  &__details {
+    grid-area: detalhe;
+    box-shadow: 1px 1px 2px 1px #bdbdbd;
+    @include round-border($top-right: 10px, $bottom-right: 10px);
+    background-color: darken($branco, 1%);
+    min-width: 400px;
+
+    &__header {
+      color: $cor-menu;
+      font-weight: bold;
+      height: 67px;
+      line-height: 67px;
+      border-bottom: 1px solid darken($cor-fundo, 15%);
+      margin: 0 15px;
+      padding: 5px;
+      position: relative;
+      &__link {
+        position: absolute;
+        right: 0;
+        top: 31px;
+        color: rgb(41, 98, 255);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: darken(rgb(41, 98, 255), 20%);
+        }
+      }
+
+      &--mid {
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 10px;
+      }
+    }
+
+    &__image {
+      text-align: center;
+      margin: 10px auto;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      border: 3px solid #eeeeee;
+      box-shadow: inset 0 0 10px #8a8a8a;
+      align-self: center;
+    }
+
+    &__dados {
+      color: $titles;
+      text-align: center;
+      word-wrap: break-word;
+      &--main {
+        font-size: 1.2em;
+      }
+      &--toleft {
+        text-align: left;
+        margin: 0 20px;
+        padding: 0 10px;
+
+        &:last-child {
+          @include padding-bottom(15);
+        }
+      }
+
+      &--male {
+        i {
+          color: rgb(8, 66, 255);
+        }
+      }
+
+      &--female {
+        i {
+          color: rgb(255, 8, 193);
+        }
+      }
+    }
+  }
+}
+.scroll {
+  overflow: auto;
+  height: 380px;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: $cor-menu;
+  border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: darken($cor-menu, 10%);
+}
+
+.grid {
+  margin: 20px 10px;
+  display: grid;
+  grid-template-areas:
+    "head"
+    "data"
+    "chart"
+    "badges";
+  grid-gap: 15px 0;
+
+  &__title {
+    font-size: 1.8em;
+    grid-area: head;
+    color: $titles;
+    @include padding-bottom(5);
+    border-bottom: 1px solid darken($cor-fundo, 15%);
+  }
+
+  &__data {
+    box-shadow: 1px 1px 2px 1px #bdbdbd;
+    grid-area: data;
+    @include round-border($top-left: 10px, $bottom-left: 10px);
+    @include padding-bottom(5);
+    background-color: $branco;
+
+    &--chart {
+      grid-area: chart;
+      box-shadow: 1px 1px 2px 1px #bdbdbd;
+      @include round-border($top-right: 10px, $bottom-right: 10px);
+    }
+
+    &__head {
+      color: $titles;
+      border-bottom: 1px solid #f2f2f2;
+      margin: 0 15px;
+      text-align: center;
+      font-size: 1.4em;
+      font-weight: bold;
+      @include padding(5px, 5px, 10px, 5px);
+    }
+
+    &__row {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      margin: 0 15px;
+      @include padding-top-bottom(10, 10);
+      border-bottom: 1px solid #f2f2f2;
+      &:hover {
+        background-color: #f8f8ff;
+        cursor: pointer;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &__icon {
+        margin: 0 15px;
+        @include padding-all(7);
+        border-radius: 50%;
+        &--success {
+          background-color: #9ce1ba;
+          color: #1c7e47;
+        }
+        &--danger {
+          background-color: #ec9c99;
+          color: #8d1d1a;
+        }
+      }
+
+      &__value {
+        word-wrap: break-word;
+        color: $titles;
+        font-size: 1em;
+        @include padding-sides(10, 10);
+        display: inline-block;
+        &--money {
+          width: 140px;
+        }
+      }
+    }
+  }
+}
+
+.grid-semanal {
+  margin: 20px 10px;
+  display: grid;
+  grid-template-rows: auto 400px;
+  grid-template-areas:
+    "head head head"
+    "data data data";
+  grid-gap: 15px 0;
+
+  &__title {
+    font-size: 1.8em;
+    grid-area: head;
+    color: $titles;
+    @include padding-bottom(5);
+    border-bottom: 1px solid darken($cor-fundo, 15%);
+  }
+
+  &__data {
+    box-shadow: 1px 1px 2px 1px #bdbdbd;
+    grid-area: data;
+    @include round-border($top-right: 10px, $bottom-right: 10px, $top-left: 10px, $bottom-left: 10px);
+    @include padding-bottom(5);
+    background-color: $branco;
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .grid-consultas {
+    margin: 10px;
+    display: grid;
+    grid-template-areas:
+      "titulo titulo titulo"
+      "badges badges badges"
+      "dados dados detalhe";
+    grid-gap: 10px 0;
+
+    &--sem-consulta {
+      grid-template-areas:
+        "titulo titulo titulo"
+        "badges badges badges"
+        "dados dados dados";
+    }
+  }
+
+  .grid {
+    margin: 20px 10px;
+    display: grid;
+    grid-template-columns: 600px minmax(380px, 1fr) auto;
+    grid-template-areas:
+      "head head head"
+      "data chart ..."
+      "badges badges badges";
+    grid-gap: 15px 0;
+  }
+}

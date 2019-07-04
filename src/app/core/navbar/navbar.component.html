@@ -7,22 +7,31 @@
       <div id="menu-bar" class="botao-menu" (click)="isOpen = !isOpen">
         <i class="fas fa-bars"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(pacientes)" pTooltip="Pacientes">
+      <div class="botao-menu " [routerLink]="['/dashboard']" pTooltip="Início"
+        [ngClass]="{'active-menu' : isActiveRoute('dashboard', [''])}">
+        <i class="fas fa-home"></i>
+      </div>
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(pacientes)" pTooltip="Pacientes"
+        [ngClass]="{'active-menu' : isActiveRoute('pacientes', ['novo', 'edit', 'consultas', 'orcamentos', 'pagamentos', 'odontograma', 'anamnese', 'procedimentos'])}">
         <i class="fas fa-user-friends"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(agendamentos)" pTooltip="Agendamentos">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(agendamentos)" pTooltip="Agendamentos"
+        [ngClass]="{'active-menu' : isActiveRoute('agendamentos', ['novo', 'edit'])}">
         <i class="fas fa-calendar-alt"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)" pTooltip="Finanças">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(financas)" pTooltip="Finanças"
+        [ngClass]="{'active-menu' : isActiveRoute('despesas', ['novo', 'edit'])}">
         <i class="fas fa-dollar-sign"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)" pTooltip="Materiais">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)" pTooltip="Materiais"
+        *ngIf="hideForRole('RECEPCIONISTA')" [ngClass]="{'active-menu' : isActiveRoute('materiais', ['novo', 'edit', 'lista'])}">
         <i class="fas fa-toolbox"></i>
       </div>
-      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)" pTooltip="Configurações">
+      <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)" pTooltip="Configurações"
+        [ngClass]="{'active-menu' : isActiveRoute('usuarios', ['novo', 'edit', 'senha']) || isActiveRoute('procedimentos', ['novo', 'edit']) || isActiveRoute('categorias-despesa', ['categorias-despesa'])}">
         <i class="fas fa-cog"></i>
       </div>
-      <div class="botao-menu" pTooltip="Sair">
+      <div class="botao-menu" pTooltip="Sair" (click)="logout()">
         <i class="fas fa-sign-out-alt"></i>
       </div>
     </div>
@@ -34,6 +43,17 @@
             <i class="fas fa-bars" (click)="isOpen = !isOpen"></i>
           </div>
         </div>
+      </li>
+
+      <li class="drop-down-menu" [routerLink]="['/dashboard']" (click)="isOpen = !isOpen">
+        <input type="checkbox" class="ativar" id="dashboard" name="dashboard" #dashboard>
+        <label class="item-titulo top-menu" for="dashboard"
+          [ngClass]="{'active-menu' : isActiveRoute('dashboard', [''])}">
+          <i class="fas fa-home icon-esq"></i>
+          <div class="label-titulo">
+            Início
+          </div>
+        </label>
       </li>
 
       <li class="drop-down-menu">
@@ -100,7 +120,7 @@
         </ul>
       </li>
 
-      <li class="drop-down-menu">
+      <li class="drop-down-menu" [ngStyle]="{'display': hideForRole('RECEPCIONISTA') ? '' :'none'}">
         <input type="checkbox" class="ativar" id="materiais" name="materiais" #materiais>
         <label id="label-materiais" for="materiais" class="item-titulo top-menu">
           <i class="fas fa-toolbox icon-esq"></i>
@@ -108,10 +128,16 @@
         </label>
 
         <ul class="drop-down">
-          <li class="last item-submenu" (click)="isOpen = !isOpen">
-            <a id="item-despesa" [routerLink]="['/materiais']" routerLinkActive="active">Catálogo</a>
+          <li class="item-submenu" (click)="isOpen = !isOpen">
+            <a id="item-despesa" [routerLink]="['/materiais/lista']" routerLinkActive="active">Lista</a>
           </li>
         </ul>
+
+        <ul class="drop-down">
+            <li class="last item-submenu" (click)="isOpen = !isOpen">
+              <a id="item-despesa" [routerLink]="['/materiais']" [routerLinkActiveOptions]="{exact: true}"routerLinkActive="active">Catálogo</a>
+            </li>
+          </ul>
       </li>
 
       <li class="drop-down-menu">
@@ -121,7 +147,7 @@
           <div class="label-titulo">Configurações</div> <i id='arrow' class="fas fa-angle-right icon-dir"></i>
         </label>
 
-        <ul class="drop-down">
+        <ul class="drop-down" *ngIf="showOnlyForRole('ADMINISTRADOR')">
           <li class="item-submenu" (click)="isOpen = !isOpen">
             <a id="usuarios" routerLinkActive="active" [routerLink]="['/usuarios']">Usuários</a>
           </li>
@@ -135,17 +161,21 @@
 
         <ul class="drop-down">
           <li class="last item-submenu" (click)="isOpen = !isOpen">
-            <a id="categorias-despesa" routerLinkActive="active" [routerLink]="['/categorias-despesa']">Categorias de
-              Despesas</a>
+            <a id="categorias-despesa" routerLinkActive="active" [routerLink]="['/categorias-despesa']">
+              Categorias de
+              Despesas
+            </a>
           </li>
         </ul>
 
       </li>
 
-      <li class="drop-down-menu">
+      <li class="drop-down-menu" (click)="logout()">
         <label class="item-titulo top-menu">
           <i class="fas fa-sign-out-alt icon-esq"></i>
-          <div class="label-titulo">Sair</div>
+          <div class="label-titulo">
+            Sair
+          </div>
         </label>
       </li>
     </ul>

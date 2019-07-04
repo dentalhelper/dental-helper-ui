@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 
 import { URL_API } from 'src/app/app.api';
+import { AppHttp } from 'src/app/seguranca/app-http';
 import { Despesa } from 'src/app/domains/despesa.model';
 import { DespesaFilter } from '../classes/despesa-filter';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 import * as moment from 'moment';
 
 @Injectable({
@@ -16,7 +18,7 @@ export class DespesaService {
 
   DESPESA_URL = `${URL_API}/despesas`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: AppHttp) { }
 
   salvar(despesa: Despesa): Observable<string> {
     return this.http.post<Despesa>(`${this.DESPESA_URL}/novo`, despesa)

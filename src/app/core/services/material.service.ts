@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpParams } from '@angular/common/http';
+
 import { URL_API } from 'src/app/app.api';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { MaterialFilter } from '../classes/material-filter';
+import { AppHttp } from 'src/app/seguranca/app-http';
 import { Material } from 'src/app/domains/material.model';
+import { MaterialFilter } from '../classes/material-filter';
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -13,7 +16,7 @@ export class MaterialService {
 
   MATERIAL_URL = `${URL_API}/materiais`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: AppHttp) { }
 
   salvar(material: Material): Observable<string> {
     return this.http.post<Material>(`${this.MATERIAL_URL}/novo`, material)

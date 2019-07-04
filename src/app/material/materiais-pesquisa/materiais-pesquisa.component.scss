@@ -25,4 +25,17 @@
       }
     }
   }
+
+  .i-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px;
+    &__ref-container {
+      &__group {
+        padding: 10px 10px 0 10px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
 }

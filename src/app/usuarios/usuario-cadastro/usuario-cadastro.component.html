@@ -1,6 +1,6 @@
 <div class="content">
   <div class="header">
-    <h1 class="header__titulo">Cadastro de Usuário</h1>
+    <h1 class="header__titulo">{{isEditando ? 'Editando ': 'Cadastro de '}}Usuário</h1>
     <button type="button" class="header__botao-voltar header__botao-voltar--float" (click)="voltar()">
       <i class="fas fa-undo-alt"></i>
     </button>
@@ -8,14 +8,10 @@
       Cancelar
     </button>
   </div>
-
   <div class="form">
     <form novalidate [formGroup]="formulario" class="i-container">
       <div class="i-container__legend">
         <h2 class="i-container__legend__title">Dados pessoais</h2>
-      </div>
-
-      <div class="i-container__pessoais">
       </div>
 
       <app-input-container label="Nome" for="nome" errorMessage="Nome é obrigatório (Até 50 caracteres).">
@@ -26,7 +22,7 @@
         <p-calendar [showIcon]="isMobile()" [touchUI]="isMobile()" [baseZIndex]="100" [readonlyInput]="isMobile()"
           inputId="data-nascimento" dateFormat="dd/mm/yy" [locale]="pt_BR" [monthNavigator]="true"
           [yearNavigator]="true" yearRange="1940:2020" formControlName="dataNascimento"
-          [style]="{'width': isMobile() ?'70%':'100%', 'margin-bottom':'20px'}">
+          [style]="{'width': isMobile() ?'70%':'418px', 'margin-bottom':'20px'}">
         </p-calendar>
       </app-input-container>
 
@@ -59,36 +55,42 @@
         <input class="i-container__input" type="text" id="logradouro" formControlName="logradouro">
       </app-input-container>
 
-      <app-input-container label="Número" for="numero" errorMessage="Número é obrigatório.">
+      <app-input-container label="Número" for="numero" errorMessage="Obrigatório.">
         <input class="i-container__input" type="text" id="numero" formControlName="numero">
       </app-input-container>
 
-      <app-input-container label="Bairro" for="bairro" errorMessage="Bairro é obrigatório">
-        <input class="i-container__input" type="text" id="bairro" formControlName="bairro">
-      </app-input-container>
+      <div class="group-flex">
 
-      <app-input-container label="Complemento" for="complemento" hint="opcional">
-        <input class="i-container__input" type="text" id="complemento" formControlName="complemento">
-      </app-input-container>
+        <app-input-container label="Bairro" for="bairro" errorMessage="Bairro é obrigatório">
+          <input class="i-container__input" type="text" id="bairro" formControlName="bairro">
+        </app-input-container>
+
+        <app-input-container label="Complemento" for="complemento" hint="opcional">
+          <input class="i-container__input" type="text" id="complemento" formControlName="complemento">
+        </app-input-container>
+
+      </div>
 
       <app-input-container label="CEP" for="cep" errorMessage="CEP é obrigatório.">
         <input class="i-container__input" type="text" id="cep" formControlName="cep" mask="00000-000">
       </app-input-container>
 
+
       <div style="margin-bottom:15px; padding-top: 3px;">
         <label class="i-container__label" for="categoria-filtro" id="categoria-filtro-label">Estado</label>
+        <br>
         <p-dropdown [options]="estadosOptions" placeholder="Selecione" [filter]="!isMobile()"
-          emptyFilterMessage="Estado não encontrado!" [style]="{'width': '100%'}" inputId="estado"
-          (onChange)="carregarCidades($event.value)">
+          emptyFilterMessage="Estado não encontrado!" [style]="{'width': '418px'}" inputId="estado"
+          (onChange)="carregarCidades($event.value)" formControlName="codigoEstado">
         </p-dropdown>
       </div>
 
 
       <app-input-container label="Cidade" for="cidade" errorMessage="Selecione uma cidade." [dropdown]="true">
         <div style="padding-bottom:20px;">
-          <p-dropdown [options]="cidadesOptions" placeholder="Selecione" [disabled]="cidadesOptions.length === 0"
-            [filter]="!isMobile()" emptyFilterMessage="Cidade não encontrada!" [style]="{'width': '100%'}"
-            inputId="cidade" formControlName="codigoCidade" [style]="{'width': '100%', 'margin-bottom':'20px'}">
+          <p-dropdown [options]="cidadesOptions" placeholder="Selecione" [filter]="!isMobile()"
+            emptyFilterMessage="Cidade não encontrada!" inputId="cidade" formControlName="codigoCidade"
+            [style]="{'width': '418px', 'margin-bottom':'20px'}">
           </p-dropdown>
         </div>
       </app-input-container>
@@ -97,18 +99,17 @@
         <h2 class="i-container__legend__title">Contato</h2>
       </div>
 
-      <app-input-container label="Telefone principal" for="telefone-principal" hint="opcional">
-        <input class="i-container__input" type="text" id="telefone-principal" formControlName="telefonePrincipal"
-          mask="(00) 00000-0000">
-      </app-input-container>
+      <div class="group-flex">
+        <app-input-container label="Telefone principal" for="telefone-principal" hint="opcional">
+          <input class="i-container__input" type="text" id="telefone-principal" formControlName="telefonePrincipal"
+            mask="(00) 00000-0000">
+        </app-input-container>
 
-      <app-input-container label="Telefone 2" for="telefone" hint="opcional">
-        <input class="i-container__input" type="text" id="telefone" formControlName="telefone2" mask="(00) 00000-0000">
-      </app-input-container>
-
-      <app-input-container label="E-mail" for="email" errorMessage="E-mail inválido." hint="opcional">
-        <input class="i-container__input" type="text" id="email" formControlName="email">
-      </app-input-container>
+        <app-input-container label="Telefone 2" for="telefone" hint="opcional">
+          <input class="i-container__input" type="text" id="telefone" formControlName="telefone2"
+            mask="(00) 00000-0000">
+        </app-input-container>
+      </div>
 
       <div class="i-container__legend">
         <h2 class="i-container__legend__title">Dados de Acesso</h2>
@@ -120,23 +121,35 @@
         </p-selectButton>
       </app-input-container>
 
-      <app-input-container label="Nome de Usuário" for="nome-user"
-        errorMessage="Nome é obrigatório (Até 50 caracteres).">
-        <input class="i-container__input" type="text" id="nome-user" formControlName="login">
-      </app-input-container>
+      <div class="group-flex">
+        <app-input-container label="E-mail" for="email" errorMessage="E-mail inválido.">
+          <input class="i-container__input" type="text" id="email" formControlName="email">
+        </app-input-container>
 
-      <app-input-container label="Senha" for="senha" errorMessage="Senha é obrigatória.">
-        <input class="i-container__input" type="password" id="senha" formControlName="senha" autocomplete="none">
-      </app-input-container>
+        <app-input-container label="Nome de Usuário" for="nome-user" errorMessage="Usuário é obrigatório.">
+          <input class="i-container__input" type="text" id="nome-user" formControlName="login">
+        </app-input-container>
 
-      <app-input-container label="Confirmação de Senha" for="senha-confirm" errorMessage="Confirmação é obrigatória.">
-        <input class="i-container__input" type="password" id="senha-confirm" formControlName="senhaconfirm"
-          autocomplete="none">
-      </app-input-container>
+      </div>
 
+      <span class="i-container__message i-container__message--error" *ngIf="formulario.hasError('senhaDiferente')">
+        <i class="fas fa-times"> Confirmação de senha incorreta</i>
+      </span>
+
+      <div class="group-flex" *ngIf="!edicao">
+        <app-input-container label="Senha" for="senha" errorMessage="Senha é obrigatória.">
+          <input class="i-container__input" type="password" id="senha" formControlName="senha" autocomplete="none">
+        </app-input-container>
+
+        <app-input-container label="Confirmação de Senha" for="senha-confirm" errorMessage="Confirmação obrigatória."
+          [dropdown]="formulario.hasError('senhaDiferente')">
+          <input class="i-container__input" type="password" id="senha-confirm" formControlName="senhaconfirm"
+            autocomplete="none">
+        </app-input-container>
+      </div>
       <app-button label="Salvar" icon="fas fa-hdd" iconPosition="right"
-        [classes]="['botao--success', isMobile() ? 'botao--full':'botao--grande']"
-        [desativar]="formulario.invalid" (botaoClicado)="[submeterFormulario()]">
+        [classes]="['botao--success', isMobile() ? 'botao--full':'botao--grande']" [desativar]="formulario.invalid"
+        (botaoClicado)="[submeterFormulario()]">
       </app-button>
     </form>
   </div>

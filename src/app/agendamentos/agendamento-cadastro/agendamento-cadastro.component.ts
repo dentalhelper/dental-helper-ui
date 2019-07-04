@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit, OnDestroy, AfterContentInit } from '@angular/core';
@@ -14,7 +14,8 @@ import { PacienteService } from 'src/app/core/services/paciente.service';
 import { EMAIL_PATTERN } from 'src/app/shared/constants/validators.regex';
 import { STATUS_AGENDAMENTO } from 'src/app/shared/constants/domains.enums';
 import { AgendamentoService } from 'src/app/core/services/agendamento.service';
-import { ProcedimentoService } from 'src/app/core/services/procedimento.service';
+import { PacienteProcedimentoDTO } from 'src/app/domains/dtos/paciente-procedimento.dto';
+import { ProcedimentoPrevistoResumoDTO } from 'src/app/domains/dtos/procedimento-previsto-resumo.dto';
 
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -86,7 +87,6 @@ declare var $: any;
 })
 export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterContentInit {
 
-
   private subscription: Subscription;
 
   activeTab = 'pronto';
@@ -100,6 +100,7 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
   pt_BR = pt_BR;
   edicao = false;
   codigoAgendamento: number;
+  codigoPaciente: number;
 
   estadosOptions = [];
   cidadesOptions = [];
@@ -117,6 +118,11 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
     { label: 'Masculino', value: 2 }
   ];
 
+  primeiraAvaliacaoSelect = [
+    { label: 'Sim', value: true, icon: 'fa fa-check-circle' },
+    { label: 'Não', value: false, icon: 'fa fa-times' }
+  ];
+
   statusAgendamento = STATUS_AGENDAMENTO;
 
   constructor(
@@ -127,7 +133,6 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
     private estadoService: EstadoService,
     private pacienteService: PacienteService,
     private agendamentoService: AgendamentoService,
-    private procedimentoService: ProcedimentoService,
   ) { }
 
   ngOnInit() {
@@ -136,11 +141,10 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
     this.prepararFormulario();
     this.prepararFormularioDePaciente();
     this.carregarPacientes();
-    this.carregarProcedimentos();
     this.title.setTitle('Nova Consulta');
 
     const codigoAgendamento = this.route.snapshot.params['codigo'];
-
+    this.codigoPaciente = this.route.snapshot.params['data'];
     if (codigoAgendamento) {
       this.edicao = true;
       this.codigoAgendamento = codigoAgendamento;
@@ -151,8 +155,8 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
   ngAfterContentInit(): void {
     this.subscription = this.route.fragment.subscribe((event) => {
       if (event) {
-        this.predefirnirData(moment(event).format('DD/MM/YYYY'));
-        this.predefinirHora(moment(event).format('hh:mm'));
+        this.predefirnirData(event);
+        this.predefinirHora(event);
       }
     });
   }
@@ -178,6 +182,7 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
         updateOn: 'change',
         validators: [Validators.required]
       }),
+      codigoOrcamento: new FormControl(''),
       dataAgendamento: new FormControl('', {
         updateOn: 'change',
         validators: [Validators.required]
@@ -187,7 +192,7 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
         validators: [Validators.required]
       }),
       horaFim: new FormControl(null),
-      codigoProcedimento: new FormControl('', {
+      codigoProcedimentoPrevisto: new FormControl({ value: '', disabled: true }, {
         updateOn: 'change',
         validators: [Validators.required]
       }),
@@ -243,6 +248,8 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
   }
 
   salvar() {
+    const form = this.formulario.value;
+    delete form['codigoPaciente'];
     this.agendamentoService.salvar(this.formulario.value)
       .subscribe(() => {
         this.voltar();
@@ -270,6 +277,11 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
             image: elemento.urlDaFoto
           })
         );
+        if (this.codigoPaciente) {
+          this.pacienteSelecionado(this.codigoPaciente);
+          this.formulario.patchValue({ codigoPaciente: +this.codigoPaciente });
+          this.formulario.get('codigoPaciente').disable();
+        }
       });
   }
 
@@ -278,17 +290,20 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
     this.pacienteService.buscarPorCodigo(event)
       .subscribe((response) => {
         this.selecionado = response.urlDaFoto;
+        this.pacienteService.buscarProcedimentos(event)
+          .subscribe((procedimentosResponse: PacienteProcedimentoDTO) => {
+            this.carregarProcedimentos(procedimentosResponse.procedimentos);
+          });
       });
   }
 
-  carregarProcedimentos() {
-    this.procedimentoService.pesquisar('')
-      .subscribe((response) => {
-        this.procedimentos = response.map(elemento => ({
-          value: elemento.codigo,
-          label: elemento.nome
-        }));
-      });
+  carregarProcedimentos(procedimentos: ProcedimentoPrevistoResumoDTO[]) {
+    this.formulario.get('codigoProcedimentoPrevisto').enable();
+    this.procedimentos = procedimentos.map(elemento => ({
+      value: elemento.codigo,
+      label: elemento.nomeProcedimento
+    }));
+
   }
 
   novoPaciente() {
@@ -303,7 +318,7 @@ export class AgendamentoCadastroComponent implements OnInit, OnDestroy, AfterCon
         })
       )
       .subscribe(() => {
-        const mensagemToast = `"${this.nome}" foi salvo(a)."`;
+        const mensagemToast = `"${this.nome}" foi salvo(a).`;
         this.sidebar = false;
         this.toastService.exibirSucesso(mensagemToast);
         this.formularioDePaciente.reset();

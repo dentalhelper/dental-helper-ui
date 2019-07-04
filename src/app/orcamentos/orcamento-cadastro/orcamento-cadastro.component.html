@@ -28,6 +28,31 @@
             </div>
 
             <div class="i-container__item__button-group">
+
+              <!-- SELECT DO DENTE -->
+              <div class="i-container__item__button-group__dente">
+                <app-input-container label="Dente" *ngIf="temValor(i)" [dropdown]="true">
+                  <app-button icon="fas fa-tooth" iconPosition="left" [classes]="['botao--optional', 'botao--grande']"
+                    (botaoClicado)="[toggleDentes(odontogama)]" pTooltip="Selecionar dente" tooltipPosition="top"
+                    [label]="formulario.value.procedimentos[i].codDentes[0]">
+                  </app-button>
+
+                  <app-odontograma-select formControlName="codDentes" [dentes]="dentes" [exibir]="isExibindo"
+                    #odontogama>
+                  </app-odontograma-select>
+                </app-input-container>
+              </div>
+
+              <!-- SELECT DA FACE -->
+              <div class="i-container__item__button-group__valor">
+                <app-input-container label="Face" *ngIf="temValor(i)" [dropdown]="true">
+                  <p-dropdown [options]="facesDoDente" placeholder="Selecione" [filter]="!isMobile()"
+                    emptyFilterMessage="Face não encontrada!" formControlName="faceDente"
+                    [style]="{'width': '100px', 'margin-bottom':'20px'}">
+                  </p-dropdown>
+                </app-input-container>
+              </div>
+
               <div class="i-container__item__button-group__valor">
                 <app-input-container label="Valor" *ngIf="temValor(i)" [dropdown]="true">
                   <input class="i-container__input" type="text" currencyMask formControlName="valor"
@@ -55,10 +80,16 @@
 
       <div class="i-container__resumo-box">
         <div class="i-container__resumo-box__desconto">
+          <app-input-container label="Aprovar orçamento" [dropdown]="true" *ngIf="!isEditando">
+            <p-selectButton [options]="aprovadoOpcoes" formControlName="aprovado" [style]="{'margin-bottom':'10px'}">
+            </p-selectButton>
+          </app-input-container>
+
           <app-input-container label="Desconto" for="desconto" [dropdown]="true">
             <input class="i-container__input" type="text" currencyMask id="desconto" formControlName="desconto"
               (keyup)="aplicarDesconto()" (blur)="aplicarDesconto()">
           </app-input-container>
+
         </div>
 
         <div class="i-container__resumo-box__valor">

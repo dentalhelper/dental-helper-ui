@@ -188,6 +188,9 @@ export class AgendamentoPesquisaComponent implements OnInit, OnDestroy {
     }
   }
 
+  obterDataAtual() {
+    return new Date();
+  }
   configurarCalendario() {
     this.calendarComponent.eventLimitText = 'consultas';
     this.calendarComponent.header = {

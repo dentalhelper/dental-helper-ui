@@ -1,0 +1,99 @@
+<div class="content" [@linha]="activeTab">
+
+  <div class="header">
+    <h1 class="header__titulo">Odontograma</h1>
+    <button type="button" class="header__botao-add header__botao-add--float"
+      [routerLink]="['/odontograma', codigPaciente, 'edit']">
+      <i class="fas fa-plus"></i>
+    </button>
+    <button id="edit-odontograma" type="button" class="header__botao-add header__botao-add--header"
+      [routerLink]="['/odontograma', codigPaciente, 'edit']">
+      Editar Odontograma
+    </button>
+  </div>
+
+
+  <div class="container">
+    <div class="odontograma__container">
+      <div class="odontograma__container__dados">
+        <label class="odontograma__container__dados__label">Forma</label>
+        <img class="odontograma__container__dados__image"
+          src="../../../assets/images/formas/{{ odontograma?.formaRosto | formaRosto }}" alt="Formato do rosto">
+      </div>
+
+      <div class="odontograma__container__dados odontograma__container__dados--col">
+        <div class="odontograma__container__dados odontograma__container__dados--space">
+          <label class="odontograma__container__dados__label">Escala</label>
+          <span class="odontograma__container__dados__data">{{ odontograma?.escalaDente | uppercase }}</span>
+        </div>
+
+        <div class="odontograma__container__dados odontograma__container__dados--space">
+          <label class="odontograma__container__dados__label">Cor</label>
+          <span class="odontograma__container__dados__data">{{ odontograma?.corDente | uppercase }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="grid__container">
+      <div class="grid__container__dentes grid__container__dentes--top" *ngFor="let dente of dentesTop"
+        (click)="exibirInformacoes($event, dente, '433px')">
+        <img class="grid__container__dentes__image"
+          src="../../assets/images/dentes/{{verificarStatusDoDente(dente)}}.png" alt="Dente {{dente.numero}}">
+        <p class="grid__container__dentes__number">{{dente.numero}}</p>
+      </div>
+
+      <div class="grid__container__dentes grid__container__dentes--bottom" *ngFor="let dente of dentesBot"
+        (click)="exibirInformacoes($event, dente, '320px')">
+        <p class="grid__container__dentes__number">{{dente.numero}}</p>
+        <img class="grid__container__dentes__image"
+          src="../../assets/images/dentes/{{verificarStatusDoDente(dente)}}.png" alt="Dente {{dente.numero}}">
+      </div>
+    </div>
+
+    <div class="grid__info" [ngStyle]="{'position': 'absolute', 'left': x, 'top': y}" *ngIf="exibirInformacao">
+      <div class="grid__info__title">
+        <span class="grid__info__title__name">Dente {{denteSelecionado.numero}}</span>
+        <i class="fas fa-times-circle grid__info__title__icon" (click)="exibirInformacao = false"></i>
+      </div>
+
+      <div class="grid__info__tratamentos">
+        <span class="grid__info__tratamentos__title grid__info__tratamentos__title--andamento">
+          Tratamentos em andamento:
+        </span>
+        <ol class="grid__info__tratamentos__item" *ngFor="let procedimento of denteSelecionado.procedimentos">
+          <li *ngIf="!procedimento.finalizado">{{procedimento.nome}}</li>
+        </ol>
+      </div>
+
+      <div class="grid__info__tratamentos">
+        <span class="grid__info__tratamentos__title grid__info__tratamentos__title--finalizado">Tratamentos
+          finalizados:</span>
+        <ol class="grid__info__tratamentos__item" *ngFor="let procedimento of denteSelecionado.procedimentos">
+          <li *ngIf="procedimento.finalizado">{{procedimento.nome}}</li>
+        </ol>
+      </div>
+
+      <div class="grid__info__link">
+        <a [routerLink]="['/pacientes',codigPaciente, 'procedimentos']">Ver procedimentos</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="status">
+    <div class="status__label status__label--empty">
+      <div class="status__label__square status__label__square--empty"></div>
+      <span class="status__label__name">Sem tratamentos</span>
+    </div>
+    <div class="status__label status__label--course">
+      <div class="status__label__square status__label__square--course"></div>
+      <span class="status__label__name">Em andamento</span>
+    </div>
+    <div class="status__label status__label--end">
+      <div class="status__label__square status__label__square--end"></div>
+      <span class="status__label__name">Finalizado</span>
+    </div>
+  </div>
+
+</div>

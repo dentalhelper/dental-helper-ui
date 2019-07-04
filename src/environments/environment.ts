@@ -4,8 +4,11 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:8080/'
+  api: 'http://localhost:8080',
   //api: 'http://192.168.0.101:8080/'
+
+  tokenWhitelistedDomains: [new RegExp('localhost:8080')],
+  tokenBlacklistedRoutes: [new RegExp('\/oauth\/token')]
 };
 
 /*

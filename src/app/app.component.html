@@ -9,11 +9,12 @@
 <app-categoria-despesa-cadastro></app-categoria-despesa-cadastro>
 -->
 
-<div class="container">
-  <app-navbar></app-navbar>
+<div class="container" [ngStyle]="{'display': (isLogin()) ? 'grid' : 'block'}">
+  <app-navbar *ngIf="isLogin()"></app-navbar>
   <router-outlet></router-outlet>
   <p-toast key="toast-desktop" position="top-right"></p-toast>
   <p-toast key="toast-mobile" position="top-center"></p-toast>
+  <p-toast key="toast-center" position="top-center"></p-toast>
 
   <!-- TODO: Implementar após a finalização do app-toast-link
 

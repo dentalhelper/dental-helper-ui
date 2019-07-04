@@ -197,23 +197,25 @@ export class PagamentosComponent implements OnInit, AfterContentInit {
   visualizar() {
 
     const mensagemToast = `"Operação não implementada"`;
-        this.toastService.exibirAviso(mensagemToast);
+    this.toastService.exibirAviso(mensagemToast);
   }
 
   carregarPagamentos() {
     this.resetarBadges();
-    this.pacienteService.buscarPagamentos(this.codigPaciente).subscribe((response) => {
-      response.forEach(pagamento => {
-        if (pagamento.statusPagamento === 2) {
-          this.valorPago += pagamento.valorPago;
-        }
-        if (pagamento.statusPagamento === 1) {
-          this.valorEmAberto += pagamento.valorEmAberto;
-        }
+    this.pacienteService.buscarPagamentos(this.codigPaciente)
+      .subscribe((response) => {
+        response.forEach(pagamento => {
+          if (pagamento.statusPagamento === 2) {
+            this.valorPago += pagamento.valorPago;
+          }
+          if (pagamento.statusPagamento === 1) {
+            this.valorPago += pagamento.valorPago;
+            this.valorEmAberto += pagamento.valorEmAberto;
+          }
+        });
+        this.valorTotal = this.valorPago + this.valorEmAberto;
+        this.pagamentos = response;
       });
-      this.valorTotal = this.valorPago + this.valorEmAberto;
-      this.pagamentos = response;
-    });
   }
 
   resetarBadges() {

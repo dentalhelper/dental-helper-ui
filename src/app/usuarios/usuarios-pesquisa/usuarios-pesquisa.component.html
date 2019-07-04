@@ -39,20 +39,26 @@
               {{ usuario.tipo }}
             </td>
             <td>
-              <!-- TODO: Busca de telefones na API -->
               <span class="ui-column-title">Telefone</span>
-              {{ usuario.telefone }}
+              {{ usuario.telefonePrincipal | telefone }}
             </td>
             <td>
               <div class="operacoes">
-                <!-- TODO: implementar edição [routerLink]="['/usuarios', usuario.codigo, 'edit']" -->
-                <button type="button" class="operacoes__button operacoes__button--edit"
-                   pTooltip="Editar" tooltipPosition="top" (click)="editar(usuario)">
+                <button type="button" class="operacoes__button operacoes__button--edit" pTooltip="Editar"
+                  tooltipPosition="top" [routerLink]="['/usuarios', usuario.codigo, 'edit']">
                   <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
-                <button type="button" class="operacoes__button operacoes__button--delete" (click)="desativar(usuario)"
-                  pTooltip="Desativar" tooltipPosition="top">
-                  <fa-icon [icon]="['fas', 'ban']" size="lg" [fixedWidth]="true"></fa-icon>
+
+                <button type="button" class="operacoes__button operacoes__button--password" pTooltip="Alterar Senha"
+                  tooltipPosition="top" [routerLink]="['/usuarios', usuario.codigo, 'senha']">
+                  <fa-icon [icon]="['fas', 'unlock-alt']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
+
+                <button type="button" class="operacoes__button operacoes__button--delete"
+                  (click)="alterarStatus(usuario.codigo)" [pTooltip]="usuario.ativo ? 'Desativar' : 'Ativar'"
+                  tooltipPosition="top">
+                  <fa-icon [icon]="['fas', usuario.ativo ? 'user-check' : 'user-times']" size="lg" [fixedWidth]="true">
+                  </fa-icon>
                 </button>
               </div>
             </td>

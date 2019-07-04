@@ -1,0 +1,9 @@
+<div class="odontograma" *ngIf="exibir" [@linha]="estadoDoItem">
+  <div class="grid-container">
+    <div class="dente" [class.active]="dente.codigo === denteSelecionado[0]" (click)="selecionarDente(dente.codigo)"
+      *ngFor="let dente of dentes">
+      <img src="../../assets/images/dentes/{{dente.numero}}.png" alt="Dente: {{dente.numero}}">
+      <p>{{ dente.numero }}</p>
+    </div>
+  </div>
+</div>

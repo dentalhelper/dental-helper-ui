@@ -1,0 +1,72 @@
+@import "../../../assets/scss/cores";
+@import "../../../assets/scss/mixins";
+
+.badge {
+  font-weight: bold;
+  font-size: 1em;
+  color: $branco;
+
+  &__left {
+    float: left;
+    width: 70%;
+    height: 96px;
+    @include round-border($top-left: 5px, $bottom-left: 5px);
+
+    &__title {
+      @include padding(10px, $left: 10px);
+      font-size: 1em;
+    }
+
+    &__value {
+      @include padding(10px, $left: 10px);
+      font-size: 2em;
+    }
+
+    &--total {
+      background-color: $badge-primary;
+    }
+
+    &--success {
+      background-color: $badge-success;
+    }
+
+    &--waiting {
+      background-color: $badge-warn;
+    }
+
+    &--cancel {
+      background-color: $badge-error;
+    }
+  }
+
+  &__right {
+    float: right;
+    width: 30%;
+    height: 100%;
+    @include round-border($top-right: 5px, $bottom-right: 5px);
+
+    &__icon {
+      text-align: center;
+      width: 100%;
+      line-height: 96px;
+      height: 100%;
+      font-size: 2em;
+    }
+
+    &--total {
+      background-color: $badge-primary-light;
+    }
+
+    &--success {
+      background-color: $badge-success-light;
+    }
+
+    &--waiting {
+      background-color: $badge-warn-light;
+    }
+
+    &--cancel {
+      background-color: $badge-error-light;
+    }
+  }
+}

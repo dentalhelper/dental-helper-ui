@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 
 import { URL_API } from 'src/app/app.api';
+import { AppHttp } from 'src/app/seguranca/app-http';
 import { AgendamentoNovoDTO } from 'src/app/domains/dtos/agendamento-novo.dto';
 import { AgendamentoResumoDTO } from 'src/app/domains/dtos/agendamento-resumo.dto';
 
-import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
 
 import * as moment from 'moment';
 
@@ -19,7 +20,7 @@ export class AgendamentoService {
 
   AGENDAMENTO_URL = `${URL_API}/agendamentos`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: AppHttp) { }
 
   salvar(agendamento: any): Observable<any> {
     agendamento.horaInicio = this.converterDataHoraParaString(agendamento.horaInicio);

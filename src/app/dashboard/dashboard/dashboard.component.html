@@ -1,0 +1,134 @@
+<div class="grid-consultas {{consultaSelecionada ? '' : 'grid-consultas--sem-consulta'}} ">
+  <h1 class="grid-consultas__title">Consultas de hoje</h1>
+
+  <div class="badge-grid">
+    <app-badge title="Consultas Marcadas" icon="fa-calendar-day" [value]="badgeConsultas.total" styleFor="total">
+    </app-badge>
+
+    <app-badge title="Realizadas" icon="fa-calendar-check" [value]="badgeConsultas.realizada" styleFor="success">
+    </app-badge>
+
+    <app-badge title="Pendentes" icon="fa-calendar-alt" [value]="badgeConsultas.pendente" styleFor="waiting">
+    </app-badge>
+
+    <app-badge title="Canceladas" icon="fa-calendar-times" [value]="badgeConsultas.cancelada" styleFor="cancel">
+    </app-badge>
+  </div>
+
+  <div class="grid-consultas__dados {{consultaSelecionada ? '' : 'grid-consultas__dados--sem-consulta'}}">
+    <div class="grid-consultas__dados__data">
+      <div class="grid-consultas__dados__data__numero">
+        {{dataHoje.dia}}
+      </div>
+      <div class="grid-consultas__dados__data__group">
+        <div class="grid-consultas__dados__data__group__dia">{{ dataHoje.diaSemana }}</div>
+        <div class="grid-consultas__dados__data__group__mes">{{ dataHoje.mes }} {{ dataHoje.ano }}</div>
+      </div>
+    </div>
+
+    <div class="scroll">
+      <div class="grid-consultas__dados__row" *ngFor="let consulta of consultas">
+        <div
+          class="grid-consultas__dados__row__left grid-consultas__dados__row__left--{{consulta.status | corStatusAgendamento}}">
+        </div>
+        <div
+          class="grid-consultas__dados__row__right grid-consultas__dados__row__right--{{consulta.status | corStatusAgendamento}} {{consulta?.horaInicio === consultaSelecionada?.horaInicio ? 'grid-consultas__dados__row__right--set-' : ''}}{{consulta.status | corStatusAgendamento}}">
+          <div>
+            <h3 class="grid-consultas__dados__row__right__name">
+              {{ consulta.nomePaciente }}
+            </h3>
+            <div class="grid-consultas__dados__row__right__procedimento">
+              {{ consulta.nomeProcedimento }}
+            </div>
+          </div>
+
+          <div class="grid-consultas__dados__row__right__arrow">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="grid-consultas__dados__row__right__hora">
+            <div class="grid-consultas__dados__row__right__hora__label">Hora</div>
+            <div class="grid-consultas__dados__row__right__hora__value">{{ consulta.horaInicio }}</div>
+          </div>
+          <div class="grid-consultas__dados__row__right__option">
+            <i class="fas fa-ellipsis-v" (click)="exibirConsulta(consulta)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-consultas__details" *ngIf="consultaSelecionada">
+    <div class="grid-consultas__details__header">
+      Ficha do paciente
+      <i class="fas fa-external-link-alt grid-consultas__details__header__link" (click)="navegarParaPaciente()"></i>
+    </div>
+    <div class="grid-consultas__details__image" [ngStyle]="imagem" style="background-size: cover;"></div>
+
+    <div class="grid-consultas__details__dados">
+      <small>#{{ consultaSelecionada.codPaciente }}</small>
+    </div>
+
+    <div
+      class="grid-consultas__details__dados grid-consultas__details__dados--main grid-consultas__details__dados--{{consultaSelecionada.sexo === 1 ? 'female':'male'}}">
+      {{ consultaSelecionada.nomePaciente }} <i class="fas fa-{{consultaSelecionada.sexo === 1 ? 'venus':'mars'}}"></i>
+    </div>
+
+    <div class="grid-consultas__details__dados">
+      {{ calcularIdade() }} Anos
+    </div>
+    <div class="grid-consultas__details__dados">
+      {{consultaSelecionada.telefonePrincipal | telefone}}
+    </div>
+
+    <div class="grid-consultas__details__header grid-consultas__details__header--mid">
+      Procedimento
+    </div>
+    <div class="grid-consultas__details__dados grid-consultas__details__dados--toleft">
+      <i class="fas fa-stethoscope"></i> {{ consultaSelecionada.nomeProcedimento }}
+    </div>
+    <div class="grid-consultas__details__dados grid-consultas__details__dados--toleft">
+      <i class="fas fa-tooth"></i> 18 MV
+    </div>
+  </div>
+</div>
+
+<div class="grid">
+  <h1 class="grid__title">Fluxo de caixa</h1>
+
+  <div class="badge-grid-chart">
+    <app-badge title="Receitas" icon="fa-arrow-down" [value]="receitaTotal" styleFor="success" [monetary]="true">
+    </app-badge>
+
+    <app-badge title="Despesas" icon="fa-arrow-up" [value]="despesaTotal" styleFor="cancel" [monetary]="true">
+    </app-badge>
+
+    <app-badge title="Saldo" icon="fa-cash-register" [value]="saldo" styleFor="total" [monetary]="true"></app-badge>
+  </div>
+
+  <div class="grid__data">
+    <div class="grid__data__head">
+      Registros do dia
+    </div>
+    <div class="scroll">
+
+      <div class="grid__data__row" *ngFor="let pagamento of pagamentos" (click)="navegarParaPagamento(pagamento)">
+        <i
+          class="fas fa-arrow-{{pagamento.tipo === 1 ? 'up':'down'}} grid__data__row__icon grid__data__row__icon--{{pagamento.tipo === 1 ? 'danger':'success'}}"></i>
+        <span
+          class="grid__data__row__value grid__data__row__value--money">{{pagamento.valor | currency: 'BRL' : 'symbol'}}</span>
+        <span class="grid__data__row__value">{{ pagamento.descricao }}</span>
+      </div>
+
+    </div>
+  </div>
+  <div class="grid__data grid__data--chart">
+    <p-chart type="doughnut" [data]="caixa" width="100%" height="100%" [options]="options"></p-chart>
+  </div>
+</div>
+
+<div class="grid-semanal">
+  <h1 class="grid-semanal__title">Fluxo financeiro semanal</h1>
+  <div class="grid-semanal__data">
+    <p-chart type="line" [data]="chartSemana" width="100%" height="100%" [options]="options"></p-chart>
+  </div>
+</div>

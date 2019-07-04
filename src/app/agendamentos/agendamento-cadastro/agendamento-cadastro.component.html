@@ -12,7 +12,6 @@
     *ngIf="!isMobile() && selecionado !== undefined" [@linha]="activeTab">
     <img class="i-container__upload__box__image" [src]="selecionado" alt="Foto do paciente">
   </div>
-
   <div class="form">
     <form novalidate [formGroup]="formulario" class="i-container">
 
@@ -32,7 +31,7 @@
             </ng-template>
           </p-dropdown>
           <button type="button" class="paciente-group__button" (click)="novoPaciente()" pTooltip="Cadastrar Paciente"
-            tooltipPosition="bottom" *ngIf="!isMobile() && !isEditando">
+            tooltipPosition="bottom" *ngIf="!isMobile() && !isEditando && !codigoPaciente">
             <i class="fas fa-plus"></i>
           </button>
         </div>
@@ -68,15 +67,16 @@
         [dropdown]="true">
 
         <p-dropdown [options]="procedimentos" placeholder="Selecione" emptyFilterMessage="Procedimento não encontrado!"
-          inputId="procedimento" formControlName="codigoProcedimento" [required]="true" [filter]="!isMobile()"
+          inputId="procedimento" formControlName="codigoProcedimentoPrevisto" [required]="true" [filter]="!isMobile()"
           [style]="{'width': '100%', 'margin-bottom':'20px'}">
         </p-dropdown>
 
       </app-input-container>
 
       <app-input-container label="Primeira avaliação?" for="avaliacao" [dropdown]="true">
-        <p-toggleButton formControlName="primeiraAvalicao" onLabel="Sim" offLabel="Não" onIcon="pi pi-check-circle"
-          offIcon="pi pi-circle-off" iconPos="right"></p-toggleButton>
+        <p-selectButton [options]="primeiraAvaliacaoSelect" formControlName="primeiraAvalicao"
+          [style]="{'margin-bottom':'10px'}" [required]="true">
+        </p-selectButton>
       </app-input-container>
 
       <div style="margin: 10px 0;">

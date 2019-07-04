@@ -1,7 +1,8 @@
-import { URL_API } from './../../app.api';
 import { Injectable } from '@angular/core';
+
+import { URL_API } from './../../app.api';
+import { AppHttp } from 'src/app/seguranca/app-http';
 import { CategoriaDespesa } from 'src/app/domains/categoria-despesa.model';
-import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,7 +12,7 @@ export class CategoriaDespesaService {
 
   categoriasDespesaUrl = `${URL_API}/categorias-despesa`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: AppHttp) { }
 
   salvar(categoria: CategoriaDespesa): Observable<string> {
     return this.http.post<CategoriaDespesa>(`${this.categoriasDespesaUrl}/novo`, categoria)

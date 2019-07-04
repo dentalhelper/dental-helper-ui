@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+import { HttpParams } from '@angular/common/http';
+
 import { URL_API } from 'src/app/app.api';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { AppHttp } from 'src/app/seguranca/app-http';
 import { Procedimento } from 'src/app/domains/procedimento.model';
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -12,7 +15,7 @@ export class ProcedimentoService {
 
   PROCEDIMENTO_URL = `${URL_API}/procedimentos`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: AppHttp) { }
 
   salvar(procedimento: Procedimento): Observable<string> {
     return this.http.post<Procedimento>(`${this.PROCEDIMENTO_URL}/novo`, procedimento)

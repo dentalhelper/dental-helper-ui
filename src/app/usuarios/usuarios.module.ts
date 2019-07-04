@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { USUARIO_ROUTES } from './usuarios.routes';
 import { SharedModule } from '../shared/shared.module';
 import { StatusUsuarioPipe } from '../pipes/status-usuario.pipe';
+import { UsuariosSenhaComponent } from './usuarios-senha/usuarios-senha.component';
 import { UsuarioCadastroComponent } from './usuario-cadastro/usuario-cadastro.component';
 import { UsuariosPesquisaComponent } from './usuarios-pesquisa/usuarios-pesquisa.component';
 
@@ -23,6 +24,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 @NgModule({
   declarations: [
     StatusUsuarioPipe,
+    UsuariosSenhaComponent,
     UsuarioCadastroComponent,
     UsuariosPesquisaComponent,
   ],

@@ -86,7 +86,8 @@
                   <fa-icon [icon]="['fas', 'edit']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
                 <button type="button" class="operacoes__button operacoes__button--delete"
-                  (click)="confirmarExclusao(despesa)" pTooltip="Excluir" tooltipPosition="top">
+                  (click)="confirmarExclusao(despesa)" pTooltip="Excluir" tooltipPosition="top"
+                  *ngIf="hideForRole('RECEPCIONISTA')">
                   <fa-icon [icon]="['fas', 'trash']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
               </div>

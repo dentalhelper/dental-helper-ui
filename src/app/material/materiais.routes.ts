@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
-import { MateriaisPesquisaComponent } from './materiais-pesquisa/materiais-pesquisa.component';
+
+import { MateriaisListaComponent } from './materiais-lista/materiais-lista.component';
 import { MaterialCadastroComponent } from './material-cadastro/material-cadastro.component';
+import { MateriaisPesquisaComponent } from './materiais-pesquisa/materiais-pesquisa.component';
 
 export const MATERIAL_ROUTES: Routes = [
   {
@@ -10,6 +12,10 @@ export const MATERIAL_ROUTES: Routes = [
   {
     path: 'novo',
     component: MaterialCadastroComponent
+  },
+  {
+    path: 'lista',
+    component: MateriaisListaComponent
   },
   {
     path: ':codigo/edit',

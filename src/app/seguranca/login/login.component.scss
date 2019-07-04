@@ -1,0 +1,201 @@
+@import "../../../assets/scss/cores";
+
+.container {
+  display: inline;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+}
+
+.screen {
+  height: 100vh;
+
+  &__top {
+    position: relative;
+    width: 100%;
+    height: 40%;
+    background-color: $cor-menu;
+
+    &__login {
+      border-radius: 10px;
+      position: absolute;
+      bottom: -170px;
+      width: 300px;
+      height: 340px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      background-color: $branco;
+      box-shadow: 0px 0px 15px rgba(153, 153, 153, 0.753);
+
+      &__icon-back{
+        position: absolute;
+        color: $titles;
+        font-size: 1.2em;
+        font-weight: bold;
+        top: 15px;
+        left: 15px;
+        cursor: pointer;
+      }
+
+      &__icon {
+        position: absolute;
+        text-align: center;
+        line-height: 80px;
+        font-size: 2em;
+        color: $branco;
+        border: 1px solid $cor-menu;
+        background-color: $cor-menu;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        height: 80px;
+        width: 80px;
+        top: -40px;
+        border-radius: 50%;
+        box-shadow: 0px -2px 10px rgba(153, 153, 153, 0.753);
+      }
+
+      &__title {
+        font-size: 1.8em;
+        text-align: center;
+        padding-top: 50px;
+        color: $titles;
+      }
+
+      &__form {
+        padding: 25px 30px;
+
+        &__input {
+          width: 100%;
+          margin-bottom: 35px;
+        }
+
+        &__password {
+          position: relative;
+
+          .icon-eye {
+            position: absolute;
+            color: $titles;
+            right: 5px;
+            bottom: 7px;
+            cursor: pointer;
+
+            &:hover {
+              color: darken($color: $titles, $amount: 5);
+            }
+          }
+        }
+
+        &__forgot {
+          text-align: right;
+          font-size: 0.8em;
+          margin-bottom: 30px;
+
+          a {
+            cursor: pointer;
+          }
+        }
+
+        &__button {
+          background-color: $cor-menu;
+          color: $branco;
+          border: none;
+          border-radius: 5px;
+          font-size: 1em;
+          padding: 4px 0;
+          width: 100%;
+          cursor: pointer;
+          border: 2px solid $cor-menu;
+
+          &:hover {
+            background-color: darken($color: $cor-menu, $amount: 5);
+            box-shadow: 1px 1px 1px rgba(153, 153, 153, 0.753);
+          }
+
+          &:focus {
+            border: 2px solid lighten($color: $cor-menu, $amount: 10);
+            background-color: darken($color: $cor-menu, $amount: 5);
+            box-shadow: 1px 1px 1px rgba(153, 153, 153, 0.753);
+            outline: 0 none;
+          }
+
+          &:active {
+            background-color: darken($color: $cor-menu, $amount: 8);
+            box-shadow: 1px 3px 5px rgba(153, 153, 153, 0.753);
+          }
+
+          &:disabled {
+            cursor: not-allowed;
+            border: 2px solid lighten($color: $cor-menu, $amount: 25);
+            background-color: lighten($color: $cor-menu, $amount: 25);
+          }
+        }
+      }
+    }
+  }
+  .ui-inputtext {
+    width: 100%;
+    border-color: transparent;
+    border-bottom: 1px solid #505050;
+    border-radius: 0;
+  }
+  .ui-inputtext:enabled:hover {
+    border-color: transparent !important;
+    border-bottom: 1px solid rgb(0, 0, 0) !important;
+    border-radius: 0 !important;
+  }
+  .ui-inputtext:enabled:focus {
+    border-color: transparent !important;
+    border-bottom: 1px solid rgb(0, 102, 255) !important;
+    border-radius: 0 !important;
+  }
+}
+
+
+.spinner {
+  margin: 10px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+.mail-spinner p{
+  text-align: center;
+  font-size: 0.8em;
+  color: $titles;
+}
