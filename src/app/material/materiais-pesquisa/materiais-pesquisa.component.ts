@@ -1,6 +1,6 @@
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, FormArray, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
@@ -12,7 +12,13 @@ import { MaterialService } from 'src/app/core/services/material.service';
 import { ConfirmationService } from 'primeng/api';
 
 declare var $: any;
+export const MATERIAL =
+{
+  materiais: 'materiais'
+}
+  ;
 
+export const FACES_DO_DENTE = [{ label: 'O', value: 1 },]
 @Component({
   selector: 'app-materiais-pesquisa',
   templateUrl: './materiais-pesquisa.component.html',
@@ -36,6 +42,9 @@ export class MateriaisPesquisaComponent implements OnInit {
   messageState = 'ready';
   formularioDoFiltro: FormGroup;
 
+  formulario: FormGroup;
+  items: FormArray;
+
   cols: any[];
 
   materiais: Material[] = [];
@@ -46,6 +55,7 @@ export class MateriaisPesquisaComponent implements OnInit {
     private title: Title,
     private router: Router,
     private route: ActivatedRoute,
+    private formBuilder: FormBuilder,
     private toastService: ToastService,
     private materialService: MaterialService,
     private confirmationService: ConfirmationService
@@ -64,6 +74,7 @@ export class MateriaisPesquisaComponent implements OnInit {
         field: 'fabricante', header: 'Fabricante'
       }
     ];
+    this.prepararFormulario();
   }
 
   criarMaterial() {
@@ -110,6 +121,43 @@ export class MateriaisPesquisaComponent implements OnInit {
         this.deletar(material);
       }
     });
+  }
+
+  prepararFormulario() {
+    this.formulario = new FormGroup({
+      materiais: this.formBuilder.array([])
+    },
+      {
+        updateOn: 'change'
+      });
+  }
+
+  get formData() {
+    return <FormArray>this.formulario.get('materiais');
+  }
+
+  adicionarMaterial(material): void {
+    this.items = this.formulario.get('materiais') as FormArray;
+    this.items.push(this.criarItemDeMaterial(material.nome));
+  }
+
+  removerMaterial(index: number) {
+    this.items.removeAt(index);
+  }
+
+  criarItemDeMaterial(nome): FormGroup {
+    return this.formBuilder.group({
+      nome: new FormControl(nome, [Validators.required, Validators.maxLength(20)]),
+      quantidade: new FormControl(1, [Validators.required, Validators.maxLength(10)]),
+    });
+  }
+
+  salvarLista() {
+    const aux = this.formulario.value;
+    const jsonAux = JSON.stringify(aux);
+    localStorage.setItem(MATERIAL.materiais, jsonAux);
+    const mensagemToast = `Você criou uma lista de materiais`;
+    this.toastService.exibirSucesso(mensagemToast);
   }
 
   isMobile(): boolean {

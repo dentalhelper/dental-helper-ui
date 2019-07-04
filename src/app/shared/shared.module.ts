@@ -26,7 +26,8 @@ import {
   faUnlockAlt,
   faImages,
   faCheckSquare,
-  faUndoAlt
+  faUndoAlt,
+  faCartPlus
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -74,6 +75,7 @@ export class SharedModule {
     library.add(faSearch);
     library.add(faImages);
     library.add(faUndoAlt);
+    library.add(faCartPlus);
     library.add(faMoneyBill);
     library.add(faUserCheck);
     library.add(faUserTimes);

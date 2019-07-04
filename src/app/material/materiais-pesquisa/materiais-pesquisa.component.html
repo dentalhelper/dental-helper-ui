@@ -59,6 +59,11 @@
                   (click)="confirmarExclusao(rowData)" pTooltip="Excluir" tooltipPosition="top">
                   <fa-icon [icon]="['fas', 'trash']" size="lg" [fixedWidth]="true"></fa-icon>
                 </button>
+
+                <button type="button" class="operacoes__button operacoes__button--add"
+                  (click)="adicionarMaterial(rowData)" pTooltip="Adicionar na lista" tooltipPosition="top">
+                  <fa-icon [icon]="['fas', 'cart-plus']" size="lg" [fixedWidth]="true"></fa-icon>
+                </button>
               </div>
 
             </td>
@@ -78,7 +83,7 @@
         <ng-template pTemplate="emptymessage">
           <tr>
             <td colspan="4">
-              Nenhuma Despesa encontrada!<br />
+              Nenhum Material encontrado!<br />
               Clique <a [routerLink]="['/materiais/novo']">AQUI</a> para cadastrar.
             </td>
           </tr>
@@ -86,6 +91,34 @@
       </p-table>
     </div>
   </div>
+
+  <br />
+
+  <div *ngIf="formulario.value.materiais.length !== 0">
+      <hr />
+      <app-default-header titulo="Criar Lista de Materiais" buttonId="material" buttonText="Salvar Lista"
+      (botaoClicado)="salvarLista()">
+    </app-default-header>
+
+    <form novalidate [formGroup]="formulario" class="i-container"  >
+      <div formArrayName="materiais" *ngFor="let material of formData.controls; let i = index;">
+        <div [formGroupName]="i" class="i-container__ref-container__group">
+
+          <app-input-container label="Nome" for="nome" errorMessage="Permitido até 20 caracteres.">
+            <input class="i-container__input" type="text" id="nome" formControlName="nome">
+          </app-input-container>
+          <app-input-container label="Quantidade" for="quantidade" errorMessage="Permitido até 30 caracteres.">
+            <input class="i-container__input" type="number" id="quantidade" formControlName="quantidade">
+          </app-input-container>
+          <app-button icon="fas fa-times" iconPosition="right" [classes]="['botao--danger', 'botao--mini']"
+            (botaoClicado)="[removerMaterial(i)]" pTooltip="Remover" tooltipPosition="top">
+          </app-button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
 </div>
 
 <p-confirmDialog #confirmDialog header="Confirmar exclusão" icon="pi pi-exclamation-triangle">

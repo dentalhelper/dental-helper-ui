@@ -24,7 +24,7 @@
         <i class="fas fa-dollar-sign"></i>
       </div>
       <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(materiais)" pTooltip="Materiais"
-        *ngIf="hideForRole('RECEPCIONISTA')" [ngClass]="{'active-menu' : isActiveRoute('materiais', ['novo', 'edit'])}">
+        *ngIf="hideForRole('RECEPCIONISTA')" [ngClass]="{'active-menu' : isActiveRoute('materiais', ['novo', 'edit', 'lista'])}">
         <i class="fas fa-toolbox"></i>
       </div>
       <div class="botao-menu " (click)="isOpen = !isOpen && abrirMenuExtendido(configuracoes)" pTooltip="Configurações"
@@ -128,10 +128,16 @@
         </label>
 
         <ul class="drop-down">
-          <li class="last item-submenu" (click)="isOpen = !isOpen">
-            <a id="item-despesa" [routerLink]="['/materiais']" routerLinkActive="active">Catálogo</a>
+          <li class="item-submenu" (click)="isOpen = !isOpen">
+            <a id="item-despesa" [routerLink]="['/materiais/lista']" routerLinkActive="active">Lista</a>
           </li>
         </ul>
+
+        <ul class="drop-down">
+            <li class="last item-submenu" (click)="isOpen = !isOpen">
+              <a id="item-despesa" [routerLink]="['/materiais']" [routerLinkActiveOptions]="{exact: true}"routerLinkActive="active">Catálogo</a>
+            </li>
+          </ul>
       </li>
 
       <li class="drop-down-menu">
