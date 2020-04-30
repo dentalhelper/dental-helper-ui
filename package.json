@@ -36,7 +36,7 @@
     "@fullcalendar/timegrid": "^4.1.0",
     "chart.js": "^2.8.0",
     "core-js": "^2.5.4",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "ng2-currency-mask": "^5.3.1",
     "ngx-mask": "^7.8.9",
