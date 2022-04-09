@@ -37,7 +37,7 @@
     "chart.js": "^2.8.0",
     "core-js": "^2.5.4",
     "jquery": "^3.4.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng2-currency-mask": "^5.3.1",
     "ngx-mask": "^7.8.9",
     "primeicons": "^1.0.0",
